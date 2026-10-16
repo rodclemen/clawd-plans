@@ -16,7 +16,7 @@ church, Hellmouth). New files go in `Sources/App/Universes/Slayer/Art/SlayerHero
 added to the arrays in `SlayerRoster.swift` and to the Preview batches.
 
 **Promo:** the Pick-your-universe page is now the pop-art layout (a panel per universe, no Settings pop-up),
-committed on `buffy`. The full re-render still waits for the LOTR universe. The Clawd Royale teaser still assumes
+committed on `buffy` (2307bd0) and on `main` (90eecab, without the Slayer lines). The full re-render still waits for the LOTR universe. The Clawd Royale teaser still assumes
 three universes (`royaleCollide`'s `from`/`meet`/`rest` arrays) and will crash until that's fixed. Build the promo
 tool as `-o build/renderpromo` (the binary must be named `renderpromo`).
 
