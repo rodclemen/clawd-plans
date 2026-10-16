@@ -16,3 +16,9 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 | [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
 | [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
 | [done/stevie-clawdberg.md](done/stevie-clawdberg.md) | Stevie Clawdberg (Spielberg's films) | built |
+
+## Engine plans
+
+| Plan | What | Status |
+|---|---|---|
+| [universe-modules.md](universe-modules.md) | Universes as self-contained modules: one folder each, a template that never ships, a checker, and on/off switches in Settings | planned |
