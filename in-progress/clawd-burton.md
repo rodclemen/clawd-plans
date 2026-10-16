@@ -8,9 +8,9 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 - **Code naming** avoids the director's name in code, as the other universes avoid theirs:
   - `case clawdBurton` with key `"clawdBurton"`.
   - Folder `Sources/App/Universes/ClawdBurton/`, file prefix `Burton…` (`BurtonRoster.swift`, `BurtonHeroes1.swift`, `burtonTheme`, `BurtonTrip`, `REEL=burton`).
-  - Branch `tim_burton`.
+  - Branch `feature-burton` (in HEM42/clawd-clash, off main `90eecab`).
   - Six other universes are being planned at the same time (Star Trek, 007, Transformers, He-Man, Game of Thrones, Buffy), so every top-level name and place key carries the `burton` prefix or a name only this universe would use.
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
+- **Raw value: 8, provisional** (`case clawdBurton = 8`). Slayer and Clawd of the Rings both use 6 right now; 8 stays clear of 6 and 7 however that's settled. To be confirmed with Rod before merging: ids are rawValue*1000 and permanent.
 - **The films (decided, ten):** Beetlejuice and Beetlejuice Beetlejuice (counted as one), Edward Scissorhands, The Nightmare Before Christmas, Corpse Bride, Sleepy Hollow, Mars Attacks!, Charlie and the Chocolate Factory, Alice in Wonderland (2010), Frankenweenie (2012), and **Pee-wee's Big Adventure** (Burton's first feature), added last.
   - **Left out on purpose:** Batman and Batman Returns (Batclawd, the Jester, Cat Burglar and the Puffin already live in Detective Clawds, and they'd look like doubles in Clawd Royale); Sweeney Todd (the whole film is murder and cannibal pies; there's no desktop-toy version of it); Ed Wood and Big Eyes (real people); Dark Shadows (Barnabas's appetite is the point of him); Planet of the Apes (2001) (overlaps Gorilla Grudd's Gorilla City). Wednesday is The Addams Family, its own franchise, so it stays out. Big Fish and Miss Peregrine's Home for Peculiar Children were offered and stay out too.
 - **Naming style:** light puns on the on-screen names (Jack Skullington, Edward Scissorclaws, Sandy Clawz, Violet Bluregarde, the Jabberclawky). A near-spelling where no pun fits (Ichabod Craine, Katrina Van Tassle). Actors' names are never used, and the real people who play themselves (Mars Attacks!' singer cameo) are left out.
