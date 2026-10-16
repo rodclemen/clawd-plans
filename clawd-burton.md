@@ -4,18 +4,17 @@
 
 Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files and Stevie Clawdberg. This plan adds a director universe for Tim Burton, built the way Stevie Clawdberg was: one ensemble drawn from a handful of films, grouped by film. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
-- **Name: Clawd Burton** (proposed; alternatives are in Open questions). It reads at a glance, it's a light pun on the director, and it sits next to "Stevie Clawdberg" as a pair.
+- **Name: Clawd Burton** (decided). It reads at a glance, it's a light pun on the director, and it sits next to "Stevie Clawdberg" as a pair. Like Clawdberg, its title lockup has a small **"universe"** tucked under the name (see Promo).
 - **Code naming** avoids the director's name in code, as the other universes avoid theirs:
   - `case clawdBurton` with key `"clawdBurton"`.
   - Folder `Sources/App/Universes/ClawdBurton/`, file prefix `Burton…` (`BurtonRoster.swift`, `BurtonHeroes1.swift`, `burtonTheme`, `BurtonTrip`, `REEL=burton`).
   - Branch `tim_burton`.
   - Six other universes are being planned at the same time (Star Trek, 007, Transformers, He-Man, Game of Thrones, Buffy), so every top-level name and place key carries the `burton` prefix or a name only this universe would use.
 - **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
-- **The films (proposed default, nine, like Clawdberg):** Beetlejuice and Beetlejuice Beetlejuice (counted as one), Edward Scissorhands, The Nightmare Before Christmas, Corpse Bride, Sleepy Hollow, Mars Attacks!, Charlie and the Chocolate Factory, Alice in Wonderland (2010), Frankenweenie (2012). The final pick is yours (see Open questions).
-  - **Left out on purpose:** Batman and Batman Returns (Batclawd, the Jester, Cat Burglar and the Puffin already live in Detective Clawds, and they'd look like doubles in Clawd Royale); Sweeney Todd (the whole film is murder and cannibal pies; there's no desktop-toy version of it); Ed Wood and Big Eyes (real people); Dark Shadows (Barnabas's appetite is the point of him); Planet of the Apes (2001) (overlaps Gorilla Grudd's Gorilla City). Wednesday is The Addams Family, its own franchise, so it's out by default.
-  - **Ready to add if you want them:** Big Fish, Pee-wee's Big Adventure and Miss Peregrine's Home for Peculiar Children. Mini-rosters are in Open questions, so a yes needs no new research.
+- **The films (decided, ten):** Beetlejuice and Beetlejuice Beetlejuice (counted as one), Edward Scissorhands, The Nightmare Before Christmas, Corpse Bride, Sleepy Hollow, Mars Attacks!, Charlie and the Chocolate Factory, Alice in Wonderland (2010), Frankenweenie (2012), and **Pee-wee's Big Adventure** (Burton's first feature), added last.
+  - **Left out on purpose:** Batman and Batman Returns (Batclawd, the Jester, Cat Burglar and the Puffin already live in Detective Clawds, and they'd look like doubles in Clawd Royale); Sweeney Todd (the whole film is murder and cannibal pies; there's no desktop-toy version of it); Ed Wood and Big Eyes (real people); Dark Shadows (Barnabas's appetite is the point of him); Planet of the Apes (2001) (overlaps Gorilla Grudd's Gorilla City). Wednesday is The Addams Family, its own franchise, so it stays out. Big Fish and Miss Peregrine's Home for Peculiar Children were offered and stay out too.
 - **Naming style:** light puns on the on-screen names (Jack Skullington, Edward Scissorclaws, Sandy Clawz, Violet Bluregarde, the Jabberclawky). A near-spelling where no pun fits (Ichabod Craine, Katrina Van Tassle). Actors' names are never used, and the real people who play themselves (Mars Attacks!' singer cameo) are left out.
-- **Size:** about **100 characters**: 51 heroes including HEM and one agent-only, 49 villains including four agent-only. Plus **22 places** and **12 transitions**.
+- **Size:** **107 characters**: 54 heroes including HEM and one agent-only, 53 villains including four agent-only. Plus **23 places** and **12 transitions**.
 - **Tone:** Burton is gothic but warm: his monsters are the misunderstood ones. That suits a desktop toy well. Where a film goes darker it's tamed to eerie (see "What's tamed" under Cast).
 
 | Universe              | Heroes | Villains | Total | Places | Transitions |
@@ -26,16 +25,17 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 | Doctor Clawd          |     56 |       42 |    98 |     20 |          10 |
 | The Clawd Files       |     36 |       46 |    82 |     20 |          10 |
 | Stevie Clawdberg      |     64 |       54 |   118 |     23 |          10 |
-| Clawd Burton (proposed) |   51 |       49 |   100 |     22 |          12 |
+| Clawd Burton          |     54 |       53 |   107 |     23 |          12 |
 
 (heroCount includes HEM; villainCount includes agent-only.)
 
-**Viability: a full experience, not a limited one.** 49 heroes can lead a session and 45 villains can, well past the 20-a-side threshold. One thing to know: many Burton heroes don't fight (Sally, Kim, Charlie, the White Queen), so a lot of the hero side is `.none` or throws something silly. That's in keeping with the films, and fights stay fun because the villain side is full of monsters with claws, swords and ray guns.
+**Viability: a full experience, not a limited one.** 52 heroes can lead a session and 49 villains can, well past the 20-a-side threshold. One thing to know: many Burton heroes don't fight (Sally, Kim, Charlie, the White Queen), so a lot of the hero side is `.none` or throws something silly. That's in keeping with the films, and fights stay fun because the villain side is full of monsters with claws, swords and ray guns.
 
 **How the sides are sorted.** Heroes are the films' protagonists and their friends. Villains are the antagonists, the monsters and the troublemakers. Two calls need care:
-- **Beetlejuice is a villain**, and the villain side's lead. He's the films' trickster antagonist: he cons the Maitlands, tries to marry Lydia and has to be sent back. Fans love him, which is exactly why he should lead a side. Claude still plays the heroes.
+- **Beetlejooce is a villain**, and the villain side's lead (decided). He's the films' trickster antagonist: he cons the Maitlands, tries to marry Lydia and has to be sent back. Fans love him, which is exactly why he should lead a side. Claude still plays the heroes.
 - **Halloween Town's scary residents are villains** (Oogie Boogie, Lock, Shock and Barrel, Dr. Finkelstein, the Wolfman, the Clown, the Witch), the same way The Clawd Files put its monsters of the week on the villain side. Jack, Sally, Zero, the Mayor and Sandy Claws are heroes.
-- The **Wonka children and the Frankenweenie classmates** are villains in the "troublemakers" sense (the guide allows this, as Fraggle Rock's Gorgs would be). Their fights are silly: Violet throws gum, Veruca throws walnuts. Nobody is hurt; Violet's signature is turning into a blueberry. Flagged in Open questions.
+- The **Wonka children and Victor's Frankenweenie classmates** stay villains in the "troublemakers" sense (decided; the guide allows this, as Fraggle Rock's Gorgs would be). Their fights are silly: Violet throws gum, Augustus a candy bar, Veruca walnuts, Mike his game zapper, and each classmate fights with the lightning-charged pet they brought back (or a silly prop of their own). Nobody is hurt; Violet's signature is turning into a blueberry.
+- **Pee-wee's Big Adventure** sorts simply: Pee-wee and his friends are heroes; Francis Buxton, the bike thief and the people who send Pee-wee the wrong way are villains.
 
 ## How a universe plugs in (checked against main, ebc02be, on 2026-10-16)
 
@@ -56,8 +56,8 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 
 **Wiring into the existing code**, copying what `clawdberg` did. Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎.
 - **`Sources/Shared/Universe.swift`:**
-  - `:8–33`: the case, `key`, `title`, `villainCount` (49), `heroCount` (51).
-  - `:44–52`: `agentOnly`: villains 45–48 and hero 49 (Maggott), as global ids.
+  - `:8–33`: the case, `key`, `title`, `villainCount` (53), `heroCount` (54).
+  - `:44–52`: `agentOnly`: villains 49–52 (Bob, the Oogie bug, the squirrel, the Sea-Monkey) and hero 52 (Maggott), as zero-based enum indexes. As global ids that's `base + 49…52` for the villains and `base + StatusStore.heroBase + 52` for Maggott, with a comment naming all five like Clawdberg's line.
   - `:58`: `claudeSide` stays false (Claude is the heroes).
   - `:61`: `rivals`: the two Victors (see Cast).
   - `:66–79`: `abductees` gets the Recently Deceased for "Take a number" (see Mechanics), with a doc comment like Clawdberg's.
@@ -65,7 +65,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 - **`Sources/App/Locations.swift:74`:** `.merging(burtonPlaces) { a, _ in a }`.
 - **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** in phase 1, add `.clawdBurton` to the `nil` cases; in phase 5, a `.burton(BurtonTrip)` case in `duration`, `draw` and `pick`, and the doc comment.
 - **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's persona and costume in every switch (see HEM below).
-- **`Sources/App/Rides.swift`:** the new `Ride` cases and their draw dispatch (`coffinSleigh`, `walkingTub`, `sandworm`, `martianSaucer`, `glassElevator`), drawn in `BurtonRides.swift`.
+- **`Sources/App/Rides.swift`:** the new `Ride` cases and their draw dispatch (`coffinSleigh`, `walkingTub`, `sandworm`, `martianSaucer`, `glassElevator`, `herclawdBike`), drawn in `BurtonRides.swift`.
 - ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list (`("clawdBurton", Universe.clawdBurton.title)`), and `case "clawdBurton": tripUniverse = .clawdBurton; tripMixed = false`.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** add `universe != .clawdBurton` to the meditation guard: nobody in these films floats cross-legged. **`:488`:** `.merging(burtonBespokeDrills)`.
 - ⚠︎ **`Sources/App/Overlay.swift:865`:** the Playground's five sample prompts (below). Lines 1113 and 1226 show how Clawdberg hooked in its set piece and its OutaTime effect: "Take a number" hooks in the same way, next to OutaTime.
@@ -73,8 +73,8 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 - **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is in a Clawd Burton place.
 - **Tools:**
   - `Tools/Preview/main.swift:60–93`: the doc comment, `burtonHeroes`/`burtonVillains` batch lists, the `"clawdBurton"` universe lookup, and the batch loops.
-  - `Tools/Transitions/main.swift:12, 122`: the usage line and the branch that renders `BurtonWipe.allCases`, plus a `burtonTitle` and `burtonShowcase` like Clawdberg's (lines 201, 262).
-  - Phase 6: `Tools/RenderPromo` (`REEL=burton`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
+  - `Tools/Transitions/main.swift:12, 122`: the usage line and the branch that renders `BurtonWipe.allCases`, plus a `burtonTitle` and `burtonShowcase` like Clawdberg's (`clawdbergTitle` at lines 199–225, the showcase at 262). `burtonTitle` is the lockup described under Promo: CLAWD over BURTON with a small "universe" under the right end of BURTON.
+  - Phase 6: `Tools/RenderPromo` (`REEL=burton`, with its own `burtonTitle` like `clawdbergTitle` at lines 3411–3435), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
 **Playground prompts (Overlay.swift:865):**
 - "Find out why the topiary test keeps snipping the wrong branch"
@@ -111,7 +111,7 @@ How the engine's weapons map onto Burton's films:
 
 The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; their colours are opposite (warm gold, sour lime). The Witch's orange lightning and Victor's grey are the two jagged ones; Thorr's, Stormy's and the Electric Gremlin's are blue-white, so neither is confusable.
 
-### Heroes (51)
+### Heroes (54)
 
 **The Nightmare Before Christmas (5).** Enum first, so the skeleton's lead hero is case 0.
 
@@ -207,11 +207,21 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 | 48 | Elsa Van Helsclaw | black bob, pale dress | none | carries her poodle's lead; a little wave |
 | 49 | Mr. Rzykrusky | science teacher, long face, tie | none | holds up a frog that twitches with a zap |
 
-**Agent-only (1):** 50 · **Maggott**, the green worm who lives in Emilee's head, on Clawd's four legs with a little worm hood; only ever an agent.
+**Pee-wee's Big Adventure (3)**, appended last of the film groups
 
-**HEM (1)**, last as always: 51.
+| # | Name | Look | Weapon | Signature |
+|---|---|---|---|---|
+| 50 | Pee-wee Herclawd | slicked-back hair, rosy cheeks, a too-small grey suit, red bow tie, white shoes | joke-shop novelties from the magic shop (`.thrown(red)`) | kicks off his shoes and does his big-shoe dance on the spot; callout "I know you are, but what am I?" |
+| 51 | Dottie | short tousled hair, bike-shop overalls, a spanner in the pocket | none | rings a bike bell and gives a hopeful little wave; callout "Drive-in, Saturday?" |
+| 52 | Large Marge | the ghost trucker: big hair, trucker's shirt, a sweet grin, a faint glow round her edges | none | her face stretches into the claymation scare (eyes pop out on stalks, jaw drops), then snaps back to the sweet grin; callout "Tell 'em Large Marge sent ya!" |
 
-### Villains (49)
+Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay eyes and a stretched jaw, nothing gory, and her crash story isn't told.
+
+**Agent-only (1):** 53 · **Maggott**, the green worm who lives in Emilee's head, on Clawd's four legs with a little worm hood; only ever an agent.
+
+**HEM (1)**, last as always: 54.
+
+### Villains (53)
 
 **Beetlejuice and Beetlejuice Beetlejuice (5).** Enum first, so the skeleton's lead villain is case 0.
 
@@ -274,7 +284,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 28 | Augustus Gloopp | big boy, lederhosen, chocolate smears | chocolate (`.thrown(brown)`) | stuffs in a chocolate bar |
+| 28 | Augustus Gloopp | big boy, lederhosen, chocolate smears | a candy bar (`.thrown(brown)`) | stuffs in a chocolate bar |
 | 29 | Veruca Saltt | posh coat, ringlets, a frown | walnuts (`.thrown(tan)`) | stamps her foot; callout "I want it now!" |
 | 30 | Violet Bluregarde | blue tracksuit, gum | gum (`.thrown(blue)`) | swells up into a blueberry and back |
 | 31 | Mike Teevee | grey hoodie, video-game controller | game zapper (`.energy`, white) | shrinks to a few pixels and pops back |
@@ -294,26 +304,41 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 38 | Edgar "E" Gorr | hunched, crooked grin, bad teeth | none | shows off his invisible goldfish (an empty bowl, a bubble) |
-| 39 | Nassorr | flat-top hair, heavy brow, deep voice | none | "Ahh!" arms raised dramatically |
-| 40 | Toshiakki | neat hair, competitive glare | none | fires up a little rocket bottle |
-| 41 | Weird Gurl | huge round eyes, fringe, holding her cat | none | holds up Mr. Whiskers, who stares |
+| 38 | Edgar "E" Gorr | hunched, crooked grin, bad teeth | his lightning-charged invisible goldfish, a crackling blob of water (`.thrown(white)`) | shows off his invisible goldfish (an empty bowl, a bubble) |
+| 39 | Nassorr | flat-top hair, heavy brow, deep voice | a sparking hamster ball, Colossuss's old one (`.thrown(grey)`) | "Ahh!" arms raised dramatically |
+| 40 | Toshiakki | neat hair, competitive glare | bottle rockets (`.thrown(silver)`) | fires up a little rocket bottle |
+| 41 | Weird Gurl | huge round eyes, fringe, holding her cat | static-charged fur-balls off Mr. Whiskerz (`.thrown(grey)`) | holds up Mr. Whiskerz, who stares |
 | 42 | Mr. Whiskerz | vampire cat with bat wings | fangs (melee), `.fly` | flaps and hisses |
 | 43 | Shellee | turtle grown to a kaiju | stomp (melee), `armoured`, `bulk` | roars and stomps, the ground shaking |
 | 44 | Colossuss | mummy hamster in bandages | bite (melee) | waddles with its arms out |
 | 45 | The Were-Rat | rat-man in tatters | claws (melee) | sniffs the air, whiskers twitching |
 
+All four Wonka children and all four classmates fight with something silly (gum, a candy bar, walnuts, a game zapper, a charged pet or its leftovers). Nobody is hurt; a hit is a splat, a fizz or a puff of fur.
+
+**Pee-wee's Big Adventure (4)**, appended last of the film groups
+
+| # | Name | Look | Weapon | Signature |
+|---|---|---|---|---|
+| 46 | Francis Buxtun | big spoilt rich boy, curly hair, a striped bathrobe, a toy boat | rubber bath toys (`.thrown(yellow)`) | lolls in a bubble bath with his toy boat, smug, then sinks out of sight |
+| 47 | The Bike Thief | a shadowy figure, hat pulled low, collar up, bolt cutters | bolt cutters (melee) | tiptoes, snips a chain, and sneaks off with a cartoon "tee-hee" |
+| 48 | Madam Rubee | phoney fortune-teller, turban, beads, a crystal ball | none | waves her hands over the crystal ball, which glows; callout "The basement of the Alamo!" |
+| 49 | Andee | Simone's enormous, short-tempered boyfriend, crew cut, plaid shirt | fists (melee), `bulk` | cracks his knuckles and stomps after someone |
+
+Madam Rubee and Andee earn their places: Rubee sends Pee-wee off on the wrong trail (and her turban and crystal ball read at once), and Andee's chase through the dinosaur park is one of the film's big set pieces.
+
 **Agent-only small fry (4).** Like the MSE-6, these only ever appear as agents:
-- 46 · **Bob**, one of Beetlejooce's shrunken-head workers in a suit;
-- 47 · **an Oogie bug**, a beetle out of Oogie Boogie's seams;
-- 48 · **a nut-sorting squirrel** from Wonka's factory;
-- 49 · **a Sea-Monkey**, Frankenweenie's monstrous brine shrimp.
+- 50 · **Bob**, one of Beetlejooce's shrunken-head workers in a suit;
+- 51 · **an Oogie bug**, a beetle out of Oogie Boogie's seams;
+- 52 · **a nut-sorting squirrel** from Wonka's factory;
+- 53 · **a Sea-Monkey**, Frankenweenie's monstrous brine shrimp.
+
+(The tables number from 1; the enum indexes are one lower, so the agent-only villains are indexes 49–52 and Maggott is hero index 52.)
 
 ### HEM
 
 As always, the last hero. His Clawd Burton costume: a crooked black top hat with a spiral band, a black-and-white striped scarf, and a big spiral lollipop he swings like a club (`.saber`). He's in the universe's colours without looking like anyone in it.
 
-### Nemeses (24)
+### Nemeses (25)
 
 Each pair faces off first when both are on stage:
 - Jack Skullington ↔ Ooogie Boogie
@@ -340,6 +365,7 @@ Each pair faces off first when both are on stage:
 - Tarrant Hightop ↔ Stayne
 - Victor Frankenstien ↔ Edgar "E" Gorr
 - Sparkie ↔ Mr. Whiskerz
+- Pee-wee Herclawd ↔ Francis Buxtun
 
 ### Rivals
 
@@ -355,6 +381,9 @@ Inside the universe:
 - **Two top hats:** Willy Wonky (burgundy velvet, black hat, bob) and Tarrant Hightop (orange hair, white face, patched hat). The Mayor's hat is tall and plain with a rosette.
 - **Four Martians:** told apart by robe (Ambassador), cape (Leader), spacesuit (Trooper) and the beehive (Spy).
 - **Lady Van Tassle and the Crone** are sisters: Lady is upright in wine red; the Crone is hunched and grey.
+- **Two spoilt boys:** Francis Buxtun (bathrobe, toy boat) and Augustus Gloopp (lederhosen, chocolate smears).
+- **Three fortune-tellers and witches:** Madam Rubee (turban and beads, no hat, a crystal ball), the Halloween Witch (green face, tall hat) and the Crone (hunched, grey).
+- **Two big faces:** Large Marge's scare and Jack's stretched skull. Marge's is clay-brown and bug-eyed; Jack's is bone white.
 
 Against the six existing universes (they meet in Clawd Royale):
 - **Tarrant Hightop vs the Mad Milliner** (Detective Clawds): keep Tarrant's orange hair, white face and patchwork hat strong.
@@ -364,16 +393,17 @@ Against the six existing universes (they meet in Clawd Royale):
 - **The Martians vs the Grey and the Tall Visitor** (Clawd Files, Clawdberg): big brains in glass domes; no one else has that.
 - **Ooogie Boogie vs the Trashman** (Clawd Files): a neat burlap sack against a heap of rubbish.
 - **Edward vs Clawdverine:** leather, buckles and long thin blades on every finger, against three claws and yellow.
+- **Pee-wee's bike vs E.T.'s moon bike** (Clawdberg, `moonBike`): a big red-and-white cruiser with chrome and a horn, against a small BMX with a basket and a blanket.
 - Check Buffy's plan too when both are drawn: witches and vampires there; Lady Van Tassle and the Halloween Witch should stay distinct.
 
 ### What's tamed, and who's left out and why
 
-- **Tamed:** Juno's smoke curls out of her collar, not her throat. Lord Barkis is "the cad who jilted Emily and ran off with her dowry". The Headless Horseman knocks hats off, never heads, and the Tree of the Dead has glowing roots, not heads. Delores's soul-suck is a pale wisp. The Martian ray doesn't strip anyone to a skeleton; it's a zap and a puff. The Red Queen's moat of heads is a moat of heart-shaped lilies. The Tear-Away Clown's face comes off to show a dark hole, nothing more.
-- **Left out:** the Mars Attacks! singer who plays himself (a real person); Nathalie Lake and her dog's swapped heads, and Professor Kessler's head in a jar (body horror for a desktop toy); the Martian Girl's seduction scene (she's kept as a gum-chewing spy); Absolem (his hookah smoke rings would copy the Cigarette-Smoking Clawd's); Tweedledum and Tweedledee (two people in one sprite won't read); Bayard, Miss Argentina, Charles Deetz, Rory, Bill and Kevin Boggs, Esmeralda, Officer Allen, Taffy Dale, General Decker, Notary Hardenbrook, the Harlequin Demon, Behemoth, the Undersea Gal, Mr. Burgemeister and Persephone (too thin to carry a character, or a near-duplicate of someone kept).
+- **Tamed:** Juno's smoke curls out of her collar, not her throat. Lord Barkis is "the cad who jilted Emily and ran off with her dowry". The Headless Horseman knocks hats off, never heads, and the Tree of the Dead has glowing roots, not heads. Delores's soul-suck is a pale wisp. The Martian ray doesn't strip anyone to a skeleton; it's a zap and a puff. The Red Queen's moat of heads is a moat of heart-shaped lilies. The Tear-Away Clown's face comes off to show a dark hole, nothing more. Large Marge's scare is rubbery clay eyes and a stretched jaw; the story of her crash isn't told.
+- **Left out:** the Mars Attacks! singer who plays himself (a real person); Nathalie Lake and her dog's swapped heads, and Professor Kessler's head in a jar (body horror for a desktop toy); the Martian Girl's seduction scene (she's kept as a gum-chewing spy); Absolem (his hookah smoke rings would copy the Cigarette-Smoking Clawd's); Tweedledum and Tweedledee (two people in one sprite won't read); Bayard, Miss Argentina, Charles Deetz, Rory, Bill and Kevin Boggs, Esmeralda, Officer Allen, Taffy Dale, General Decker, Notary Hardenbrook, the Harlequin Demon, Behemoth, the Undersea Gal, Mr. Burgemeister, Persephone, and from Pee-wee's Big Adventure Simone, Mickey the escaped convict, Mario the magic-shop owner and the biker gang (too thin to carry a character, or a near-duplicate of someone kept).
 
-## Places (22)
+## Places (23)
 
-Each is a `Place` with a still picture, a moving layer and tall-canvas extras for the screen saver. The palettes swing wide on purpose: Halloween orange and black, Corpse Bride's grey-blue living world against its colourful dead, pastel suburbia, candy colours for Wonka, Underland's saturated greens and reds, Frankenweenie in greys.
+Each is a `Place` with a still picture, a moving layer and tall-canvas extras for the screen saver. The palettes swing wide on purpose: Halloween orange and black, Corpse Bride's grey-blue living world against its colourful dead, pastel suburbia, candy colours for Wonka, Underland's saturated greens and reds, Frankenweenie in greys, and Pee-wee's toy-box primaries.
 
 | # | Key | Place | Still | Moving layer | Tall-canvas extras |
 |---|---|---|---|---|---|
@@ -399,8 +429,9 @@ Each is a `Place` with a still picture, a moving layer and tall-canvas extras fo
 | 20 | `salazenGrum` | **The Red Queen's castle** | heart-shaped topiaries, red stone, the throne | red banners flap, card knights patrol in the background | the castle towers and the lily moat |
 | 21 | `newHollandAttic` | **Victor's attic lab, New Holland** | kites, jars, the operating table under the skylight, in greys | lightning flashes through the skylight, a kite flaps | the rooftop and a lightning-split sky |
 | 22 | `windmillMiniGolf` | **The windmill mini-golf** | the mini-golf windmill on the hill, the fair below, in greys | the windmill's sails turn, torches flicker | a stormy grey sky and the town's lights |
+| 23 | `breakfastMachineHouse` | **Pee-wee's house and the breakfast machine** | a toy-crammed kitchen in bright primaries, the long Rube Goldberg breakfast machine along the counter, the red-and-white bike by the door | the machine runs its loop: a dinosaur toy tips, a little ball rolls, the toaster pops, a flipped pancake lands on the plate (big, clear moves only) | the sunny yard and Francis's mansion next door over the fence |
 
-Keys checked: none clash with the 150-odd `Location("…")` keys on main (`christmasLondon` and `mothership` exist, so these are `christmasTown` and `martianSaucerDeck`). Each is a name only this universe would use, so the six sibling plans shouldn't hit them; check again at build time with `grep -rn 'Location("' Sources/App/Universes`.
+Keys checked: none clash with the 150-odd `Location("…")` keys on main (`christmasLondon` and `mothership` exist, so these are `christmasTown` and `martianSaucerDeck`; nothing on main mentions breakfast, bikes or Pee-wee, so `breakfastMachineHouse` is free). Each is a name only this universe would use, so the six sibling plans shouldn't hit them; check again at build time with `grep -rn 'Location("' Sources/App/Universes`.
 
 **Homes:**
 - **Nightmare:** Jack, Sallee, Zeero and the Mayor in Halloween Town; Sandy Clawz in Christmas Town. Ooogie and his bugs in his lair; Lok, Shok and Barrell in the lair too; Dr. Finkelclawd, the Wolfclawd, the Clown and the Witch in Halloween Town. Spiral Hill is Jack's turf in the transitions.
@@ -412,6 +443,7 @@ Keys checked: none clash with the 150-odd `Location("…")` keys on main (`chris
 - **Charlie:** everyone in the Chocolate Room, the squirrel included; Slugwurth too (he's snooping).
 - **Alice:** Alice, Tarrant, Chessur, McTwisp, Mally and Thackery at the tea party; Mirana at the tea party. The Red Queen, Stayne, the Bandersnatch and the Card Knight at Salazen Grum; the Jabberclawky at Salazen Grum.
 - **Frankenweenie:** Victor, Sparkie and Mr. Rzykrusky in the attic; Elsa at the windmill. The classmates and their monsters, and the Sea-Monkeys, at the windmill.
+- **Pee-wee's Big Adventure:** everyone at Pee-wee's house: Pee-wee and Dottie; Large Marge (her truck stop isn't a place, so she haunts the house's porch light); Francis (next door), the Bike Thief, Madam Rubee and Andee (they've followed the bike there).
 - HEM lives in Halloween Town.
 
 ## Mechanics that make it its own universe
@@ -422,12 +454,14 @@ Keys checked: none clash with the 150-odd `Location("…")` keys on main (`chris
    - **The Sandworm:** bursts up through the floor, the rider on its back, and dives back down. For Beetlejooce, Delorez and Jeremee (and the Maitlands leave on it, unwillingly: a fun gag, your call).
    - **The Martian saucer:** a classic silver saucer with a clear dome and a ring of flashing lights, drawn new (not the Clawd Files' saucer). For the Martians.
    - **The Great Glass Elevator:** crashes down through the top of the window and lifts off again. For Wonky, Charlie, Grampa Joe, the Oompa-Loompah and Dr. Wilbur Wonky.
+   - **Pee-wee's bike:** the big red-and-white cruiser with chrome, a horn and a headlamp, pedalled in fast with a skid stop. For Pee-wee, Dottie and Francis; the Bike Thief rides it too, furtively (it's stolen, after all). Large Marge doesn't ride: she fades in out of the dark. Drawn new, not E.T.'s `moonBike`.
    - Everyone else walks. The Headless Horseman's black horse was considered; a horse is a big new drawing for one rider, so it's left for the polish pass if there's time.
-2. **Compaction: "Take a number" (recommended).** When a session led by one of **the Recently Deceased** compacts, they're called away to the Afterlife and back. The group is the Beetlejuice ghosts, all clearly dead in the films: Adam, Barbara, Junoh, Wolf Jaxon and the Shrunken-Head Man (heroes 6, 7, 10, 11, 12), and Beetlejooce, Delorez and Jeremee (villains 0, 2, 4).
+2. **Compaction: "Take a number" (decided).** When a session led by one of **the Recently Deceased** compacts, they're called away to the Afterlife and back. The group is the Beetlejuice ghosts, all clearly dead in the films: Adam, Barbara, Junoh, Wolf Jaxon and the Shrunken-Head Man (heroes 6, 7, 10, 11, 12), and Beetlejooce, Delorez and Jeremee (villains 0, 2, 4).
    - A paper ticket pops out of a dispenser above the leader with a ridiculous number on it; they flicker out like a ghost; a "NOW SERVING" board ticks over; they flicker back, same face.
    - **Beetlejooce does it his way:** his name rises in three speech bubbles, "BEETLEJOOCE!" ×3, and he springs back up through a black-and-white striped ring. Say it three times and he's back.
    - It reuses Clawdberg's route: the list goes in `Universe.abductees`, the effect is drawn in `BurtonTakeANumber.swift` where the overlay draws OutaTime (`Overlay.swift:1226`). No new hook is needed.
-   - **Alternative, "It's alive!"**: Frankenweenie's reanimated pets (Sparkie, Mr. Whiskerz, Shellee, Colossuss, the Were-Rat) are struck by lightning from Victor's kite, flash black and white, and a horror-film caption reads "IT'S ALIVE!". It's lovely but rarely seen, since four of the five are villains who seldom lead. Your pick (Open questions).
+   - The ids, zero-based: heroes 6, 7, 10, 11, 12 and villains 0, 2, 4 (unchanged by the Pee-wee additions, which are appended). Large Marge is a ghost too, but she isn't one of the Recently Deceased, so she stays out of the list.
+   - "It's alive!" (Frankenweenie's reanimated pets) was the alternative; it lives on as transition #12 instead.
 3. **Habits:**
    - **Beetlejooce, three times:** idle, his name ticks up in bubbles, one, two, three, and on the third he vanishes and pops up somewhere else on stage through a striped ring.
    - **The Mayor's two faces:** his head spins to the worried face when a session hits an error or needs approval, and back to the smile when it's going well. It ties straight into the status states.
@@ -460,8 +494,8 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    - 8 places: Halloween Town, Spiral Hill, Oogie's lair, Christmas Town, the Maitlands' house, the model town, the waiting room, and the Land of the Dead;
    - their homes and nemeses (the other places' homes fall back to the default until phase 3).
    - Fine to commit the enum cases first as stand-ins, then draw them in a second commit.
-3. **The rest:** Sleepy Hollow, Mars Attacks!, Charlie, Alice, Frankenweenie, Maggott and the four agent-only villains, up to 100 characters and all 22 places, every home filled in. Ends with **the character audit**: every persona's weapon, shots, magic colours, motion, signature and callout checked against the films and this roster, and a mismatches table for you.
-4. **Mechanics:** the five rides, "Take a number" (or "It's alive!"), the habits and the bespoke drills.
+3. **The rest:** Sleepy Hollow, Mars Attacks!, Charlie, Alice, Frankenweenie, Pee-wee's Big Adventure, Maggott and the four agent-only villains: 29 heroes and 34 villains, up to 107 characters and all 23 places, every home filled in. (Big enough to split into 3a, the first three films, and 3b, the last three plus the agent-only, if that's easier to review.) Ends with **the character audit**: every persona's weapon, shots, magic colours, motion, signature and callout checked against the films and this roster, and a mismatches table for you.
+4. **Mechanics:** the six rides, "Take a number", the habits and the bespoke drills.
 5. **Transitions:** the twelve `BurtonTrip`s and the spidery caption (below), wired through `ComicTransition`.
 6. **Polish pass:** every weak spot noted in phases 2–5, fixed together, split by file and run in parallel with before-and-after renders for you. Always before phase 6.
 7. **Docs and release (phase 6):**
@@ -469,7 +503,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    - `Tools/RenderDocs`: a `burtonLineup` desktop strip, `roster-clawd-burton.png`, `locations-clawd-burton.png` and a social preview; `Tools/MakeSocial`, `Tools/RenderShowcase`;
    - `llms.txt`: the universe list, the folder and `Burton…` prefix, and "Take a number";
    - a `CHANGELOG.md` entry each phase;
-   - the trailer, `REEL=burton` (see Promo).
+   - the trailer, `REEL=burton` (see Promo), with the `burtonTitle` lockup (CLAWD over BURTON, a small "universe" under BURTON's right end) on the intro, the end card, the transitions showcase and the social preview.
    - **Needs your OK first, since it's public:** a showcase repo, a cask in `release.sh` (`write_cask`, the `others` list), releasing, pushing, a PR.
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
@@ -481,6 +515,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
   - `build/preview cast out.png "Jack Skullington"`;
   - `build/preview fight out.png "Jack Skullington" "Ooogie Boogie"`;
   - `build/preview fight out.png "Victor Van Dawt" "Victor Frankenstien"` (side by side, to check they read apart);
+  - `build/preview fight out.png "Pee-wee Herclawd" "Francis Buxtun"`;
   - `build/preview place out.png "Clawd Burton"`;
   - the batch sheets `burtonHeroes1…`, `burtonVillains1…`.
   
@@ -502,9 +537,9 @@ Each is weighted by who's on screen and where, like `ClawdbergTrip`.
 
 | # | Transition | What happens | More often with |
 |---|---|---|---|
-| 1 | **The Model Town Flyover** (signature opening) | The camera glides low over a hill town at dusk: rooftops, a river, the covered bridge, down a lane to a white house on a hill. A spider walks into view, enormous; pull back and it's a model on the attic table. The camera dives into the model's front door and comes out in the new place. The longest and rarest. | any time, rarely; the model town and the Maitlands' house |
+| 1 | **The Model Town Flyover** (signature opening) | The camera glides low over a hill town at dusk: rooftops, a river, the covered bridge, down a lane to a white house on a hill. A spider walks into view, enormous; pull back and it's a model on the attic table. The camera dives into the model's front door and comes out in the new place. The longest and rarest. | any time, rarely; the model town, the Maitlands' house, Pee-wee's house |
 | 2 | **Spiral Hill Unfurls** | A curled spiral of hill rises in silhouette against the moon, uncurls across the screen like a tongue, and rolls out the new place as it goes. | Jack, Zeero; Halloween Town, Spiral Hill |
-| 3 | **The Jack-o'-Lantern** | A huge carved pumpkin swings in; its grin opens wider and wider, the candle glow inside showing the new place, until the mouth fills the screen. | Halloween Town's residents; Halloween Town, Oogie's lair |
+| 3 | **The Jack-o'-Lantern** | A huge carved pumpkin swings in; its grin opens wider and wider, the candle glow inside showing the new place, until the mouth fills the screen. | Halloween Town's residents, Large Marge (the other big scary face); Halloween Town, Oogie's lair |
 | 4 | **Black-and-White Stripes** | Stripes slide in from both sides like Beetlejooce's suit, twist into a spinning barber-pole spiral, and unwind on the new place. | Beetlejooce, Bob; the model town |
 | 5 | **The Sandworm** | The floor ripples, the striped sandworm bursts up and swallows the picture; it dives and the new place is left in its wake under settling sand. | the Sandwurm, the Maitlands; Saturn, the Maitlands' house |
 | 6 | **Grey to Colour** | The old place drains to grey-blue like Corpse Bride's living world; a flurry of blue butterflies sweeps across; behind them the new place blooms into colour. | Emilee, Bonejingles, Victor Van Dawt; the Land of the Dead, the village |
@@ -515,7 +550,7 @@ Each is weighted by who's on screen and where, like `ClawdbergTrip`.
 | 11 | **Down the Rabbit Hole** | The picture falls away; we drop down a long earthy hole past floating clocks, teacups and a piano, and land in the new place. | Alice, McTwisp, Tarrant; the tea party, Salazen Grum |
 | 12 | **It's Alive!** | Lightning strikes a kite overhead; the scene flashes black and white, the new place appears in greys, and colour seeps back in (unless it's a Frankenweenie place, which stays grey). | Victor Frankenstien, Sparkie; the attic, the windmill |
 
-**Not used, and why:** the Train to the Great Beyond (Beetlejuice already has three); Chessur's grin (better as his habit, and it'd overlap the jack-o'-lantern's grin); Oogie's roulette wheel (fine detail, and the lair is already the jack-o'-lantern's turf); the Bat-Signal and Gotham's skyline (Batman is Detective Clawds'); a cut-paper "Burton logo" title card (too close to copying a studio logo).
+**Not used, and why:** the Train to the Great Beyond (Beetlejuice already has three); Chessur's grin (better as his habit, and it'd overlap the jack-o'-lantern's grin); Oogie's roulette wheel (fine detail, and the lair is already the jack-o'-lantern's turf); the Bat-Signal and Gotham's skyline (Batman is Detective Clawds'); a cut-paper "Burton logo" title card (too close to copying a studio logo); Pee-wee's breakfast machine as a chain-reaction wipe (lovely, but fine detail for one place, and it's already that place's moving layer), so no 13th transition. The Pee-wee cast instead nudges two existing ones: Large Marge owns a share of the Jack-o'-Lantern, and Pee-wee's house counts as turf for the Model Town Flyover (another small-town house the camera can dive into).
 
 **Promo.** The Model Town Flyover (#1) opens the trailer, as Doctor Clawd's opens on the time vortex.
 
@@ -523,7 +558,7 @@ Each is weighted by who's on screen and where, like `ClawdbergTrip`.
 
 Built on the Doctor Clawd and Clawdberg trailers in `Tools/RenderPromo/main.swift`, about 45–50 seconds.
 
-- **Intro (~9 s): the flyover.** Dusk clouds part over a hill town; the camera glides across rooftops, over the river and the covered bridge, up a lane to the white house. The giant spider walks across; pull back to the attic table and the model. In the model graveyard a little striped figure pops up (Beetlejooce) and waves. **CLAWD BURTON** curls up out of the mist in spidery hand-lettering with a spiral underline, and the camera plunges through the model's door.
+- **Intro (~9 s): the flyover.** Dusk clouds part over a hill town; the camera glides across rooftops, over the river and the covered bridge, up a lane to the white house. The giant spider walks across; pull back to the attic table and the model. In the model graveyard a little striped figure pops up (Beetlejooce) and waves. The **Clawd Burton title lockup** (below) curls up out of the mist, and the camera plunges through the model's door.
 - **Set piece (~9.5 s): Mars Attacks Halloween Town.** Saucers drop over Halloween Town square, zapping pumpkins. The residents scream happily, as if it's a holiday. Jack stretches his scariest face; the Martians aren't scared. Then Grandma Florenz rides in on the coffin sleigh, turns up her record player: the yodel (our own notes) blasts out, and the Martians' domes pop with green goo, cartoon-style. Beetlejooce springs out of the fountain: "It's showtime!"
 - **Shared shots:**
   - `hook`: as every trailer.
@@ -532,20 +567,25 @@ Built on the Doctor Clawd and Clawdberg trailers in `Tools/RenderPromo/main.swif
   - `agents`: "Every subagent gets to be a monster."
   - `window`: `windowShot(ctx, .clawdBurton, …, at: .halloweenTown)`, with "Strange and unusual."
   - `ais`: the BRING YOUR OWN AI* line-up: Jack (Claude), Willy Wonky (Desktop), Edward (Codex), Alice (Copilot), Ichabod (Qwen), Lydia (Gemini), Sparkie (pi).
-  - `endcard`: Halloween Town at night, the crew lined up, the title lands with a spiral flourish, "Have fun. Keep track.", "One of many universes in Clawd Clash · free for macOS".
+  - `endcard`: Halloween Town at night, the crew lined up, the title lockup lands with its spiral flourish, "Have fun. Keep track.", "One of many universes in Clawd Clash · free for macOS".
+- **The title lockup, `burtonTitle`.** Like `clawdbergTitle` (`Tools/Transitions/main.swift:199–225`, `Tools/RenderPromo/main.swift:3411–3435`), one function per tool, used for the trailer intro, the end card, the transitions showcase and the social preview.
+  - **Two lines, CLAWD over BURTON**, not one: spindly lettering needs height to read, and a single long line would shrink it to hairlines. CLAWD sits smaller on top, BURTON big below, as STEVIE sits over CLAWDBERG.
+  - **The lettering is Burton-style but our own:** tall, thin, slightly wobbly pixel strokes, letters leaning a touch off true, curled spiral ends on the C, the W's points and the N's tail, and BURTON's O drawn as a full moon. It's built from pixel strokes, not a system font (Clawdberg uses Avenir Next; nothing installed looks spidery), so it shares one small pixel alphabet with the transitions' place-name caption, kept in `BurtonKit.swift`.
+  - **A small "universe"** in the same spidery hand, lower case, tucked under the right end of BURTON, just as Clawdberg's sits under CLAWDBERG. BURTON's underline curls off its left end into a spiral (Spiral Hill's shape), leaving room for "universe" at the right.
+  - **The Burton palette:** bone white letters `F2EEE3` with an ink-black outline and a moonlit blue-violet glow `6B5BD6` (where Clawdberg glows blue round gold); "universe" in bone white with a softer glow. A fleck of pumpkin orange only in the moon-O's shading.
+  - `alpha` fades it and `scale` grows it, exactly as `clawdbergTitle` does.
 - **Music:** in the *sound* of a Burton score, never its melodies: a lopsided waltz in 3/4, wordless "la-la" choir pads, celesta and pizzicato strings, tuba on the low end, a theremin-ish wobble for the Martians. Hits on the spider's reveal, the title, the record's first note and the end card. Our own notes throughout.
 - Storyboard first (`REEL=burton build/renderpromo storyboard promo`), shown to you before rendering video.
 
-## Open questions for you
+## Decisions (2026-10-16)
 
-1. **The name.** Clawd Burton (recommended). Alternatives: **Tim Clawdton** (closest to the real name, but uses his first name), **Clawdburton** (one word, harder to read), **The Clawd Before Christmas** (lovely, but it promises one film and this is nine).
-2. **The films.** The default is the nine above. Ready to add, or to swap in for a group:
-   - **Big Fish** (+4 heroes, +3 villains): Edward Bloome (tall-tale teller, a fish on a line), Karl the Giant, Amos Callaway (the werewolf ringmaster), Sandra Bloome; villains the Witch with the glass eye (eerie, she shows how you'll die, kept vague), Don Price, Norther Winslow (the poet-turned-robber). Place: Spectre, the hidden town with shoes on the line. A daffodil-field transition would replace one of the twelve.
-   - **Pee-wee's Big Adventure** (+3 heroes, +2 villains): Pee-wee Herclawd, Dottie, Large Marge (the ghost trucker; her claymation scare face as a signature); villains Francis Buxton and the bike thief. Ride: Pee-wee's bike. Place: Pee-wee's house and its breakfast machine.
-   - **Miss Peregrine's Home for Peculiar Children** (+6 heroes, +3 villains): Miss Peregrine (turns into a falcon), Jake, Emma (floats, air), Olive (fire hands), Bronwyn (strong), Enoch (clay soldiers); villains Barron, a Hollowgast (invisible to most, so it'd need an outline trick), a Wight. Lots of distinct powers, and it'd push the count to about 109.
-   - **Wednesday:** out by default (The Addams Family is its own franchise, only partly Burton's), but say so if you want her.
-   - **Batman and Batman Returns:** out (the cast is already in Detective Clawds). **Sweeney Todd:** out (murder and cannibal pies).
-3. **Beetlejuice as a villain**, and the villain side's lead. Or would you rather he were a hero-side trickster? (Then the villain lead would be Ooogie Boogie.)
-4. **Compaction:** "Take a number" for the Recently Deceased (recommended, with Beetlejooce's three calls), or "It's alive!" for Frankenweenie's reanimated pets?
-5. **Children as troublemaker villains:** the four Wonka kids and Frankenweenie's classmates. Keep them as villains (silly fights, nobody hurt), or move the classmates to heroes and leave only the monsters as villains?
-6. **Swaps:** any character you'd rather have in or out. A swap keeps the count.
+1. **Name: Clawd Burton.** Like Stevie Clawdberg, its title lockup has a small "universe" tucked under the name: CLAWD over BURTON in spidery pixel lettering, bone white with a moonlit violet glow, "universe" under the right end of BURTON (`burtonTitle`, see Promo; used on the trailer intro, end card, transitions showcase and social preview).
+2. **Films: the nine plus Pee-wee's Big Adventure**, appended last. Big Fish and Miss Peregrine stay out; Wednesday, the Batman films and Sweeney Todd stay out. Pee-wee brings heroes Pee-wee Herclawd, Dottie and Large Marge (table rows 50–52), villains Francis Buxtun, the Bike Thief, Madam Rubee and Andee (rows 46–49; Madam Rubee and Andee added because they truly carry the film), a sixth ride (Pee-wee's bike, `herclawdBike`), a 23rd place (`breakfastMachineHouse`), the nemesis pair Pee-wee ↔ Francis, and a share in two existing transitions (no 13th). The agent-only ids move to villains 49–52 and hero 52 (Maggott), zero-based.
+3. **Beetlejooce is a villain** and leads the villain side.
+4. **Compaction: "Take a number"** for the Recently Deceased, with Beetlejooce's three calls.
+5. **Children stay troublemaker villains:** the four Wonka kids and Victor's Frankenweenie classmates, each with something silly to fight with (gum, a candy bar, walnuts, a game zapper, a charged pet or its leftovers).
+6. **Swaps:** none.
+
+New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only), 107 characters, 23 places, 12 transitions.
+
+The plan is ready for phase 1 when you say start.
