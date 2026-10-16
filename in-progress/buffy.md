@@ -413,6 +413,12 @@ Keep a weak-spot list at the end of each phase and fix them all here, split by f
 - **The Gentlemen's grin** must read at agent size, or they become Silents.
 - **Night places** risk all being the same navy; give each its own key colour (the Bronze's purple stage light, the factory's orange brazier, the Hellmouth's red).
 
+**Weak spots found in phase 1** (fix in the polish pass):
+- **Buffy's hair** reads a little like a helmet; a few strands breaking the outline would help.
+- **The Old Master's collar** stands up like two posts; it might read better curved, and he doesn't read as bald.
+- **The Old Master's signature barrier** is a faint line at desktop size; check it in the app.
+- **The library on the screen saver:** the stacks are very regular, and the arched windows' tops are a little lopsided.
+
 ## Verification
 
 - **Build:** `./build.sh`. The cast-size assert in `Overlay.swift` catches a wrong `heroCount` or `villainCount`. Before calling a phase done, `./build.sh --release <version>` to catch slow type-checking on dense drawing maths.
