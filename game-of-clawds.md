@@ -17,7 +17,7 @@ Clawd Clash has six universes on `main` (ebc02be, 2026-10-16). This plan adds a 
 (heroCount includes HEM and two agent-only pets; villainCount includes one agent-only creature.)
 
 - **Viability: comfortably viable.** 63 heroes and 36 villains, both well over the 20 threshold, with no padding. The show's real problem isn't numbers, it's that nobody is cleanly good or bad. How the cast is split is set out below.
-- **Name: Game of Clawds** (recommended). Alternatives: *A Song of Ice and Clawd* (lovely, but long for a menu and a trailer title, and it names the books rather than the show), *Clawds of Westeros* (clear but flat). Game of Clawds reads at a glance, scans like the original, and fits the "Star Clawds / Doctor Clawd" pattern.
+- **Name: Game of Clawds** (chosen on 2026-10-16). The alternatives were *A Song of Ice and Clawd* and *Clawds of Westeros*.
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case thrones` with key `"thrones"`.
   - Folder `Sources/App/Universes/GameOfClawds/`, file prefix `Thrones…` (`ThronesRoster.swift`, `ThronesHeroes1.swift`, `ThronesWipes.swift` …). Nothing in the repo uses `Thrones` today.
@@ -425,6 +425,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
    - **The Hound and fire.** When a fire-user is beside him (Beric, Melisandra, the dragons, Leif), he backs away a step.
    - **Winter is here.** While the Night Clawd is on stage, snow drifts across it, whatever the place.
    - **Pycelle's act.** Like the Weeping Angle, the other way round: with nobody near him he straightens up spry and stretches; when someone comes close, he hunches back over his cane.
+   - **Warging** (decided 2026-10-16). Now and then, while idle, Bran's or Orrel's eyes go milky white, and a raven (for Bran) or an eagle (for Orrel) circles above them for a few seconds before they blink back. A habit rather than part of the compaction mechanic, which stays with the Faceless.
    - **Arya's list.** With a villain from her list on stage (Cersei, Joffrey, the Mountain, Walder Fray, Tywin), she whispers one name in a speech bubble now and then.
 4. **Bespoke practice drills** (`Drills.swift:488`):
    - Arya water-dances with Needle, Syrio-style;
@@ -531,14 +532,16 @@ Built on `doctorShots`, about 45–50 seconds, rendered with the app's own sprit
 
 No logo or melody is copied: the title is our own lettering, and the music only evokes the theme's instruments and mood.
 
-## Open questions for you
+## Decisions (2026-10-16)
 
-- **Name:** Game of Clawds (recommended), A Song of Ice and Clawd, or Clawds of Westeros?
-- **House of the Dragon:** leave it out (the plan as written), or widen the source with a group of its own: Rhaenyra and Syrax, Daemon and Caraxes, Aemond and Vhagar, Alicent, Criston Cole, Otto Hightower, Corlys and Rhaenys with Meleys (about 10–14 more). It can be appended later without changing any ids, but it would push the cast past 100.
-- **Melisandre's side:** the plan puts her with the heroes (the Long Night, bringing Jon back). Move her to the villains with Stannis instead?
-- **Daenerys and Jaime:** both heroes here, on the Long Night rule. Happy with that, or would you rather Jaime start as a villain (he is the season 1 antagonist)?
-- **Ramsay Bolton:** left out (his story is torture). He's one of the show's best-known villains, so say if you want a tamed version (the hounds and the flayed-man banner gone, just the smirk and a bow).
-- **The compaction mechanic:** A girl is no one covers three characters. Widen it with the wargs (Bran and Orrel's eyes go white and a raven or eagle circles), or keep it to the Faceless?
-- **The default place:** the Iron Throne room (the plan, since the title names it and everyone wants it) or Winterfell's courtyard (home of the leads)?
-- **The house puns:** Stork for the Starks reads gently; "Snark" was the other option. Any names you'd change.
-- **Swaps:** any character in or out. The cast is full, so a swap keeps the count.
+All the open questions are settled:
+- **Name: Game of Clawds.**
+- **House of the Dragon:** left out for now; it can be appended later as its own group without changing any ids.
+- **Sides:** the Long Night rule holds for everyone. Melisandra, Daenerys and Jaime are heroes.
+- **Ramsay Bolton** stays out.
+- **Compaction:** "A girl is no one" stays with the three Faceless. The wargs get a white-eyed **warging** habit instead (Bran and Orrel).
+- **The default place** is the Iron Throne room.
+- **House Stork** stays, and the other names stand.
+- **Swaps:** none; the cast stands as written.
+
+The plan is ready for phase 1 when you say start.
