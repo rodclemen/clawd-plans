@@ -13,3 +13,4 @@ Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, wri
 | [clawd-burton.md](clawd-burton.md) | Clawd Burton (Tim Burton's films) | open questions |
 | [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
 | [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
+| [done/stevie-clawdberg.md](done/stevie-clawdberg.md) | Stevie Clawdberg (Spielberg's films) | built |
