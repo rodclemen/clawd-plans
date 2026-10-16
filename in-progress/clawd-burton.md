@@ -10,7 +10,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
   - Folder `Sources/App/Universes/ClawdBurton/`, file prefix `Burton…` (`BurtonRoster.swift`, `BurtonHeroes1.swift`, `burtonTheme`, `BurtonTrip`, `REEL=burton`).
   - Branch `feature-burton` (in HEM42/clawd-clash, off main `90eecab`).
   - Six other universes are being planned at the same time (Star Trek, 007, Transformers, He-Man, Game of Thrones, Buffy), so every top-level name and place key carries the `burton` prefix or a name only this universe would use.
-- **Raw value: 8, provisional** (`case clawdBurton = 8`). Slayer and Clawd of the Rings both use 6 right now; 8 stays clear of 6 and 7 however that's settled. To be confirmed with Rod before merging: ids are rawValue*1000 and permanent.
+- **Raw value: 8, provisional** (`case clawdBurton = 8`). Clawd of the Rings was merged as 6, so Clawd Slayer (planned as 6) needs another number; 8 leaves 7 free for it. To be confirmed with Rod before merging: ids are rawValue*1000 and permanent.
 - **The films (decided, ten):** Beetlejuice and Beetlejuice Beetlejuice (counted as one), Edward Scissorhands, The Nightmare Before Christmas, Corpse Bride, Sleepy Hollow, Mars Attacks!, Charlie and the Chocolate Factory, Alice in Wonderland (2010), Frankenweenie (2012), and **Pee-wee's Big Adventure** (Burton's first feature), added last.
   - **Left out on purpose:** Batman and Batman Returns (Batclawd, the Jester, Cat Burglar and the Puffin already live in Detective Clawds, and they'd look like doubles in Clawd Royale); Sweeney Todd (the whole film is murder and cannibal pies; there's no desktop-toy version of it); Ed Wood and Big Eyes (real people); Dark Shadows (Barnabas's appetite is the point of him); Planet of the Apes (2001) (overlaps Gorilla Grudd's Gorilla City). Wednesday is The Addams Family, its own franchise, so it stays out. Big Fish and Miss Peregrine's Home for Peculiar Children were offered and stay out too.
 - **Naming style:** light puns on the on-screen names (Jack Skullington, Edward Scissorclaws, Sandy Clawz, Violet Bluregarde, the Jabberclawky). A near-spelling where no pun fits (Ichabod Craine, Katrina Van Tassle). Actors' names are never used, and the real people who play themselves (Mars Attacks!' singer cameo) are left out.
@@ -47,7 +47,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
   - The `static let` place keys, and `let burtonPlaces` merged from the Places files.
 - `Art/BurtonHeroes1…6.swift` and `Art/BurtonVillains1…6.swift`, 8–10 personas per file.
 - `Places/BurtonScenes1…N.swift`, two or three places each.
-- `BurtonKit.swift`: drawing helpers shared across the Art files (stripes, stitches, the spiral), every name prefixed `burton…`.
+- `BurtonKit.swift`: drawing helpers shared across the Art and Places files, every name prefixed `burton…`. Built in phase 1: `burtonStripes`, `burtonStitches`, `burtonSpiralDisc`, `burtonSpiralHill` and `burtonSpiralHillTop` (for things standing on the hill), `burtonTriangle`, `burtonTopHat`, `burtonLollipop`, and `burtonBeetle` (Beetlejooce drops them; the Oogie bugs can use it).
 - `BurtonIcon.swift`: the menu bar icon, 28×26, colour and mono. Spiral Hill curling up under a big moon: it reads at 26 pixels and isn't a character's face.
 - `BurtonRides.swift`: the rides' drawings (phase 4), as Clawdberg keeps its own.
 - `BurtonTakeANumber.swift`: the compaction effect (phase 4; see Mechanics).
@@ -66,14 +66,17 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 - **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** in phase 1, add `.clawdBurton` to the `nil` cases; in phase 5, a `.burton(BurtonTrip)` case in `duration`, `draw` and `pick`, and the doc comment.
 - **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's persona and costume in every switch (see HEM below).
 - **`Sources/App/Rides.swift`:** the new `Ride` cases and their draw dispatch (`coffinSleigh`, `walkingTub`, `sandworm`, `martianSaucer`, `glassElevator`, `herclawdBike`), drawn in `BurtonRides.swift`.
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list (`("clawdBurton", Universe.clawdBurton.title)`), and `case "clawdBurton": tripUniverse = .clawdBurton; tripMixed = false`.
+- **`Sources/Saver/SaverView.swift`:** nothing to add any more. Since Clawd of the Rings was merged (`f281192`), the Options list `Universe.offered`.
+- **`Universe.isReleased`** is false for Clawd Burton until phase 6 (`self != .clawdBurton`): Settings, Random, Clawd Royale and the screen saver leave it out while it's being built; the tools still see it. Flip it in phase 6.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** add `universe != .clawdBurton` to the meditation guard: nobody in these films floats cross-legged. **`:488`:** `.merging(burtonBespokeDrills)`.
 - ⚠︎ **`Sources/App/Overlay.swift:865`:** the Playground's five sample prompts (below). Lines 1113 and 1226 show how Clawdberg hooked in its set piece and its OutaTime effect: "Take a number" hooks in the same way, next to OutaTime.
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per `if` whether Clawd Burton joins; it needs new hooks for Beetlejooce's three calls, the Mayor's head and Chessur's fade.
-- **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is in a Clawd Burton place.
+- **Clawd Royale** picks the cast and places up through `Universe.offered` (so only once it's released). Check the menu bar icon and arch-enemies when a scene is in a Clawd Burton place.
+- **Engine, added in phase 1 for Jack's scare:** `Magic.pulse` (`Persona.swift`), drawn in `Pose.swift`, with `screamPeriod` in `Fights.swift`: waves sent out as a scream, a burst of three thick slow arcs every 1.6 seconds, then a pause. Off by default; nobody else uses it. It's its own commit, apart from the Burton ones.
 - **Tools:**
   - `Tools/Preview/main.swift:60–93`: the doc comment, `burtonHeroes`/`burtonVillains` batch lists, the `"clawdBurton"` universe lookup, and the batch loops.
   - `Tools/Transitions/main.swift:12, 122`: the usage line and the branch that renders `BurtonWipe.allCases`, plus a `burtonTitle` and `burtonShowcase` like Clawdberg's (`clawdbergTitle` at lines 199–225, the showcase at 262). `burtonTitle` is the lockup described under Promo: CLAWD over BURTON with a small "universe" under the right end of BURTON.
+  - `Tools/RenderPromo`: its four exhaustive per-universe switches (window-mode cast, brawl cast, the "pick your universe" caption, `pickVerse`) need a Burton line to compile; phase 1 put in stand-ins (Jack, Sallee and Beetlejooce in Halloween Town, "Coming soon: Clawd Burton.", a "BOO!" panel in violet), to be redone with the trailer.
   - Phase 6: `Tools/RenderPromo` (`REEL=burton`, with its own `burtonTitle` like `clawdbergTitle` at lines 3411–3435), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
 **Playground prompts (Overlay.swift:865):**
@@ -87,7 +90,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 
 How the engine's weapons map onto Burton's films:
 - **`.none`** for the gentle heroes: Sally, Kim, Charlie, the White Queen (she's vowed never to harm a living thing). They run, point and cheer, as Elliclawd does.
-- **`.saber`** for blades and bites: Edward's scissor hands, the Vorpal sword, the Headless Horseman's sword, the Sandworm's jaws, the Red Queen's flamingo mallet.
+- **`.saber`** for blades and bites: Edward's scissor hands, the Vorpal sword, the Headless Horseman's sword, the Sandworm's jaws, the Red Queen's flamingo mallet, and Beetlejooce's snake arm (a poltergeist changes shape; he doesn't cast spells).
 - **`.blaster` + `.thrown(colour)`** for the silly things people throw: Oogie Boogie's dice, Sandy Claws' presents, the March Hare's teacups, Violet's gum, Richie's vinyl records.
 - **`.blaster` + `.beam`** for the Martians' ray guns: a green ray with a yellow core.
 - **`.lightning` + `Magic`** for real magic. Every caster has its own look (table below), and `magicVariants` gives each its own drawing variant too.
@@ -97,8 +100,7 @@ How the engine's weapons map onto Burton's films:
 
 | Caster | Family | Core / glow | What you see |
 |---|---|---|---|
-| Beetlejooce | `spell` | moss green `B7E35A` / `3F6B1A` | a ribbon of moss-green sparkles with the odd beetle tumbling in it |
-| Jack Skullington | steady ray | pale green `D9FFC2` / `2FBF5A` | a wavering ghost-green flame, the fountain's fire from "Jack's Lament" |
+| Jack Skullington | `waves` + `pulse` | bone `FFF0D8` / pumpkin `FF8A2A` | the scare: he pulls his scary face, hands clawing, and the fright goes out of his gaping mouth in slow throbbing bursts of arcs, his mouth gaping wider with each |
 | The Halloween Witch | jagged | pumpkin `FFE0B0` / `FF7A1A` | forked orange lightning off the end of her broom |
 | Delorez | steady ray | white `F4F7FF` / slate `8C9BB0` | a pale wisp drawn out of the target towards her (the soul-suck, kept cartoonish) |
 | Otho | `rings` | lilac `E6CCFF` / `9A5BD6` | séance rings rippling out along a faint ray |
@@ -109,7 +111,7 @@ How the engine's weapons map onto Burton's films:
 | The Jabberclawky | jagged | lavender `F0D6FF` / violet `7A2BD1` | the Jabberwocky's purple lightning breath |
 | Victor Frankenstien | jagged | white `FFFFFF` / grey `A8A8A8` | a black-and-white lightning bolt from his kite: the only grey lightning in the app |
 
-The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; their colours are opposite (warm gold, sour lime). The Witch's orange lightning and Victor's grey are the two jagged ones; Thorr's, Stormy's and the Electric Gremlin's are blue-white, so neither is confusable.
+The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; their colours are opposite (warm gold, sour lime). The Witch's orange lightning and Victor's grey are the two jagged ones; Thorr's, Stormy's and the Electric Gremlin's are blue-white, so neither is confusable. Jack's scare is pumpkin orange too, but arcs in bursts, not forks; it's orange because the other `waves` casters (Bansheen, the Barrow-write) are green, and it's the only pulsing one.
 
 ### Heroes (54)
 
@@ -117,8 +119,8 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 1 | Jack Skullington | white skull head, tall thin black pinstripe suit, bat bow tie | ghost-green flame (steady ray) | stretches his skull into a scary face, then bows; callout "What's this?" |
-| 2 | Sallee | patchwork rag doll, red yarn hair, stitched patchwork dress | none | her arm comes loose; she sews it back on |
+| 1 | Jack Skullington | egg-shaped bone-white skull on a thin neck (big black eye sockets, two nose slits, a stitched grin curling up), the spiky bat-wing collar, black pinstripe suit narrower than Clawd, heart-shaped white shirt front, bat bow tie, ragged tails, long arms, bony fingers | the scare (`waves` + `pulse`) | his scary face (skull stretching tall, mouth gaping with teeth, angry eyes, both hands clawing beside it), then a deep bow; callout "What's this?" |
+| 2 | Sallee | the rag doll: tall pale-blue face on a stitched neck, big eyes with lashes, dark lips, stitched seams from the mouth, long red yarn hair past her waist, patchwork dress (mustard, teal, lilac, black, pink), long stitched arms and legs | none | her whole arm drops off onto the floor; she picks it up, sews it back with needle and red thread, and wiggles it |
 | 3 | Zeero | white ghost dog, a glowing orange pumpkin nose | none, `.hover`, `canSit: false` | his nose lights up bright; callout "Arf!" |
 | 4 | The Mayor | tall black hat with a rosette, cone head, sash | none | his head spins from the smiling face to the worried one |
 | 5 | Sandy Clawz | red suit, white beard, sack | presents (`.thrown(red)`) | pats his tummy; callout "Ho ho ho!" |
@@ -227,7 +229,7 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 1 | Beetlejooce | black-and-white striped suit, wild mossy hair, grubby green-white face | moss-green magic (`spell`) | his name bubbles up three times and he pops out of a striped ring; callout "It's showtime!" |
+| 1 | Beetlejooce | bursting bright-lime mane round a tall pale mouldy face, dark sunken eyes, huge sharp yellow grin; black-and-white striped suit with white shirt and black tie, black boots | snake arm (melee, `bulk`): his arm turns into a black-and-white banded snake that slithers out and snaps, jaws open, tongue out | his name bubbles up three times and he drops into a striped ring, hands on its rim, and springs back out; a beetle drops out of his sleeve now and then; callout "It's showtime!" |
 | 2 | The Sandwurm | huge black-and-white striped worm, a mouth inside its mouth | jaws (melee), `bulk` | rears up and its inner mouth snaps out |
 | 3 | Delorez | black gown, dark hair, held together with staples | soul wisp (steady ray) | gathers her pieces and staples them back together |
 | 4 | Otho | black turtleneck, red scarf, theatrical | séance rings (`rings`) | reads from the Handbook, arms raised |
@@ -388,7 +390,7 @@ Inside the universe:
 Against the six existing universes (they meet in Clawd Royale):
 - **Tarrant Hightop vs the Mad Milliner** (Detective Clawds): keep Tarrant's orange hair, white face and patchwork hat strong.
 - **Chessur vs Cheshyre** (Detective Clawds' assassin): different names on purpose; one's a cat.
-- **Beetlejooce vs the Jester** (Detective Clawds): both have green hair and a pale face. Beetlejooce's black-and-white stripes and mossy, messy hair keep him apart; no purple anywhere on him.
+- **Beetlejooce vs the Jester** (Detective Clawds): both have green hair and a pale face. Beetlejooce's black-and-white stripes and his bursting spiky mane keep him apart; no purple anywhere on him (his reference cartoons have purple eye rings and ties; his stay dark grey and black).
 - **The Headless Horseclawd vs Ghost Biker** (Marvelous Clawds): no head versus a flaming skull.
 - **The Martians vs the Grey and the Tall Visitor** (Clawd Files, Clawdberg): big brains in glass domes; no one else has that.
 - **Ooogie Boogie vs the Trashman** (Clawd Files): a neat burlap sack against a heap of rubbish.
@@ -407,7 +409,7 @@ Each is a `Place` with a still picture, a moving layer and tall-canvas extras fo
 
 | # | Key | Place | Still | Moving layer | Tall-canvas extras |
 |---|---|---|---|---|---|
-| 1 | `halloweenTown` | **Halloween Town square** (the default) | crooked houses, the green-slime fountain, the town hall, a pumpkin patch | the fountain bubbles green, jack-o'-lanterns flicker, a bat flits | Spiral Hill and the full moon high above, the gates' silhouette |
+| 1 | `halloweenTown` | **Halloween Town square** (the default) | in purples, under an orange-yellow moon: two rows of crooked houses that bend and bulge with witch-hat roofs curled at the tip, about half pulling jack-o'-lantern faces with their windows; the town hall with a gable, a spider-web rose window, orange-and-black bunting, two curled turrets and a bent spire with a bat vane; the green-slime fountain; pumpkins on the cobbles and on a ridge behind the town | the fountain spouts and bubbles, the carved pumpkins flicker, the rose window glows, a bat flits | Spiral Hill curling in front of a huge moon, a graveyard all over it (graves on both slopes and down its sides, a crooked fence, pumpkins), and the town gates on a far ridge |
 | 2 | `spiralHill` | **Spiral Hill** | the curling hill in the graveyard, a huge moon behind it | mist rolls between gravestones, Zero-like wisps float | the stars and a black cat on a far roof |
 | 3 | `oogiesLair` | **Oogie Boogie's lair** | a roulette table, dice, slot machines, a UV glow | the roulette wheel spins, ultraviolet light pulses | the rope bridge and the hanging cage overhead |
 | 4 | `christmasTown` | **Christmas Town** | snowy toy-town houses, a giant tree, candy-cane lamps | snow falls, windows twinkle | the northern lights and a sleigh far off |
@@ -482,13 +484,13 @@ Keys checked: none clash with the 150-odd `Location("…")` keys on main (`chris
 
 Each phase builds, is checked with Preview sheets, and is shown to you before the next one.
 
-1. **Skeleton:**
+1. **Skeleton** (**done**, 2026-10-16, branch `feature-burton` in HEM42/clawd-clash, on upstream main `f281192`):
    - the universe case and all the wiring above;
    - Jack Skullington and Sallee (heroes 0 and 1) and Beetlejooce (villain 0);
    - Halloween Town square, the menu icon, HEM's costume, the saver option and Preview support;
    - plain wipes for now (`ComicTransition.pick` returns nil for it).
    
-   It runs end to end in the app, the window, the screen saver and Clawd Royale.
+   It runs end to end in the app, the window, the screen saver and Clawd Royale. The whole roster (107) is registered up front with homes and nemeses, so ids never move; the others are stand-ins. Jack, Sallee, Beetlejooce and Halloween Town were each redrawn from reference pictures before moving on (see Decisions during phase 1).
 2. **Core ensemble.** About 43 characters, the first four film groups in enum order:
    - Nightmare, Beetlejuice, Edward Scissorhands and Corpse Bride: 24 heroes and 19 villains;
    - 8 places: Halloween Town, Spiral Hill, Oogie's lair, Christmas Town, the Maitlands' house, the model town, the waiting room, and the Land of the Dead;
@@ -502,7 +504,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    - the README's universe table and a collapsible cast-and-places section; the screen-saver paragraph; the developer notes;
    - `Tools/RenderDocs`: a `burtonLineup` desktop strip, `roster-clawd-burton.png`, `locations-clawd-burton.png` and a social preview; `Tools/MakeSocial`, `Tools/RenderShowcase`;
    - `llms.txt`: the universe list, the folder and `Burton…` prefix, and "Take a number";
-   - a `CHANGELOG.md` entry each phase;
+   - the `CHANGELOG.md` entry, written once, here at the end: CHANGELOG.md is the file upstream changes most, so an entry per phase would make every rebase conflict;
    - the trailer, `REEL=burton` (see Promo), with the `burtonTitle` lockup (CLAWD over BURTON, a small "universe" under BURTON's right end) on the intro, the end card, the transitions showcase and the social preview.
    - **Needs your OK first, since it's public:** a showcase repo, a cask in `release.sh` (`write_cask`, the `others` list), releasing, pushing, a PR.
 
@@ -514,6 +516,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 - **Characters:** `Tools/Preview/build.sh`, then:
   - `build/preview cast out.png "Jack Skullington"`;
   - `build/preview fight out.png "Jack Skullington" "Ooogie Boogie"`;
+  - `SCALE=6 SECONDS=8 build/preview fightclip out.mp4 jackSkullington beetlejooce` for a moving fight, an mp4 (a melee opponent, like `indianaBones`, shows Beetlejooce's snake striking; against magic he only blocks);
   - `build/preview fight out.png "Victor Van Dawt" "Victor Frankenstien"` (side by side, to check they read apart);
   - `build/preview fight out.png "Pee-wee Herclawd" "Francis Buxtun"`;
   - `build/preview place out.png "Clawd Burton"`;
@@ -588,4 +591,15 @@ Built on the Doctor Clawd and Clawdberg trailers in `Tools/RenderPromo/main.swif
 
 New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only), 107 characters, 23 places, 12 transitions.
 
-The plan is ready for phase 1 when you say start.
+## Decisions during phase 1 (2026-10-16, Henrik, with Rod's note on the scare)
+
+1. **Raw value 8**, provisional (see Context), and **unreleased** (`isReleased` false) until phase 6.
+2. **Jack fights by scaring**, not with a green flame: on screen, scaring is what he does. `waves` + the new `pulse`: slow throbbing bursts (Rod asked for slower and pulsing), bone-white arcs with a pumpkin glow, his scary face gaping in time. Redrawn from reference pictures: egg skull, thin neck, bat-wing collar (three broad filled spikes a side; thin lines turned into fishbones under the app's outline), heart-shaped shirt front, slimmer suit.
+3. **Beetlejooce fights with a snake arm**, not `spell` sparkles: a poltergeist changes shape. `.saber`, with `bulk` so duel partners stand clear of it; the swing stays in front of him. Redrawn from reference pictures (three alternatives, the cartoon one chosen, eyes darkened): bursting lime mane, pale mouldy face, dark sunken eyes, huge sharp grin, white shirt and black tie. No purple (the Jester). Beetles drop out of his sleeve.
+4. **Sallee is the rag doll** from the references: tall pale-blue stitched face, long red yarn hair, patchwork dress, long stitched arms; her signature shows the whole arm falling off and being sewn back.
+5. **Halloween Town** redrawn from three alternatives (faces, graveyard, pumpkin patch): the faces one chosen, with the graveyard over the whole of Spiral Hill and a town hall with more character.
+6. **No CHANGELOG entry per phase;** one at the end (phase 6).
+
+**Weak spots so far** (for the polish pass): HEM's striped scarf hides behind his beard; Sallee's arms are faint at rest and her needle is tiny; Jack's tailcoat tails blur into his back legs; Beetlejooce's shirt V and tie read a little as an "M"; the menu icon's mono version has a notch where the hill's foot meets the moon.
+
+Phase 1 is done; phase 2 is next.
