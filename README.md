@@ -11,5 +11,5 @@ Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, wri
 | [masters-of-the-clawdiverse.md](masters-of-the-clawdiverse.md) | Clawds of the Universe (He-Man and She-Ra) | decided, ready for phase 1 |
 | [game-of-clawds.md](game-of-clawds.md) | Game of Clawds (Game of Thrones) | decided, ready for phase 1 |
 | [clawd-burton.md](clawd-burton.md) | Clawd Burton (Tim Burton's films) | open questions |
-| [clawd-files.md](clawd-files.md) | The Clawd Files (The X-Files) | built |
-| [doctor-clawd.md](doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
+| [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
+| [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
