@@ -1,0 +1,9 @@
+- [Changelog policy](changelog-policy.md) — only CHANGELOG.md is kept current; universe pages now and then; history/ frozen
+- [Release setup](release-setup.md) — notary profile, Developer ID cert, team ID 2S5TWMXL9G, brew trust, slow type-check fix
+- [Doctor Clawd universe](doctor-clawd-universe.md) — 4th universe planned; plan in private repo doctor-clawd, branch doctor_who
+- [Stevie Clawdberg universe](stevie-clawdberg-universe.md) — 5th universe, on main since 2026-10-16, public showcase page, release pending
+- [No co-author](no-coauthor.md) — NEVER Co-Authored-By Claude or any Claude attribution, anywhere (commits, PRs, files, helpers)
+- [Clawd Files universe](clawd-files-universe.md) — X-Files parody planned; plan ~/.claude/plans/clawd-files.md, branch x-files
+- [Seven planned universes](planned-universes-batch.md) — Clawd Slayer (Buffy, first, raw 6, ready), Trek, 007, Transformers, He-Man, GoT, Burton; plans in ~/.claude/plans/ + private repo clawd-plans
+- [No branch switching](no-branch-switching.md) — read other branches with git show; never checkout just to read
+- [Main promo re-render](main-promo-rerender.md) — main promo + Royale teaser outdated; re-render once, after the LOTR universe lands
