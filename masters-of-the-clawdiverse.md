@@ -1,18 +1,23 @@
-# Plan: a new universe, Masters of the Clawdiverse (He-Man and the Masters of the Universe)
+# Plan: a new universe, Clawds of the Universe (He-Man and the Masters of the Universe)
+
+(The file keeps its old name, `masters-of-the-clawdiverse.md`, so links to it still work. The universe is called **Clawds of the Universe**.)
 
 ## Context
 
 Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files and Stevie Clawdberg. This plan adds He-Man and the Masters of the Universe as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
-- **Name: Masters of the Clawdiverse** (recommended; the user picks, see Open questions). Alternatives: **He-Clawd** and **Clawds of the Universe**.
-- **Scope:** the 1983 Filmation cartoon and the 1982–87 toy line, plus **She-Ra: Princess of Power** (Filmation, 1985) to widen the cast. She-Ra brings the Great Rebellion and, more importantly, the Evil Horde: without it the villain side would be thin (see Viability). The 2002 series, the 1987 film and Revelation are options, under Open questions.
+- **Name: Clawds of the Universe** (decided 2026-10-16).
+- **Scope: the 1983–1987 cast.** That's the 1983 Filmation cartoon and the 1982–87 toy line, plus **She-Ra: Princess of Power** (Filmation, 1985) and the **1987 live-action film**:
+  - She-Ra brings the Great Rebellion and, more importantly, the Evil Horde. Without it the villain side would be thin (see Viability).
+  - The film brings Gwildor, the Thenorian locksmith with the Cosmic Key, and Skeletor's mercenaries Blade, Saurod and Karg, plus his Dark Troopers. It also brings a place of its own, the small Earth town at night.
+  - The 2002 series and Revelation stay out. The 2002 Snake Men are a possible add-on later, appended to the enums.
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case eternia` with key `"eternia"`.
   - Folder `Sources/App/Universes/Eternia/`, file prefix `Eternia…`.
   - Branch `he_man`. Trailer reel `REEL=eternia`.
 - **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (He-Clawd, Skeleclawd, Man-At-Claws, Trap Claw, Tri-Klawps). Where no pun comes naturally, a near-spelling or the plain name (Bow, Glimmer, Kowl, Cringer). Actors' names are never used.
-- **Size:** about **79 characters**: 43 heroes including HEM and one agent-only, and 36 villains including 3 agent-only. Plus **20 places** and **12 transitions**.
+- **Size:** **85 characters**: 44 heroes including HEM and one agent-only, and 41 villains including 4 agent-only. Plus **21 places** and **12 transitions**.
 - **Tone:** the show is already made for children, so very little needs leaving out. Fisto is renamed (his real name reads as adult slang); Mosquitor (a blood-sucker) and the cruelty of Vultak's Horde Zoo are left out. Anything else is just a matter of keeping fights cartoonish, which is how Filmation drew them anyway: nobody is ever hurt by a sword.
 
 | Universe                    | Heroes | Villains | Total | Places | Transitions |
@@ -23,23 +28,27 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 | Doctor Clawd                |     56 |       42 |    98 |     20 |          10 |
 | The Clawd Files             |     36 |       46 |    82 |     20 |          10 |
 | Stevie Clawdberg            |     64 |       54 |   118 |     23 |          10 |
-| Masters of the Clawdiverse (proposed) | 43 | 36 |    79 |     20 |          12 |
+| Clawds of the Universe (proposed) | 44 |   41 |    85 |     21 |          12 |
 
 (heroCount includes HEM; villainCount includes agent-only.)
 
 ### Viability
 
-It clears the bar comfortably: **41 heroes and 33 villains** who can lead a session (not counting HEM and the agent-only small fry).
+It clears the bar comfortably: **42 heroes and 37 villains** who can lead a session (not counting HEM and the agent-only small fry).
 
-Without She-Ra it would not. The 1983 cartoon alone gives about 22 good heroes but only about 18 villains, since the Evil Warriors are a small gang and most of Filmation's one-off foes (Kothos, the Dragon of Darksmoke's enemies, assorted wizards) aren't recognisable. That would be **a limited experience**: the same five villains every time. She-Ra adds 15 Horde villains and 19 rebels, all drawn in the same Filmation style, and Hordak is canonically Skeletor's old teacher, so the two halves meet naturally.
+Without She-Ra it would not. The 1983 cartoon alone gives about 22 good heroes but only about 18 villains, since the Evil Warriors are a small gang and most of Filmation's one-off foes (Kothos, the Dragon of Darksmoke's enemies, assorted wizards) aren't recognisable. That would be **a limited experience**: the same five villains every time. She-Ra adds 15 Horde villains and 19 rebels, all drawn in the same Filmation style, and Hordak is canonically Skeletor's old teacher, so the two halves meet naturally. The 1987 film adds one hero and three villains who lead, plus the Dark Troopers as small fry. They're drawn in the same flat cel style as everyone else, so they sit with the cartoon cast without looking out of place.
+
+Left out of the film on purpose: Julie and Kevin, the Earth teenagers, and Detective Lubic. They're ordinary people in 1980s clothes, and none of them carries the show the way Gwildor's Cosmic Key does.
 
 ### Telling the barbarians apart
 
 Half the heroic cast are muscled men in furry briefs and a harness, and many villains are green and scaly. At 72×52 pixels, **colour and headgear carry them**, so every character below is given a distinct colour pair and a helmet, hood or head shape. The risky clusters, and how each is split:
 - **He-Clawd / Faker / Prince Addam:** He-Clawd is bronze with a blond pageboy and the iron-cross harness; Faker is the same build in **blue skin, orange armour and red hair** with glowing eyes; Addam wears a **pink vest and lavender sleeves**, paler, no harness.
 - **He-Clawd / She-Clawd:** She-Clawd has the long blond hair, **winged golden tiara, red cape** and white tunic.
-- **The scaly greens:** Mer-Clawd (teal-green, fish fins, blue armour), Kobra Khan (bright green, **yellow cobra hood**), Whiplash (olive-brown, long gator snout and **orange belly**, spear), Rattlor (**red-orange**, yellow belly, rattle tail), Tung Lashor (**purple**, long pink tongue), King Hiss (purple-and-gold armour, snake heads round his waist).
-- **The beasts:** Beast Clawd (**orange-red fur, blue face**), Grizzlor (dark brown shag, **Horde purple chest armour, red eyes**), Battle Kat (**green tiger, orange stripes, red helmet and saddle**), Cringer (the same tiger, no helmet, ears down), Panthor (**dark purple panther, gold saddle**), Katra's panther form (lighter violet, wearing her red cat mask).
+- **The scaly greens:** Mer-Clawd (teal-green, fish fins, blue armour), Kobra Khan (bright green, **yellow cobra hood**), Whiplash (olive-brown, long gator snout and **orange belly**, spear), Rattlor (**red-orange**, yellow belly, rattle tail), Tung Lashor (**purple**, long pink tongue), King Hiss (purple-and-gold armour, snake heads round his waist), Saurod (**grey-green** lizard in **silver plate armour**, sparks at the mouth).
+- **The beasts:** Beast Clawd (**orange-red fur, blue face**), Grizzlor (dark brown shag, **Horde purple chest armour, red eyes**), Battle Kat (**green tiger, orange stripes, red helmet and saddle**), Cringer (the same tiger, no helmet, ears down), Panthor (**dark purple panther, gold saddle**). Katra no longer turns into a panther, so Panthor is the only purple cat.
+- **The big hands:** Clawfist's **silver** right fist on blue and red armour; Jitsu's **gold** chopping hand on orange and black.
+- **The film's mercenaries:** Blade (**black and silver**, a long sword), Karg (**wild white mane**, a hook for a hand, black fur cloak). Neither is a skull, so neither reads as Skeleclawd.
 - **The fliers:** Stratos (grey fur, **blue wing-arms, red backpack**), Vultak (bald pink vulture head, black wings), Kowl (round grey koala-owl, little), Buzz-Off (yellow and black bee), Flutterina (butterfly wings), Swift Wind (white winged horse).
 
 **Against the other six universes** (they all meet in Clawd Royale):
@@ -47,7 +56,8 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **Cyclopz** (Marvel, red visor): Tri-Klawps is green with a **three-eyed rotating drum** on his helmet.
 - **The Beest** (Marvel, blue fur) and **Sabreclawd**: Beast Clawd is orange-red with a blue face.
 - **Chewbacca** (Star Clawds): Grizzlor needs his Horde armour and red eyes to stay apart from him.
-- **Black Panthah** and **Black Kat** (Marvel): Katra's red cat-mask headdress and long black hair.
+- **Black Panthah** and **Black Kat** (Marvel): Katra's red cat-mask headdress and long black hair. She stays a woman in a mask throughout; no panther form.
+- **The Horde Trooper and the Dark Troopers:** grey robot with the red bat emblem, against black armour with a narrow visor and no emblem.
 - **Fin Fang Fume** (Marvel's green dragon): Granamyr is grey-green, old, with a long white beard and horns, and mostly sits.
 - **Hawk-Warrior** and **Hawk-Maiden** (DC): Stratos has no helmet or mace; blue wing-arms on grey fur.
 - **Aquamarine** (DC): Mermista has a blue-green tail and white-blonde hair; Mer-Clawd is a fish-man, not a man.
@@ -76,10 +86,14 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 **Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did at each spot.
 - **`Sources/Shared/Universe.swift`:**
   - `:8–33`: the case, `key`, `title`, `villainCount`, `heroCount`.
-  - `:44–52`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech).
+  - `:44–52`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech, the Dark Trooper: table rows hero #42 and villains #34, #35, #36 and #41, which are the 0-based enum ids hero 41 and villains 33, 34, 35 and 40).
   - `:58`: `claudeSide` (Claude plays the heroes, the default `false`).
   - `:61`: `rivals` (Skeleclawd and Hordakk, see Nemeses).
-  - `:66–79`: next to `abductees` and `regenerations`, the new `transformations` map (see Mechanics).
+  - `:66–79`: next to `abductees` and `regenerations`, the new `transformations` map (see Mechanics), and at `:110` its union across universes for the `Roster`, the way `rivals` is.
+- ⚠︎ **`Sources/Shared/StatusStore.swift`:**
+  - `:330–343` (`PreCompact`): a transformation branch after the abductee one.
+  - `:488` (`nextAgentCast`) and `:506` (`pickLeader`): the secret identity rule (see Mechanics).
+  - `"Stop"` (`:344`): the moral's roll (see Mechanics).
 - **`Sources/App/Theme.swift:47`:** `Theme.of`.
 - **`Sources/App/Locations.swift:74`:** `.merging(eterniaPlaces)`.
 - **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** the `nil` cases in phase 1; in phase 5 a `.eternia(EterniaTrip)` case in `duration`, `draw` and `pick`, and the doc comment.
@@ -87,9 +101,9 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **`Sources/App/Rides.swift`:** the rides (phase 4).
 - ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list and the trip switch (`case "eternia": tripUniverse = …`).
 - ⚠︎ **`Sources/App/Drills.swift:54`** (the meditation guard: no, see Mechanics) and **`:488`** (the bespoke drills merge).
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** five Playground prompts. Lines 1113 and 1226 show how clawdberg hooked its set piece and its OutaTime effect into the tick; the transformation effect and Skeleclawd's retreat hook in the same places.
+- ⚠︎ **`Sources/App/Overlay.swift:865`:** five Playground prompts. Lines 1113 and 1226 show how clawdberg hooked its set piece and its OutaTime effect into the tick; the transformation effect and Skeleclawd's retreat hook in the same places. The moral's speech bubble reuses the callout bubble at `:1293`.
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`:** decide whether Eternia joins each universe-specific `if`.
-- ⚠︎ **`StatusStore.swift`** (PreCompact) and **`HookInstaller.swift`:** the transformation reuses Doctor Clawd's hook, which is already registered.
+- ⚠︎ **`HookInstaller.swift`:** nothing new. The transformation reuses Doctor Clawd's `PreCompact` hook and the moral reuses `Stop`, both already registered.
 - **Clawd Royale** picks up the cast and places through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is an Eternia place.
 - **Tools:**
   - `Tools/Preview/main.swift:60–93`: batch names (`eterniaHeroes1…`), the universe lookup and the enum lookups.
@@ -100,10 +114,10 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 
 Each entry gives the parody name, its look as pixels, its weapon or motion, and its signature move. How the engine's weapons map onto the show:
 - **`.saber`** is the main weapon on both sides. Eternia is swords, axes, staffs, maces, claws and fists. Filmation's He-Man barely swings his sword at people (he throws things, lifts things and deflects blasts), and `.saber` deflecting shots is exactly that.
-- **`.blaster`** is for the few who shoot: Bow's arrows, Hordak's arm cannon, Trap Jaw's arm laser, Mantenna's eye beams, Roboto, Zodac, the Horde Troopers. Frosta (`.ice`), Granamyr (`.fire`), Netossa's net (`.thrown`) and Perfuma's flowers (`.thrown`) use other shot styles.
+- **`.blaster`** is for the few who shoot: Bow's arrows, Hordak's arm cannon, Trap Jaw's arm laser, Mantenna's eye beams, Saurod's mouth sparks, Roboto, Zodac, the Horde Troopers and the Dark Troopers. Frosta (`.ice`), Granamyr (`.fire`), Netossa's net (`.thrown`) and Perfuma's flowers (`.thrown`) use other shot styles.
 - **`.lightning` + `Magic`** is for the sorcerers. Every caster gets its own family and colour (table below), so no two look alike here or elsewhere.
 - **`motion: .fly`** for Stratos, Buzz-Off, Swift Wind, Kowl, Flutterina, Vultak, Granamyr and Queen Angella; **`.hover`** for Orkko, Light Hope and Horde Prime; **`.swing`** for Webstor.
-- **`armoured: true`** for robots and rock: Roboto, Multi-Bot, Clawful, Stonedar and the Horde Trooper.
+- **`armoured: true`** for robots, rock and plate: Roboto, Multi-Bot, Clawful, Stonedar, Saurod, the Horde Trooper and the Dark Trooper.
 - **`bulk`** for Battle Kat, Panthor, Granamyr, Ram Clawd, Two Bad and Clawful.
 
 ### Magic, one look per caster
@@ -129,7 +143,7 @@ Each entry gives the parody name, its look as pixels, its weapon or motion, and 
 
 Check every colour against the other six universes' casters (`magicVariants`, `Theme.swift:54`) when drawing.
 
-### Heroes (43)
+### Heroes (44)
 
 **The Masters of the Universe: Eternia's heroes (22)**
 
@@ -188,6 +202,12 @@ Check every colour against the other six universes' casters (`magicVariants`, `T
 |---|---|---|---|---|
 | 42 | Loo-Kee | small yellow Kon-Seal, big eyes | none | hides behind the scenery and peeks out (She-Ra's "did you find me?") |
 
+**From the 1987 film (1)**, appended after the small fry since ids are append-only
+
+| # | Name | Look | Weapon | Signature |
+|---|---|---|---|---|
+| 43 | Gwildor | small and stooped, wrinkled grey-brown face, wild red-brown hair and beard, brown robes, a tool belt | none (a locksmith, not a fighter; he ducks behind the nearest Master) | holds up the Cosmic Key: its lights blink in a row and a little run of music notes floats up |
+
 **HEM (1)**, as in every universe, last: a blond pageboy wig, a leather chest harness with an iron cross, and a foam Power Sword.
 
 Callouts (`Persona.callout`) for the leads:
@@ -203,8 +223,9 @@ Callouts (`Persona.callout`) for the leads:
 - The Sorceress of Greyskull: "Hurry, He-Clawd!"
 - Bow: "Here's Bow!"
 - Kowl: "Typical."
+- Gwildor: "Have key, will travel!"
 
-### Villains (36)
+### Villains (41)
 
 **Skeleclawd and the Evil Warriors (15)**
 
@@ -240,7 +261,7 @@ Callouts (`Persona.callout`) for the leads:
 |---|---|---|---|---|
 | 19 | Hordakk (Hordak) | white mask-like face, red eyes, bony cowl, dark blue suit, red bat emblem | arm cannon (`.blaster`, white/crimson energy, `handGun: false`) | his arm turns into a cannon, then back; snorting laugh |
 | 20 | Shadow Weaver | red hooded robe, black face, glowing eyes | `waves`, dark crimson/black | weaves her hands; shadows curl round them |
-| 21 | Katra (Catra) | long black hair, red cat-mask headdress, black and red | claws and whip (`.saber`) | pulls the mask down and becomes a violet panther for a beat |
+| 21 | Katra (Catra) | long black hair, red cat-mask headdress, black and red | claws and whip (`.saber`) | pulls the cat mask down over her eyes and cracks her whip (no panther form: Panthor is the purple cat) |
 | 22 | Scorpia | red and black, pincers, a stinger tail over her head | pincers (`.saber`) | clacks her pincers, tail flicks |
 | 23 | Mantenna | four-legged brown bug, eyes on stalks | eye beams (`.blaster`, red beam, `handGun: false`) | his eyes pop out on their stalks |
 | 24 | Leach (Leech) | green, suckers on his hands and mouth | `touch`, yellow-green | sticks to the wall with a sucker |
@@ -259,6 +280,24 @@ Callouts (`Persona.callout`) for the leads:
 - Horde Trooper (35): grey robot with a red bat emblem, `.blaster` red energy, `armoured`. Marches in step.
 - Screeech (36): Skeleclawd's purple-and-green bird, `.fly`.
 
+**Appended in phase 3 (5).** Ids are append-only, so these come after the small fry above, at the end of the villain enum.
+
+*From the bench (1):*
+
+| # | Name | Look | Weapon | Signature |
+|---|---|---|---|---|
+| 37 | Jitsu | black hair, orange and black martial-arts armour, a huge golden right hand | the chopping hand (`.saber`) | karate-chops a plank clean in two |
+
+*From the 1987 film (3 leaders, 1 small fry):*
+
+| # | Name | Look | Weapon | Signature |
+|---|---|---|---|---|
+| 38 | Blade | the mercenary swordsman: black and silver armour, slicked-back black hair, a scar | long sword (`.saber`) | a fencing salute, then a quick flourish |
+| 39 | Saurod | armoured lizard man: grey-green scales, silver plate armour, red eyes | sparks from his mouth (`.blaster`, orange/yellow energy, `handGun: false`), `armoured` | opens his jaws and a shower of sparks sprays out |
+| 40 | Karg | wild white mane, pale face, a hook for a left hand, black fur cloak over bronze armour | hook and sword (`.saber`) | slashes the air with his hook and bares his teeth |
+
+- Dark Trooper (41), agent-only: Skeletor's foot soldiers in the film. Black armour, a helmet with a narrow visor, a laser rifle (`.blaster`, red energy), `armoured`. They march in a line, rifles up.
+
 ### Nemeses
 
 Each pair faces off on the same stage:
@@ -275,7 +314,7 @@ Each pair faces off on the same stage:
 - Man-E-Claws ↔ Faker
 - Ram Clawd ↔ Clawful
 - Buzz-Off ↔ Webstor
-- Clawfist ↔ Two Bad
+- Clawfist ↔ Jitsu (the fist and the chopping hand; their toys were sold as rivals)
 - Moss Clawd ↔ Stinkor (the toys shared a mould)
 - Roboto ↔ Multi-Bot
 - King Randor ↔ King Hiss
@@ -287,14 +326,19 @@ Each pair faces off on the same stage:
 - Frosta ↔ Scorpia
 - Glimmer ↔ Entrapta
 - Light Hope ↔ Horde Prime
+- Gwildor ↔ Karg (Karg leads the hunt for the Cosmic Key)
+- Snout Spout ↔ Saurod (the fire-fighter and the spark-spitter)
+- Stonedar ↔ Blade (a sword is no use against stone)
+
+That's 28 pairs, three over the guide's usual 25, all for the film. Two Bad no longer has a nemesis; his two heads argue with each other instead.
 
 **Rivals:** Skeleclawd and Hordakk never lead two sessions back to back. They are the two big bads, and the old pupil and teacher; two cackling skull-faces in a row would feel repetitive.
 
 **Claude's side:** the heroes (the default).
 
-## Places (20)
+## Places (21)
 
-Each is a `Place` with a still picture and a moving layer, plus tall-canvas extras for the screen saver. The first eleven are on Eternia, the last nine on Etheria. Keys are flavoured so they won't clash with the sibling plans: the proper nouns are unique already, and the generic ones carry `eternia`.
+Each is a `Place` with a still picture and a moving layer, plus tall-canvas extras for the screen saver. Places 1–14 are on Eternia, 15–20 on Etheria, and the last is the film's Earth town. Keys are flavoured so they won't clash with the sibling plans: the proper nouns are unique already, and the generic ones carry `eternia`.
 
 | # | Place (key) | Still | Moving layer | Tall-canvas extras |
 |---|---|---|---|---|
@@ -318,23 +362,25 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
 | 18 | **The Crystal Castle** (`crystalCastle`) | Light Hope's castle of crystal on a hill | a rainbow column of light inside | the castle's peak, beams of light |
 | 19 | **Mystacor** (`mystacor`) | Castaspella's city of sorcerers, buildings on floating rocks | the islands bob; magic sparks | more islands up the sky |
 | 20 | **Castle Chill** (`castleChill`) | Frosta's ice palace, icicles | snow falls | the ice towers and the aurora |
+| 21 | **Earth, a small town at night** (`eterniaEarthTown`), from the 1987 film | a little American main street after dark: a diner with a neon sign, a music shop window full of keyboards, the high school across the road | the neon flickers; now and then the Cosmic Key's portal shimmers open in the alley and closes | a water tower against a starry sky, one star brighter than the rest (Eternia) |
 
-Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor scenes, and the palettes change a lot: Greyskull's dusk, the jungle's greens, Snake Mountain's reds, the undersea blues, Etheria's pastels, the Fright Zone's grey and red.
+Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor scenes, and the palettes change a lot: Greyskull's dusk, the jungle's greens, Snake Mountain's reds, the undersea blues, Etheria's pastels, the Fright Zone's grey and red, and the Earth town's streetlight orange and neon pink against a navy night.
 
 **Homes:**
 - He-Clawd, the Sorceress, Battle Kat: Castle Greyskull (the Sorceress in her chamber).
 - The royal family, Addam, Cringer, Teelah, Orkko and the Masters with no realm: the Royal Palace. Man-At-Claws, Roboto and Snout Spout: the workshop.
 - Stratos: Avion. Buzz-Off: Andreenos. Granamyr: Darksmoke. Moss Clawd, Clawfist: the Vine Jungle. Zodac, Sy-Klawne: the Mystic Mountains. Orkko also counts Trolla as home.
-- Skeleclawd and the Evil Warriors: Snake Mountain (Mer-Clawd in the undersea kingdom; Beast Clawd and Panthor on Beast Island; Kobra Khan and King Hiss in the Vine Jungle; Count Marzo and Shokoti at the temple).
+- Skeleclawd and the Evil Warriors, Jitsu included: Snake Mountain (Mer-Clawd in the undersea kingdom; Beast Clawd and Panthor on Beast Island; Kobra Khan and King Hiss in the Vine Jungle; Count Marzo and Shokoti at the temple).
 - The Horde: the Fright Zone. Horde Prime appears there too.
 - The Great Rebellion: the Whispering Woods. Glimmer and Angella: Bright Moon. Light Hope, She-Clawd, Swift Wind: the Crystal Castle. Clawstaspella: Mystacor. Frosta: Castle Chill. Mermista: the undersea kingdom. Sea Hawk: the Whispering Woods (his ship moors on the coast).
+- The film's cast: the Earth town. Gwildor, and the mercenaries sent after his key (Blade, Saurod, Karg and the Dark Troopers). Queen Marlena also counts it as home, since she came from Earth.
 
 ## Mechanics that make it its own universe
 
 1. **Rides.** These replace ships flying in:
-   - **Eternia's heroes:** the Wind Raider (green and orange, with its tail fin) swoops in and lands.
+   - **Eternia's heroes, Gwildor included:** the Wind Raider (green and orange, with its tail fin) swoops in and lands.
    - **She-Ra and the rebels:** Swift Wind flies in with a rider on his back.
-   - **Skeleclawd and the Evil Warriors:** the Roton rolls in, its blades spinning.
+   - **Skeleclawd and the Evil Warriors, Jitsu and the film's mercenaries included:** the Roton rolls in, its blades spinning.
    - **The Horde:** a bat-winged Horde skiff. Hordakk himself arrives as a rocket (he turns into one in the show) and turns back into himself on landing.
 2. **The transformation, which is Eternia's regeneration: "By the power of Greyskull!"** When a Claude Code or pi session led by one of these compacts its context, they change into their other self:
    - **Prince Addam → He-Clawd:** he raises the sword, lightning hits it, a white-out, and He-Clawd stands there. "I have the power!"
@@ -343,9 +389,19 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    - **Spirit → Swift Wind:** wings and a horn appear in a rainbow.
    - The next compaction changes them back, with a soft glow (no lightning). It's the secret identity: he can't stay He-Clawd forever.
 
-   Nobody else changes. It reuses Doctor Clawd's `PreCompact` path (`StatusStore`, `DoctorRegeneration.swift`). Doctor Clawd's `regenerations` is one long chain, so this needs a small map of pairs next to it in `Universe` (`transformations: [Int: Int]`, each mapping both ways), and its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1226`).
+   Nobody else changes. Decided: these are **two characters per pair**, each with its own id, and compaction swaps one for the other.
 
-   **The secret identity rule:** Prince Addam and He-Clawd should never be on stage at once (nor Adorra and She-Clawd, Cringer and Battle Kat, Spirit and Swift Wind). Casting skips a character whose other self is on stage, and a transformation into someone already there just plays the lightning and stays put. See Open questions.
+   **How it works in the engine.** It reuses Doctor Clawd's `PreCompact` path:
+   - Doctor Clawd's `regenerations` is one long chain, so this needs a small map of pairs next to it in `Universe`: `transformations: [Int: Int]`, each pair listed both ways. The `Roster` gets the union across universes, the way it gets `rivals` (`Universe.swift:110`).
+   - In `StatusStore`'s `PreCompact` case (`:330–343`), after the abductee check: if the leader has an entry in `transformations`, set the session's leader to the other self and stamp the time (a new `transformed` field, or `regenerated` reused if the overlay can tell them apart by universe).
+   - Its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1226`).
+
+   **The secret identity rule (decided): a pair is never on stage at once.** Prince Addam and He-Clawd are never both on screen, nor Adorra and She-Clawd, Cringer and Battle Kat, or Spirit and Swift Wind. Three places in the code enforce it:
+   - **`pickLeader`** (`StatusStore.swift:506`): before choosing, add the other self of everyone in `used` to the excluded set, so a new session can't be led by He-Clawd while Addam leads another.
+   - **`nextAgentCast`** (`:488`): the same for `onScreen`, which already covers both session leaders and agents. If the only characters left are excluded ones, it falls back to the whole pool as it does today, but still never picks a partner of someone on screen.
+   - **The `PreCompact` swap:** if the other self is already on stage (leading another session or working as an agent), the lightning plays and the leader stays as they are. Nobody ever meets their own secret identity.
+
+   Helpers in `Preview` and `Transitions` that pick casts directly don't need the rule; it's a casting rule, not a drawing one.
 3. **Habits:**
    - **Orkko's magic goes wrong** now and then: a rain cloud over his own hat, a rubber fish, his scarf tangling him up.
    - **Skeleclawd's retreat:** when he loses a fight he vanishes in a purple puff with "I'll get you for this, He-Clawd!" (hooked into the overlay's tick the way Clawdberg's Indy moment is, `Overlay.swift:1113`).
@@ -354,7 +410,23 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    - **Imp** turns into an object for a few seconds.
    - **Two Bad's** heads argue when idle.
    - **Stinkor's** cloud makes characters near him shuffle away.
-4. **The moral (optional, see Open questions).** Every Filmation episode ended with a character stepping forward to give the audience a short lesson. When a session finishes its work, its leader now and then gives one in a speech bubble, coding-flavoured: "Always read the error message!", "Commit before you refactor!", "Sharing your code is good, but never share your passwords!". About 15 lines, said by whoever leads (Orkko gets the best ones).
+   - **Gwildor** ducks behind the nearest hero when a villain is on stage, clutching the Cosmic Key.
+   - **The Dark Troopers** march in step when more than one is on stage.
+4. **The moral (decided).** Every Filmation episode ended with a character stepping forward to give the audience a short lesson. Here, when a session finishes its work, its leader **now and then** steps forward and gives one in a speech bubble, in the Filmation voice with a coding twist. It's short and rare, so it stays a treat rather than chatter:
+   - **When:** on `Stop` (the session has finished and gone idle), about one finish in eight, and never twice within half an hour for the same session.
+   - **Who:** heroes only (Skeleclawd doesn't do lessons). Orkko, the Sorceress and Man-At-Claws get the most.
+   - **Engine:** a small change. `StatusStore` rolls the dice on `Stop` and stamps the session with a `moral` time. The overlay shows the line in the done state through the callout bubble (`Overlay.swift:1293`) for about four seconds, the leader facing the front.
+   - **The lines** (about ten, written so no single one gets stale):
+     - "Remember, kids: always write your tests!"
+     - "Remember, kids: read the error message before you ask for help."
+     - "Sharing your code is good, but never share your passwords!"
+     - "Commit before you refactor. Even He-Clawd saves his work."
+     - "Never run a script from a stranger without reading it first."
+     - "Nobody's code is perfect. Even Man-At-Claws asks for a review."
+     - "Bullies force-push. Friends open a pull request."
+     - "Stuck on a bug? Take a break. It'll still be there, and so will you."
+     - "Orkko learned today that magic numbers cause trouble. Give them names!"
+     - "Back up your files. Castle Greyskull didn't last this long by luck."
 5. **Practice drills, which are bespoke:**
    - He-Clawd lifts a boulder over his head and puts it down;
    - Teelah spins her staff through a kata;
@@ -362,6 +434,8 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    - Orkko practises a trick, and juggles three glowing balls until one turns into a fish;
    - Ram Clawd charges a wall and bounces off;
    - Bow shoots at a target;
+   - Jitsu chops a stack of planks;
+   - Gwildor tunes the Cosmic Key, one note at a time;
    - Hordakk's Horde Troopers drill in step;
    - Skeleclawd practises his cackle on Screeech.
 
@@ -383,11 +457,11 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    - 8 places (Castle Greyskull, the palace, the workshop, Snake Mountain, the Vine Jungle, the Fright Zone, the Whispering Woods, the Crystal Castle), with the nemeses for these.
 
    It's fine to commit the enum cases first, as stand-ins, and draw them in a second commit.
-3. **Rest of the cast and places.** Up to 79 characters and 20 places, with every home filled in. Ends with **the character audit**: every weapon, shot, magic colour, motion, signature and callout checked against the show, and a table of only the mismatches.
-4. **Mechanics:** the rides, the transformation, the habits (Skeleclawd's retreat included), the moral if you want it, the bespoke drills.
+3. **Rest of the cast and places.** Up to 85 characters and 21 places, with every home filled in: the rest of the Masters, the rebels and the Horde, then the appended five (Jitsu, Blade, Saurod, Karg, the Dark Trooper) and Gwildor, and the Earth town. Ends with **the character audit**: every weapon, shot, magic colour, motion, signature and callout checked against the show, and a table of only the mismatches.
+4. **Mechanics:** the rides, the transformation and the secret identity rule, the habits (Skeleclawd's retreat included), the moral, the bespoke drills.
 5. **Transitions:** the twelve `EterniaTrip`s and the stone caption (see below).
 6. **Docs and release:**
-   - the README, roster and location sheets, a desktop line-up (`eterniaLineup`) and a social preview;
+   - the README, roster and location sheets (`roster-clawds-of-the-universe.png`, `places-clawds-of-the-universe.png`), a desktop line-up (`eterniaLineup`) and a social preview;
    - `llms.txt`, and a `CHANGELOG.md` entry each phase;
    - a trailer, `REEL=eternia`, opening on "By the Power of Greyskull" as its title sequence.
    - **Needs your OK first, since it's public:** a showcase repo and a cask in `release.sh` (`write_cask`, the `others` list and its `preflight_steps` universe preset).
@@ -400,7 +474,9 @@ The weak-spot list is kept here as the phases go: anything that doesn't read in 
 
 Spots to watch from the start:
 - He-Clawd, Faker and Prince Addam side by side; She-Clawd and Adorra side by side.
-- The scaly greens (Mer-Clawd, Kobra Khan, Whiplash) in one sheet.
+- The scaly greens (Mer-Clawd, Kobra Khan, Whiplash, Saurod) in one sheet.
+- Clawfist's and Jitsu's big hands: silver against gold must read at a glance.
+- Gwildor's Cosmic Key: a few pixels, so its lights need to be bright.
 - Man-E-Claws's and Tri-Klawps's turning drums: a few pixels each, so the faces and eyes must be bold.
 - Orkko's eyes in the dark under his hat; Loo-Kee's size as an agent.
 - Light Hope and Horde Prime: neither has a body, so each must still read as a character on Clawd's legs (a rainbow robe; a smoke cloak with the hand).
@@ -411,14 +487,15 @@ Spots to watch from the start:
 - **Characters:** `Tools/Preview/build.sh`, then:
   - `build/preview cast out.png "He-Clawd"`;
   - `build/preview fight out.png "He-Clawd" "Skeleclawd"`;
-  - `build/preview place out.png "Masters of the Clawdiverse"`;
+  - `build/preview place out.png "Clawds of the Universe"`;
   - and the batch sheets, one per Art file. Look at every PNG for lookalikes, inside the universe and against the six others.
 - **Transitions:** `Tools/Transitions/build.sh`, then `build/transitions <outdir> castleGreyskull frightZone` (an Eternia-to-Etheria trip, so the portal shows).
 - **In the app:**
-  - Settings → Universe → Masters of the Clawdiverse: new sessions are heroes, subagents can be villains or small fry.
+  - Settings → Universe → Clawds of the Universe: new sessions are heroes, subagents can be villains or small fry.
   - The screen saver's Options include it.
   - Random and Clawd Royale reach it.
-- **The transformation:** `/compact` in a Claude session led by Prince Addam (he becomes He-Clawd), then again (back to Addam). Check the secret identity rule with Addam and He-Clawd both wanted at once.
+- **The transformation:** `/compact` in a Claude session led by Prince Addam (he becomes He-Clawd), then again (back to Addam). Check the secret identity rule: with Addam leading one session, start a second and spawn agents, and He-Clawd must never appear; with He-Clawd already on screen as an agent, `/compact` Addam's session and he should only play the lightning.
+- **The moral:** finish a few sessions led by heroes and check one in eight or so ends with a line, never from a villain, never twice in half an hour.
 
 ## Transitions (`EterniaTrip`, 12)
 
@@ -440,7 +517,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 | 8 | **For the Honour of Greyskull** | She-Ra's transformation: a sword held high, a gold-and-rainbow spiral climbs up it and floods the screen, and the colours settle into the new place. Second-rarest. | She-Clawd, Adorra; the Crystal Castle |
 | 9 | **The Horde Bat** | The red bat emblem flies at the screen, its wings close over the scene, and open on the new place. | Hordakk, the Horde; the Fright Zone |
 | 10 | **Shadow Weave** | Dark crimson strands weave across the scene into a cloth, then unravel strand by strand to show the new place. | Shadow Weaver (`needsOwner`) |
-| 11 | **The Portal** | A swirling blue-white tunnel between worlds opens in the middle of the scene and widens; the new place is at its end. | trips between an Eternia place and an Etheria place |
+| 11 | **The Portal** | A swirling blue-white tunnel between worlds opens in the middle of the scene and widens; the new place is at its end. | trips between worlds (Eternia, Etheria, the Earth town); Gwildor, whose Cosmic Key opens it |
 | 12 | **Light Hope's Rainbow** | A column of rainbow light rises in the middle, splits into prism bands that sweep across, and fades on the new place. | Light Hope, the rebels; Etheria's places |
 
 **Not used:**
@@ -449,6 +526,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 - **Hordak's rocket** is his ride, not a transition.
 - **Filmation's reused stock zooms** read as a plain zoom at pixel scale.
 - **The end-of-episode moral** suits a habit better (Mechanics), since it's a line, not a picture.
+- **The Cosmic Key** as a transition of its own would be the Portal again; it's folded into the Portal instead.
 
 **Check them** with `Tools/Transitions`, which renders all twelve between two Eternia places.
 
@@ -462,7 +540,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 - He draws the sword and raises it: "By the power of Greyskull!" in a speech bubble.
 - Lightning forks down into the blade, the screen whites out in crackling bolts.
 - He-Clawd stands where Addam was, sword high; Cringer has become Battle Kat, who roars. "I HAVE THE POWER!"
-- The title, MASTERS OF THE CLAWDIVERSE, rises in carved-stone letters (our own, not the logo), and the camera plunges through the jawbridge into white.
+- The title, CLAWDS OF THE UNIVERSE, rises in carved-stone letters (our own, not the logo), and the camera plunges through the jawbridge into white.
 
 **Set piece (~9.5 s):**
 - Snake Mountain under a red sky. Skeleclawd, Beast Clawd and Trap Claw roll out on the Roton.
@@ -470,14 +548,14 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 - Orkko pops up to help: his spell misfires and a rain cloud opens over Skeleclawd.
 - He-Clawd and Battle Kat leap in, He-Clawd lifts the Roton over his head and the crew scatters.
 - Skeleclawd vanishes in a purple puff: "I'll get you for this, He-Clawd!"
-- Orkko turns to the camera: "And remember, kids…" (the moral, cut off by the hook).
+- Orkko turns to the camera: "Remember, kids: always write your tests!" (the moral).
 
 **The rest:**
 - **desktop:** `brawl(ctx, .eternia, …)` with "The battle for Greyskull, right on your desktop."
 - **status:** He-Clawd working, Cringer waiting (hiding), Orkko erroring ("Oops!"), Teelah done ("Where's Adam?").
 - **agents:** "Every subagent gets to be a Master of the Universe."
 - **window:** `windowShot(ctx, .eternia, …, at: .castleGreyskull)` with "It has the power."
-- **endcard:** Castle Greyskull, the crew lined up, the title lands, then the shared lines.
+- **endcard:** Castle Greyskull, the crew lined up, CLAWDS OF THE UNIVERSE lands in stone letters, then the shared lines.
 
 **Sound:** a brassy, heroic synth march in the spirit of the 80s cartoon but **our own notes**, a big thunderclap on the lightning, a sword shing as the title lands, Skeleclawd's cackle as a pitched-down blip, and a bright fanfare sting on the end card.
 
@@ -485,19 +563,19 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 - "Skeleclawd stole the castle keys: rotate the secrets"
 - "Orkko broke the build again, find out what he did"
 - "By the power of Greyskull, fix the flaky test"
-- "Man-At-Claws wants an autopilot for the Wind Raider"
+- "Gwildor's Cosmic Key plays the wrong notes: fix the tune parser"
 - "Hordakk needs a dashboard for the Fright Zone's smokestacks"
 
-## Open questions for you
+## Decisions (2026-10-16)
 
-1. **The name.** *Masters of the Clawdiverse* (recommended: it reads at once, keeps the "Masters" and works "Clawd" in), *He-Clawd* (short and punchy, but it's also the lead character's name, which gets confusing in menus), or *Clawds of the Universe*.
-2. **Scope.** She-Ra is in by default, because without the Horde this is a limited experience on the villain side. Options to widen or swap:
-   - **the 2002 series:** the Snake Men as a full faction (King Hiss, Kobra Khan, Rattlor redone as snake generals), Clamp Champ, Chief Carnivus and the Speleans, Count Marzo redesigned;
-   - **the 1987 film:** Gwildor, Blade, Saurod, Karg, Evil-Lyn's film look;
-   - **Revelation (2021):** a darker take; its designs for Teela and Evil-Lyn could replace Filmation's;
-   - **the 2018 She-Ra:** its very different designs would clash with Filmation's, so it's left out.
-3. **The transformation.** Prince Addam and He-Clawd are two characters (as are Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), and compaction swaps one for the other. Is that right, and do you want the secret identity rule (never on stage at once)? The alternative is a single He-Clawd who just plays the lightning on compaction, which frees four places in the cast.
-4. **The moral.** Should leaders give an end-of-episode moral when a session finishes? It's a small engine change (a line in the done state) and very Filmation, but it's text on screen, which some might find chatty.
-5. **Swaps.** Anyone you'd rather have in or out. A swap keeps the count. On the bench: Batros, Jitsu, Icer (an ice-user, too close to Frosta), Spinnerella (spins like Sy-Klawne), Sweet Bee (wings like Buzz-Off), Kittrina, Dree Elle, Rio Blast, Extendar, Dragstor, Colonel Blast. Left out on purpose: Mosquitor (a blood-sucker) and the 1990 New Adventures cast (a different show).
-6. **Panthor and Katra's panther.** Both are purple panthers. They're split by shade, the gold saddle and Katra's mask, but you might prefer to drop Panthor.
-7. **Names.** Some are plain (Bow, Glimmer, Kowl, Webstor, Whiplash, Faker) where no pun came naturally. Any you'd like punned, or un-punned?
+1. **Name: Clawds of the Universe.** The code naming stays as it was: `case eternia`, key `"eternia"`, folder `Sources/App/Universes/Eternia/`, prefix `Eternia…`, branch `he_man`, `REEL=eternia`. This file keeps its old path.
+2. **Scope: the 1983–1987 cast.** The 1983 Filmation cartoon, She-Ra (1985) and the 1987 live-action film. The film adds Gwildor (hero 43), the villains Blade (38), Saurod (39) and Karg (40), appended after Jitsu, with the Dark Troopers (41) as agent-only small fry, and a 21st place, the small Earth town at night. Nemeses: Gwildor ↔ Karg, Snout Spout ↔ Saurod, Stonedar ↔ Blade. Julie, Kevin and Detective Lubic stay out. The 2002 series and Revelation stay out; the 2002 Snake Men could come later as an add-on, appended to the enums.
+3. **The transformation: approved.** Two characters per pair (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), swapping on compaction. **The secret identity rule: approved.** A pair is never on stage at once, enforced in `pickLeader`, `nextAgentCast` and the `PreCompact` swap (see Mechanics).
+4. **The moral: approved.** Short and rare end-of-episode morals when a session finishes, heroes only, in the Filmation voice with a coding twist. A small engine change: a roll on `Stop` and a line in the done state (see Mechanics).
+5. **Swaps:** none beyond item 6.
+6. **Katra's panther form is dropped; Panthor stays.** Jitsu (villain 37), Skeletor's martial artist with the golden chopping hand, comes in from the bench, at home in Snake Mountain, facing Clawfist (Two Bad loses that pairing).
+7. **Names:** the plain ones (Bow, Glimmer, Kowl, Webstor, Whiplash, Faker) stay as they are.
+
+**The counts now:** 44 heroes (42 who lead, Loo-Kee, HEM) and 41 villains (37 who lead, 4 agent-only), so 85 in all, with `heroCount` 44 and `villainCount` 41. Agent-only: table rows hero #42 and villains #34, #35, #36, #41 (0-based enum ids hero 41; villains 33, 34, 35, 40). 21 places, 12 transitions, 28 nemesis pairs.
+
+The plan is ready for phase 1 when you say start.
