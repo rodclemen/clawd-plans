@@ -122,9 +122,9 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 |---|---|---|---|---|
 | 1 | Jack Skullington | egg-shaped bone-white skull on a thin neck (big black eye sockets, two nose slits, a stitched grin curling up), the spiky bat-wing collar, black pinstripe suit narrower than Clawd, heart-shaped white shirt front, bat bow tie, ragged tails, long arms, bony fingers | the scare (`waves` + `pulse`) | his scary face (skull stretching tall, mouth gaping with teeth, angry eyes, both hands clawing beside it), then a deep bow; callout "What's this?" |
 | 2 | Sallee | the rag doll: tall pale-blue face on a stitched neck, big eyes with lashes, dark lips, stitched seams from the mouth, long red yarn hair past her waist, patchwork dress (mustard, teal, lilac, black, pink), long stitched arms and legs | none | her whole arm drops off onto the floor; she picks it up, sews it back with needle and red thread, and wiggles it |
-| 3 | Zeero | white ghost dog, a glowing orange pumpkin nose | none, `.hover`, `canSit: false` | his nose lights up bright; callout "Arf!" |
-| 4 | The Mayor | tall black hat with a rosette, cone head, sash | none | his head spins from the smiling face to the worried one |
-| 5 | Sandy Clawz | red suit, white beard, sack | presents (`.thrown(red)`) | pats his tummy; callout "Ho ho ho!" |
+| 3 | Zeero | a small white ghost dog floating on a wispy tail instead of hind legs, floppy ears hanging down, a collar with a bow tie, a glowing pumpkin nose | none, `.hover`, `canSit: false` | his nose blazes like a jack-o'-lantern and he loops once round in the air; callout "Arf!" |
+| 4 | The Mayor | a cone of a head, pointed at the top and widest at his collar, the hat perched on the point (a little brim, a tall thin crooked stovepipe); a fat grey tailcoat flaring out like a bell, short pinstriped legs, a white collar with a black spider bow tie, a red rosette; his megaphone. Two faces: happy (tan, spiral eyes, a big toothy grin) and worried (pale, droopy eyes, a zigzag frown) | none, `bulk` | his head spins from one face to the other and back; he wears the worried face while his session waits for you |
+| 5 | Sandy Clawz | round red fur-trimmed coat, belt and gold buckle, black boots, big white beard, the hat's tip drooping behind, his sack over his shoulder | presents (`.thrown(red)`), `bulk` | pats his bouncing tummy; callout "Ho ho ho!" |
 
 **Beetlejuice and Beetlejuice Beetlejuice (8)**
 
@@ -240,14 +240,14 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 6 | Ooogie Boogie | big burlap sack, stitched mouth, glows under UV | dice (`.thrown(white)`), `bulk` | rolls dice; a bug falls out of a seam; callout "Well, well, well…" |
-| 7 | Lok | devil mask, red suit, pitchfork | pitchfork (melee) | pushes his mask up, grins |
-| 8 | Shok | witch mask, purple dress, pointy hat | broom (melee) | cackles and twirls her broom |
-| 9 | Barrell | skeleton mask, green, a lollipop | lollipops (`.thrown(green)`) | licks his lollipop |
-| 10 | Dr. Finkelclawd | lab coat, goggles, the top of his head flips open | potion bottles (`.thrown(green)`) | flips his skull open and scratches his brain |
-| 11 | The Wolfclawd | werewolf in a tattered suit | claws (melee) | howls at the moon |
-| 12 | The Tear-Away Clown | clown on a unicycle | none | tears his face off to show a dark hole, then puts it back (eerie, not gory) |
-| 13 | The Halloween Witch | green-faced witch, tall hat, broom | orange lightning, `.fly` | cackles round a circle on her broom |
+| 6 | Ooogie Boogie | the biggest sprite in the universe: a huge pale burlap sack, its tied top flopping over, stitched seams, slanted hollow eyes, a wide stitched grin, stubby arms, four stumpy feet; bugs in green, purple, orange, blue and yellow keep falling out of his seams and scuttling off (`burtonBeetle`) | dice (`.thrown(white)`), `bulk`, can't sit | shakes the dice and rolls them along the floor, then laughs as a seam bulges and a bug pops out; callout "Well, well, well…" |
+| 7 | Lok | a small kid in a red suit with a pointy tail, a red devil mask with horns and yellow eyes | pitchfork (melee) | pushes his mask up and grins a wicked grin |
+| 8 | Shok | a small kid in a purple dress, a pale witch mask under a tall crooked black hat | broom (melee) | pushes her mask up, cackling, and twirls her broom |
+| 9 | Barrell | a small round kid in green, a bone-white skull mask, a mop of dark hair | lollipops (`.thrown(green)`) | pushes his mask up and licks his lollipop |
+| 10 | Dr. Finkelclawd | in his wheelchair (it stands in for his legs): white lab coat, round black goggles, a flat beak of a mouth, the top of his head a lid on a hinge | potion bottles (`.thrown(green)`), can't sit | flips the lid of his skull open and scratches his brain |
+| 11 | The Wolfclawd | a werewolf in a tattered brown suit, grey-brown fur, pointed ears, a snout, yellow eyes | claws (melee), `bulk` | throws his head back and howls at the moon |
+| 12 | The Tear-Away Clown | a pale clown riding a unicycle on the spot (it stands in for his legs), a dark purple shirt with orange pom-poms, red tufts of hair, a little hat | none, can't sit | tears his face off, leaving a dark hole, holds it out, then claps it back on |
+| 13 | The Halloween Witch | a green face with a hooked nose and pointed chin, a tall crooked hat with a buckle, a black dress, her broom (she rides it when she flies) | orange forked lightning, `.fly` | loops round in the air on her broom, cackling; callout "Hee hee hee!" |
 
 **Edward Scissorhands (2)**
 
@@ -411,9 +411,9 @@ Each is a `Place` with a still picture, a moving layer and tall-canvas extras fo
 | # | Key | Place | Still | Moving layer | Tall-canvas extras |
 |---|---|---|---|---|---|
 | 1 | `halloweenTown` | **Halloween Town square** (the default) | in purples, under an orange-yellow moon: two rows of crooked houses that bend and bulge with witch-hat roofs curled at the tip, about half pulling jack-o'-lantern faces with their windows; the town hall with a gable, a spider-web rose window, orange-and-black bunting, two curled turrets and a bent spire with a bat vane; the green-slime fountain; pumpkins on the cobbles and on a ridge behind the town | the fountain spouts and bubbles, the carved pumpkins flicker, the rose window glows, a bat flits | Spiral Hill curling in front of a huge moon, a graveyard all over it (graves on both slopes and down its sides, a crooked fence, pumpkins), and the town gates on a far ridge |
-| 2 | `spiralHill` | **Spiral Hill** | the curling hill in the graveyard, a huge moon behind it | mist rolls between gravestones, Zero-like wisps float | the stars and a black cat on a far roof |
-| 3 | `oogiesLair` | **Oogie Boogie's lair** | a roulette table, dice, slot machines, a UV glow | the roulette wheel spins, ultraviolet light pulses | the rope bridge and the hanging cage overhead |
-| 4 | `christmasTown` | **Christmas Town** | snowy toy-town houses, a giant tree, candy-cane lamps | snow falls, windows twinkle | the northern lights and a sleigh far off |
+| 2 | `spiralHill` | **Spiral Hill** | a near-black sky and a huge yellow moon with the hill's curl in front of it, graves up its slope; tombstones, crosses and an obelisk across the yard, red berry bushes, a crooked iron fence, a stone gargoyle | mist drifts low between the graves; ghost wisps rise and fade | the hill on a far ridge, a middle distance of graves, the yard graves and gargoyle large in front |
+| 3 | `oogiesLair` | **Oogie Boogie's lair** | his casino under ultraviolet light: a giant roulette wheel on the back wall with a glowing rim, neon-green arches, a stack of giant dice, a slot machine framed in bulbs, playing cards on the walls, a chequered floor glowing at its edge | the wheel spins, the reels flicker (skull, bug, die), the bulbs chase, the UV light throbs, bugs scuttle across the floor | the rope bridge sagging across and a cage hanging from it |
+| 4 | `christmasTown` | **Christmas Town** | candy-coloured toy houses (the odd tower) with snowy roofs and warm windows, a giant tree with a gold star, candy-cane lamp posts, a snowy street | snow falls, the tree's lights twinkle | snowy hills with a far row of little houses, the northern lights rippling, a sleigh crossing far off |
 | 5 | `maitlandHouse` | **The Maitlands' house** | the white New England house, the covered bridge below, Delia's sculptures on the lawn | wind in the trees, a curtain flaps in the attic window | the hill town on the slope behind |
 | 6 | `modelWinterRiver` | **The model town in the attic** | the tabletop model of Winter River: tiny houses, a graveyard, the bridge | a spider crawls across the model; a tiny gravestone wobbles | the attic rafters and a dusty skylight |
 | 7 | `afterlifeWaitingRoom` | **The Afterlife waiting room** | green walls, plastic chairs, a ticket dispenser, a "NOW SERVING" board | the number board ticks over, a strip light buzzes | a mile of corridor and filing cabinets up into the dark |
@@ -467,7 +467,7 @@ Keys checked: none clash with the 150-odd `Location("…")` keys on main (`chris
    - "It's alive!" (Frankenweenie's reanimated pets) was the alternative; it lives on as transition #12 instead.
 3. **Habits:**
    - **Beetlejooce, three times:** idle, his name ticks up in bubbles, one, two, three, and on the third he vanishes and pops up somewhere else on stage through a striped ring.
-   - **The Mayor's two faces:** his head spins to the worried face when a session hits an error or needs approval, and back to the smile when it's going well. It ties straight into the status states.
+   - **The Mayor's two faces:** his head spins to the worried face when a session hits an error or needs approval, and back to the smile when it's going well. It ties straight into the status states. (Built early, in phase 2: his drawing shows the worried face whenever his session is waiting for you.)
    - **Chessur fades:** now and then he fades out until only the grin floats, then comes back.
    - **Zeero follows Jack:** when both are on stage, Zeero drifts to hover beside Jack.
    - **Oompa-Loompahs dance:** when a session on stage finishes its task, any Oompa-Loompah does a short dance (our own drum beat, never their songs).
@@ -492,7 +492,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    - plain wipes for now (`ComicTransition.pick` returns nil for it).
    
    It runs end to end in the app, the window, the screen saver and Clawd Royale. The whole roster (107) is registered up front with homes and nemeses, so ids never move; the others are stand-ins. Jack, Sallee, Beetlejooce and Halloween Town were each redrawn from reference pictures before moving on (see Decisions during phase 1).
-2. **Core ensemble.** About 43 characters, the first four film groups in enum order:
+2. **Core ensemble** (in progress: **Nightmare done**, its 11 characters and 3 places, 2026-10-17). About 43 characters, the first four film groups in enum order, each group's design directions agreed with you before it's drawn:
    - Nightmare, Beetlejuice, Edward Scissorhands and Corpse Bride: 24 heroes and 19 villains;
    - 8 places: Halloween Town, Spiral Hill, Oogie's lair, Christmas Town, the Maitlands' house, the model town, the waiting room, and the Land of the Dead;
    - their homes and nemeses (the other places' homes fall back to the default until phase 3).
@@ -603,4 +603,15 @@ New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only),
 
 **Weak spots so far** (for the polish pass): HEM's striped scarf hides behind his beard; Sallee's arms are faint at rest and her needle is tiny; Jack's tailcoat tails blur into his back legs; Beetlejooce's shirt V and tie read a little as an "M"; the menu icon's mono version has a notch where the hill's foot meets the moon.
 
-Phase 1 is done; phase 2 is next.
+## Decisions during phase 2 (2026-10-17, Henrik)
+
+1. **Before each film group is drawn, its design directions are listed for you to steer.** References help, but stay with the Clawd look: blocky, four short legs, no fine detail; take silhouettes and iconic pieces from the references, not the originals' exact design.
+2. **The Mayor** was drawn from photos: his cone head points up (narrow at the top, widest at his collar), the hat on the point with a tall thin crooked stovepipe, a grey bell of a coat. "Cone head" alone didn't say which way the point goes; say so in future rows.
+3. **Ooogie Boogie** is the biggest sprite, with bugs of every colour falling out of him (`burtonBeetle`, coloured).
+4. **The trick-or-treaters** are small kids with masks on sticks; in their signatures the mask goes up.
+5. **Dr. Finkelclawd's wheelchair and the Tear-Away Clown's unicycle stand in for their legs:** the one exception to "always on Clawd's four legs", as The Clawd Files' fishbowl is, because that's what makes them recognisable.
+6. **Burton draws its own boots** (`burtonBoots`) instead of borrowing another universe's helpers.
+
+**Weak spots from phase 2:** the Wolfclawd's snout is short (he reads a little like a big cat); Finkelclawd is boxy; Spiral Hill's gargoyle reads more like a hooded statue; the middle of Christmas Town's sky on the screen saver is still mostly snow.
+
+Phase 1 is done; phase 2 is under way (Nightmare done; Beetlejuice next).
