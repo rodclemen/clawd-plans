@@ -25,4 +25,4 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 
 | Plan | What | Status |
 |---|---|---|
-| [universe-modules.md](universe-modules.md) | Universes as self-contained modules: one folder each, a template that never ships, a checker, and on/off switches in Settings | planned |
+| [universe-modules.md](universe-modules.md) | Universes as self-contained modules: one folder each, a template that never ships, a checker, and adding or removing universes in Settings | planned |

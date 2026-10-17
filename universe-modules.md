@@ -25,7 +25,7 @@ Make adding a universe a matter of **adding one folder**:
   - The screen saver runs sandboxed inside macOS's screen-saver host, which won't load our own extra code.
   - There's nothing to save. Memory isn't a problem (see below).
 - **No memory cost worth worrying about.** Measured today (16 October, six universes): the app binary is 20.4 MB, the screen saver carries its own copy at 18.4 MB, and the hook is 1.1 MB. The running app sits at about 25–33 MB of memory. Each universe adds about 2–3 MB of binary per copy, and only the pictures on screen get drawn. Loading universes lazily would save almost nothing.
-- **Each step leaves the app identical for users** until the on/off switches arrive. "Identical" is checked by comparing pictures pixel for pixel, and the id tables entry for entry (see Verification).
+- **Each step leaves the app identical for users** until Add and Remove arrive in Settings. "Identical" is checked by comparing pictures pixel for pixel, and the id tables entry for entry (see Verification).
 
 ### What the code looks like today
 
@@ -266,7 +266,7 @@ Counted on `main` at `e6f639c`; the line numbers below were checked against `mai
 | `Shared/Universe.swift:65–68` | `claudeSide`, `rivals` (Star Wars only) | `facts.claudeSide`, `facts.rivals` |
 | `Shared/Universe.swift:90–102` | `abductees` (Files, Clawdberg), `regenerations` (Doctor) | `facts.compaction` |
 | `Shared/Universe.swift:70–83` | `guises` and `homebound` (Clawd of the Rings only, new since `e6f639c`) | not in the design yet |
-| `Shared/Universe.swift:104–110` | `isReleased` (true for every universe today) and `Universe.offered`, which Settings, Random, Clawd Royale and the saver already read | not in the design yet; the on/off switches would sit beside it |
+| `Shared/Universe.swift:104–110` | `isReleased` (true for every universe today) and `Universe.offered`, which Settings, Random, Clawd Royale and the saver already read | not in the design yet; the removed list would sit beside it |
 | `Shared/StatusStore.swift:336–350` | PreCompact: abduct or regenerate | stays, reads `facts.compaction` (same logic, same results) |
 | `Shared/StatusStore.swift:70`, `SaverFeed.swift:11` | `?? .starWars`, the saver's choice keys in comments | `Universe.fallback`; comments say "a universe key" |
 | `App/Theme.swift:40–50` | `Theme.of` switch | `u.module.theme` |
@@ -298,7 +298,7 @@ Counted on `main` at `e6f639c`; the line numbers below were checked against `mai
 | `Overlay.swift:1310–1313, 1352, 1782–1792` | Captain Clawk flinches at the Croc Clock's tick | `StageQuirk.jitter` (Clawdberg) |
 | `Overlay.swift:1315–1319, 1794–1814` | T. Wrecks's glass of water | `StageQuirk.prop` (Clawdberg) |
 | `Overlay.swift:1594` | Detective Clawds' grey web line | `module.swingLine` |
-| `Overlay.swift:2487–2512` | Settings → Universe lists every universe people can pick (`Universe.offered`) | enabled universes only (see On/off) |
+| `Overlay.swift:2487–2512` | Settings → Universe lists every universe people can pick (`Universe.offered`) | added universes only (see Add and remove) |
 | `Overlay.swift:2846–2856` | first launch takes after the old apps (Star Wars, Marvel, DC) | stays, but looks them up by key (`Universe(key: "dc")`). The one allowed exception: keys never change |
 | `Overlay.swift:2894` | Random picks from every universe people can pick (`Universe.offered`) | from enabled universes |
 | `App/WindowMode.swift:567–574, 605–624` | The Clawd Files' typed place name in the window | `module.placeCaption` |
@@ -459,30 +459,33 @@ The template must never reach a user. One guard could fail, so there are several
 
 ---
 
-## On/off switches in Settings
+## Add and remove universes in Settings
+
+Every universe ships inside the app, so nothing is downloaded or installed. "Add" and "Remove" only choose which ones the app uses. The words are Add and Remove, not Install and Uninstall, because nothing is installed. (Real install/uninstall as runtime plugins was turned down, see Constraints.)
 
 ### What the user sees
 
-A new **Universes** section in Settings has one toggle per universe, in number order. They're all on by default.
-- **At least one stays on.** Turning off the last one is refused, with the note "At least one universe stays on."
-- Saved as a list of **turned-off keys** (`universesOff` in the app's defaults). It saves what's off, not what's on, so a universe added by an update shows up switched on. Keys are used rather than numbers because they're readable, and they're just as permanent.
+A new **Universes** section in Settings lists every universe in number order. Each row has an **Add** or **Remove** button. Every universe is added by default.
+- **At least one stays.** Removing the last one is refused, with the note "At least one universe stays in."
+- Saved as a list of **removed keys** (`universesRemoved` in the app's defaults). It saves what's removed, not what's added, so a universe that comes with an update shows up added. Keys are used rather than numbers because they're readable, and they're just as permanent.
+- Adding a universe back is instant, and everything about it is exactly as before.
 
-### What turning one off does
+### What removing one does
 
 - It **drops out of** Settings → Universe, Random, Clawd Royale's cast and places, the Location menu in Clawd Royale, and the saver's Options, Random and Clawd Royale.
 - **Arch-enemies** and **HEM** follow by themselves: nemeses only pair inside one universe, and `Roster.hems` only holds the universes in the roster.
-- **The hook needs to know**, because it casts new characters in Clawd Royale. The app writes the list into `state.json` as `off: [Int]?`, and into the saver feed. Old files without it decode fine (it's read leniently, like the other fields), and the hook's `Roster` leaves those universes out.
-- **The universe on show is turned off:** the app switches to the lowest-numbered universe that's still on, with the usual whole-window transition. Everyone is recast into it, exactly as picking a universe from the menu does today (`switchScene`).
-- **The saver's own choice is turned off:** it acts as "The same as Clawd Clash".
-- **The saved `universe` is off at launch:** the app starts in the first universe that's on.
+- **The hook needs to know**, because it casts new characters in Clawd Royale. The app writes the list into `state.json` as `removed: [Int]?`, and into the saver feed. Old files without it decode fine (it's read leniently, like the other fields), and the hook's `Roster` leaves those universes out.
+- **The universe on show is removed:** the app switches to the lowest-numbered universe still added, with the usual whole-window transition. Everyone is recast into it, exactly as picking a universe from the menu does today (`switchScene`).
+- **The saver's own choice is removed:** it acts as "The same as Clawd Clash".
+- **The saved `universe` is removed at launch:** the app starts in the first universe still added.
 
-### Sessions already cast from a universe that gets turned off
+### Sessions already cast from a universe that gets removed
 
 **Decision: they keep their character until the session ends. Only new casting stops, and it stops straight away.** This only matters in Clawd Royale. In a single universe everyone is already shown as one of that universe (`adopt`).
-- **Why:** the character's id is saved in `state.json` and belongs to a running session. Rewriting it would break the one rule we never break, and turning the universe back on should bring everything back exactly as it was.
+- **Why:** the character's id is saved in `state.json` and belongs to a running session. Rewriting it would break the one rule we never break, and adding the universe back should bring everything back exactly as it was.
 - A face changing in the middle of a session would also be confusing: "who's that, and where did Doctor Ten go?"
 - Agents are the same: they keep their character until they finish, which is usually minutes.
-- If the owner would rather they vanish at once, they can be *shown* adopted into a universe that's still on, without touching the saved id (see Open questions).
+- If the owner would rather they vanish at once, they can be *shown* adopted into a universe that's still added, without touching the saved id (see Open questions).
 
 ---
 
@@ -562,7 +565,7 @@ The guide keeps its voice, its research steps and its approval gates. What chang
 
 ## Phases
 
-Every phase builds, passes the verification below, and **leaves the app identical for users**, apart from phase 6, which adds the switches. Commit at the end of each step, with a `CHANGELOG.md` entry where users would notice anything (most phases are internal, so the entry is short or empty).
+Every phase builds, passes the verification below, and **leaves the app identical for users**, apart from phase 6, which adds Add and Remove. Commit at the end of each step, with a `CHANGELOG.md` entry where users would notice anything (most phases are internal, so the entry is short or empty).
 
 ### 0. A baseline
 
@@ -610,9 +613,9 @@ Every phase builds, passes the verification below, and **leaves the app identica
 
 - `Tools/CheckUniverse/`. Run `--all` on the seven: everything passes, or the misses are fixed (expected: a few unprefixed top-level helpers, and maybe a signature or two never drawn).
 
-### 6. The on/off switches
+### 6. Add and remove universes
 
-- Settings' Universes section, `universesOff`, `off` in `state.json` and the saver feed, and the behaviour above. This is the one phase users will notice, so it gets a real changelog entry.
+- Settings' Universes section with Add and Remove, `universesRemoved`, `removed` in `state.json` and the saver feed, and the behaviour above. This is the one phase users will notice, so it gets a real changelog entry.
 
 ### 7. The guide
 
@@ -652,7 +655,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 1. **Clawd Slayer is already under way** on `buffy`, with a skeleton touching 9 shared files, committed there (`23e3206`) as number 6, which Clawd of the Rings now has on `main`. Pause it after its planning steps while phases 0–4 land, then start its code from the template? Or finish its skeleton the old way and port it in phase 2, as an eighth universe? Pausing is less work in total.
 2. **Numbers:** handed out in `NUMBERS` before work starts (recommended)? Or a development range (900–989) that contributors use until the owner assigns the real number at merge? The range spares contributors a wait, but means one line changes at merge, and any test sessions they saved become orphans.
 3. **The manifest:** a plain `universe.conf` (recommended, because the shell scripts and `release.sh` can read it)? Or everything in Swift, plus a hand-edited one-line registry?
-4. **Turned-off universes in Clawd Royale:** keep their characters until the session ends (recommended), or show them at once as someone from a universe that's still on (the saved id stays the same either way)?
+4. **Removed universes in Clawd Royale:** keep their characters until the session ends (recommended), or show them at once as someone from a universe that's still added (the saved id stays the same either way)?
 5. **The owner's curated pictures:** MakeSocial's comic cover, MakeIcon and the main promo, bloopers and Royale teaser keep naming universes by hand. Fine as the owner's own art? Or should modules offer an optional social panel too?
 6. **Casks:** only the three old universes have one today. Should new universes get casks at all? The manifest's `cask` line makes it possible but optional.
 7. **Contributors and credit:** where are contributors credited (README, CHANGELOG, the universe's showcase)? About already has a "Thanks to" list with the universes each person made (`Overlay.swift:2693–2697`). Do their pull requests need anything about the MIT licence?
