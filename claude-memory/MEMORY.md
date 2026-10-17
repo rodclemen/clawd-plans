@@ -1,9 +1,18 @@
-- [Changelog policy](changelog-policy.md) — only CHANGELOG.md is kept current; universe pages now and then; history/ frozen
-- [Release setup](release-setup.md) — notary profile, Developer ID cert, team ID 2S5TWMXL9G, brew trust, slow type-check fix
-- [Doctor Clawd universe](doctor-clawd-universe.md) — 4th universe planned; plan in private repo doctor-clawd, branch doctor_who
-- [Stevie Clawdberg universe](stevie-clawdberg-universe.md) — 5th universe, on main since 2026-10-16, public showcase page, release pending
-- [No co-author](no-coauthor.md) — NEVER Co-Authored-By Claude or any Claude attribution, anywhere (commits, PRs, files, helpers)
-- [Clawd Files universe](clawd-files-universe.md) — X-Files parody planned; plan ~/.claude/plans/clawd-files.md, branch x-files
-- [Seven planned universes](planned-universes-batch.md) — Clawd Slayer (Buffy, first, raw 6, ready), Trek, 007, Transformers, He-Man, GoT, Burton; plans in ~/.claude/plans/ + private repo clawd-plans
-- [No branch switching](no-branch-switching.md) — read other branches with git show; never checkout just to read
-- [Main promo re-render](main-promo-rerender.md) — main promo + Royale teaser outdated; re-render once, after the LOTR universe lands
+- [Changelog policy](changelog-policy.md): only CHANGELOG.md is kept current; universe pages now and then; history/ frozen
+- [Release setup](release-setup.md): notary profile, Developer ID cert, team ID 2S5TWMXL9G, brew trust, slow type-check fix
+- [Doctor Clawd universe](doctor-clawd-universe.md): 4th universe planned; plan in private repo doctor-clawd, branch doctor_who
+- [Stevie Clawdberg universe](stevie-clawdberg-universe.md): 5th universe, on main since 2026-10-16, public showcase page, release pending
+- [No co-author](no-coauthor.md): NEVER Co-Authored-By Claude or any Claude attribution, anywhere (commits, PRs, files, helpers)
+- [Clawd Files universe](clawd-files-universe.md): X-Files parody planned; plan ~/.claude/plans/clawd-files.md, branch x-files
+- [Seven planned universes](planned-universes-batch.md): Clawd Slayer (Buffy, first, raw 6, ready), Trek, 007, Transformers, He-Man, GoT, Burton; plans in ~/.claude/plans/ + private repo clawd-plans
+- [No branch switching](no-branch-switching.md): read other branches with git show; never checkout just to read
+- [Main promo re-render](main-promo-rerender.md): main promo + Royale teaser outdated; re-render once, after the LOTR universe lands
+- [Avengers: Clawd Wars spec](avengers-clawd-wars-spec.md): Marvel reskin decisions: roster, sides, combat, locations, future theme merge
+- [No em dashes](no-em-dashes.md): never use the em dash in any text (docs, commits, comments, UI)
+- [Clawd Clash plan](clawd-clash-plan.md): one combined app, old repos become showcase pages linking to it
+- [Clawd stands on four legs](clawd-four-legs.md): never merge/drop legs in a redesign; label before/after renders
+- [Stevie Clawdberg](stevie-clawdberg.md): built overnight, merged into main as 3.4.0; gate 4 was decided by Claude
+- [Audit plan Oct 2026](audit-plan-2026-10.md): 4-step security/guard/cleanup/perf plan; all done and released as 3.6.0
+- [Short ! commands](short-bang-commands.md): user-run commands must fit one line (use files in build/); never test via HOME redirect
+- [GitHub video uploads](github-video-uploads.md): README videos go public only when the issue they were dropped in is submitted; 720p via RenderPromo
+- [Outline frame rule](outline-frame-rule.md): outlines cut at the 72x52 frame edge; check new art with build/preview edges

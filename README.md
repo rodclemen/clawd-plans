@@ -1,6 +1,6 @@
 # Clawd plans
 
-Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, written with [`clawdify_guide.md`](clawdify_guide.md) (a copy of the one in the clawd-clash repo). Plans only, no code.
+Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, written with [`clawdify_guide.md`](clawdify_guide.md) (a copy of the one in the clawd-clash repo, as of 3.6.0). Plans only, no code.
 
 Folders: plans at the top level are free to pick up; `in-progress/` is being built by someone (don't start it); `done/` is built and released.
 
@@ -16,6 +16,7 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 | [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
 | [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
 | [done/stevie-clawdberg.md](done/stevie-clawdberg.md) | Stevie Clawdberg (Spielberg's films) | built |
+| (no plan here) | Clawd of the Rings (The Lord of the Rings) | built by Henrik (PR #3), in Clawd Clash since 3.5.0 |
 
 ## Engine plans
 
