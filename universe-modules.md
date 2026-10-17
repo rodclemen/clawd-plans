@@ -25,7 +25,7 @@ Make adding a universe a matter of **adding one folder**:
   - The screen saver runs sandboxed inside macOS's screen-saver host, which won't load our own extra code.
   - There's nothing to save. Memory isn't a problem (see below).
 - **No memory cost worth worrying about.** Measured today (16 October, six universes): the app binary is 20.4 MB, the screen saver carries its own copy at 18.4 MB, and the hook is 1.1 MB. The running app sits at about 25–33 MB of memory. Each universe adds about 2–3 MB of binary per copy, and only the pictures on screen get drawn. Loading universes lazily would save almost nothing.
-- **Each step leaves the app identical for users** until Add and Remove arrive in Settings. "Identical" is checked by comparing pictures pixel for pixel, and the id tables entry for entry (see Verification).
+- **Each step leaves the app identical for users** until the Universes checkboxes arrive in Settings. "Identical" is checked by comparing pictures pixel for pixel, and the id tables entry for entry (see Verification).
 
 ### What the code looks like today
 
@@ -461,14 +461,14 @@ The template must never reach a user. One guard could fail, so there are several
 
 ## Add and remove universes in Settings
 
-Every universe ships inside the app, so nothing is downloaded or installed. "Add" and "Remove" only choose which ones the app uses. The words are Add and Remove, not Install and Uninstall, because nothing is installed. (Real install/uninstall as runtime plugins was turned down, see Constraints.)
+Every universe ships inside the app, so nothing is downloaded or installed. A checkbox only chooses which ones the app uses; unchecking one removes it from the app, checking it adds it back. (Real install/uninstall as runtime plugins was turned down, see Constraints.)
 
 ### What the user sees
 
-A new **Universes** section in Settings lists every universe in number order. Each row has an **Add** or **Remove** button. Every universe is added by default.
-- **At least one stays.** Removing the last one is refused, with the note "At least one universe stays in."
-- Saved as a list of **removed keys** (`universesRemoved` in the app's defaults). It saves what's removed, not what's added, so a universe that comes with an update shows up added. Keys are used rather than numbers because they're readable, and they're just as permanent.
-- Adding a universe back is instant, and everything about it is exactly as before.
+A new **Universes** section in Settings lists every universe in number order, each with a **checkbox**. Every universe is checked by default.
+- **At least one stays checked.** The last checked box can't be unchecked, with the note "At least one universe stays in."
+- Saved as a list of **removed (unchecked) keys** (`universesRemoved` in the app's defaults). It saves what's removed, not what's added, so a universe that comes with an update shows up checked. Keys are used rather than numbers because they're readable, and they're just as permanent.
+- Checking a universe again is instant, and everything about it is exactly as before.
 
 ### What removing one does
 
@@ -565,7 +565,7 @@ The guide keeps its voice, its research steps and its approval gates. What chang
 
 ## Phases
 
-Every phase builds, passes the verification below, and **leaves the app identical for users**, apart from phase 6, which adds Add and Remove. Commit at the end of each step, with a `CHANGELOG.md` entry where users would notice anything (most phases are internal, so the entry is short or empty).
+Every phase builds, passes the verification below, and **leaves the app identical for users**, apart from phase 6, which adds the Universes checkboxes. Commit at the end of each step, with a `CHANGELOG.md` entry where users would notice anything (most phases are internal, so the entry is short or empty).
 
 ### 0. A baseline
 
@@ -615,7 +615,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 
 ### 6. Add and remove universes
 
-- Settings' Universes section with Add and Remove, `universesRemoved`, `removed` in `state.json` and the saver feed, and the behaviour above. This is the one phase users will notice, so it gets a real changelog entry.
+- Settings' Universes section with a checkbox per universe, `universesRemoved`, `removed` in `state.json` and the saver feed, and the behaviour above. This is the one phase users will notice, so it gets a real changelog entry.
 
 ### 7. The guide
 
