@@ -2,7 +2,7 @@
 
 ## Context
 
-Clawd Clash has six universes on `main` (ebc02be, 2026-10-16). This plan adds a Game of Thrones parody, the HBO series (eight seasons), as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
+Clawd Clash has seven universes on `main` (d270b63, 2026-10-17). This plan adds a Game of Thrones parody, the HBO series (eight seasons), as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
 | Universe                   | Heroes | Villains | Total | Places | Transitions |
 |----------------------------|--------|----------|-------|--------|-------------|
@@ -10,8 +10,9 @@ Clawd Clash has six universes on `main` (ebc02be, 2026-10-16). This plan adds a 
 | Marvelous Clawds           |    106 |       88 |   194 |     43 |           7 |
 | Detective Clawds           |    111 |       97 |   208 |     43 |          15 |
 | Doctor Clawd               |     56 |       42 |    98 |     20 |          10 |
-| The Clawd Files            |     36 |       46 |    82 |     20 |          10 |
+| The Clawd Files            |     36 |       46 |    82 |     20 |          11 |
 | Stevie Clawdberg           |     64 |       54 |   118 |     23 |          10 |
+| Clawd of the Rings         |     38 |       38 |    76 |     22 |           9 |
 | **Game of Clawds (proposed)** | **63** | **36** | **99** | **20** | **12** |
 
 (heroCount includes HEM and two agent-only pets; villainCount includes one agent-only creature.)
@@ -22,7 +23,7 @@ Clawd Clash has six universes on `main` (ebc02be, 2026-10-16). This plan adds a 
   - `case thrones` with key `"thrones"`.
   - Folder `Sources/App/Universes/GameOfClawds/`, file prefix `Thrones…` (`ThronesRoster.swift`, `ThronesHeroes1.swift`, `ThronesWipes.swift` …). Nothing in the repo uses `Thrones` today.
   - Branch `game_of_thrones`.
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
+- **Raw value:** the next free one when its build starts, checked against main and the open branches (main ends at `middleEarth = 6`, and the `buffy` branch still has `slayer = 6`); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names, one per house so families read together: the Starks are **Stork**, the Lannisters **Lannclaw**, the Targaryens **Clawgaryen**, the Mormonts **Clawmont**, the Greyjoys **Greyjaw**, the Tyrells **Tyrose**, the Cleganes **Clawgane**. Where a pun would be forced, a near-spelling (Gendree, Syrio Foral). Actors' names are never used.
 - **Scope:** the HBO series only. House of the Dragon is an option (see Open questions); it can be appended later without touching any ids.
 - **Size:** 99 characters (Doctor Clawd's size) and 20 places.
@@ -62,7 +63,7 @@ The show has a lot of sexual violence, torture and gore. Clawd Clash is a deskto
   - Roose's famous line is not used as his callout, and Jaime's "the things I do for love" (said before he pushes Bran) is not used either.
 - **No sexualised names.** "Tart" was avoided for Brienne for this reason (she's Brienne of Tharth).
 
-## How a universe plugs in (checked against the code on 2026-10-16, main ebc02be)
+## How a universe plugs in (checked against the code on 2026-10-17, main d270b63)
 
 **New code: `Sources/App/Universes/GameOfClawds/`**
 - `ThronesRoster.swift`:
@@ -78,28 +79,28 @@ The show has a lot of sexual violence, torture and gore. Clawd Clash is a deskto
 
 **Wiring into the existing code.** Copy what `clawdberg` did. Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎.
 - **`Sources/Shared/Universe.swift`:**
-  - `:8–33`: the case, `key`, `title`, `villainCount`, `heroCount`;
-  - `:44–52`: `agentOnly` (Ser Pounce, the Lord Commander's raven, the crawling wight);
-  - `:58`: `claudeSide` (default false: Claude plays the heroes);
-  - `:61`: `rivals` (the Night Clawd and the White Stalker, see Cast);
-  - `:66–79`: `abductees`, which lists the Faceless (Arya, Jaqen, the Waif) the way Clawdberg lists its time travellers.
-- **`Sources/App/Theme.swift:47`:** `Theme.of`.
-- **`Sources/App/Locations.swift:74`:** `.merging(thronesPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** add `.thrones` to the `nil` cases in phase 1; in phase 5, a `.thrones(ThronesTrip)` case in `duration`, `draw` and `pick`, and the doc comment.
-- **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's costume in every switch.
+  - `:8–40`: the case, `key`, `title`, `villainCount`, `heroCount`;
+  - `:50–61`: `agentOnly` (Ser Pounce, the Lord Commander's raven, the crawling wight);
+  - `:65`: `claudeSide` (default false: Claude plays the heroes);
+  - `:68`: `rivals`, a one-liner today (`self == .starWars ? [0, 1] : []`), which has to take the Night Clawd and the White Stalker too (see Cast);
+  - `:85–96`: `abductees`, which lists the Faceless (Arya, Jaqen, the Waif) the way Clawdberg lists its time travellers.
+- **`Sources/App/Theme.swift:48`:** `Theme.of`.
+- **`Sources/App/Locations.swift:72`:** `.merging(thronesPlaces)`.
+- **`Sources/App/Universes/ComicTransition.swift:3–6, 13, 15–24, 27–35, 40–63`:** `pick` lists every universe explicitly, so in phase 1 `.thrones` joins Star Clawds' line (`:42`, `case .starWars, .thrones: return nil`); in phase 5, a `.thrones(ThronesTrip)` case in the enum, `duration`, `draw` and `pick`, and the doc comment.
+- **`Sources/App/Universes/Hem.swift:14, 62, 112, 123, 200`:** HEM's costume in every switch.
 - **`Sources/App/Rides.swift`:** the rides (phase 4).
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list, and `case "thrones": tripUniverse = …`.
+- ⚠︎ **`Sources/Saver/SaverView.swift:79–80`:** only the Options doc comment. The choices list (`:89`) and the trip pick (`:208`) build themselves from `Universe.offered`.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** the meditation guard. Game of Clawds doesn't meditate: nobody floats in the show (the Three-Eyed Raven sits in roots). **`:488`:** merge the bespoke drills.
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** the Playground prompts (five, below). Lines 1113 and 1226 show how `clawdberg` hooked in its set piece and its `OutaTime` effect; `ThronesNoOne` hooks in the same way. The habits hook into the tick here too (see Mechanics).
+- ⚠︎ **`Sources/App/Overlay.swift:868`:** the Playground prompts (five, below). Lines 1143 and 1271 show how `clawdberg` hooked in its set piece and its `OutaTime` effect; `ThronesNoOne` hooks in the same way. The habits hook into the tick here too (see Mechanics).
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per universe-specific `if`. Game of Clawds joins none of the existing ones; it adds its own habits.
 - ⚠︎ **Compaction:** `StatusStore.swift`'s PreCompact path already serves `abductees`; check it picks up `.thrones` without changes. `HookInstaller.swift` already registers the hook.
 - **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies still behave when a scene is in a Game of Clawds place.
 - **Tools:**
-  - `Tools/Preview/main.swift:60–93`: the batch names (`thronesHeroes1…`), the universe lookup, the enum lookups by case name.
-  - `Tools/Transitions/main.swift:12, 122`.
+  - `Tools/Preview/main.swift:63–120`: the batch names (`thronesHeroes1…`), the universe lookup, the enum lookups by case name.
+  - `Tools/Transitions/main.swift:4–15, 129–133`.
   - Phase 6: `Tools/RenderPromo` (`REEL=thrones`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
-**Playground prompts** (`Overlay.swift:865`):
+**Playground prompts** (`Overlay.swift:868`):
 1. "Send a raven to Castle Black: the build is broken."
 2. "Find out who poisoned the wine at the wedding feast."
 3. "Count the dragonglass in the mines under Dragonstone."
@@ -419,7 +420,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
    - **The dead** arrive in a blizzard: a swirl of snow thickens, and they're there when it clears; they leave by crumbling into snow.
    - **The Lannisters and the court** arrive in a gilded wheelhouse drawn by a horse (Cersei's from season 1).
    - **Everyone else** rides in on horseback, with their house banner on the lance.
-2. **A girl is no one: Game of Clawds' compaction mechanic.** When a Claude Code or pi session led by one of **the Faceless** (Arya, Jaqen, the Waif) compacts its context, its leader becomes no one for a moment: their face lifts away like a pale mask, another face from the Hall of Faces (a random member of the current cast) looks out for a beat, then the mask slips back and they're themselves again, with a caption: "A GIRL HAS NO NAME" (Arya), "A MAN HAS NO NAME" (Jaqen), "A GIRL IS NO ONE" (the Waif). A session losing its memory and coming back as itself is exactly the Faceless trick. It reuses the clock Clawdberg's 88 mph uses: the three go in `Universe.abductees`, and `ThronesNoOne.swift` draws the effect where the overlay draws `OutaTime` (`Overlay.swift:1226`). The masks are pale porcelain, never skin. Everyone else ignores compaction.
+2. **A girl is no one: Game of Clawds' compaction mechanic.** When a Claude Code or pi session led by one of **the Faceless** (Arya, Jaqen, the Waif) compacts its context, its leader becomes no one for a moment: their face lifts away like a pale mask, another face from the Hall of Faces (a random member of the current cast) looks out for a beat, then the mask slips back and they're themselves again, with a caption: "A GIRL HAS NO NAME" (Arya), "A MAN HAS NO NAME" (Jaqen), "A GIRL IS NO ONE" (the Waif). A session losing its memory and coming back as itself is exactly the Faceless trick. It reuses the clock Clawdberg's 88 mph uses: the three go in `Universe.abductees`, and `ThronesNoOne.swift` draws the effect where the overlay draws `OutaTime` (`Overlay.swift:1271`). The masks are pale porcelain, never skin. Everyone else ignores compaction.
 3. **Habits** (`Habits.swift`, the Overlay tick):
    - **Wolves follow their Starks.** With both on stage, Ghost trails Jon, Grey Wind trails Robb, Summer trails Bran and Nymeria trails Arya.
    - **The Hound and fire.** When a fire-user is beside him (Beric, Melisandra, the dragons, Leif), he backs away a step.

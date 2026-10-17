@@ -2,7 +2,7 @@
 
 ## Context
 
-Clawd Clash has six universes. This plan adds a Star Trek parody as a full ensemble, the same way Doctor Clawd covered every Doctor. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
+Clawd Clash has seven universes. This plan adds a Star Trek parody as a full ensemble, the same way Doctor Clawd covered every Doctor. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
 | Universe              | Heroes | Villains | Total | Places | Transitions |
 |-----------------------|--------|----------|-------|--------|-------------|
@@ -10,8 +10,9 @@ Clawd Clash has six universes. This plan adds a Star Trek parody as a full ensem
 | Marvelous Clawds      |    106 |       88 |   194 |     43 |           7 |
 | Detective Clawds      |    111 |       97 |   208 |     43 |          15 |
 | Doctor Clawd          |     56 |       42 |    98 |     20 |          10 |
-| The Clawd Files       |     36 |       46 |    82 |     20 |          10 |
+| The Clawd Files       |     36 |       46 |    82 |     20 |          11 |
 | Stevie Clawdberg      |     64 |       54 |   118 |     23 |          10 |
+| Clawd of the Rings    |     38 |       38 |    76 |     22 |           9 |
 | Clawd Trek (proposed) |     53 |       47 |   100 |     21 |          13 |
 
 (heroCount includes HEM; villainCount includes agent-only.)
@@ -22,7 +23,7 @@ Clawd Clash has six universes. This plan adds a Star Trek parody as a full ensem
   - `case clawdTrek` with key `"clawdTrek"`.
   - Folder `Sources/App/Universes/ClawdTrek/`, file prefix `Trek…`.
   - Branch `star_trek`.
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
+- **Raw value:** the next free one when its build starts, checked against main and the open branches (Clawd of the Rings is `middleEarth = 6` on main, and the open `buffy` branch also claims 6 for `slayer`); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (Captain James T. Quirk, Mr. Spawk, Captain Jean-Luc Pinchard). A near-spelling beats a forced pun. Actors' names are never used. Species are misspelt lightly, the way Doctor Clawd has Dalicks and Sontarons: the Borgg, the Gawn, the Jem'Hadda.
 - **Size:** **100 characters**: 53 heroes including HEM and one agent-only pet, and 47 villains including 3 agent-only. Plus **21 places**. That sits next to Doctor Clawd (98).
 - **Viability:** comfortably clears the bar. 51 heroes and 44 villains can lead a session, so nothing repeats too often. Star Trek is one of the deepest casts there is: the hard part was choosing, not finding.
@@ -36,7 +37,7 @@ Clawd Clash has six universes. This plan adds a Star Trek parody as a full ensem
   - **The Intendant** (Mirror Kira): sexualised. Mirror Spawk represents the Mirror Universe on his own.
   - Seven of Nein and Lt. Uhurrah are drawn in their uniforms (silver suit, red duty dress), never sexualised.
 
-## How a universe plugs in (checked against main, ebc02be, on 2026-10-16)
+## How a universe plugs in (checked against the code on 2026-10-17, main at d270b63)
 
 **New code: `Sources/App/Universes/ClawdTrek/`**
 - `TrekRoster.swift`:
@@ -53,32 +54,32 @@ Clawd Clash has six universes. This plan adds a Star Trek parody as a full ensem
 - `TrekWipes.swift`: the transitions, last.
 
 **Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did in each spot.
-- **`Sources/Shared/Universe.swift:8–33`:** the case, `key`, `title` ("Clawd Trek"), `villainCount` (47), `heroCount` (53).
-- **`Universe.swift:44–52`:** `agentOnly`: Spot, the tribbel, the vole and the targh (global ids).
-- **`Universe.swift:58`:** `claudeSide` stays the default (heroes).
-- **`Universe.swift:61`:** `rivals`: Pinchard and Locutus (the same man, so never back to back).
-- **`Universe.swift:66–79`:** the TNG senior staff go in `abductees` for assimilation (see Mechanics), with a doc comment like the other two.
-- **`Sources/App/Theme.swift:47`:** `Theme.of`.
-- **`Sources/App/Locations.swift:74`:** `.merging(trekPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** `nil` in phase 1; a `.trek(TrekTrip)` case in `duration`, `draw` and `pick` in phase 5, and the doc comment.
-- **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's costume in every switch: a gold command tunic with a combadge, a communicator on his belt and a phaser.
+- **`Sources/Shared/Universe.swift:8–40`:** the case, `key`, `title` ("Clawd Trek"), `villainCount` (47), `heroCount` (53).
+- **`Universe.swift:50–61`:** `agentOnly`: Spot, the tribbel, the vole and the targh (global ids).
+- **`Universe.swift:65`:** `claudeSide` stays the default (heroes).
+- **`Universe.swift:68`:** `rivals`: Pinchard and Locutus (the same man, so never back to back). It's a one-liner today, `self == .starWars ? [0, 1] : []`, so it becomes a switch.
+- **`Universe.swift:85–96`:** the TNG senior staff go in `abductees` for assimilation (see Mechanics), with a doc comment like the other two.
+- **`Sources/App/Theme.swift:47–48`:** `Theme.of`.
+- **`Sources/App/Locations.swift:72`:** `.merging(trekPlaces)`.
+- **`Sources/App/Universes/ComicTransition.swift:3–6, 13, 22, 34, 42–43`:** `pick` now lists every universe explicitly, so in phase 1 Clawd Trek joins Star Clawds' line as `case .starWars, .clawdTrek: return nil`; in phase 5 a `.trek(TrekTrip)` case in the enum, `duration`, `draw` and `pick`, and the doc comment.
+- **`Sources/App/Universes/Hem.swift:29, 104, 119, 146, 172, 228`:** HEM's costume in every switch: a gold command tunic with a combadge, a communicator on his belt and a phaser.
 - **`Sources/App/Rides.swift`:** new `Ride` cases `.transporter`, `.birdOfPrey`, `.borgBeam` in `drawRide` (phase 4).
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list and the trip switch (`case "clawdTrek": …`).
+- ⚠︎ **`Sources/Saver/SaverView.swift:79–80, 89, 207–208`:** the Options doc comment, the choices list and the trip switch. The choices and the switch now go through `Universe.offered`, so Clawd Trek shows up there once it's released with nothing added; check it anyway.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** add `clawdTrek` to the meditation guard. Vulcans meditate, but sitting on the floor, never floating; that goes in a bespoke drill instead.
 - ⚠︎ **`Drills.swift:488`:** `.merging(trekBespokeDrills)`.
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** the Playground prompts. Five in-universe ones:
+- ⚠︎ **`Sources/App/Overlay.swift:869`:** the Playground prompts. Five in-universe ones:
   - "Make it so: refactor the warp core module"
   - "Run a level-3 diagnostic on the test suite"
   - "Scan the logs for life signs"
   - "Reroute auxiliary power to the build"
   - "Boldly delete the code no one has touched before"
-- ⚠︎ **`Overlay.swift:1113, 1226`:** how clawdberg hooked in its set piece and its OutaTime effect. Assimilation draws in the same place (line 1226); the Borgg link habit (if approved) hooks into the tick next to line 1113.
+- ⚠︎ **`Overlay.swift:1143, 1271`:** how clawdberg hooked in its set piece and its OutaTime effect. Assimilation draws in the same place (line 1271); the Borgg link habit (if approved) hooks into the tick next to line 1143.
 - ⚠︎ **`Sources/Shared/StatusStore.swift`, `Sources/App/HookInstaller.swift`:** nothing new, as assimilation reuses the missing-time clock. Check it anyway.
 - ⚠︎ **`Sources/App/Pose.swift`, `Habits.swift`:** decide whether Clawd Trek joins each universe-specific `if`.
 - **Clawd Royale** picks the new cast and places up through `Universe.allCases`. Check that the menu bar icon and arch-enemies still hold when the scene is a Clawd Trek place.
 - **Tools:**
-  - `Tools/Preview/main.swift:60–93`: the batch names (`trekHeroes1…`), the universe lookup and the enum lookups.
-  - `Tools/Transitions/main.swift:12, 122`: the `clawdTrek` branch (phase 5).
+  - `Tools/Preview/main.swift:63–120`: the batch names (`trekHeroes1…`), the universe lookup and the enum lookups.
+  - `Tools/Transitions/main.swift:13–15, 132–133`: the `clawdTrek` branch (phase 5).
   - `Tools/RenderPromo` (`REEL=trek`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase` in phase 6.
 
 ## Cast
@@ -407,7 +408,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
    - for Pinchard, the peak frame is Locutus himself;
    - a beat later the implants clank off, and they shake their head. Same session, same face.
 
-   Losing your context and becoming part of a collective fits compaction, and the Borgg are TNG's great enemy, so the group is a clear one. It reuses the missing-time clock (`SessionRecord.abducted`, `missingTimeLength`), as Clawdberg's OutaTime does; the list goes in `Universe.abductees` and the effect is drawn in `TrekAssimilation.swift`, hooked in where the overlay draws OutaTime (`Overlay.swift:1226`).
+   Losing your context and becoming part of a collective fits compaction, and the Borgg are TNG's great enemy, so the group is a clear one. It reuses the missing-time clock (`SessionRecord.abducted`, `missingTimeLength`), as Clawdberg's OutaTime does; the list goes in `Universe.abductees` and the effect is drawn in `TrekAssimilation.swift`, hooked in where the overlay draws OutaTime (`Overlay.swift:1271`).
 3. **Habits:**
    - Oddo sits by melting into his bucket when his session idles.
    - The Jem'Hadda shroud: now and then they fade almost to nothing and come back.

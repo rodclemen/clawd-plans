@@ -2,7 +2,7 @@
 
 ## Context
 
-Clawd Clash has six universes on `main` (ebc02be, 2026-10-16): Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files and Stevie Clawdberg. This plan adds a Transformers parody as a full ensemble, built the same way as The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
+Clawd Clash has seven universes on `main` (d270b63, 2026-10-17): Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files, Stevie Clawdberg and Clawd of the Rings. This plan adds a Transformers parody as a full ensemble, built the same way as The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
 - **Name: Clawdformers** (decided 2026-10-16).
 - **Scope:** the G1 cartoon (1984–87, seasons 1–4, including the three-part *The Rebirth*), *The Transformers: The Movie* (1986) and **Beast Wars** (1996–99, the Maximals and Predacons). The live-action films are left out.
@@ -10,7 +10,7 @@ Clawd Clash has six universes on `main` (ebc02be, 2026-10-16): Star Clawds, Marv
   - `case clawdformers` with key `"clawdformers"`, title `"Clawdformers"`.
   - Folder `Sources/App/Universes/Clawdformers/`, file prefix `Bots…` (`BotsRoster.swift`, `BotsHero`, `BotsVillain`, `botsTheme`, `BotsWipe`/`BotsTrip`). Place keys all start with `bots`.
   - Branch `transformers`. Promo reel `REEL=bots`. Docs files `docs/roster-clawdformers.png` and so on.
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6). Ids are rawValue*1000 and permanent.
+- **Raw value:** the next free one when its build starts, checked against `main` and the open branches. Today `main` uses 0 to 6 (Clawd of the Rings is `middleEarth = 6`), and the `buffy` branch claims `slayer = 6`, which clashes and will need renumbering. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`. Ids are rawValue*1000 and permanent.
 - **Naming style: coding-language names.** The leads, and anyone where a coding pun lands cleanly, get one: Optimus Runtime, Megabyte, Stackscream, Sound.wav, Rat.catch(). The rule is that it must still read at a glance as the real name. Characters with no natural coding pun keep a light pun or a near-spelling (Ironhyde, Blabstreak, Grumble, Snarkticon); a forced pun is worse than none. Actors' names are never used. Nothing here is a real person.
 - **Size:** **112 characters**: 61 heroes including HEM, and 51 villains including 5 agent-only. Plus **23 places** and **12 transitions**.
 - **Claude's side:** the heroes, the Autobots and Maximals (`claudeSide` false, as in every universe except Star Clawds).
@@ -22,7 +22,8 @@ Clawd Clash has six universes on `main` (ebc02be, 2026-10-16): Star Clawds, Marv
 | Marvelous Clawds           |    106 |       88 |   194 |     43 |           7 |
 | Detective Clawds           |    111 |       97 |   208 |     43 |          15 |
 | Doctor Clawd               |     56 |       42 |    98 |     20 |          10 |
-| The Clawd Files            |     36 |       46 |    82 |     20 |          10 |
+| The Clawd Files            |     36 |       46 |    82 |     20 |          11 |
+| Clawd of the Rings         |     38 |       38 |    76 |     22 |           9 |
 | Stevie Clawdberg           |     64 |       54 |   118 |     23 |          10 |
 | **Clawdformers**           | **61** | **51** | **112** | **23** |      **12** |
 
@@ -64,7 +65,7 @@ Almost everyone here is a robot, but `armoured: true` means "shots ricochet off 
 - **Everyone else ducks, shields and gets knocked over** like any other universe's cast. The cartoon's robots are knocked flat constantly, so that fits.
 - **Variety comes from weapons:** about half the cast are rifle shooters (in different shot colours), a third melee (fists, swords, pile drivers, dino bites, claws), and a handful use special powers (magnetism, sound, mind control, time, weather). Giants have `bulk`, so duels stand further apart.
 
-## How a universe plugs in (checked against the code on 2026-10-16, main ebc02be)
+## How a universe plugs in (checked against the code on 2026-10-17, main d270b63)
 
 **New code: `Sources/App/Universes/Clawdformers/`**
 - `BotsRoster.swift`:
@@ -82,26 +83,26 @@ Almost everyone here is a robot, but `armoured: true` means "shots ricochet off 
 - `BotsWipes.swift`: the transitions (phase 5).
 
 **Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did in each spot.
-- **`Sources/Shared/Universe.swift:8–33`:** the case, `key`, `title`, `villainCount` (51), `heroCount` (61).
-- **`Universe.swift:44–52`:** `agentOnly`, the five small fry (villain indices 46–50, so `base + 46…50`).
-- **`Universe.swift:58`:** `claudeSide` stays false (heroes).
-- **`Universe.swift:61`:** `rivals`: Megabyte and Gigabyte (see Cast).
-- **`Universe.swift:66–79`:** `regenerations` becomes a list of chains (see Mechanics): the Matrix chain, which wraps, and Megabyte → Gigabyte, one way. `abductees` is unchanged.
+- **`Sources/Shared/Universe.swift:8–40`:** the case, `key`, `title`, `villainCount` (51), `heroCount` (61).
+- **`Universe.swift:50–61`:** `agentOnly`, the five small fry (villain indices 46–50, so `base + 46…50`).
+- **`Universe.swift:65`:** `claudeSide` stays false (heroes).
+- **`Universe.swift:68`:** `rivals`: Megabyte and Gigabyte (see Cast). Today it's a one-liner, `self == .starWars ? [0, 1] : []`, so it becomes a `switch`.
+- **`Universe.swift:100–102`:** `regenerations` becomes a list of chains (see Mechanics): the Matrix chain, which wraps, and Megabyte → Gigabyte, one way. `abductees` (`:90–96`) is unchanged.
 - **`Sources/App/Theme.swift:47`:** `Theme.of`.
-- **`Sources/App/Locations.swift:74`:** `.merging(botsPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** `nil` in phase 1; a `.clawdformers(BotsTrip)` case in `duration`, `draw` and `pick` in phase 5, and the doc comment.
-- **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's costume in every switch.
+- **`Sources/App/Locations.swift:70–72`:** `.merging(botsPlaces)`.
+- **`Sources/App/Universes/ComicTransition.swift`:** `pick` (`:40–62`) now lists every universe explicitly, so in phase 1 Clawdformers joins Star Clawds' line as `case .starWars, .clawdformers: return nil`, per the guide. In phase 5, take it out of that line and add a `.clawdformers(BotsTrip)` case at `:8–13`, in `duration` (`:15–24`), `draw` (`:26–36`) and `pick`, and the doc comment at `:3–6`.
+- **`Sources/App/Universes/Hem.swift:29, 104, 119, 146, 228`:** HEM's costume in every switch.
 - **`Sources/App/Rides.swift`:** three new ride cases and their drawing (phase 4).
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list and `case "clawdformers": tripUniverse = …`.
+- ⚠︎ **`Sources/Saver/SaverView.swift`:** nothing to add; the Options list (`:89`) and the trip choice (`:208`) build themselves from `Universe.offered`. Only the doc comment at `:79–80` names universes.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** the meditation guard. Clawdformers don't float cross-legged: nobody in G1 or Beast Wars meditates. **`:488`:** merge the bespoke drills.
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** five Playground prompts. Lines 1113/1226 show how `clawdberg` hooked in its set piece and its OutaTime effect; the Matrix and Gigabyte effects hook in the same way (as Doctor Clawd's regeneration flare does, but with their own drawing).
-- ⚠︎ **`Sources/App/Overlay.swift:1255`:** the roll-out hook, where an actor leaving without a ride fades and sinks (see Mechanics).
+- ⚠︎ **`Sources/App/Overlay.swift:875`:** five Playground prompts, a `case .clawdformers:` in the `switch Universe.shown` (`:869`) next to `.clawdberg` and `.middleEarth`. Lines 1143/1271 show how `clawdberg` hooked in its set piece and its OutaTime effect; the Matrix and Gigabyte effects hook in the same way (as Doctor Clawd's regeneration flare does, but with their own drawing).
+- ⚠︎ **`Sources/App/Overlay.swift:1301`:** the roll-out hook, where an actor leaving without a ride fades and sinks (see Mechanics).
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`:** decide per universe-specific `if`. The parked-in-vehicle-mode idea lives in the drawing functions, not here.
-- ⚠︎ **`Sources/Shared/StatusStore.swift:330–343`:** PreCompact walks `regenerations` (line 336); it changes to find the chain holding the leader and step along it (see Mechanics).
+- ⚠︎ **`Sources/Shared/StatusStore.swift:336–349`:** PreCompact walks `regenerations` (line 342); it changes to find the chain holding the leader and step along it (see Mechanics).
 - **Clawd Royale** picks up the cast and places through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is in a `bots…` place.
 - **Tools:**
-  - `Tools/Preview/main.swift:60–93`: batch names (`botsHeroes1…`, `botsVillains1…`), the universe lookup, the enum lookups.
-  - `Tools/Transitions/main.swift:12, 122`.
+  - `Tools/Preview/main.swift:63–120`: batch names (`botsHeroes1…`, `botsVillains1…`), the universe lookup, the enum lookups.
+  - `Tools/Transitions/main.swift:13` (usage comment) and `:132–133` (the branch that renders this universe's trips, phase 5).
   - Phase 7: `Tools/RenderPromo` (`REEL=bots`), `Tools/RenderDocs` (`botsLineup`), `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
 **Playground prompts** (five, in-universe): "Roll out the new release", "Find the Decepticon in the test suite", "Transform this function into a class", "Scan the logs, Teletraan", "Refuel with energon and refactor".
@@ -407,7 +408,7 @@ Optimus Runtime "Autobots, roll out!" · Megabyte "Decepticons, attack!" · Stac
 
 ## Places (23)
 
-Each is a `Place` with a still picture and a moving layer, plus tall-canvas extras for the screen saver. Keys all start with `bots`, so they can't clash with the six universes or the sibling plans (checked: no `bots…` key exists in `Sources/App/Universes` today). The palette swings between 80s Earth (bright blue sky, desert orange-pink, green grass), Cybertron's metal blues and purples, and Beast Wars' prehistoric greens, lava reds and crystal pinks.
+Each is a `Place` with a still picture and a moving layer, plus tall-canvas extras for the screen saver. Keys all start with `bots`, so they can't clash with the seven universes or the sibling plans (checked: no `bots…` key exists in `Sources/App/Universes` today). The palette swings between 80s Earth (bright blue sky, desert orange-pink, green grass), Cybertron's metal blues and purples, and Beast Wars' prehistoric greens, lava reds and crystal pinks.
 
 | # | Key | Place | Still | Moving | Tall extras |
 |---|---|---|---|---|---|
@@ -457,7 +458,7 @@ The energon fields differ from Dinobot Island by being a dusky rocky canyon with
    - **The Autobot shuttle** (white and red, from the movie) picks up and drops off the movie crew and the giants who'd fit: Hot Reload, Rootimus Prime, Ultra Macros, Backup, Springr, Arcee-RC1, Blurrr, Wheelee, Danny, Spike.
    - **Astro Retrain** carries Decepticons: he's a triple changer whose job in the cartoon is literally being the Decepticon shuttle. The ride is his purple-and-white shuttle mode. Whenever Astro Retrain is on stage himself, the others still ride a shuttle that looks like him; that's the cartoon's logic too.
    - **The space bridge** (a ring of pylons and a green-yellow shimmer column) for anyone from Cybertron: Shock.exe, Alpha Build, Elita 1.0.
-   - **Everyone else rolls out (decided).** Characters with a vehicle mode play the fold and drive off-stage in vehicle mode; the Beast Wars cast and the G1 beasts change into their animal and run or fly off; the rest (humans, giants, the Judge) leave as in any universe. The hook is in `Overlay.swift` where an actor leaving without a ride is drawn (~line 1255: today it fades, and sinks or rises): for this universe it slides the actor off-stage over the fade time, and the drawing gets the leaving fraction so it can show the fold, then the vehicle or beast frame (the same frames as parking and the signature).
+   - **Everyone else rolls out (decided).** Characters with a vehicle mode play the fold and drive off-stage in vehicle mode; the Beast Wars cast and the G1 beasts change into their animal and run or fly off; the rest (humans, giants, the Judge) leave as in any universe. The hook is in `Overlay.swift` where an actor leaving without a ride is drawn (~line 1301: today it fades, and sinks or rises): for this universe it slides the actor off-stage over the fade time, and the drawing gets the leaving fraction so it can show the fold, then the vehicle or beast frame (the same frames as parking and the signature).
 2. **The Matrix of Leadership, which is Clawdformers' regeneration.** When a Claude Code or pi session led by a **Matrix bearer** compacts its context, the Matrix passes to the next bearer: **Optimus Runtime → Ultra Macros → Rootimus Prime → Optimus Runtime** (the last step is season 3's *The Return of Optimus Prime*). Compaction is a session handing on what it knows, and that's what the Matrix does: it holds the wisdom of past Primes. It wraps round, and skips anyone already leading another session.
    - The effect, drawn in `BotsMatrix.swift`: the leader's chest opens, the Matrix's handle-shaped crystal glows, blue-white light pours up in a column with drifting sparkles, and the new bearer is standing in it as the light fades. Caption: "LIGHT OUR DARKEST HOUR". This deliberately looks nothing like Doctor Clawd's golden flare: blue-white, a column, not a burst.
    - Local hero indices: Optimus Runtime 0, Ultra Macros 43, Rootimus Prime 42, so the chain is `[0, 43, 42].map { base + StatusStore.heroBase + $0 }`.
@@ -465,7 +466,7 @@ The energon fields differ from Dinobot Island by being a dusky rocky canyon with
 3. **Megabyte → Gigabyte, the second chain (decided).** When a session led by Megabyte compacts, Unicron Job reformats him into Gigabyte, as in the movie. One way: compacting Gigabyte does nothing, and if Gigabyte is already leading another session, Megabyte stays as he is.
    - The effect, also in `BotsMatrix.swift`: Unicron Job's deep-violet eye ray (his power colours) washes over Megabyte, the silver plates fly off in a ring, and Gigabyte's purple body and crown lock into place with a white flash. Caption: "REFORMATTED".
    - Villain ids: Megabyte `base + 0` → Gigabyte `base + 23`.
-   - **The engine change:** `Universe.regenerations` becomes a list of chains, each with whether it wraps (`[(ids: [Int], wraps: Bool)]`). Doctor Clawd's Doctors become one wrapping chain, the Matrix another, and Megabyte → Gigabyte a one-way chain. `StatusStore`'s PreCompact (line 336) finds the chain holding the leader and steps along it, skipping anyone on stage, and stops at the end of a one-way chain. The overlay picks the Matrix or reformatting effect by which chain fired.
+   - **The engine change:** `Universe.regenerations` becomes a list of chains, each with whether it wraps (`[(ids: [Int], wraps: Bool)]`). Doctor Clawd's Doctors become one wrapping chain, the Matrix another, and Megabyte → Gigabyte a one-way chain. `StatusStore`'s PreCompact (line 342) finds the chain holding the leader and steps along it, skipping anyone on stage, and stops at the end of a one-way chain. The overlay picks the Matrix or reformatting effect by which chain fired.
 4. **Habits:**
    - **Parked in vehicle mode** when a session sits (all characters with a vehicle mode), and **curled up in beast mode** for the Beast Wars cast (in the drawings, not the engine).
    - **Sound.wav ejects a cassette:** now and then a tiny Laserbreak flies a lap round him and docks.
@@ -524,7 +525,7 @@ The weak-spot list starts empty and is filled in at the end of each phase. Thing
 
 ## Verification
 
-- **Build:** `./build.sh`. The cast-size assert in `Overlay.swift` catches a wrong `heroCount` or `villainCount`. Before calling a phase done, `./build.sh --release <version>` with `-Xfrontend -warn-long-expression-type-checking=300` to catch slow fold maths.
+- **Build:** `./build.sh`. The cast-size `precondition` in `Overlay.swift:180` catches a wrong `heroCount` or `villainCount`. Before calling a phase done, `./build.sh --release <version>` with `-Xfrontend -warn-long-expression-type-checking=300` to catch slow fold maths.
 - **Characters:** `Tools/Preview/build.sh`, then:
   - `build/preview cast out.png "Optimus Runtime"` (check every frame of the transform) and `build/preview cast out.png "Optimus Primitive"` (the beast mode);
   - `build/preview fight out.png "Optimus Runtime" "Megabyte"`;
@@ -589,7 +590,7 @@ About 45–50 seconds, on the `doctorShots` pattern:
 1. **Name: Clawdformers.** Code: `case clawdformers`, key `"clawdformers"`, folder `Sources/App/Universes/Clawdformers/`. The `Bots…` file prefix, `bots…` place keys, the `transformers` branch and `REEL=bots` stay.
 2. **Scope:** G1, the 1986 movie and **Beast Wars**. Beast Wars adds 20 characters: 10 Maximal heroes (Optimus Primitive, Rhinux, Rat.catch(), Cheetorr, Dinobyte, Tygatron, Airazure, Silverboot, Depth Charj, Tygerhawk) and 10 Predacon villains (Megabyte Rex, Tarantulus, Waspiterator, Errorsaur, Scorp-200-OK, Blackarachnet, Infernode, Quicksort, RAM-page, Dinobyte 2.0). Dinobyte is a hero and Blackarachnet a villain (reasons under the tables). Three places are added (the Axalon, the Darksyde, the energon fields), with 8 new nemesis pairs. The live-action films are out. New totals: **61 heroes, 51 villains (5 agent-only, indices 46–50), 112 characters, 23 places, 12 transitions.**
 3. **Compaction, two chains:** the Matrix passing on (Optimus Runtime → Ultra Macros → Rootimus Prime, wrapping), and **Megabyte → Gigabyte**, one way, caption "REFORMATTED". `regenerations` becomes a list of chains, each with a wraps flag.
-4. **Roll out on leaving:** yes. Vehicle-mode characters fold and drive off, beasts run or fly off, via a small hook where walk-offs are drawn (`Overlay.swift` ~1255).
+4. **Roll out on leaving:** yes. Vehicle-mode characters fold and drive off, beasts run or fly off, via a small hook where walk-offs are drawn (`Overlay.swift` ~1301).
 5. **Naming rule:** coding-language names for the leads and anyone where a coding pun lands cleanly; everyone else keeps a light pun. Your list is applied everywhere. G1 Scorponok becomes **Scorpio-404**, since the Beast Wars one is Scorp-200-OK.
    **Renames I chose myself (veto any):**
    - Trailblazer → **Trailbreakpoint**

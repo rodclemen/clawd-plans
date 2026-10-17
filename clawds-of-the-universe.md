@@ -4,7 +4,7 @@
 
 ## Context
 
-Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files and Stevie Clawdberg. This plan adds He-Man and the Masters of the Universe as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
+Clawd Clash has seven universes: Star Clawds, Marvelous Clawds, Detective Clawds, Doctor Clawd, The Clawd Files, Stevie Clawdberg and Clawd of the Rings. This plan adds He-Man and the Masters of the Universe as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
 - **Name: Clawds of the Universe** (decided 2026-10-16).
 - **Scope: the 1983–1987 cast.** That's the 1983 Filmation cartoon and the 1982–87 toy line, plus **She-Ra: Princess of Power** (Filmation, 1985) and the **1987 live-action film**:
@@ -15,7 +15,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
   - `case eternia` with key `"eternia"`.
   - Folder `Sources/App/Universes/Eternia/`, file prefix `Eternia…`.
   - Branch `he_man`. Trailer reel `REEL=eternia`.
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
+- **Raw value:** the next free one when its build starts, checked against main and the open branches (Clawd of the Rings is `middleEarth = 6` on main, and the `buffy` branch also uses 6 today); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (He-Clawd, Skeleclawd, Man-At-Claws, Trap Claw, Tri-Klawps). Where no pun comes naturally, a near-spelling or the plain name (Bow, Glimmer, Kowl, Cringer). Actors' names are never used.
 - **Size:** **85 characters**: 44 heroes including HEM and one agent-only, and 41 villains including 4 agent-only. Plus **21 places** and **12 transitions**.
 - **Tone:** the show is already made for children, so very little needs leaving out. Fisto is renamed (his real name reads as adult slang); Mosquitor (a blood-sucker) and the cruelty of Vultak's Horde Zoo are left out. Anything else is just a matter of keeping fights cartoonish, which is how Filmation drew them anyway: nobody is ever hurt by a sword.
@@ -26,8 +26,9 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 | Marvelous Clawds            |    106 |       88 |   194 |     43 |           7 |
 | Detective Clawds            |    111 |       97 |   208 |     43 |          15 |
 | Doctor Clawd                |     56 |       42 |    98 |     20 |          10 |
-| The Clawd Files             |     36 |       46 |    82 |     20 |          10 |
+| The Clawd Files             |     36 |       46 |    82 |     20 |          11 |
 | Stevie Clawdberg            |     64 |       54 |   118 |     23 |          10 |
+| Clawd of the Rings          |     38 |       38 |    76 |     22 |           9 |
 | Clawds of the Universe (proposed) | 44 |   41 |    85 |     21 |          12 |
 
 (heroCount includes HEM; villainCount includes agent-only.)
@@ -51,7 +52,7 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **The film's mercenaries:** Blade (**black and silver**, a long sword), Karg (**wild white mane**, a hook for a hand, black fur cloak). Neither is a skull, so neither reads as Skeleclawd.
 - **The fliers:** Stratos (grey fur, **blue wing-arms, red backpack**), Vultak (bald pink vulture head, black wings), Kowl (round grey koala-owl, little), Buzz-Off (yellow and black bee), Flutterina (butterfly wings), Swift Wind (white winged horse).
 
-**Against the other six universes** (they all meet in Clawd Royale):
+**Against the other seven universes** (they all meet in Clawd Royale):
 - **Thorr** and **Herakles** (Marvel) and **Captain Thunderbolt** (DC, red and gold with lightning): He-Clawd's lightning is white-gold from the sword tip, and he's bronze and blond with no cape.
 - **Cyclopz** (Marvel, red visor): Tri-Klawps is green with a **three-eyed rotating drum** on his helmet.
 - **The Beest** (Marvel, blue fur) and **Sabreclawd**: Beast Clawd is orange-red with a blue face.
@@ -67,7 +68,7 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **The Emperor's Royal Guards** (Star Clawds, red robes): Shadow Weaver's red robe has a black face and glowing eyes, and she casts.
 - **Names:** DC already has a **"Sorceress"** and **"The Leech"**, and Marvel has **"The Scorpyon"** and **"Iron Fyst"**. So it's *The Sorceress of Greyskull*, *Leach*, *Scorpia* and *Clawfist*.
 
-## How a universe plugs in (checked against the code on 2026-10-16, main at ebc02be)
+## How a universe plugs in (checked against the code on 2026-10-17, main at d270b63)
 
 **New code: `Sources/App/Universes/Eternia/`**
 - `EterniaRoster.swift`:
@@ -85,29 +86,29 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 
 **Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did at each spot.
 - **`Sources/Shared/Universe.swift`:**
-  - `:8–33`: the case, `key`, `title`, `villainCount`, `heroCount`.
-  - `:44–52`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech, the Dark Trooper: table rows hero #42 and villains #34, #35, #36 and #41, which are the 0-based enum ids hero 41 and villains 33, 34, 35 and 40).
-  - `:58`: `claudeSide` (Claude plays the heroes, the default `false`).
-  - `:61`: `rivals` (Skeleclawd and Hordakk, see Nemeses).
-  - `:66–79`: next to `abductees` and `regenerations`, the new `transformations` map (see Mechanics), and at `:110` its union across universes for the `Roster`, the way `rivals` is.
+  - `:8–40`: the case, `key`, `title`, `villainCount`, `heroCount`.
+  - `:50–61`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech, the Dark Trooper: table rows hero #42 and villains #34, #35, #36 and #41, which are the 0-based enum ids hero 41 and villains 33, 34, 35 and 40).
+  - `:65`: `claudeSide` (Claude plays the heroes, the default `false`).
+  - `:68`: `rivals` (Skeleclawd and Hordakk, see Nemeses). Today it's a one-liner, `self == .starWars ? [0, 1] : []`, so it becomes a `switch` or gains an Eternia branch.
+  - `:90–102`: next to `abductees` and `regenerations`, the new `transformations` map (see Mechanics), and at `:140` its union across universes for the `Roster`, the way `rivals` is.
 - ⚠︎ **`Sources/Shared/StatusStore.swift`:**
-  - `:330–343` (`PreCompact`): a transformation branch after the abductee one.
-  - `:488` (`nextAgentCast`) and `:506` (`pickLeader`): the secret identity rule (see Mechanics).
-  - `"Stop"` (`:344`): the moral's roll (see Mechanics).
-- **`Sources/App/Theme.swift:47`:** `Theme.of`.
-- **`Sources/App/Locations.swift:74`:** `.merging(eterniaPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** the `nil` cases in phase 1; in phase 5 a `.eternia(EterniaTrip)` case in `duration`, `draw` and `pick`, and the doc comment.
-- **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's costume in every switch (below).
+  - `:336–349` (`PreCompact`): a transformation branch after the abductee one.
+  - `:495` (`nextAgentCast`) and `:516` (`pickLeader`): the secret identity rule (see Mechanics).
+  - `"Stop"` (`:350`): the moral's roll (see Mechanics).
+- **`Sources/App/Theme.swift:40`:** `Theme.of`.
+- **`Sources/App/Locations.swift:72`:** `.merging(eterniaPlaces)`.
+- **`Sources/App/Universes/ComicTransition.swift:42`:** `pick` now lists every universe explicitly, and Star Clawds is the only one left on plain wipes, so in phase 1 Eternia joins its line: `case .starWars, .eternia: return nil`. In phase 5 it comes out of that line, and a `.eternia(EterniaTrip)` case goes in the enum (`:8–13`), `duration` (`:15`), `draw` (`:27`) and `pick` (`:40`), plus the doc comment (`:3–5`).
+- **`Sources/App/Universes/Hem.swift:29, 104, 119, 146, 172, 228`:** HEM's costume in every switch (below).
 - **`Sources/App/Rides.swift`:** the rides (phase 4).
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choices list and the trip switch (`case "eternia": tripUniverse = …`).
+- **`Sources/Saver/SaverView.swift`:** nothing to add. The Options list (`:89`) and the trip choice (`:208`) build themselves from `Universe.offered`.
 - ⚠︎ **`Sources/App/Drills.swift:54`** (the meditation guard: no, see Mechanics) and **`:488`** (the bespoke drills merge).
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** five Playground prompts. Lines 1113 and 1226 show how clawdberg hooked its set piece and its OutaTime effect into the tick; the transformation effect and Skeleclawd's retreat hook in the same places. The moral's speech bubble reuses the callout bubble at `:1293`.
+- ⚠︎ **`Sources/App/Overlay.swift:868`:** five Playground prompts, a `case .eternia:` in the `prompts` switch. Lines 1143 and 1271 show how clawdberg hooked its set piece and its OutaTime effect into the tick; the transformation effect and Skeleclawd's retreat hook in the same places. The moral's speech bubble reuses the callout bubble at `:1339`.
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`:** decide whether Eternia joins each universe-specific `if`.
 - ⚠︎ **`HookInstaller.swift`:** nothing new. The transformation reuses Doctor Clawd's `PreCompact` hook and the moral reuses `Stop`, both already registered.
 - **Clawd Royale** picks up the cast and places through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is an Eternia place.
 - **Tools:**
-  - `Tools/Preview/main.swift:60–93`: batch names (`eterniaHeroes1…`), the universe lookup and the enum lookups.
-  - `Tools/Transitions/main.swift:12, 122`.
+  - `Tools/Preview/main.swift:64–120`: batch names (`eterniaHeroes1…`), the universe lookup and the enum lookups.
+  - `Tools/Transitions/main.swift:7, 15, 133`.
   - Phase 6: `Tools/RenderPromo` (`REEL=eternia`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
 ## Cast
@@ -141,7 +142,7 @@ Each entry gives the parody name, its look as pixels, its weapon or motion, and 
 | Madame Razz | touch | pink / purple | a glowing fingertip; the target glows (often the wrong one) |
 | Leach | touch | yellow-green / green | his suckers glow; the target's glow drains to him |
 
-Check every colour against the other six universes' casters (`magicVariants`, `Theme.swift:54`) when drawing.
+Check every colour against the other seven universes' casters (`magicVariants`, `Theme.swift:55`) when drawing.
 
 ### Heroes (44)
 
@@ -392,19 +393,19 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    Nobody else changes. Decided: these are **two characters per pair**, each with its own id, and compaction swaps one for the other.
 
    **How it works in the engine.** It reuses Doctor Clawd's `PreCompact` path:
-   - Doctor Clawd's `regenerations` is one long chain, so this needs a small map of pairs next to it in `Universe`: `transformations: [Int: Int]`, each pair listed both ways. The `Roster` gets the union across universes, the way it gets `rivals` (`Universe.swift:110`).
-   - In `StatusStore`'s `PreCompact` case (`:330–343`), after the abductee check: if the leader has an entry in `transformations`, set the session's leader to the other self and stamp the time (a new `transformed` field, or `regenerated` reused if the overlay can tell them apart by universe).
-   - Its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1226`).
+   - Doctor Clawd's `regenerations` is one long chain, so this needs a small map of pairs next to it in `Universe`: `transformations: [Int: Int]`, each pair listed both ways. The `Roster` gets the union across universes, the way it gets `rivals` (`Universe.swift:140`).
+   - In `StatusStore`'s `PreCompact` case (`:336–349`), after the abductee check: if the leader has an entry in `transformations`, set the session's leader to the other self and stamp the time (a new `transformed` field, or `regenerated` reused if the overlay can tell them apart by universe).
+   - Its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1271`).
 
    **The secret identity rule (decided): a pair is never on stage at once.** Prince Addam and He-Clawd are never both on screen, nor Adorra and She-Clawd, Cringer and Battle Kat, or Spirit and Swift Wind. Three places in the code enforce it:
-   - **`pickLeader`** (`StatusStore.swift:506`): before choosing, add the other self of everyone in `used` to the excluded set, so a new session can't be led by He-Clawd while Addam leads another.
-   - **`nextAgentCast`** (`:488`): the same for `onScreen`, which already covers both session leaders and agents. If the only characters left are excluded ones, it falls back to the whole pool as it does today, but still never picks a partner of someone on screen.
+   - **`pickLeader`** (`StatusStore.swift:516`): before choosing, add the other self of everyone in `used` to the excluded set, so a new session can't be led by He-Clawd while Addam leads another.
+   - **`nextAgentCast`** (`:495`): the same for `onScreen`, which already covers both session leaders and agents. If the only characters left are excluded ones, it falls back to the whole pool as it does today, but still never picks a partner of someone on screen.
    - **The `PreCompact` swap:** if the other self is already on stage (leading another session or working as an agent), the lightning plays and the leader stays as they are. Nobody ever meets their own secret identity.
 
    Helpers in `Preview` and `Transitions` that pick casts directly don't need the rule; it's a casting rule, not a drawing one.
 3. **Habits:**
    - **Orkko's magic goes wrong** now and then: a rain cloud over his own hat, a rubber fish, his scarf tangling him up.
-   - **Skeleclawd's retreat:** when he loses a fight he vanishes in a purple puff with "I'll get you for this, He-Clawd!" (hooked into the overlay's tick the way Clawdberg's Indy moment is, `Overlay.swift:1113`).
+   - **Skeleclawd's retreat:** when he loses a fight he vanishes in a purple puff with "I'll get you for this, He-Clawd!" (hooked into the overlay's tick the way Clawdberg's Indy moment is, `Overlay.swift:1143`).
    - **Cringer hides** behind the nearest hero when a villain is on stage.
    - **Loo-Kee hides** behind scenery and peeks out.
    - **Imp** turns into an object for a few seconds.
@@ -415,7 +416,7 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
 4. **The moral (decided).** Every Filmation episode ended with a character stepping forward to give the audience a short lesson. Here, when a session finishes its work, its leader **now and then** steps forward and gives one in a speech bubble, in the Filmation voice with a coding twist. It's short and rare, so it stays a treat rather than chatter:
    - **When:** on `Stop` (the session has finished and gone idle), about one finish in eight, and never twice within half an hour for the same session.
    - **Who:** heroes only (Skeleclawd doesn't do lessons). Orkko, the Sorceress and Man-At-Claws get the most.
-   - **Engine:** a small change. `StatusStore` rolls the dice on `Stop` and stamps the session with a `moral` time. The overlay shows the line in the done state through the callout bubble (`Overlay.swift:1293`) for about four seconds, the leader facing the front.
+   - **Engine:** a small change. `StatusStore` rolls the dice on `Stop` and stamps the session with a `moral` time. The overlay shows the line in the done state through the callout bubble (`Overlay.swift:1339`) for about four seconds, the leader facing the front.
    - **The lines** (about ten, written so no single one gets stale):
      - "Remember, kids: always write your tests!"
      - "Remember, kids: read the error message before you ask for help."
@@ -488,7 +489,7 @@ Spots to watch from the start:
   - `build/preview cast out.png "He-Clawd"`;
   - `build/preview fight out.png "He-Clawd" "Skeleclawd"`;
   - `build/preview place out.png "Clawds of the Universe"`;
-  - and the batch sheets, one per Art file. Look at every PNG for lookalikes, inside the universe and against the six others.
+  - and the batch sheets, one per Art file. Look at every PNG for lookalikes, inside the universe and against the seven others.
 - **Transitions:** `Tools/Transitions/build.sh`, then `build/transitions <outdir> castleGreyskull frightZone` (an Eternia-to-Etheria trip, so the portal shows).
 - **In the app:**
   - Settings → Universe → Clawds of the Universe: new sessions are heroes, subagents can be villains or small fry.
@@ -559,7 +560,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 
 **Sound:** a brassy, heroic synth march in the spirit of the 80s cartoon but **our own notes**, a big thunderclap on the lightning, a sword shing as the title lands, Skeleclawd's cackle as a pitched-down blip, and a bright fanfare sting on the end card.
 
-**Playground prompts** (`Overlay.swift:865`):
+**Playground prompts** (`Overlay.swift:868`):
 - "Skeleclawd stole the castle keys: rotate the secrets"
 - "Orkko broke the build again, find out what he did"
 - "By the power of Greyskull, fix the flaky test"

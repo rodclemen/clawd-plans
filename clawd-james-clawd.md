@@ -12,7 +12,7 @@ Bond is a strong fit. The heroes are a smaller, sharper crew (six Bonds, MI6, th
   - Folder `Sources/App/Universes/SpyClawd/`, file prefix `Spy…` (`SpyRoster.swift`, `SpyHeroes1.swift`, `SpyWipes.swift`…).
   - Branch `bond`.
   - Place keys and top-level helpers all start with `spy` so they can't clash with the six sibling plans being written at the same time (Star Trek, Transformers, He-Man, Game of Thrones, Tim Burton, Buffy).
-- **Raw value:** the next free one when its build starts (Buffy is planned as 6); ids are rawValue*1000 and permanent.
+- **Raw value:** the next free one when its build starts, checked against main and the open branches (main has Clawd of the Rings as `middleEarth = 6`, and the Buffy branch also claims 6 today); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (Auric Goldclaw, Blowfeld, Dr. Know, Felix Lighter). The six Bonds get nicknames from their look, one per era (decided 2026-10-16): **Trilby Bond, Ski Bond, Safari Bond, Leather Bond, Tank Bond, Jumper Bond**, never the actors' names. Each era is named in this plan only by its films.
 - **Size:** about **96 characters**: 45 heroes including HEM, and 51 villains including 4 agent-only. Plus **21 places** and **13 transitions**.
 - **Tone:** a desktop toy, so the Bond films' sexualised names, the gore and the dated caricatures are left out or renamed (see *Tone, and what was left out*).
@@ -23,8 +23,9 @@ Bond is a strong fit. The heroes are a smaller, sharper crew (six Bonds, MI6, th
 | Marvelous Clawds        |    106 |       88 |   194 |     43 |           7 |
 | Detective Clawds        |    111 |       97 |   208 |     43 |          15 |
 | Doctor Clawd            |     56 |       42 |    98 |     20 |          10 |
-| The Clawd Files         |     36 |       46 |    82 |     20 |          10 |
+| The Clawd Files         |     36 |       46 |    82 |     20 |          11 |
 | Stevie Clawdberg        |     64 |       54 |   118 |     23 |          10 |
+| Clawd of the Rings      |     38 |       38 |    76 |     22 |           9 |
 | **James Clawd (proposed)** | **45** | **51** | **96** | **21** | **13** |
 
 (heroCount includes HEM; villainCount includes the 4 agent-only small fry.)
@@ -41,7 +42,7 @@ Bond is a strong fit. The heroes are a smaller, sharper crew (six Bonds, MI6, th
 - **Dated caricatures:** the "Bond in Japanese disguise" and the voodoo stereotyping of Live and Let Die are not used. Mr. Bigg, Tee Hee and Baron Samedee are drawn as their characters (a rubber mask, a claw arm, a top hat and skull face paint), nothing more. Nick Knack is drawn as Scaramangle's scheming butler with a tray, with no jokes about his height.
 - **No real people:** no politicians or real spies; real places (Fort Knox, the Golden Gate) appear only as backdrops.
 
-## How a universe plugs in (checked against the code on main, ebc02be, 2026-10-16)
+## How a universe plugs in (checked against the code on 2026-10-17, main at d270b63)
 
 **New code: `Sources/App/Universes/SpyClawd/`**
 - `SpyRoster.swift` (the pattern is `StevieClawdberg/ClawdbergRoster.swift`):
@@ -60,27 +61,27 @@ Bond is a strong fit. The heroes are a smaller, sharper crew (six Bonds, MI6, th
 
 **Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did in each spot.
 - **`Sources/Shared/Universe.swift`:**
-  - `:8–33` the case, `key`, `title`, `villainCount`, `heroCount`.
-  - `:44–52` `agentOnly` (the white cat, the tarantula, the piranha, the iguana).
-  - `:58` `claudeSide` stays the default (heroes). `:61` `rivals`: none.
-  - `:66–79` `regenerations`: the six Bonds in order (see Mechanics). Today it's `self == .doctor ? … : []`; it becomes a switch.
-- **`Sources/App/Theme.swift:47`:** `Theme.of` → `spyTheme`.
-- **`Sources/App/Locations.swift:74`:** `.merging(spyPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:12, 16, 26, 36–38`:** nil in phase 1; a `.spy(SpyTrip)` case in the enum, `duration`, `draw` and `pick` in phase 5, and the doc comment.
-- **`Sources/App/Universes/Hem.swift:27, 87, 101, 121, 143, 180`:** HEM's costume in every switch (see Cast).
-- **`Sources/App/Rides.swift`** (and `Theme.swift:88`'s `enum Ride`): `.astonMartin`, `.flyingCar`.
-- ⚠︎ **`Sources/Saver/SaverView.swift:79, 89, 214`:** the Options doc comment, the choice, and `case "spy": tripUniverse = .spy`.
+  - `:8–40` the case, `key`, `title`, `villainCount`, `heroCount`.
+  - `:50–61` `agentOnly` (the white cat, the tarantula, the piranha, the iguana).
+  - `:65` `claudeSide` stays the default (heroes). `:68` `rivals` (today the one-liner `self == .starWars ? [0, 1] : []`): none.
+  - `:100–102` `regenerations`: the six Bonds in order (see Mechanics). Today it's `self == .doctor ? … : []`; it becomes a switch.
+- **`Sources/App/Theme.swift:40–49`:** `Theme.of` → `spyTheme`.
+- **`Sources/App/Locations.swift:70–72`:** `.merging(spyPlaces)` in `places`.
+- **`Sources/App/Universes/ComicTransition.swift`:** `pick` (`:40–62`) now lists every universe explicitly, so in phase 1 James Clawd joins Star Clawds' line (`:42–43`, which becomes `case .starWars, .spy: return nil`). In phase 5 it leaves that line and gets a `.spy(SpyTrip)` case in the enum (`:8–13`), `duration` (`:15–24`), `draw` (`:27–36`) and `pick`, and the doc comment (`:3–6`) is updated.
+- **`Sources/App/Universes/Hem.swift:29, 104, 119, 146, 172, 228`:** HEM's costume in every switch (see Cast).
+- **`Sources/App/Rides.swift`** (and `Theme.swift:89`'s `enum Ride`): `.astonMartin`, `.flyingCar`. The Aston Martin drives in along the ground, so it also goes in `Ride.drives` (`Theme.swift:93`).
+- **`Sources/Saver/SaverView.swift`:** nothing to add. The Options list (`:88–90`) and the trip choice (`:207–215`) build themselves from `Universe.offered`.
 - ⚠︎ **`Sources/App/Drills.swift:54`:** add `.spy` to the no-meditation guard. `:488`: merge `spyBespokeDrills`.
-- ⚠︎ **`Sources/App/Overlay.swift:865`:** five Playground prompts (below). `:1113` shows how `clawdberg` hooked its set piece (Indy shoots first) into the Han-and-Greedo moment: the Golden Gun duel goes in the same way. `:1193` draws the Doctor's golden flare for *any* regenerated leader: wrap it so a `.spy` leader gets the gun-barrel recast instead. `:1226` is where OutaTime was hooked, for reference.
-- ⚠︎ **`Sources/Shared/StatusStore.swift:330–343`:** the PreCompact path already walks `Universe.regenerations` for any universe, so no change is needed. Check the comment still reads right.
+- ⚠︎ **`Sources/App/Overlay.swift:869`:** five Playground prompts (below), a `case .spy:` in the `switch Universe.shown`. `:1143` shows how `clawdberg` hooked its set piece (Indy shoots first) into the Han-and-Greedo moment: the Golden Gun duel goes in the same way. `:1224` draws the Doctor's golden flare for *any* regenerated leader: wrap it so a `.spy` leader gets the gun-barrel recast instead. `:1271` is where OutaTime was hooked, for reference.
+- ⚠︎ **`Sources/Shared/StatusStore.swift:336–349`:** the PreCompact path already walks `Universe.regenerations` for any universe, so no change is needed. Check the comment still reads right.
 - ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`:** decide whether `.spy` joins each universe-specific `if`.
 - **Clawd Royale** picks up the cast and places through `Universe.allCases`. Check the menu icon and arch-enemies in a Spy place.
 - **Tools:**
-  - `Tools/Preview/main.swift:60–93`: the batch names (`spyHeroes1…`, `spyVillains1…`), the universe lookup, the enum lookups by case name.
-  - `Tools/Transitions/main.swift:12, 122`: the branch that renders `SpyTrip`s.
+  - `Tools/Preview/main.swift:63–120`: the batch names (`spyHeroes1…`, `spyVillains1…`), the universe lookup, the enum lookups by case name.
+  - `Tools/Transitions/main.swift:13, 132–133`: the branch that renders `SpyTrip`s.
   - Phase 6: `Tools/RenderPromo` (`REEL=spy`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
 
-**Playground prompts** (`Overlay.swift:865`): "Run a background check on Auric Goldclaw", "Decrypt the Lektor before the train reaches Venice", "Q, what does this button do?", "Find the leak inside MI6", "Track the GoldenEye satellite's next pass".
+**Playground prompts** (`Overlay.swift:869`): "Run a background check on Auric Goldclaw", "Decrypt the Lektor before the train reaches Venice", "Q, what does this button do?", "Find the leak inside MI6", "Track the GoldenEye satellite's next pass".
 
 ## Cast
 
@@ -367,9 +368,9 @@ Prefer variety: there are interiors (MI6, Q Branch, the train, the casino, Fort 
    - Q could have Little Nellie, the yellow autogyro, as his own ride (open question: one more ride or keep it to two).
 2. **The new face: Bond's recast (compaction).** When a session led by one of the six Bonds compacts, he's **recast**: the gun barrel's white circle closes in on him like an iris, holds on black for a beat, and opens on the next Bond in the same spot, with **"JAMES CLAWD WILL RETURN"** typing out underneath, the line every film's end credits promise. Order One → Two → Three → Four → Five → Six → One, skipping any Bond already leading another session.
    - Recasting is how Bond really "regenerates", and it's the franchise's own running joke (Ski Bond's line, "This never happened to the other fellow"), so it fits.
-   - It reuses the Doctor's path whole: `Universe.regenerations` lists the six Bonds (`[0, 1, 2, 3, 4, 5].map { base + StatusStore.heroBase + $0 }`), and `StatusStore.swift:330–343` already handles any universe. The only new code is the effect, `SpyRecast.swift`, drawn at `Overlay.swift:1193` instead of the golden flare when the leader is a Spy character.
+   - It reuses the Doctor's path whole: `Universe.regenerations` lists the six Bonds (`[0, 1, 2, 3, 4, 5].map { base + StatusStore.heroBase + $0 }`), and `StatusStore.swift:336–349` already handles any universe. The only new code is the effect, `SpyRecast.swift`, drawn at `Overlay.swift:1224` instead of the golden flare when the leader is a Spy character.
    - Only the Bonds recast; everyone else ignores compaction, like non-Doctors.
-3. **Set piece: the Golden Gun duel.** Hooked in like Indy shoots first (`Overlay.swift:1113`): when Safari Bond and Scaramangle face off, now and then they turn back to back, walk ten paces apart, turn and fire. Scaramangle's one gold shot misses; Safari Bond's doesn't.
+3. **Set piece: the Golden Gun duel.** Hooked in like Indy shoots first (`Overlay.swift:1143`): when Safari Bond and Scaramangle face off, now and then they turn back to back, walk ten paces apart, turn and fire. Scaramangle's one gold shot misses; Safari Bond's doesn't.
 4. **Habits** (`Habits.swift`, the Overlay tick):
    - **Trilby Bond's hat:** at MI6 he tosses his trilby onto the hatstand when he arrives, and takes it back when he leaves.
    - **Jawz gets up:** knocked down, he lies still a moment, then sits up, dusts himself off and grins. He always comes back.
@@ -421,7 +422,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 ## Verification
 
-- **Build:** `./build.sh`. The cast-size `assert` in `Overlay.swift` catches a wrong `heroCount` or `villainCount`. Check `./build.sh --release <version>` before calling a phase done; split any dense `sin`/`cos` expression the type-checker chokes on (`-Xfrontend -warn-long-expression-type-checking=300`).
+- **Build:** `./build.sh`. The cast-size `precondition` in `Overlay.swift` (`:180`, checked at launch) catches a wrong `heroCount` or `villainCount`. Check `./build.sh --release <version>` before calling a phase done; split any dense `sin`/`cos` expression the type-checker chokes on (`-Xfrontend -warn-long-expression-type-checking=300`).
 - **Characters:** `Tools/Preview/build.sh`, then:
   - `build/preview cast out.png "Trilby Bond"`;
   - `build/preview fight out.png "Safari Bond" "Francisco Scaramangle"`;
