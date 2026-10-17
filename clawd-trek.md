@@ -57,7 +57,7 @@ Clawd Clash has seven universes. This plan adds a Star Trek parody as a full ens
 - **`Sources/Shared/Universe.swift:8–40`:** the case, `key`, `title` ("Clawd Trek"), `villainCount` (47), `heroCount` (53).
 - **`Universe.swift:50–61`:** `agentOnly`: Spot, the tribbel, the vole and the targh (global ids).
 - **`Universe.swift:65`:** `claudeSide` stays the default (heroes).
-- **`Universe.swift:68`:** `rivals`: Pinchard and Locutus (the same man, so never back to back). It's a one-liner today, `self == .starWars ? [0, 1] : []`, so it becomes a switch.
+- **`Universe.swift:70–78`:** `guises`: Pinchard and Locutus, the same man, so never on screen together (hero row #12 and villain row #3, the 0-based enum ids hero 11 and villain 2, as global ids: `base + StatusStore.heroBase + 11` and `base + 2`). Today it's `guard self == .middleEarth else { return [] }`, so it becomes a `switch`, and its doc comment gains the Trek pair. The casting keeps to it with nothing else added: `nextLeader` and `nextAgentCast` (`StatusStore.swift:476, 504`) rule out the other guise through `Roster.ruledOut(by:)` (`Universe.swift:143–145`), and `snapshot` (`StatusStore.swift:762–789`) is the backstop. `rivals` (`:68`) stays Star Clawds only.
 - **`Universe.swift:85–96`:** the TNG senior staff go in `abductees` for assimilation (see Mechanics), with a doc comment like the other two.
 - **`Sources/App/Theme.swift:47–48`:** `Theme.of`.
 - **`Sources/App/Locations.swift:72`:** `.merging(trekPlaces)`.
@@ -335,7 +335,7 @@ Each pair faces off on the same stage:
 - Kess ↔ Species 8472
 - the Holo-Doc ↔ the Hirogen Alpha
 
-**Rivals:** Pinchard and Locutus never lead back to back: they're the same face.
+**Guises:** Pinchard and Locutus are the same man, so they're a `Universe.guises` pair and never on screen together (see the wiring list). They're not rivals any more: that rule only stopped them leading back to back, a stand-in for keeping the same face apart, which `guises` does properly. No one else in the cast is the same person twice: Lorr is Datum's brother, Selah is Yarr's daughter, Mirror Spawk is another universe's Spawk, and Seskah's Bajoran disguise is one sprite.
 
 ### Telling sprites apart
 
@@ -405,7 +405,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
    - Everyone else walks on, as in the other universes.
 2. **Assimilation, which is Clawd Trek's regeneration.** When a Claude Code or pi session led by one of the **TNG senior staff** (Pinchard, Rikker, Datum, La Forje, Wharf, Troix, Dr. Clawsher) compacts its context, the Borgg take them for a moment:
    - green circuit lines creep over them, black armour plates and an eyepiece snap on, an eye laser sweeps, and RESISTANCE IS FUTILE types itself out above them;
-   - for Pinchard, the peak frame is Locutus himself;
+   - for Pinchard, the peak frame is Locutus himself (drawn, not cast: Pinchard stays the leader, and since the two are `guises`, the real Locutus is never on stage to meet him);
    - a beat later the implants clank off, and they shake their head. Same session, same face.
 
    Losing your context and becoming part of a collective fits compaction, and the Borgg are TNG's great enemy, so the group is a clear one. It reuses the missing-time clock (`SessionRecord.abducted`, `missingTimeLength`), as Clawdberg's OutaTime does; the list goes in `Universe.abductees` and the effect is drawn in `TrekAssimilation.swift`, hooked in where the overlay draws OutaTime (`Overlay.swift:1271`).
@@ -535,5 +535,7 @@ All the open questions are settled:
 - **Q** is just Q. **Species 8472** keeps its real number.
 - **Tribbles:** yes, as a habit.
 - **Swaps:** none; the cast stands as written.
+
+**2026-10-17: uses `Universe.guises`, decided by the user.** Pinchard and Locutus are a `guises` pair (never on screen together) instead of `rivals` (never leading back to back), which was only standing in for that. No other pair in the cast is the same person.
 
 The plan is ready for phase 1 when you say start.

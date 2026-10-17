@@ -90,10 +90,11 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
   - `:50–61`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech, the Dark Trooper: table rows hero #42 and villains #34, #35, #36 and #41, which are the 0-based enum ids hero 41 and villains 33, 34, 35 and 40).
   - `:65`: `claudeSide` (Claude plays the heroes, the default `false`).
   - `:68`: `rivals` (Skeleclawd and Hordakk, see Nemeses). Today it's a one-liner, `self == .starWars ? [0, 1] : []`, so it becomes a `switch` or gains an Eternia branch.
-  - `:90–102`: next to `abductees` and `regenerations`, the new `transformations` map (see Mechanics), and at `:140` its union across universes for the `Roster`, the way `rivals` is.
+  - `:70–78`: `guises` gets the four Eternia pairs (see Mechanics). Today it's `guard self == .middleEarth else { return [] }`, so it becomes a `switch`, and its doc comment gains the Eternia pairs. The `Roster`'s union at `:141` and `ruledOut(by:)` at `:143–145` pick them up with nothing added.
+  - `:100–102`: next to `regenerations`, a one-line flag, `var guisesSwapOnCompaction: Bool { self == .eternia }`, with a doc comment like the others (see Mechanics).
 - ⚠︎ **`Sources/Shared/StatusStore.swift`:**
-  - `:336–349` (`PreCompact`): a transformation branch after the abductee one.
-  - `:495` (`nextAgentCast`) and `:516` (`pickLeader`): the secret identity rule (see Mechanics).
+  - `:336–349` (`PreCompact`): a transformation branch after the abductee one (`:341`), before the regeneration lookup (`:342`).
+  - Nothing for the secret identity rule: the casting already keeps to `guises` (see Mechanics).
   - `"Stop"` (`:350`): the moral's roll (see Mechanics).
 - **`Sources/App/Theme.swift:40`:** `Theme.of`.
 - **`Sources/App/Locations.swift:72`:** `.merging(eterniaPlaces)`.
@@ -392,15 +393,23 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
 
    Nobody else changes. Decided: these are **two characters per pair**, each with its own id, and compaction swaps one for the other.
 
-   **How it works in the engine.** It reuses Doctor Clawd's `PreCompact` path:
-   - Doctor Clawd's `regenerations` is one long chain, so this needs a small map of pairs next to it in `Universe`: `transformations: [Int: Int]`, each pair listed both ways. The `Roster` gets the union across universes, the way it gets `rivals` (`Universe.swift:140`).
-   - In `StatusStore`'s `PreCompact` case (`:336–349`), after the abductee check: if the leader has an entry in `transformations`, set the session's leader to the other self and stamp the time (a new `transformed` field, or `regenerated` reused if the overlay can tell them apart by universe).
-   - Its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1271`).
+   **The secret identity rule (decided): a pair is never on stage at once.** Prince Addam and He-Clawd are never both on screen, nor Adorra and She-Clawd, Cringer and Battle Kat, or Spirit and Swift Wind. The engine already has this rule for Clawd of the Rings (Gandclawd the Grey and the White, Arrogorn and Stride-r, Sarumanual and Sharkey, Sourun and the Necro-maintainer): `Universe.guises` (`Universe.swift:70–78`), "one character in two guises, as global ids: never on screen together". So the four pairs go in `guises`, as global ids from the table rows (0-based enum ids, heroes offset by `StatusStore.heroBase`):
+   - He-Clawd and Prince Addam: hero rows #1 and #3, enum ids 0 and 2;
+   - Battle Kat and Cringer: rows #4 and #5, ids 3 and 4;
+   - She-Clawd and Princess Adorra: rows #23 and #24, ids 22 and 23;
+   - Swift Wind and Spirit: rows #26 and #25, ids 25 and 24.
 
-   **The secret identity rule (decided): a pair is never on stage at once.** Prince Addam and He-Clawd are never both on screen, nor Adorra and She-Clawd, Cringer and Battle Kat, or Spirit and Swift Wind. Three places in the code enforce it:
-   - **`pickLeader`** (`StatusStore.swift:516`): before choosing, add the other self of everyone in `used` to the excluded set, so a new session can't be led by He-Clawd while Addam leads another.
-   - **`nextAgentCast`** (`:495`): the same for `onScreen`, which already covers both session leaders and agents. If the only characters left are excluded ones, it falls back to the whole pool as it does today, but still never picks a partner of someone on screen.
-   - **The `PreCompact` swap:** if the other self is already on stage (leading another session or working as an agent), the lightning plays and the leader stays as they are. Nobody ever meets their own secret identity.
+   That gives the rule for free, through code that's already there:
+   - **New sessions:** `nextLeader` (`StatusStore.swift:476`) rules out the other guise of every leader and agent on screen (`Roster.ruledOut(by:)`, `Universe.swift:143–145`), and `pickLeader` (`:519`) drops them from the pool.
+   - **New agents:** `nextAgentCast` (`:504–506`) does the same against `onScreen`, which covers both session leaders and agents.
+   - **The backstop:** `snapshot` (`:762–789`) shows whoever comes later as someone else on the same side, the same someone on every refresh, for the cases the casting can't see coming (the universe switched with sessions open).
+   - `Roster.recast` (`Universe.swift:153`) keeps to it too, though no Eternia character is homebound.
+
+   **How the transformation works in the engine.** `guises` only keeps the pairs apart; nothing in the engine turns one guise into the other (Clawd of the Rings never swaps: Gandclawd is cast as the Grey or the White and stays that way). So the swap is the one new piece, and it reuses Doctor Clawd's `PreCompact` path:
+   - **Which pairs swap:** derived from `guises`, not a second map. The flag `guisesSwapOnCompaction` (`self == .eternia`, next to `regenerations` at `Universe.swift:100–102`) says this universe's guises swap on compaction, so Clawd of the Rings' pairs never do. The other self is `Universe.of(leader).guises.first { $0.contains(leader) }`, minus the leader.
+   - **The swap:** in `StatusStore`'s `PreCompact` case (`:336–349`), after the abductee check (`:341`): if the leader's universe has the flag and the leader has another self, set the session's leader to it and stamp the time (a new `transformed` field, or `regenerated` reused if the overlay can tell them apart by universe).
+   - **Not when the other self is on stage:** if the other self already leads another session or works as an agent, the lightning plays and the leader stays as they are. Nobody ever meets their own secret identity. The existing code doesn't give this: Doctor Clawd's regeneration (`:344`) only skips faces leading *other* sessions, and ignores agents. Normally the casting means the other self can't be on stage at all while this one leads, so the check only matters after a universe switch, but without it the `snapshot` backstop would turn the newly swapped leader into a stand-in. The check: the other self isn't among the other sessions' leaders or any agent's cast (`a.cast ?? heroBase + a.character`), each through `s.roster.adopt`. `ruledOut(by:)` can't be used as it is here, since the session's own leader would rule out its own other self.
+   - Its own effect in `EterniaPower.swift`, drawn where the overlay draws Clawdberg's OutaTime (`Overlay.swift:1271`).
 
    Helpers in `Preview` and `Transitions` that pick casts directly don't need the rule; it's a casting rule, not a drawing one.
 3. **Habits:**
@@ -495,7 +504,7 @@ Spots to watch from the start:
   - Settings → Universe → Clawds of the Universe: new sessions are heroes, subagents can be villains or small fry.
   - The screen saver's Options include it.
   - Random and Clawd Royale reach it.
-- **The transformation:** `/compact` in a Claude session led by Prince Addam (he becomes He-Clawd), then again (back to Addam). Check the secret identity rule: with Addam leading one session, start a second and spawn agents, and He-Clawd must never appear; with He-Clawd already on screen as an agent, `/compact` Addam's session and he should only play the lightning.
+- **The transformation:** `/compact` in a Claude session led by Prince Addam (he becomes He-Clawd), then again (back to Addam). Check the secret identity rule: with Addam leading one session, start a second and spawn agents, and He-Clawd must never appear (the `guises` casting). For the guard on the swap, switch the universe to Clawds of the Universe with sessions open so that He-Clawd and Addam both come through `adopt`, then `/compact` Addam's session: he should only play the lightning.
 - **The moral:** finish a few sessions led by heroes and check one in eight or so ends with a line, never from a villain, never twice in half an hour.
 
 ## Transitions (`EterniaTrip`, 12)
@@ -571,11 +580,13 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 
 1. **Name: Clawds of the Universe.** The code naming stays as it was: `case eternia`, key `"eternia"`, folder `Sources/App/Universes/Eternia/`, prefix `Eternia…`, branch `he_man`, `REEL=eternia`. This file keeps its old path.
 2. **Scope: the 1983–1987 cast.** The 1983 Filmation cartoon, She-Ra (1985) and the 1987 live-action film. The film adds Gwildor (hero 43), the villains Blade (38), Saurod (39) and Karg (40), appended after Jitsu, with the Dark Troopers (41) as agent-only small fry, and a 21st place, the small Earth town at night. Nemeses: Gwildor ↔ Karg, Snout Spout ↔ Saurod, Stonedar ↔ Blade. Julie, Kevin and Detective Lubic stay out. The 2002 series and Revelation stay out; the 2002 Snake Men could come later as an add-on, appended to the enums.
-3. **The transformation: approved.** Two characters per pair (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), swapping on compaction. **The secret identity rule: approved.** A pair is never on stage at once, enforced in `pickLeader`, `nextAgentCast` and the `PreCompact` swap (see Mechanics).
+3. **The transformation: approved.** Two characters per pair (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), swapping on compaction. **The secret identity rule: approved.** A pair is never on stage at once, through `Universe.guises` and a guard on the `PreCompact` swap (see Mechanics and the 2026-10-17 note below).
 4. **The moral: approved.** Short and rare end-of-episode morals when a session finishes, heroes only, in the Filmation voice with a coding twist. A small engine change: a roll on `Stop` and a line in the done state (see Mechanics).
 5. **Swaps:** none beyond item 6.
 6. **Katra's panther form is dropped; Panthor stays.** Jitsu (villain 37), Skeletor's martial artist with the golden chopping hand, comes in from the bench, at home in Snake Mountain, facing Clawfist (Two Bad loses that pairing).
 7. **Names:** the plain ones (Bow, Glimmer, Kowl, Webstor, Whiplash, Faker) stay as they are.
+
+**2026-10-17: uses `Universe.guises`, decided by the user.** The four pairs (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind) go in the engine's existing `guises`, which already keeps Clawd of the Rings' pairs off the stage together, instead of a new `transformations: [Int: Int]` map and changes to `pickLeader` and `nextAgentCast`. What's left to build is the compaction swap: the `guisesSwapOnCompaction` flag, the `PreCompact` branch with its guard against the other self being on stage, and its effect.
 
 **The counts now:** 44 heroes (42 who lead, Loo-Kee, HEM) and 41 villains (37 who lead, 4 agent-only), so 85 in all, with `heroCount` 44 and `villainCount` 41. Agent-only: table rows hero #42 and villains #34, #35, #36, #41 (0-based enum ids hero 41; villains 33, 34, 35, 40). 21 places, 12 transitions, 28 nemesis pairs.
 
