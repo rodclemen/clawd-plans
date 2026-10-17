@@ -80,7 +80,7 @@ The show is full of gore, torture and dark themes. Clawd Clash is a desktop toy,
   - `:68` `rivals` (Death and Billie, see Cast; today it's `self == .starWars ? [0, 1] : []`, so it becomes a switch);
   - `:90` `abductees`: Dean, Sam, Clawstiel, Bobby and Jack, the way Clawdberg lists its time travellers;
   - `:106` `isReleased`: return `false` for `.hunters` until phase 6 if it's built on `main`, as Clawd of the Rings was.
-- **`Sources/App/Theme.swift:48`:** `Theme.of`. **`:90`** add `impala` to `enum Ride`; **`:93`** add it to `Ride.drives`.
+- **`Sources/App/Theme.swift:40`:** `Theme.of`. **`:89`** add `impala` to `enum Ride`; **`:93`** add it to `Ride.drives`.
 - **`Sources/App/Locations.swift:72`:** `.merging(huntPlaces)`.
 - **`Sources/App/Universes/ComicTransition.swift`:** in phase 1, a `case .hunters: return nil` in `pick` (`:40–62`). In phase 5, a `.hunters(HuntTrip)` case at `:8–13`, in `duration` (`:15–23`), `draw` (`:26–35`) and `pick`, and the doc comment at `:3–6`.
 - **`Sources/App/Universes/Hem.swift:15–31, 63–104, 113–118, 130, 203`:** HEM's persona and costume in every switch.
