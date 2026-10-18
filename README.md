@@ -6,7 +6,6 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 
 | Plan | Universe | Status |
 |---|---|---|
-| [in-progress/buffy.md](in-progress/buffy.md) | Clawd Slayer (Buffy the Vampire Slayer) | **in progress** (branch `buffy` in clawd-clash) |
 | [clawd-trek.md](clawd-trek.md) | Clawd Trek (Star Trek) | decided, ready for phase 1 |
 | [clawd-james-clawd.md](clawd-james-clawd.md) | James Clawd (007) | decided, ready for phase 1 |
 | [clawdformers.md](clawdformers.md) | Clawdformers (Transformers) | decided, ready for phase 1 |
@@ -18,6 +17,7 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 | [harry-potter.md](harry-potter.md) | Harry Clawder (Harry Potter, the seven books and eight films) | decided, ready for phase 1 |
 | [dungeon-crawler-carl.md](dungeon-crawler-carl.md) | Dungeon Clawd Carl (Dungeon Crawler Carl, all eight books) | decided, ready for phase 1 |
 | [in-progress/clawd-burton.md](in-progress/clawd-burton.md) | Clawd Burton (Tim Burton's films) | **in progress**, phase 1 done (Henrik, branch `feature-burton` in HEM42/clawd-clash) |
+| [done/clawd-slayer.md](done/clawd-slayer.md) | Clawd Slayer (Buffy the Vampire Slayer) | built, released in 3.7.0 |
 | [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
 | [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
 | [done/stevie-clawdberg.md](done/stevie-clawdberg.md) | Stevie Clawdberg (Spielberg's films) | built |
