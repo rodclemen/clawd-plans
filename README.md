@@ -1,6 +1,6 @@
 # Clawd plans
 
-Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, written with [`clawdify_guide.md`](clawdify_guide.md) (a copy of the one in the clawd-clash repo, as of 3.6.0). Plans only, no code.
+Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, written with [`clawdify_guide.md`](clawdify_guide.md) (a copy of the one in the clawd-clash repo, as of 3.7.0). Plans only, no code.
 
 Folders: plans at the top level are free to pick up; `in-progress/` is being built by someone (don't start it); `done/` is built and released.
 
