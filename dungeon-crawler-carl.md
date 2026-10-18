@@ -487,10 +487,10 @@ No cover art, logo or melody is copied.
 
 All four gates are passed:
 - **Name: Dungeon Clawd Carl.** Everyone keeps the on-page name.
-- **Scope:** all eight books (assumed at gate 1, unchallenged).
+- **Scope:** all eight books (confirmed by you after the plan was written).
 - **Code naming:** `case crawl`, prefix `Crawl`, folder `DungeonClawdCarl/`, branch `dungeon-crawler-carl`, `REEL=crawl`.
 - **Raw value:** settled at build time.
-- **Tone:** the Desperado dancers are in, your call (pixel art keeps them from being too sexy); Samantha is a doll's head with smeared red lipstick; Lucia Mar stays a villain (assumed at gate 1, unchallenged).
+- **Tone:** the Desperado dancers are in, your call (pixel art keeps them from being too sexy); Samantha is a doll's head with smeared red lipstick; Lucia Mar stays a villain (confirmed by you after the plan was written).
 - **Roster:** approved as drafted: 51 heroes (with HEM and the agent-only Garret), 44 villains (with five small fry), 95 in all. Callouts "I'll kill your mother!" (Samantha) and Prepotente's scream approved.
 - **Places and homes:** the 20 approved; the Hoarder is homebound in her lair.
 - **Mechanics:** the monster truck, New Achievement!, the fans, Mongo and Donut, Prepotente's scream and petty-achievement habits, the drills, no meditation.
