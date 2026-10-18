@@ -15,6 +15,7 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 | [supernatural.md](supernatural.md) | Superclawdtural (Supernatural) | decided, ready for phase 1 |
 | [battlestar.md](battlestar.md) | Battleclawd Galactica (Battlestar Galactica 2004 and Caprica) | decided, ready for phase 1 |
 | [stranger-things.md](stranger-things.md) | Stranger Clawds (Stranger Things, all five seasons) | decided, ready for phase 1 |
+| [harry-potter.md](harry-potter.md) | Harry Clawder (Harry Potter, the seven books and eight films) | decided, ready for phase 1 |
 | [in-progress/clawd-burton.md](in-progress/clawd-burton.md) | Clawd Burton (Tim Burton's films) | **in progress**, phase 1 done (Henrik, branch `feature-burton` in HEM42/clawd-clash) |
 | [done/clawd-files.md](done/clawd-files.md) | The Clawd Files (The X-Files) | built |
 | [done/doctor-clawd.md](done/doctor-clawd.md) | Doctor Clawd (Doctor Who) | built |
