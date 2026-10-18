@@ -623,7 +623,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 
 ### 8. Clawd Slayer, the first universe built from the template
 
-- `new-universe.sh ClawdSlayer Slayer slayer "Clawd Slayer" 7`, then the existing plan (`clawd-plans/in-progress/buffy.md`) from its phase 1. It's a pull request that adds only `ClawdSlayer/`, which proves the whole flow.
+- `new-universe.sh ClawdSlayer Slayer slayer "Clawd Slayer" 7`, then the existing plan (`clawd-plans/done/clawd-slayer.md`) from its phase 1. It's a pull request that adds only `ClawdSlayer/`, which proves the whole flow.
 
 **Recommendation: do this before Clawd Slayer.** Slayer is the next universe (number 7, since Clawd of the Rings has 6 on `main`), and as things stand its skeleton is already editing 9 shared files. Every universe built the old way is one more to port in phase 2.
 
