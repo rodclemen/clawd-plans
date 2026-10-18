@@ -1,5 +1,7 @@
 # Plan: universes as modules (one folder each)
 
+> **Status, 18 October 2026.** Started on branch `universe-modules` in clawd-clash, off `main` after 3.7.0. Clawd Slayer was built the old way and released as universe 7, so it's the eighth universe to port in phase 2 (everywhere below, "the eight" are numbers 0–7). The open questions are settled with the recommended answers: numbers are handed out in `NUMBERS` before work starts; the manifest is a plain `universe.conf`; Clawd Royale sessions from a removed universe keep their characters until they end; the owner's curated pictures keep naming universes by hand; only the three original universes have casks (`cask` stays empty for new ones). Phase 8 is now "the next new universe is the first built from the template". Phase 0 is done: `Tools/Baseline/baseline.sh` and `compare.sh`, and `build/preview ids`.
+
 ## Context
 
 ### The problem
@@ -18,7 +20,7 @@ Make adding a universe a matter of **adding one folder**:
 
 ### Constraints
 
-- **Ids are forever.** A character's id is `universe number × 1000 + local id`. It's saved in `~/.claude/clawd-clash/state.json`, in the screen-saver feed, and in each AI's running session. The seven existing numbers (0–6) and every saved id must stay exactly the same. That isn't up for discussion.
+- **Ids are forever.** A character's id is `universe number × 1000 + local id`. It's saved in `~/.claude/clawd-clash/state.json`, in the screen-saver feed, and in each AI's running session. The eight existing numbers (0–7) and every saved id must stay exactly the same. That isn't up for discussion.
 - **One signed app.** Universes stay compiled into the one notarised app. They are source-level modules, **not runtime plugins**. Plugins were looked at and turned down:
   - Swift has no stable ABI for this kind of thing between separately built pieces.
   - Every plugin would need its own signing and notarisation.
@@ -237,7 +239,7 @@ The number is the one thing two contributors could clash over, because it decide
 4         clawdFiles  ClawdFiles        shipped
 5         clawdberg   StevieClawdberg   shipped
 6         middleEarth ClawdOfTheRings   shipped
-7         slayer      ClawdSlayer       reserved
+7         slayer      ClawdSlayer       active
 999       template    _Template         template
 ```
 
@@ -247,7 +249,7 @@ The number is the one thing two contributors could clash over, because it decide
   - two folders claim the same number or key;
   - a `shipped` line has no folder (a universe can't quietly disappear and leave saved ids pointing at nothing);
   - a number is 900 or above outside a `TEMPLATE=1` build (that range is kept for the template).
-- **How 0–6 stay the same:** the existing seven get exactly their current numbers and keys in `NUMBERS` and in their manifests. `base` is still `number × 1000`. The enums are moved but not reordered. Verification dumps every id, name, place key and magic variant before and after, and the two lists must be identical.
+- **How 0–7 stay the same:** the existing eight get exactly their current numbers and keys in `NUMBERS` and in their manifests. `base` is still `number × 1000`. The enums are moved but not reordered. Verification dumps every id, name, place key and magic variant before and after, and the two lists must be identical.
 
 ---
 
@@ -272,7 +274,7 @@ Counted on `main` at `e6f639c`; the line numbers below were checked against `mai
 | `App/Theme.swift:40–50` | `Theme.of` switch | `u.module.theme` |
 | `App/Theme.swift:89–90` | the `Ride` enum, 14 cases from 6 universes | `Ride` struct; each ride in its universe's folder |
 | `App/Locations.swift:22, 29` | which universe a place is in; every place | a dictionary built once from the registry (faster too) |
-| `App/Locations.swift:70–72` | merging seven places dictionaries | merged from `module.places`; **a duplicate key becomes an error** (today `merging { a, _ in a }` silently drops one) |
+| `App/Locations.swift:70–72` | merging eight places dictionaries | merged from `module.places`; **a duplicate key becomes an error** (today `merging { a, _ in a }` silently drops one) |
 | `App/Universes/Hem.swift:13–34` | HEM's persona per universe | `module.hem.persona` |
 | `Hem.swift:62–107, 111–120, 123–149` | legs, colours, chest | `hem.legs`, `hem.top`, `hem.chest` |
 | `Hem.swift:55–58, 151–153, 157–184, 195–196` | the sonic's lift, helmet, fez, fedora, heart, shield on the back, and Éowyn's Rohan helmet coming off in her signature (which also starts the fist-shake later) | `hem.headwear`, `hem.prop` |
@@ -322,15 +324,15 @@ Counted on `main` at `e6f639c`; the line numbers below were checked against `mai
 
 | File:lines | What it decides | Where it goes |
 |---|---|---|
-| `Tools/Preview/main.swift:63–120` | batch names and enum-case lookups for all seven | `module.preview` (batches, `caseNames`); the tool loops over the registry |
+| `Tools/Preview/main.swift:63–120` | batch names and enum-case lookups for all eight | `module.preview` (batches, `caseNames`); the tool loops over the registry |
 | `Preview/main.swift:409–424` | the rides sheet lists 13 rides (not yet the Eagle) | every module's rides |
 | `Tools/Transitions/main.swift:4–15, 48–95, 129–133` | one function and branch per universe | `module.transitions.every(from:to:)` |
 | `Transitions/main.swift:96–110, 190, 201` | Files' caption at the end of each clip | `module.placeCaption` |
 | `Transitions/main.swift:209–312, 353–357` | Stevie Clawdberg's showcase video and title | `StevieClawdberg/Promo/ClawdbergShowcase.swift` |
-| `Tools/RenderDocs/main.swift:89–162, 215–221` | seven desktop line-ups (Clawd of the Rings' borrows Files' `filesPair`) | `module.docs.lineup` (`Extra` moves to the core as `LineupSlot`) |
-| `RenderDocs/main.swift:313–340` | seven social previews' titles, subtitles and groups | `module.docs.social` |
+| `Tools/RenderDocs/main.swift:89–162, 215–221` | eight desktop line-ups (Clawd of the Rings' borrows Files' `filesPair`) | `module.docs.lineup` (`Extra` moves to the core as `LineupSlot`) |
+| `RenderDocs/main.swift:313–340` | eight social previews' titles, subtitles and groups | `module.docs.social` |
 | `Tools/RenderShowcase/main.swift:115–193, 249–407, 408–579, 580–751` | Doctor's, Files', Clawd of the Rings' and Clawdberg's showcase pictures, and the switch that picks one | each folder's `Promo/<Prefix>Showcase.swift`, behind a small `Showcase` protocol |
-| `Tools/RenderPromo/main.swift:2168–4333, 4637–5493` | seven trailers: shots, beats, sound, title, set pieces | each folder's `Promo/<Prefix>Reel.swift`, behind a `PromoReel` protocol |
+| `Tools/RenderPromo/main.swift:2168–4333, 4637–5493` | eight trailers: shots, beats, sound, title, set pieces | each folder's `Promo/<Prefix>Reel.swift`, behind a `PromoReel` protocol |
 | `RenderPromo/main.swift:250–257, 5500–5512, 5557–5561, 6158–6169, 6309–6310, 6324–6326, 6336–6345` | the reel switches: the `gemini ▸` line, shots, poster, soundtrack, file names, storyboard |
 | `RenderPromo/main.swift:751–766, 5576–5596, 5972–5996` | the shot transitions: Star Wars', Marvel's, DC's and Clawd of the Rings' own cases, the rest through `.trip(ComicTransition)` | not in the design yet | from the registered reels |
 | `RenderPromo/main.swift:785–1911, 1912–2167, 4334–4636` | the main promo, the bloopers and the Clawd Royale teaser (they mix universes) | stay in the tool: the owner's reels |
@@ -382,7 +384,7 @@ Each of these becomes a general hook in phase 2, with its current user as the fi
 | `FilesCaption` in the window and saver | `PlaceCaption`: typed lines, font, a dark box, extra time at the end of a trip | The Clawd Files |
 | `universe == .dc` web colour | `swingLine` | Detective Clawds |
 | the `classic` pose | `PoseStyle.classic`: kept for Star Clawds only; new universes use `.modern` | Star Clawds |
-| the meditation guard | `Meditation` | all seven |
+| the meditation guard | `Meditation` | all eight |
 
 ### Asking for a new hook
 
@@ -505,7 +507,7 @@ Clawd Slayer (slayer, 7)
   ✓ place keys: 20, unique across all 8 universes
   ✓ magic: 9 magic users, each with its own variant; no earlier universe's variants changed
   ✗ signatures: Spike has signature: 3.0 but his drawing never reads p.signature
-  ✓ ids: every existing id (0–6) has the same character as on main
+  ✓ ids: every existing id (0–7) has the same character as on main
   ✓ nemeses: 14 pairs, each a hero and a villain from this universe
   ✓ transitions: 11 kinds, each renders start to end; durations 1.6–6.0 s
   ✓ the core doesn't name this universe; this universe doesn't name any other
@@ -522,7 +524,7 @@ What it checks, and how:
 - **Counts:** `facts` counts against the `Theme`'s persona lists; HEM is last and drawn with the engine's HEM.
 - **Homes:** every cast member's `home` is in `theme.places`, and every place in `theme.places` has a drawing.
 - **Place keys:** the number of merged places equals the sum of every universe's places, so nothing was dropped.
-- **Magic variants:** every `(family, variant)` pair is unique across all universes, and the variants of universes 0–6 match main's.
+- **Magic variants:** every `(family, variant)` pair is unique across all universes, and the variants of universes 0–7 match main's.
 - **Signatures:** every persona with a `signature` is drawn at `signature` 0.5 and at none; identical pixels mean the drawing never uses it. Leads without one are listed as a note.
 - **Ids:** dumps `id → name` for every universe and compares it with the same dump built from `main`. Any change to an existing id fails.
 - **Core-blind lint:** no file outside the folder mentions its types, keys or place names (except the known owner-curated tools and the old-app migration lines), and the folder mentions no other universe's.
@@ -573,10 +575,10 @@ Every phase builds, passes the verification below, and **leaves the app identica
 - Add a hidden `--dump-ids` flag (to Preview, so the app doesn't change) that prints every `id, universe key, name`, every place key with its universe, every magic variant, and the hook's global sets (agent-only, rivals, compaction lists). Save it as the baseline.
 - A tiny `Tools/Baseline/compare.sh` renders the same set again and compares it with `cmp` (same pixels give the same PNG bytes from the same encoder), listing anything that differs.
 
-### 1. The protocols and a hand-written registry, the seven adapted in place
+### 1. The protocols and a hand-written registry, the eight adapted in place
 
 - Add `UniverseFacts`, `UniverseModule` (every member with a default for now), `Trip` and `TransitionSet`.
-- Turn `Universe` into the struct, with a **hand-written** list of the seven in `Sources/Shared` for now.
+- Turn `Universe` into the struct, with a **hand-written** list of the eight in `Sources/Shared` for now.
 - Give each universe a `<Prefix>Facts.swift` (enums moved from the roster file, unchanged and in order) and a `<Prefix>Universe.swift` that returns what already lives in its folder: theme, places, trips, Files' and Clawdberg's drills.
 - Swap the core's simple switches for registry lookups: `Theme.of`, the places merge, `Universe`'s properties, `ComicTransition`, Preview's universe list.
 - Check: pixel-identical baseline, identical `--dump-ids`.
@@ -611,7 +613,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 
 ### 5. check-universe
 
-- `Tools/CheckUniverse/`. Run `--all` on the seven: everything passes, or the misses are fixed (expected: a few unprefixed top-level helpers, and maybe a signature or two never drawn).
+- `Tools/CheckUniverse/`. Run `--all` on the eight: everything passes, or the misses are fixed (expected: a few unprefixed top-level helpers, and maybe a signature or two never drawn).
 
 ### 6. Add and remove universes
 
@@ -621,11 +623,9 @@ Every phase builds, passes the verification below, and **leaves the app identica
 
 - Rewrite `clawdify_guide.md` (sections above) and refresh the copy in `clawd-plans`.
 
-### 8. Clawd Slayer, the first universe built from the template
+### 8. The next universe, the first built from the template
 
-- `new-universe.sh ClawdSlayer Slayer slayer "Clawd Slayer" 7`, then the existing plan (`clawd-plans/done/clawd-slayer.md`) from its phase 1. It's a pull request that adds only `ClawdSlayer/`, which proves the whole flow.
-
-**Recommendation: do this before Clawd Slayer.** Slayer is the next universe (number 7, since Clawd of the Rings has 6 on `main`), and as things stand its skeleton is already editing 9 shared files. Every universe built the old way is one more to port in phase 2.
+- Clawd Slayer was built the old way and released in 3.7.0, so it's ported in phase 2 with the others. The next planned universe (the top-level plans in clawd-plans) starts with `new-universe.sh`, as a pull request that adds only its folder, which proves the whole flow.
 
 ---
 
@@ -634,7 +634,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 - **Pixels.** After every commit in phases 1–5: the full baseline set (Preview batches, places, rides, fights, drills, transition key frames, RenderDocs and RenderShowcase pictures, reel storyboards and fixed frames) compared byte for byte. The only allowed differences are deliberate ones, named in the commit.
 - **Saved ids.** `--dump-ids` identical: every id's character, every place key's universe, every magic variant, the hook's agent-only, rival and compaction sets. That proves a session saved by today's app and hook opens as the same character after the refactor.
 - **The hook.** A fixture `state.json` fed through the built hook binary with PreCompact, SessionStart and SubagentStart events: the same output before and after. Then, with `off` set, Clawd Royale never casts from a universe that's off.
-- **Release build.** `./build.sh --release <version>` builds universal binaries (watch the type-checker on the moved drawing code). `--list-universes` lists the seven, with no template. The casks match today's.
+- **Release build.** `./build.sh --release <version>` builds universal binaries (watch the type-checker on the moved drawing code). `--list-universes` lists the eight, with no template. The casks match today's.
 - **The screen saver.** Installed from the app: the Options list is the same ten entries in the same order (until phase 6, then without the ones that are off). Each universe, Clawd Royale and Random work, and The Clawd Files' typed caption still types.
 - **In the app.** Each universe in Settings, Random, Clawd Royale, the menu bar icons, the Playground's prompts, `--missing-time` (FBI agents' beam, Marty's 88 mph), `/compact` with a Doctor, Han and Greedo, Indy and the swordsman, the Weeping Angle, Clawk and the Croc Clock, T. Wrecks's glass, HEM and Laya.
 - **Size and memory.** The binary sizes and the running app's memory before and after. They're expected to be the same within a few hundred KB; the hook grows a little from the enums.
@@ -648,7 +648,7 @@ Every phase builds, passes the verification below, and **leaves the app identica
 - **Order-dependent results.** `magicVariants`, the places merge and the menu order depend on the registry being in number order. The registry sorts by number, and `--dump-ids` would catch any slip.
 - **Random picks.** Moving `ComicTransition.pick` could change how random numbers are used, so the same run picks a different trip. Nobody sees that, and pixel checks use the deterministic tools, but it's worth knowing.
 - **Generated code.** A contributor who never runs a build script won't have `build/gen/`. Every script runs `universes.sh` first, so this only affects editor completion.
-- **Phase 2 is the long one.** Seven universes, each with its own surprises. It can be spread over several sessions, because each commit stands on its own.
+- **Phase 2 is the long one.** Eight universes, each with its own surprises. It can be spread over several sessions, because each commit stands on its own.
 
 ## Open questions for the owner
 
