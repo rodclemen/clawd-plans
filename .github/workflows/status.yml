@@ -22,15 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Refresh the README
+      # Two runs can overlap (a push and a manual run), so each try starts from the latest main and the push
+      # is retried if someone else got there first.
+      - name: Refresh the README and commit it if anything changed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/status.py
-      - name: Commit it if anything changed
         run: |
-          git diff --quiet README.md && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          git commit -am "docs(readme): refresh the universes' build status" \
-            -m "Worked out by scripts/status.py from the branches, main and release tags on GitHub."
-          git push
+          for try in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 scripts/status.py
+            git diff --quiet README.md && exit 0
+            git commit -qam "docs(readme): refresh the universes' build status" \
+              -m "Worked out by scripts/status.py from the branches, main and release tags on GitHub."
+            git push -q origin HEAD:main && exit 0
+            echo "push rejected, trying again"
+          done
+          exit 1
