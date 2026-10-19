@@ -1,5 +1,5 @@
 # Plan: a blockbuster universe, Stevie Clawdberg (a Spielberg/Amblin parody)
-<!-- track: repo=rodclemen/clawd-clash folder=StevieClawdberg title="Stevie Clawdberg" cast=118 places=23 -->
+<!-- track: repo=rodclemen/clawd-clash folder=StevieClawdberg title="Stevie Clawdberg" source="Spielberg's films" cast=118 places=23 -->
 
 ## Context
 

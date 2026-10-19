@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawds of the Universe (He-Man and the Masters of the Universe)
-<!-- track: repo=rodclemen/clawd-clash branch=he_man folder=Eternia title="Clawds of the Universe" cast=85 places=21 -->
+<!-- track: repo=rodclemen/clawd-clash branch=he_man folder=Eternia title="Clawds of the Universe" source="He-Man and She-Ra" cast=85 places=21 -->
 
 (The file keeps its old name, `masters-of-the-clawdiverse.md`, so links to it still work. The universe is called **Clawds of the Universe**.)
 

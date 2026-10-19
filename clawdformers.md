@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawdformers (Transformers parody)
-<!-- track: repo=rodclemen/clawd-clash branch=transformers folder=Clawdformers title="Clawdformers" cast=112 places=23 -->
+<!-- track: repo=rodclemen/clawd-clash branch=transformers folder=Clawdformers title="Clawdformers" source="Transformers" cast=112 places=23 -->
 
 ## Context
 

@@ -1,5 +1,5 @@
 # Plan: a new universe, Harry Clawder (Harry Potter parody)
-<!-- track: repo=rodclemen/clawd-clash branch=harry-potter folder=HarryClawder title="Harry Clawder" cast=85 places=22 -->
+<!-- track: repo=rodclemen/clawd-clash branch=harry-potter folder=HarryClawder title="Harry Clawder" source="Harry Potter, the seven books and eight films" cast=85 places=22 -->
 
 ## Context
 

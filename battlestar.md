@@ -1,5 +1,5 @@
 # Plan: a new universe, Battleclawd Galactica (Battlestar Galactica parody)
-<!-- track: repo=rodclemen/clawd-clash branch=battlestar folder=BattleclawdGalactica title="Battleclawd Galactica" cast=51 places=17 -->
+<!-- track: repo=rodclemen/clawd-clash branch=battlestar folder=BattleclawdGalactica title="Battleclawd Galactica" source="Battlestar Galactica 2004 and Caprica" cast=51 places=17 -->
 
 ## Context
 

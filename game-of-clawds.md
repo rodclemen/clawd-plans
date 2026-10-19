@@ -1,5 +1,5 @@
 # Plan: a new universe, Game of Clawds (Game of Thrones parody)
-<!-- track: repo=rodclemen/clawd-clash branch=game_of_thrones folder=GameOfClawds title="Game of Clawds" cast=99 places=20 -->
+<!-- track: repo=rodclemen/clawd-clash branch=game_of_thrones folder=GameOfClawds title="Game of Clawds" source="Game of Thrones" cast=99 places=20 -->
 
 ## Context
 

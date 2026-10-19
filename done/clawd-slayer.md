@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawd Slayer (Buffy the Vampire Slayer parody)
-<!-- track: repo=rodclemen/clawd-clash branch=buffy folder=Slayer title="Clawd Slayer" cast=84 places=20 -->
+<!-- track: repo=rodclemen/clawd-clash branch=buffy folder=Slayer title="Clawd Slayer" source="Buffy the Vampire Slayer" cast=84 places=20 -->
 
 ## Context
 

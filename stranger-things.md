@@ -1,5 +1,5 @@
 # Plan: a new universe, Stranger Clawds (Stranger Things parody)
-<!-- track: repo=rodclemen/clawd-clash branch=stranger-things folder=StrangerClawds title="Stranger Clawds" cast=45 places=16 -->
+<!-- track: repo=rodclemen/clawd-clash branch=stranger-things folder=StrangerClawds title="Stranger Clawds" source="Stranger Things, all five seasons" cast=45 places=16 -->
 
 ## Context
 

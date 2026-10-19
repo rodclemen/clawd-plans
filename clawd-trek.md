@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawd Trek (Star Trek parody)
-<!-- track: repo=rodclemen/clawd-clash branch=star_trek folder=ClawdTrek title="Clawd Trek" cast=100 places=21 -->
+<!-- track: repo=rodclemen/clawd-clash branch=star_trek folder=ClawdTrek title="Clawd Trek" source="Star Trek" cast=100 places=21 -->
 
 ## Context
 
