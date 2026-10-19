@@ -1,5 +1,5 @@
 # Plan: a new universe, Game of Clawds (Game of Thrones parody)
-<!-- track: repo=rodclemen/clawd-clash branch=game_of_thrones folder=GameOfClawds title="Game of Clawds" source="Game of Thrones" cast=99 places=20 -->
+<!-- track: repo=rodclemen/clawd-clash branch=game-of-clawds folder=GameOfClawds title="Game of Clawds" source="Game of Thrones" cast=99 places=20 -->
 
 ## Context
 
@@ -23,7 +23,7 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17). This plan adds 
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case thrones` with key `"thrones"`.
   - Folder `Sources/App/Universes/GameOfClawds/`, file prefix `Thrones…` (`ThronesRoster.swift`, `ThronesHeroes1.swift`, `ThronesWipes.swift` …). Nothing in the repo uses `Thrones` today.
-  - Branch `game_of_thrones`.
+  - Branch `game-of-clawds`.
 - **Raw value:** the next free one when its build starts, checked against main and the open branches (main ends at `middleEarth = 6`, and the `buffy` branch still has `slayer = 6`); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names, one per house so families read together: the Starks are **Stork**, the Lannisters **Lannclaw**, the Targaryens **Clawgaryen**, the Mormonts **Clawmont**, the Greyjoys **Greyjaw**, the Tyrells **Tyrose**, the Cleganes **Clawgane**. Where a pun would be forced, a near-spelling (Gendree, Syrio Foral). Actors' names are never used.
 - **Scope:** the HBO series only. House of the Dragon is an option (see Open questions); it can be appended later without touching any ids.

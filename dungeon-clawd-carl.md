@@ -1,5 +1,5 @@
 # Plan: a new universe, Dungeon Clawd Carl (Dungeon Crawler Carl parody)
-<!-- track: repo=rodclemen/clawd-clash branch=dungeon-crawler-carl folder=DungeonClawdCarl title="Dungeon Clawd Carl" source="Dungeon Crawler Carl, all eight books" cast=95 places=20 -->
+<!-- track: repo=rodclemen/clawd-clash branch=dungeon-clawd-carl folder=DungeonClawdCarl title="Dungeon Clawd Carl" source="Dungeon Crawler Carl, all eight books" cast=95 places=20 -->
 
 ## Context
 
@@ -26,7 +26,7 @@ Clawd Clash has seven universes on `main` (b5c6ab8, 2026-10-18). This plan adds 
   - `case crawl` with key `"crawl"`.
   - Folder `Sources/App/Universes/DungeonClawdCarl/`, file prefix `Crawl` (`CrawlRoster.swift`, `CrawlHeroes1.swift`, `CrawlWipes.swift` …). No file in the repo uses `Crawl` as a prefix today. Top-level names start with `crawl` or are `private`, as `scripts/pr-guard.py` asks. Star Clawds' sandcrawler has locals called `crawlerLights` and `crawlerHigh`; don't name anything `crawler…`.
   - Place keys are prefixed `crawl…` (`crawlSafeRoom`); none clash with `main` or `buffy`.
-  - Branch `dungeon-crawler-carl`. Trailer `REEL=crawl`.
+  - Branch `dungeon-clawd-carl`. Trailer `REEL=crawl`.
 - **Raw value: next free when the build starts.** Check `main`, the open branches (`buffy` has `slayer = 7`), Henrik's fork (HEM42/clawd-clash) and the other plans (Harry Clawder's `wizards` among them). Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** everyone keeps the on-page name. The books' names are already jokes (Princess Donut, Gluteus Maxx, Splash Zone), and a pun on top would be forced. No narrators' or actors' names (Donut's announced voice actor included), and no character named after a real person.
 - **Size:** 95 characters and 20 places, in the guide's 70 to 100 target.
@@ -489,7 +489,7 @@ No cover art, logo or melody is copied.
 All four gates are passed:
 - **Name: Dungeon Clawd Carl.** Everyone keeps the on-page name.
 - **Scope:** all eight books (confirmed by you after the plan was written).
-- **Code naming:** `case crawl`, prefix `Crawl`, folder `DungeonClawdCarl/`, branch `dungeon-crawler-carl`, `REEL=crawl`.
+- **Code naming:** `case crawl`, prefix `Crawl`, folder `DungeonClawdCarl/`, branch `dungeon-clawd-carl`, `REEL=crawl`.
 - **Raw value:** settled at build time.
 - **Tone:** the Desperado dancers are in, your call (pixel art keeps them from being too sexy); Samantha is a doll's head with smeared red lipstick; Lucia Mar stays a villain (confirmed by you after the plan was written).
 - **Roster:** approved as drafted: 51 heroes (with HEM and the agent-only Garret), 44 villains (with five small fry), 95 in all. Callouts "I'll kill your mother!" (Samantha) and Prepotente's scream approved.

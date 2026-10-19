@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawds of the Universe (He-Man and the Masters of the Universe)
-<!-- track: repo=rodclemen/clawd-clash branch=he_man folder=Eternia title="Clawds of the Universe" source="He-Man and She-Ra" cast=85 places=21 -->
+<!-- track: repo=rodclemen/clawd-clash branch=clawds-of-the-universe folder=Eternia title="Clawds of the Universe" source="He-Man and She-Ra" cast=85 places=21 -->
 
 (The file keeps its old name, `masters-of-the-clawdiverse.md`, so links to it still work. The universe is called **Clawds of the Universe**.)
 
@@ -15,7 +15,7 @@ Clawd Clash has seven universes: Star Clawds, Marvelous Clawds, Detective Clawds
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case eternia` with key `"eternia"`.
   - Folder `Sources/App/Universes/Eternia/`, file prefix `Eternia…`.
-  - Branch `he_man`. Trailer reel `REEL=eternia`.
+  - Branch `clawds-of-the-universe`. Trailer reel `REEL=eternia`.
 - **Raw value:** the next free one when its build starts, checked against main and the open branches (Clawd of the Rings is `middleEarth = 6` on main, and the `buffy` branch also uses 6 today); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (He-Clawd, Skeleclawd, Man-At-Claws, Trap Claw, Tri-Klawps). Where no pun comes naturally, a near-spelling or the plain name (Bow, Glimmer, Kowl, Cringer). Actors' names are never used.
 - **Size:** **85 characters**: 44 heroes including HEM and one agent-only, and 41 villains including 4 agent-only. Plus **21 places** and **12 transitions**.
@@ -579,7 +579,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 
 ## Decisions (2026-10-16)
 
-1. **Name: Clawds of the Universe.** The code naming stays as it was: `case eternia`, key `"eternia"`, folder `Sources/App/Universes/Eternia/`, prefix `Eternia…`, branch `he_man`, `REEL=eternia`. This file keeps its old path.
+1. **Name: Clawds of the Universe.** The code naming stays as it was: `case eternia`, key `"eternia"`, folder `Sources/App/Universes/Eternia/`, prefix `Eternia…`, branch `clawds-of-the-universe`, `REEL=eternia`. This file keeps its old path.
 2. **Scope: the 1983–1987 cast.** The 1983 Filmation cartoon, She-Ra (1985) and the 1987 live-action film. The film adds Gwildor (hero 43), the villains Blade (38), Saurod (39) and Karg (40), appended after Jitsu, with the Dark Troopers (41) as agent-only small fry, and a 21st place, the small Earth town at night. Nemeses: Gwildor ↔ Karg, Snout Spout ↔ Saurod, Stonedar ↔ Blade. Julie, Kevin and Detective Lubic stay out. The 2002 series and Revelation stay out; the 2002 Snake Men could come later as an add-on, appended to the enums.
 3. **The transformation: approved.** Two characters per pair (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), swapping on compaction. **The secret identity rule: approved.** A pair is never on stage at once, through `Universe.guises` and a guard on the `PreCompact` swap (see Mechanics and the 2026-10-17 note below).
 4. **The moral: approved.** Short and rare end-of-episode morals when a session finishes, heroes only, in the Filmation voice with a coding twist. A small engine change: a roll on `Stop` and a line in the done state (see Mechanics).

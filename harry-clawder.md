@@ -1,5 +1,5 @@
 # Plan: a new universe, Harry Clawder (Harry Potter parody)
-<!-- track: repo=rodclemen/clawd-clash branch=harry-potter folder=HarryClawder title="Harry Clawder" source="Harry Potter, the seven books and eight films" cast=85 places=22 -->
+<!-- track: repo=rodclemen/clawd-clash branch=harry-clawder folder=HarryClawder title="Harry Clawder" source="Harry Potter, the seven books and eight films" cast=85 places=22 -->
 
 ## Context
 
@@ -28,7 +28,7 @@ Clawd Clash has seven universes on `main` (b5c6ab8, 2026-10-18). This plan adds 
   - `case wizards` with key `"wizards"`.
   - Folder `Sources/App/Universes/HarryClawder/`, file prefix `Wand` (`WandRoster.swift`, `WandHeroes1.swift`, `WandWipes.swift` …). No file in the repo uses `Wand` as a prefix today. Top-level names start with `wand` or are `private`, as `scripts/pr-guard.py` asks.
   - Place keys are prefixed `wand…` (`wandGreatHall`), the way Clawd Slayer prefixes its own with `slayer`.
-  - Branch `harry-potter`. Trailer `REEL=wand`.
+  - Branch `harry-clawder`. Trailer `REEL=wand`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch has `slayer = 7`; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own; Superclawdtural (`hunters`), Battleclawd Galactica (`fleet`), Stranger Clawds (`hawkins`) and the older plans may have taken some by then. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** light puns only where they read at a glance: **Harry Clawder**, **Hermione Clawnger**, **Lord Clawdemort**, **Draco Malclaw**. Everyone else keeps the on-screen name, because a forced pun is worse than none. Actors' names are never used, and the author isn't named anywhere in the app or the docs.
 - **Size:** 85 characters and 22 places, in the guide's 70 to 100 target.
@@ -506,7 +506,7 @@ No logo or melody is copied: the title is our own lettering, and the music only 
 All four gates are passed:
 - **Scope:** the seven books and eight films only.
 - **Name: Harry Clawder.** Puns: Clawder, Clawnger, Clawdemort, Malclaw; everyone else by name.
-- **Code naming:** `case wizards`, prefix `Wand`, folder `HarryClawder/`, branch `harry-potter`, `REEL=wand`.
+- **Code naming:** `case wizards`, prefix `Wand`, folder `HarryClawder/`, branch `harry-clawder`, `REEL=wand`.
 - **Raw value:** settled at build time, after checking `main`, the open branches, the forks and the other plans.
 - **Roster:** approved as drafted: 45 heroes (with HEM and the agent-only Hedwig), 40 villains (with four agent-only small fry), 85 in all. Clawdemort and Riddle are guises; the Basilisk is homebound.
 - **Spell variety:** your request at the roster gate. Every spell type the engine has is used (steady ray, forked lightning, `spell`, `rings`, `waves`, `touch`, beam, thrown, fire, energy bolts), each character with a colour of their own.

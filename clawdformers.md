@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawdformers (Transformers parody)
-<!-- track: repo=rodclemen/clawd-clash branch=transformers folder=Clawdformers title="Clawdformers" source="Transformers" cast=112 places=23 -->
+<!-- track: repo=rodclemen/clawd-clash branch=clawdformers folder=Clawdformers title="Clawdformers" source="Transformers" cast=112 places=23 -->
 
 ## Context
 
@@ -10,7 +10,7 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17): Star Clawds, Ma
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case clawdformers` with key `"clawdformers"`, title `"Clawdformers"`.
   - Folder `Sources/App/Universes/Clawdformers/`, file prefix `Bots…` (`BotsRoster.swift`, `BotsHero`, `BotsVillain`, `botsTheme`, `BotsWipe`/`BotsTrip`). Place keys all start with `bots`.
-  - Branch `transformers`. Promo reel `REEL=bots`. Docs files `docs/roster-clawdformers.png` and so on.
+  - Branch `clawdformers`. Promo reel `REEL=bots`. Docs files `docs/roster-clawdformers.png` and so on.
 - **Raw value:** the next free one when its build starts, checked against `main` and the open branches. Today `main` uses 0 to 6 (Clawd of the Rings is `middleEarth = 6`), and the `buffy` branch claims `slayer = 6`, which clashes and will need renumbering. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`. Ids are rawValue*1000 and permanent.
 - **Naming style: coding-language names.** The leads, and anyone where a coding pun lands cleanly, get one: Optimus Runtime, Megabyte, Stackscream, Sound.wav, Rat.catch(). The rule is that it must still read at a glance as the real name. Characters with no natural coding pun keep a light pun or a near-spelling (Ironhyde, Blabstreak, Grumble, Snarkticon); a forced pun is worse than none. Actors' names are never used. Nothing here is a real person.
 - **Size:** **112 characters**: 61 heroes including HEM, and 51 villains including 5 agent-only. Plus **23 places** and **12 transitions**.
@@ -588,7 +588,7 @@ About 45–50 seconds, on the `doctorShots` pattern:
 
 ## Decisions (2026-10-16)
 
-1. **Name: Clawdformers.** Code: `case clawdformers`, key `"clawdformers"`, folder `Sources/App/Universes/Clawdformers/`. The `Bots…` file prefix, `bots…` place keys, the `transformers` branch and `REEL=bots` stay.
+1. **Name: Clawdformers.** Code: `case clawdformers`, key `"clawdformers"`, folder `Sources/App/Universes/Clawdformers/`. The `Bots…` file prefix, `bots…` place keys, the `clawdformers` branch and `REEL=bots` stay.
 2. **Scope:** G1, the 1986 movie and **Beast Wars**. Beast Wars adds 20 characters: 10 Maximal heroes (Optimus Primitive, Rhinux, Rat.catch(), Cheetorr, Dinobyte, Tygatron, Airazure, Silverboot, Depth Charj, Tygerhawk) and 10 Predacon villains (Megabyte Rex, Tarantulus, Waspiterator, Errorsaur, Scorp-200-OK, Blackarachnet, Infernode, Quicksort, RAM-page, Dinobyte 2.0). Dinobyte is a hero and Blackarachnet a villain (reasons under the tables). Three places are added (the Axalon, the Darksyde, the energon fields), with 8 new nemesis pairs. The live-action films are out. New totals: **61 heroes, 51 villains (5 agent-only, indices 46–50), 112 characters, 23 places, 12 transitions.**
 3. **Compaction, two chains:** the Matrix passing on (Optimus Runtime → Ultra Macros → Rootimus Prime, wrapping), and **Megabyte → Gigabyte**, one way, caption "REFORMATTED". `regenerations` becomes a list of chains, each with a wraps flag.
 4. **Roll out on leaving:** yes. Vehicle-mode characters fold and drive off, beasts run or fly off, via a small hook where walk-offs are drawn (`Overlay.swift` ~1301).

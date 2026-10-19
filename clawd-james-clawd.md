@@ -1,5 +1,5 @@
 # Plan: a new universe, James Clawd (the 007 films)
-<!-- track: repo=rodclemen/clawd-clash branch=bond folder=SpyClawd title="James Clawd" source="007" cast=96 places=21 -->
+<!-- track: repo=rodclemen/clawd-clash branch=james-clawd folder=SpyClawd title="James Clawd" source="007" cast=96 places=21 -->
 
 ## Context
 
@@ -11,7 +11,7 @@ Bond is a strong fit. The heroes are a smaller, sharper crew (six Bonds, MI6, th
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case spy` with key `"spy"`.
   - Folder `Sources/App/Universes/SpyClawd/`, file prefix `Spy…` (`SpyRoster.swift`, `SpyHeroes1.swift`, `SpyWipes.swift`…).
-  - Branch `bond`.
+  - Branch `james-clawd`.
   - Place keys and top-level helpers all start with `spy` so they can't clash with the six sibling plans being written at the same time (Star Trek, Transformers, He-Man, Game of Thrones, Tim Burton, Buffy).
 - **Raw value:** the next free one when its build starts, checked against main and the open branches (main has Clawd of the Rings as `middleEarth = 6`, and the Buffy branch also claims 6 today); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (Auric Goldclaw, Blowfeld, Dr. Know, Felix Lighter). The six Bonds get nicknames from their look, one per era (decided 2026-10-16): **Trilby Bond, Ski Bond, Safari Bond, Leather Bond, Tank Bond, Jumper Bond**, never the actors' names. Each era is named in this plan only by its films.

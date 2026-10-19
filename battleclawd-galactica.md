@@ -1,5 +1,5 @@
 # Plan: a new universe, Battleclawd Galactica (Battlestar Galactica parody)
-<!-- track: repo=rodclemen/clawd-clash branch=battlestar folder=BattleclawdGalactica title="Battleclawd Galactica" source="Battlestar Galactica 2004 and Caprica" cast=51 places=17 -->
+<!-- track: repo=rodclemen/clawd-clash branch=battleclawd-galactica folder=BattleclawdGalactica title="Battleclawd Galactica" source="Battlestar Galactica 2004 and Caprica" cast=51 places=17 -->
 
 ## Context
 
@@ -24,7 +24,7 @@ Clawd Clash has seven universes on `main` (d471352, 2026-10-17, after 3.6.0). Th
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case fleet` with key `"fleet"`.
   - Folder `Sources/App/Universes/BattleclawdGalactica/`, file prefix `Fleet` (`FleetRoster.swift`, `FleetHeroes1.swift`, `FleetWipes.swift` …). No file in the repo uses `Fleet` as a prefix today. Top-level names start with `fleet` or are `private`, as `scripts/pr-guard.py` asks.
-  - Branch `battlestar`. Trailer `REEL=fleet`.
+  - Branch `battleclawd-galactica`. Trailer `REEL=fleet`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own; Superclawdtural (`hunters`) may have taken one by then. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** light puns where they read at a glance: Admiral **Adclawma**, **Clawbuck** (Starbuck), President **Clawslin**. Everyone else keeps the on-screen name or callsign (Apollo, Helo, Athena, Cavil, Leoben), because a forced pun is worse than none. Actors' names are never used.
 - **Scope:** the 2004 miniseries, seasons 1 to 4, *Razor*, *The Plan* and *Caprica*. *Blood & Chrome* is left out.

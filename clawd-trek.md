@@ -1,5 +1,5 @@
 # Plan: a new universe, Clawd Trek (Star Trek parody)
-<!-- track: repo=rodclemen/clawd-clash branch=star_trek folder=ClawdTrek title="Clawd Trek" source="Star Trek" cast=100 places=21 -->
+<!-- track: repo=rodclemen/clawd-clash branch=clawd-trek folder=ClawdTrek title="Clawd Trek" source="Star Trek" cast=100 places=21 -->
 
 ## Context
 
@@ -23,7 +23,7 @@ Clawd Clash has seven universes. This plan adds a Star Trek parody as a full ens
 - **Code naming** follows the other universes:
   - `case clawdTrek` with key `"clawdTrek"`.
   - Folder `Sources/App/Universes/ClawdTrek/`, file prefix `Trek…`.
-  - Branch `star_trek`.
+  - Branch `clawd-trek`.
 - **Raw value:** the next free one when its build starts, checked against main and the open branches (Clawd of the Rings is `middleEarth = 6` on main, and the open `buffy` branch also claims 6 for `slayer`); ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names (Captain James T. Quirk, Mr. Spawk, Captain Jean-Luc Pinchard). A near-spelling beats a forced pun. Actors' names are never used. Species are misspelt lightly, the way Doctor Clawd has Dalicks and Sontarons: the Borgg, the Gawn, the Jem'Hadda.
 - **Size:** **100 characters**: 53 heroes including HEM and one agent-only pet, and 47 villains including 3 agent-only. Plus **21 places**. That sits next to Doctor Clawd (98).

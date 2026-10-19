@@ -1,5 +1,5 @@
 # Plan: a new universe, Superclawdtural (Supernatural parody)
-<!-- track: repo=rodclemen/clawd-clash branch=supernatural folder=Superclawdtural title="Superclawdtural" source="Supernatural" cast=80 places=20 -->
+<!-- track: repo=rodclemen/clawd-clash branch=superclawdtural folder=Superclawdtural title="Superclawdtural" source="Supernatural" cast=80 places=20 -->
 
 ## Context
 
@@ -23,7 +23,7 @@ Clawd Clash has seven universes on `main` (d471352, 2026-10-17, after 3.6.0). Th
 - **Code naming** avoids the franchise name, as the other universes do:
   - `case hunters` with key `"hunters"`.
   - Folder `Sources/App/Universes/Superclawdtural/`, file prefix `Hunt` (`HuntRoster.swift`, `HuntHeroes1.swift`, `HuntWipes.swift` …). No file in the repo uses `Hunt` as a prefix today. Top-level names start with `hunt` or are `private`, as `scripts/pr-guard.py` asks.
-  - Branch `supernatural`.
+  - Branch `superclawdtural`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch also claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** light puns on the on-screen names, kept where they read at a glance: **Winclawster** for the family, **Clawstiel**, **Clawley**, Bobby **Clawsinger**, Garth **Fitzclawd** IV, Charlie **Clawdbury**, Rowena **MacClawd**, **Balthaclaws**. Where a pun would be forced, the real or near name (Metatron, Ruby, Jack Klyne). Actors' names are never used.
 - **Scope:** the fifteen seasons only. The prequel *The Winchesters* and the *Wayward Sisters* pilot are left out.
