@@ -1,0 +1,36 @@
+# Keeps the Status column in README.md in step with what's pushed to clawd-clash and the forks.
+# scripts/status.py does the work; this only runs it and commits the README when it changed.
+name: Build status
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every six hours
+  workflow_dispatch:          # the "Run workflow" button, for when you've just pushed
+  push:
+    branches: [main]
+    paths: ["**.md", "scripts/status.py"]   # a new or moved plan shows up straight away
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status
+  cancel-in-progress: false
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh the README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/status.py
+      - name: Commit it if anything changed
+        run: |
+          git diff --quiet README.md && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git commit -am "docs(readme): refresh the universes' build status" \
+            -m "Worked out by scripts/status.py from the branches, main and release tags on GitHub."
+          git push

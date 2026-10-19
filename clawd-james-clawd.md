@@ -1,4 +1,5 @@
 # Plan: a new universe, James Clawd (the 007 films)
+<!-- track: repo=rodclemen/clawd-clash branch=bond folder=SpyClawd title="James Clawd" cast=96 places=21 -->
 
 ## Context
 

@@ -1,4 +1,5 @@
 # Plan: a new universe, Superclawdtural (Supernatural parody)
+<!-- track: repo=rodclemen/clawd-clash branch=supernatural folder=Superclawdtural title="Superclawdtural" cast=80 places=20 -->
 
 ## Context
 

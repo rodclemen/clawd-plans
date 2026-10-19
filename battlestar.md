@@ -1,4 +1,5 @@
 # Plan: a new universe, Battleclawd Galactica (Battlestar Galactica parody)
+<!-- track: repo=rodclemen/clawd-clash branch=battlestar folder=BattleclawdGalactica title="Battleclawd Galactica" cast=51 places=17 -->
 
 ## Context
 
