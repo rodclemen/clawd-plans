@@ -10,13 +10,14 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 <!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" url="https://github.com/rodclemen/clawd-clash/pull/3" source="The Lord of the Rings, built without a plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
-🚧 **1** being built · ✅ **5** released · 📝 **10** ready to pick up
+🚧 **2** being built · ✅ **5** released · 📝 **9** ready to pick up
 
 ### 🚧 Being built
 
 | Universe | Progress | Where it's at |
 |---|---|---|
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>Henrik · `feature-burton` in HEM42/clawd-clash, nothing pushed yet</sub> |
+| **[Stranger Clawds](in-progress/stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>`stranger-clawds`, nothing pushed yet</sub> |
 
 ### 🎨 Detail overhaul
 
@@ -47,7 +48,6 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. D
 | **[Dungeon Clawd Carl](dungeon-clawd-carl.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | 95 characters · 20 places |
 | **[Game of Clawds](game-of-clawds.md)**<br><sub>Game of Thrones</sub> | 99 characters · 20 places |
 | **[Harry Clawder](harry-clawder.md)**<br><sub>Harry Potter, the seven books and eight films</sub> | 85 characters · 22 places |
-| **[Stranger Clawds](stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | 45 characters · 16 places |
 | **[Superclawdtural](superclawdtural.md)**<br><sub>Supernatural</sub> | 80 characters · 20 places |
 
 ### ✅ Released
