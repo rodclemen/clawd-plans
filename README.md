@@ -4,10 +4,10 @@ Plans for [Clawd Clash](https://github.com/rodclemen/clawd-clash) universes, wri
 
 Folders: plans at the top level are free to pick up; `in-progress/` is being built by someone (don't start it); `done/` is built and released.
 
-The status below fills itself in. Every few hours [`scripts/status.py`](scripts/status.py) looks at clawd-clash (and the forks) on GitHub and works out how far each universe has got: its phase, how many of the plan's characters and places are drawn, and the release it shipped in. It can only see pushed branches. Each plan says where its build lives in a hidden `<!-- track: … -->` line under its title; a new plan needs one too.
+The status below fills itself in. Every few hours [`scripts/status.py`](scripts/status.py) looks at clawd-clash (and the forks) on GitHub and works out how far each universe has got: its phase, how many of the plan's characters and places are drawn, and the release it shipped in. It can only see pushed branches. Each plan says where its build lives in a hidden `<!-- track: … -->` line under its title; a new plan needs one too. The detail overhaul reads `main` and `universe-modules` together; a refresh commit can name what it covered in a footer like `Detail: villains, Area 51` (groups are heroes, villains and places).
 
-<!-- track: kind=overhaul repo=rodclemen/clawd-clash branch=universe-modules title="Detail overhaul" source="Every released universe redrawn to the detail bar the Star Clawds refresh set. Counted from the `detail` line in each universe's `universe.conf`." -->
-<!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" source="The Lord of the Rings, no plan here (PR #3)" cast=76 places=22 who=Henrik -->
+<!-- track: kind=overhaul repo=rodclemen/clawd-clash branch=universe-modules since=v3.7.0 title="Detail overhaul" source="Every released universe redrawn to the detail bar the Star Clawds refresh set. A character or place counts once its drawing has changed since 3.7.0 on either branch, or a commit's audit covers it." -->
+<!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" url="https://github.com/rodclemen/clawd-clash/pull/3" source="The Lord of the Rings, built without a plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
 🚧 **1** being built · ✅ **5** released · 📝 **10** ready to pick up
@@ -20,20 +20,20 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 ### 🎨 Detail overhaul
 
-Every released universe redrawn to the detail bar the Star Clawds refresh set. Counted from the `detail` line in each universe's `universe.conf`.
+Every released universe redrawn to the detail bar the Star Clawds refresh set. A character or place counts once its drawing has changed since 3.7.0 on either branch, or a commit's audit covers it.
 
-**Overall** `█░░░░░░░░░` 7% · 81/934 characters · 4/213 places<br><sub>`universe-modules`, last commit 19 Oct</sub>
+**Overall** `████████░░` 84% · 933/934 characters · 35/213 places<br><sub>`main` and `universe-modules` since 3.7.0, last commit 19 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
-| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `██░░░░░░░░` 18%<br><sub>4/22</sub> |
-| **Marvelous Clawds** | `░░░░░░░░░░` 0%<br><sub>0/193</sub> | `░░░░░░░░░░` 0%<br><sub>0/43</sub> |
-| **Detective Clawds** | `░░░░░░░░░░` 0%<br><sub>0/207</sub> | `░░░░░░░░░░` 0%<br><sub>0/43</sub> |
-| **Doctor Clawd** | `░░░░░░░░░░` 0%<br><sub>0/97</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
-| **The Clawd Files** | `░░░░░░░░░░` 0%<br><sub>0/81</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
-| **Stevie Clawdberg** | `░░░░░░░░░░` 0%<br><sub>0/117</sub> | `░░░░░░░░░░` 0%<br><sub>0/23</sub> |
-| **Clawd of the Rings** | `░░░░░░░░░░` 0%<br><sub>0/75</sub> | `░░░░░░░░░░` 0%<br><sub>0/22</sub> |
-| **Clawd Slayer** | `░░░░░░░░░░` 0%<br><sub>0/83</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
+| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `█████░░░░░` 50%<br><sub>11/22</sub> |
+| **The Clawd Files** | `██████████` 100%<br><sub>81/81</sub> | `████░░░░░░` 35%<br><sub>7/20</sub> |
+| **Detective Clawds** | `██████████` 100%<br><sub>207/207</sub> | `█░░░░░░░░░` 14%<br><sub>6/43</sub> |
+| **Doctor Clawd** | `██████████` 100%<br><sub>97/97</sub> | `██░░░░░░░░` 15%<br><sub>3/20</sub> |
+| **Marvelous Clawds** | `██████████` 99%<br><sub>192/193</sub> | `█░░░░░░░░░` 14%<br><sub>6/43</sub> |
+| **Stevie Clawdberg** | `██████████` 100%<br><sub>117/117</sub> | `░░░░░░░░░░` 0%<br><sub>0/23</sub> |
+| **Clawd Slayer** | `██████████` 100%<br><sub>83/83</sub> | `█░░░░░░░░░` 10%<br><sub>2/20</sub> |
+| **Clawd of the Rings** | `██████████` 100%<br><sub>75/75</sub> | `░░░░░░░░░░` 0%<br><sub>0/22</sub> |
 
 ### 📝 Ready to pick up
 
@@ -55,7 +55,7 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. C
 | Universe | Released in | Size |
 |---|---|---|
 | **[Clawd Slayer](done/clawd-slayer.md)**<br><sub>Buffy the Vampire Slayer</sub> | **3.7.0** | 84 characters · 20 places |
-| **Clawd of the Rings**<br><sub>The Lord of the Rings, no plan here (PR #3)</sub> | **3.5.0**<br><sub>by Henrik</sub> | 76 characters · 22 places |
+| **[Clawd of the Rings](https://github.com/rodclemen/clawd-clash/pull/3)**<br><sub>The Lord of the Rings, built without a plan here (PR #3)</sub> | **3.5.0**<br><sub>by Henrik</sub> | 76 characters · 22 places |
 | **[Stevie Clawdberg](done/stevie-clawdberg.md)**<br><sub>Spielberg's films</sub> | **3.4.0** | 118 characters · 23 places |
 | **[The Clawd Files](done/clawd-files.md)**<br><sub>The X-Files</sub> | **3.3.0** | 82 characters · 20 places |
 | **[Doctor Clawd](done/doctor-clawd.md)**<br><sub>Doctor Who</sub> | **3.1.0** | 98 characters · 20 places |

@@ -11,13 +11,15 @@ The script looks at the build repo over GitHub's API and works out how far each 
 released in a tag, built on main, or somewhere along its branch. Only pushed branches can be seen.
 It then rewrites the block between <!-- status:start --> and <!-- status:end --> in the README: a summary
 line, then tables for the universes being built (with a progress bar), ready to pick up, and released. A
-universe with no plan here (Clawd of the Rings) gets its track line in the README itself.
+universe with no plan here (Clawd of the Rings) gets its track line in the README itself, and `url=` links it.
+
+The detail overhaul (`kind=overhaul`) is worked out from the code and commit messages on main and its branch since
+the `since` tag; see overhaul_status.
 
 Run it locally with `python3 scripts/status.py` (it uses `gh auth token` if GITHUB_TOKEN isn't set),
 or let .github/workflows/status.yml run it. `--check` prints the block without touching the README.
 """
 
-import base64
 import json
 import os
 import re
@@ -27,6 +29,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -73,14 +76,20 @@ def q(s):
 
 
 def tree(repo, ref):
-    """Every file path at `ref`, or None if the ref isn't on GitHub."""
+    """Every file path at `ref`, mapped to its blob sha, or None if the ref isn't on GitHub."""
     t = get(f"/repos/{repo}/git/trees/{q(ref)}?recursive=1")
-    return None if t is None else {e["path"] for e in t["tree"] if e["type"] == "blob"}
+    return None if t is None else {e["path"]: e["sha"] for e in t["tree"] if e["type"] == "blob"}
 
 
-def text(repo, ref, path):
+_texts = {}
+
+
+def text(repo, ref, path, blob=None):
     """A file's contents, from raw.githubusercontent.com: it doesn't count against the API's hourly limit. Fetched by
-    commit, since raw caches a branch name for a few minutes and would miss what was just pushed."""
+    commit, since raw caches a branch name for a few minutes and would miss what was just pushed. With the blob sha, a
+    file that's the same on two refs is only fetched once."""
+    if blob and blob in _texts:
+        return _texts[blob]
     c = get(f"/repos/{repo}/commits/{q(ref)}")
     url = f"https://raw.githubusercontent.com/{repo}/{c['sha'] if c else q(ref)}/{urllib.parse.quote(path)}"
     req = urllib.request.Request(url, headers={"User-Agent": "clawd-plans-status"})
@@ -88,9 +97,19 @@ def text(repo, ref, path):
         req.add_header("Authorization", f"Bearer {TOKEN}")
     try:
         with urllib.request.urlopen(req) as r:
-            return r.read().decode()
+            body = r.read().decode()
     except urllib.error.HTTPError:
-        return ""
+        body = ""
+    if blob:
+        _texts[blob] = body
+    return body
+
+
+def texts(repo, ref, files, paths):
+    """Several files at once, as {path: contents}."""
+    paths = sorted(paths)
+    with ThreadPoolExecutor(8) as pool:
+        return dict(zip(paths, pool.map(lambda p: text(repo, ref, p, files.get(p)), paths)))
 
 
 def last_commit(repo, ref):
@@ -171,7 +190,7 @@ def universe_status(plan, claimed):
     """Where a universe is, as a dict: `state` is built, main, released, claimed or ready.
     `claimed`: the plan sits in in-progress/, so someone's building it even if nothing is pushed yet."""
     repo, branch = plan["repo"], plan.get("branch")
-    main = tree(repo, "main") or set()
+    main = tree(repo, "main") or {}
     version = released_in(repo, plan)
     if version:
         return dict(state="released", version=version, **(progress(repo, "main", main, plan) or {}))
@@ -201,28 +220,132 @@ def engine_status(plan):
     return dict(state="built", where=f"`{branch}`{fork(repo)}{ahead}", date=last_commit(repo, branch))
 
 
+# The detail overhaul. Every character and place gets a key (its enum case, or its name), and a key is done if:
+#   - its drawing code changed since the `since` tag, on main or on the overhaul's branch. Its code is the function its
+#     `draw:` / `still:` / `moving:` names, plus every function in the universe that those call; or
+#   - a commit message since then covers it: "An audit of all thirty-five Clawd Slayer heroes" (the audit kept the ones
+#     already at the bar as they were), or a `Detail: heroes, Area 51` footer naming groups (heroes, villains,
+#     places) or names. The universe comes from the commit's scope: `feat(slayer): …` is Slayer.
+# The keys from both refs go in one set per universe, so a commit on both, or a place redone twice, counts once.
+
+
+def funcs(src):
+    """Every `func name(…) { … }` in `src`, as {name: body}."""
+    out = {}
+    for m in re.finditer(r"\bfunc (\w+)\s*(?:<[^>]*>)?\(", src):
+        i = src.find("{", m.end())
+        depth, j = 0, i
+        while 0 <= j < len(src):
+            depth += {"{": 1, "}": -1}.get(src[j], 0)
+            if depth == 0:
+                break
+            j += 1
+        out.setdefault(m.group(1), src[i:j + 1])
+    return out
+
+
+def drawings(sources):
+    """A universe's characters and places, from {path: contents} of its Swift files:
+    ({key: (name, group, code)}, {name: code}), where code is everything that draws it."""
+    fs = funcs("".join(sources.values()))
+
+    def code(expr):
+        seen, todo = set(), re.findall(r"\b(\w+)\b", expr)
+        while todo:
+            n = todo.pop()
+            if n in fs and n not in seen:
+                seen.add(n)
+                todo += re.findall(r"\b(\w+)\s*\(", fs[n])
+        return "".join(fs[n] for n in sorted(seen))
+
+    def call(src, i):
+        """The text of the call whose `(` is at src[i], up to its matching `)`."""
+        depth = 0
+        for j in range(i, len(src)):
+            depth += {"(": 1, ")": -1}.get(src[j], 0)
+            if depth == 0:
+                return src[i:j + 1]
+        return src[i:]
+
+    chars, places = {}, {}
+    for path, src in sources.items():
+        group = "villains" if "Villain" in path else "heroes"
+        for m in re.finditer(r"\.(\w+): Persona\(name: \"([^\"]+)\"", src):
+            body = call(src, src.index("(", m.start()))
+            chars[m.group(1)] = (m.group(2), group, code(body.split("draw:", 1)[-1]))
+        for m in re.finditer(r"Place\(name: \"([^\"]+)\"", src):
+            body = call(src, src.index("(", m.start()))
+            places[m.group(1)] = code(body.split("panel:", 1)[-1])   # still: and moving:, named or as closures
+    return chars, places
+
+
+def universe_drawings(repo, ref, files, folder):
+    mine = [p for p in files if p.startswith(f"{UNIVERSES}/{folder}/") and p.endswith(".swift")]
+    return drawings(texts(repo, ref, files, mine))
+
+
+def commits_since(repo, ref, date):
+    """{sha: message} for every commit on `ref` after `date`."""
+    out, page = {}, 1
+    while True:
+        batch = get(f"/repos/{repo}/commits?sha={q(ref)}&since={q(date)}&per_page=100&page={page}") or []
+        out.update((c["sha"], c["commit"]["message"]) for c in batch)
+        if len(batch) < 100:
+            return out
+        page += 1
+
+
+def covered(messages, folders):
+    """What the commit messages say is done: {folder: set of groups and names}."""
+    out = {f: set() for f in folders}
+    for msg in messages:
+        m = re.match(r"\w+\(([\w-]+)\)!?:", msg)
+        hits = [f for f in folders if m and m.group(1).replace("-", "") in f.lower()]
+        if len(hits) != 1:
+            continue
+        said = out[hits[0]]
+        said.update(g.lower() for g in re.findall(r"\bAn audit of [^.:]*?\b(heroes|villains)\b", msg, re.I))
+        for line in re.findall(r"^Detail:\s*(.+)$", msg, re.M):
+            said.update(x.strip() for x in re.split(r",\s*|\s+and\s+", line) if x.strip())
+    return out
+
+
 def overhaul_status(plan):
-    """The detail overhaul: each universe's `detail = <n> characters, <n> places` manifest line, against what's drawn.
-    Read from the overhaul's branch while it's pushed, and from main once it's merged and gone."""
-    repo, branch = plan["repo"], plan.get("branch")
-    ref = branch if branch and tree(repo, branch) is not None else "main"
-    files = tree(repo, ref) or set()
+    """How far the detail overhaul has got in each universe that was out at the `since` tag."""
+    repo, branch, since = plan["repo"], plan.get("branch"), plan.get("since", "v3.7.0")
+    base = tree(repo, since) or {}
+    refs = {"main": tree(repo, "main") or {}}
+    if branch and tree(repo, branch) is not None:
+        refs[branch] = tree(repo, branch)
+    folders = sorted({p.split("/")[3] for p in base if re.match(UNIVERSES + r"/[^/]+/Art/", p)})
+    date = get(f"/repos/{repo}/commits/{q(since)}")["commit"]["committer"]["date"]
+    messages = {}
+    for ref in refs:
+        messages.update(commits_since(repo, ref, date))
+    said = covered(messages.values(), folders)
+    titles = {pl["folder"]: pl.get("title") for pl in tracked_plans().values() if pl.get("folder")}
     rows = []
-    for conf in sorted(f for f in files if re.fullmatch(UNIVERSES + r"/[^/]+/universe\.conf", f)):
-        folder = conf.split("/")[-2]
-        fields = {}
-        for line in text(repo, ref, conf).split("\n"):
-            k, _, v = line.partition("=")
-            if v and not k.strip().startswith("#"):
-                fields[k.strip()] = v.split("#")[0].strip()
-        mine = [f for f in files if f.startswith(f"{UNIVERSES}/{folder}/")]
-        art = "".join(text(repo, ref, f) for f in mine if "/Art/" in f)
-        scenes = "".join(text(repo, ref, f) for f in mine if "/Places/" in f)
-        m = re.match(r"(\d+) characters?, (\d+) places?", fields.get("detail", ""))
-        rows.append(dict(title=fields.get("title", folder), number=int(fields.get("number", 99)),
-                         chars=int(m.group(1)) if m else 0, places=int(m.group(2)) if m else 0,
-                         want_chars=len(re.findall(r"\bPersona\(", art)), want_places=len(re.findall(r"\bPlace\(name:", scenes))))
-    return dict(state="overhaul", ref=ref, date=last_commit(repo, ref), rows=rows)
+    for folder in folders:
+        old_chars, old_places = universe_drawings(repo, since, base, folder)
+        chars, places, done_chars, done_places = {}, {}, set(), set()
+        for ref, files in refs.items():
+            now_chars, now_places = universe_drawings(repo, ref, files, folder)
+            chars.update(now_chars)
+            places.update(now_places)
+            done_chars |= {k for k, v in now_chars.items() if k not in old_chars or v[2] != old_chars[k][2]}
+            done_places |= {k for k, v in now_places.items() if k not in old_places or v != old_places[k]}
+        done_chars |= {k for k, (name, group, _) in chars.items() if group in said[folder] or name in said[folder]}
+        done_places |= set(places) if "places" in said[folder] else set(places) & said[folder]
+        conf, path = {}, f"{UNIVERSES}/{folder}/universe.conf"
+        for ref, files in refs.items():   # the title and number, from the module manifest once the refactor has one
+            for line in text(repo, ref, path, files[path]).split("\n") if path in files else []:
+                k, _, v = line.partition("=")
+                if v and not k.strip().startswith("#"):
+                    conf.setdefault(k.strip(), v.split("#")[0].strip())
+        rows.append(dict(title=conf.get("title") or titles.get(folder) or folder, number=int(conf.get("number", 99)),
+                         chars=len(done_chars), places=len(done_places), want_chars=len(chars), want_places=len(places)))
+    dates = [d for d in (last_commit(repo, r) for r in refs) if d]
+    return dict(state="overhaul", refs=list(refs), since=since.lstrip("v"), date=max(dates) if dates else None, rows=rows)
 
 
 def fork(repo):
@@ -257,7 +380,8 @@ def short_date(iso):
 
 def name(path, plan):
     title = plan.get("title", path)
-    link = title if path.startswith("README.md") else f"[{title}]({path})"
+    url = plan.get("url") or (None if path.startswith("README.md") else path)   # a README entry has no plan to link
+    link = f"[{title}]({url})" if url else title
     source = f"<br><sub>{plan['source']}</sub>" if plan.get("source") else ""
     return f"**{link}**{source}"
 
@@ -280,7 +404,7 @@ def render_overhaul(plan, st):
     rows = sorted(st["rows"], key=lambda r: (-pct(r["chars"] + r["places"], r["want_chars"] + r["want_places"]), r["number"]))
     chars, places = sum(r["chars"] for r in rows), sum(r["places"] for r in rows)
     want_chars, want_places = sum(r["want_chars"] for r in rows), sum(r["want_places"] for r in rows)
-    where = "on `main`" if st["ref"] == "main" else f"`{st['ref']}`"
+    where = " and ".join(f"`{r}`" for r in st["refs"]) + f" since {st['since']}"
     out = [f"### 🎨 {plan.get('title', 'Detail overhaul')}", ""]
     if plan.get("source"):
         out += [plan["source"], ""]
