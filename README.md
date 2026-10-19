@@ -46,5 +46,5 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 | Plan | Status |
 |---|---|
-| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 📝 planned, no branch pushed yet |
+| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 50 commits ahead of `main`, last commit 19 Oct</sub> |
 <!-- status:end -->
