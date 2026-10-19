@@ -5,7 +5,8 @@ Each plan carries one hidden line saying where its build lives:
 
     <!-- track: repo=rodclemen/clawd-clash branch=star_trek folder=ClawdTrek title="Clawd Trek" source="Star Trek" cast=100 places=21 -->
 
-Engine plans (no universe folder) say `kind=engine` instead of folder, title, cast and places.
+Engine plans (no universe folder) say `kind=engine` instead of folder, title, cast and places, and `marker=` names a
+file the change adds, so the release it shipped in can be found once its branch is merged and gone.
 
 The script looks at the build repo over GitHub's API and works out how far each universe is:
 released in a tag, built on main, or somewhere along its branch. Only pushed branches can be seen.
@@ -210,7 +211,11 @@ def universe_status(plan, claimed):
 
 
 def engine_status(plan):
+    """An engine plan's branch, or the release it shipped in: the first tag with its `marker`, a file it added."""
     repo, branch = plan["repo"], plan["branch"]
+    for t in tags(repo) if plan.get("marker") else []:
+        if plan["marker"] in (tree(repo, t) or {}):
+            return dict(state="released", version=t.lstrip("v"))
     if get(f"/repos/{repo}/branches/{q(branch)}") is None:
         return dict(state="ready")
     cmp = get(f"/repos/{repo}/compare/main...{q(branch)}")
@@ -460,7 +465,7 @@ def render(plans, statuses):
         out += ["### ⚙️ Engine plans", "", "| Plan | Status |", "|---|---|"]
         for p in engine:
             st = statuses[p]
-            label = {"ready": "📝 planned, no branch pushed yet", "merged": f"✅ merged into `main` ({st.get('where')})",
+            label = {"ready": "📝 planned, no branch pushed yet", "released": f"✅ shipped in **{st.get('version')}**", "merged": f"✅ merged into `main` ({st.get('where')})",
                      "built": f"🚧 **in progress**<br><sub>{st.get('where')}, last commit {short_date(st['date']) if st.get('date') else '?'}</sub>"}[st["state"]]
             out.append(f"| {name(p, plans[p])} | {label} |")
         out.append("")

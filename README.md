@@ -22,33 +22,33 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 Every released universe redrawn to the detail bar the Star Clawds refresh set. A character or place counts once its drawing has changed since 3.7.0 on either branch, or a commit's audit covers it.
 
-**Overall** `████████░░` 84% · 933/934 characters · 35/213 places<br><sub>`main` and `universe-modules` since 3.7.0, last commit 19 Oct</sub>
+**Overall** `█████████░` 88% · 933/934 characters · 71/213 places<br><sub>`main` since 3.7.0, last commit 19 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
-| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `█████░░░░░` 50%<br><sub>11/22</sub> |
-| **The Clawd Files** | `██████████` 100%<br><sub>81/81</sub> | `████░░░░░░` 35%<br><sub>7/20</sub> |
-| **Detective Clawds** | `██████████` 100%<br><sub>207/207</sub> | `█░░░░░░░░░` 14%<br><sub>6/43</sub> |
-| **Doctor Clawd** | `██████████` 100%<br><sub>97/97</sub> | `██░░░░░░░░` 15%<br><sub>3/20</sub> |
-| **Marvelous Clawds** | `██████████` 99%<br><sub>192/193</sub> | `█░░░░░░░░░` 14%<br><sub>6/43</sub> |
-| **Stevie Clawdberg** | `██████████` 100%<br><sub>117/117</sub> | `░░░░░░░░░░` 0%<br><sub>0/23</sub> |
-| **Clawd Slayer** | `██████████` 100%<br><sub>83/83</sub> | `█░░░░░░░░░` 10%<br><sub>2/20</sub> |
-| **Clawd of the Rings** | `██████████` 100%<br><sub>75/75</sub> | `░░░░░░░░░░` 0%<br><sub>0/22</sub> |
+| **Clawd Slayer** ✅ | `██████████` 100%<br><sub>83/83</sub> | `██████████` 100%<br><sub>20/20</sub> |
+| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `██████░░░░` 55%<br><sub>12/22</sub> |
+| **The Clawd Files** | `██████████` 100%<br><sub>81/81</sub> | `████░░░░░░` 40%<br><sub>8/20</sub> |
+| **Marvelous Clawds** | `██████████` 99%<br><sub>192/193</sub> | `██░░░░░░░░` 23%<br><sub>10/43</sub> |
+| **Detective Clawds** | `██████████` 100%<br><sub>207/207</sub> | `██░░░░░░░░` 21%<br><sub>9/43</sub> |
+| **Doctor Clawd** | `██████████` 100%<br><sub>97/97</sub> | `██░░░░░░░░` 20%<br><sub>4/20</sub> |
+| **Stevie Clawdberg** | `██████████` 100%<br><sub>117/117</sub> | `█░░░░░░░░░` 13%<br><sub>3/23</sub> |
+| **Clawd of the Rings** | `██████████` 100%<br><sub>75/75</sub> | `██░░░░░░░░` 23%<br><sub>5/22</sub> |
 
 ### 📝 Ready to pick up
 
 | Universe | Size |
 |---|---|
-| **[Battleclawd Galactica](battlestar.md)**<br><sub>Battlestar Galactica 2004 and Caprica</sub> | 51 characters · 17 places |
+| **[Battleclawd Galactica](battleclawd-galactica.md)**<br><sub>Battlestar Galactica 2004 and Caprica</sub> | 51 characters · 17 places |
 | **[James Clawd](clawd-james-clawd.md)**<br><sub>007</sub> | 96 characters · 21 places |
 | **[Clawd Trek](clawd-trek.md)**<br><sub>Star Trek</sub> | 100 characters · 21 places |
 | **[Clawdformers](clawdformers.md)**<br><sub>Transformers</sub> | 112 characters · 23 places |
 | **[Clawds of the Universe](clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | 85 characters · 21 places |
-| **[Dungeon Clawd Carl](dungeon-crawler-carl.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | 95 characters · 20 places |
+| **[Dungeon Clawd Carl](dungeon-clawd-carl.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | 95 characters · 20 places |
 | **[Game of Clawds](game-of-clawds.md)**<br><sub>Game of Thrones</sub> | 99 characters · 20 places |
-| **[Harry Clawder](harry-potter.md)**<br><sub>Harry Potter, the seven books and eight films</sub> | 85 characters · 22 places |
-| **[Stranger Clawds](stranger-things.md)**<br><sub>Stranger Things, all five seasons</sub> | 45 characters · 16 places |
-| **[Superclawdtural](supernatural.md)**<br><sub>Supernatural</sub> | 80 characters · 20 places |
+| **[Harry Clawder](harry-clawder.md)**<br><sub>Harry Potter, the seven books and eight films</sub> | 85 characters · 22 places |
+| **[Stranger Clawds](stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | 45 characters · 16 places |
+| **[Superclawdtural](superclawdtural.md)**<br><sub>Supernatural</sub> | 80 characters · 20 places |
 
 ### ✅ Released
 
@@ -64,5 +64,5 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. A
 
 | Plan | Status |
 |---|---|
-| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 26 commits ahead of `main`, last commit 19 Oct</sub> |
+| **[Universes as modules](done/universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | ✅ shipped in **3.7.1** |
 <!-- status:end -->

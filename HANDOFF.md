@@ -46,7 +46,7 @@ committed on `buffy` (2307bd0) and on `main` (90eecab, without the Slayer lines)
 three universes (`royaleCollide`'s `from`/`meet`/`rest` arrays) and will crash until that's fixed. Build the promo
 tool as `-o build/renderpromo` (the binary must be named `renderpromo`).
 
-**Open question:** keep building Slayer the current way and port it later, or do the `universe-modules.md` refactor
+**Open question:** keep building Slayer the current way and port it later, or do the `done/universe-modules.md` refactor
 first.
 
 ## Claude's memory
