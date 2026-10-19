@@ -79,8 +79,10 @@ def tree(repo, ref):
 
 
 def text(repo, ref, path):
-    """A file's contents, from raw.githubusercontent.com: it doesn't count against the API's hourly limit."""
-    url = f"https://raw.githubusercontent.com/{repo}/{q(ref)}/{urllib.parse.quote(path)}"
+    """A file's contents, from raw.githubusercontent.com: it doesn't count against the API's hourly limit. Fetched by
+    commit, since raw caches a branch name for a few minutes and would miss what was just pushed."""
+    c = get(f"/repos/{repo}/commits/{q(ref)}")
+    url = f"https://raw.githubusercontent.com/{repo}/{c['sha'] if c else q(ref)}/{urllib.parse.quote(path)}"
     req = urllib.request.Request(url, headers={"User-Agent": "clawd-plans-status"})
     if TOKEN:
         req.add_header("Authorization", f"Bearer {TOKEN}")
@@ -199,6 +201,30 @@ def engine_status(plan):
     return dict(state="built", where=f"`{branch}`{fork(repo)}{ahead}", date=last_commit(repo, branch))
 
 
+def overhaul_status(plan):
+    """The detail overhaul: each universe's `detail = <n> characters, <n> places` manifest line, against what's drawn.
+    Read from the overhaul's branch while it's pushed, and from main once it's merged and gone."""
+    repo, branch = plan["repo"], plan.get("branch")
+    ref = branch if branch and tree(repo, branch) is not None else "main"
+    files = tree(repo, ref) or set()
+    rows = []
+    for conf in sorted(f for f in files if re.fullmatch(UNIVERSES + r"/[^/]+/universe\.conf", f)):
+        folder = conf.split("/")[-2]
+        fields = {}
+        for line in text(repo, ref, conf).split("\n"):
+            k, _, v = line.partition("=")
+            if v and not k.strip().startswith("#"):
+                fields[k.strip()] = v.split("#")[0].strip()
+        mine = [f for f in files if f.startswith(f"{UNIVERSES}/{folder}/")]
+        art = "".join(text(repo, ref, f) for f in mine if "/Art/" in f)
+        scenes = "".join(text(repo, ref, f) for f in mine if "/Places/" in f)
+        m = re.match(r"(\d+) characters?, (\d+) places?", fields.get("detail", ""))
+        rows.append(dict(title=fields.get("title", folder), number=int(fields.get("number", 99)),
+                         chars=int(m.group(1)) if m else 0, places=int(m.group(2)) if m else 0,
+                         want_chars=len(re.findall(r"\bPersona\(", art)), want_places=len(re.findall(r"\bPlace\(name:", scenes))))
+    return dict(state="overhaul", ref=ref, date=last_commit(repo, ref), rows=rows)
+
+
 def fork(repo):
     return "" if repo == "rodclemen/clawd-clash" else f" in {repo}"
 
@@ -215,7 +241,7 @@ def tracked_plans():
         for m in re.finditer(r"^<!--\s*track:(.*?)-->", path.read_text(), re.M):   # at a line's start, not in prose
             fields = dict(kv.split("=", 1) for kv in shlex.split(m.group(1)))
             rel = path.relative_to(ROOT).as_posix()
-            plans[rel if rel != "README.md" else f"README.md#{fields['folder']}"] = fields
+            plans[rel if rel != "README.md" else f"README.md#{fields.get('folder') or fields.get('kind')}"] = fields
     return plans
 
 
@@ -246,11 +272,35 @@ def counts(st, planned=False):
     return f"{st['drawn']}/{st['want']} characters · {st['places']}/{st['want_places']} places"
 
 
+def pct(done, total):
+    return round(100 * done / total) if total else 0
+
+
+def render_overhaul(plan, st):
+    rows = sorted(st["rows"], key=lambda r: (-pct(r["chars"] + r["places"], r["want_chars"] + r["want_places"]), r["number"]))
+    chars, places = sum(r["chars"] for r in rows), sum(r["places"] for r in rows)
+    want_chars, want_places = sum(r["want_chars"] for r in rows), sum(r["want_places"] for r in rows)
+    where = "on `main`" if st["ref"] == "main" else f"`{st['ref']}`"
+    out = [f"### 🎨 {plan.get('title', 'Detail overhaul')}", ""]
+    if plan.get("source"):
+        out += [plan["source"], ""]
+    out += [f"**Overall** {bar(pct(chars + places, want_chars + want_places))} · {chars}/{want_chars} characters · "
+            f"{places}/{want_places} places<br><sub>{where}, last commit {short_date(st['date']) if st.get('date') else '?'}</sub>", "",
+            "| Universe | Characters | Places |", "|---|---|---|"]
+    for r in rows:
+        tick = " ✅" if r["chars"] >= r["want_chars"] and r["places"] >= r["want_places"] else ""
+        out.append(f"| **{r['title']}**{tick} | {bar(pct(r['chars'], r['want_chars']))}<br><sub>{r['chars']}/{r['want_chars']}</sub> "
+                   f"| {bar(pct(r['places'], r['want_places']))}<br><sub>{r['places']}/{r['want_places']}</sub> |")
+    return out + [""]
+
+
 def render(plans, statuses):
-    building = [p for p in plans if plans[p].get("kind") != "engine" and statuses[p]["state"] in ("built", "main", "claimed")]
-    ready = [p for p in plans if plans[p].get("kind") != "engine" and statuses[p]["state"] == "ready"]
-    released = [p for p in plans if plans[p].get("kind") != "engine" and statuses[p]["state"] == "released"]
+    universe = [p for p in plans if plans[p].get("kind") not in ("engine", "overhaul")]
+    building = [p for p in universe if statuses[p]["state"] in ("built", "main", "claimed")]
+    ready = [p for p in universe if statuses[p]["state"] == "ready"]
+    released = [p for p in universe if statuses[p]["state"] == "released"]
     engine = [p for p in plans if plans[p].get("kind") == "engine"]
+    overhaul = [p for p in plans if plans[p].get("kind") == "overhaul"]
     building.sort(key=lambda p: -statuses[p]["pct"])
     released.sort(key=lambda p: [int(x) for x in statuses[p]["version"].split(".")], reverse=True)
 
@@ -266,6 +316,8 @@ def render(plans, statuses):
             out.append(f"| {name(p, plans[p])} | {bar(st['pct'])} | **Phase {st['phase']} of 6**, {PHASES[st['phase']]}"
                        f"<br><sub>{counts(st)} · {who(plans[p])}{st['where']}{when}</sub> |")
         out.append("")
+    for p in overhaul:
+        out += render_overhaul(plans[p], statuses[p])
     if ready:
         out += ["### 📝 Ready to pick up", "", "| Universe | Size |", "|---|---|"]
         for p in ready:
@@ -297,13 +349,15 @@ def main():
     statuses = {}
     for path, plan in plans.items():
         claimed = path.startswith("in-progress/")
-        st = statuses[path] = engine_status(plan) if plan.get("kind") == "engine" else universe_status(plan, claimed)
+        kind = plan.get("kind")
+        st = statuses[path] = (engine_status(plan) if kind == "engine" else overhaul_status(plan) if kind == "overhaul"
+                               else universe_status(plan, claimed))
         # A plan at the top level with something pushed should move to in-progress/ (and to done/ once released).
-        if "/" not in path and not path.startswith("README") and plan.get("kind") != "engine" and st["state"] != "ready":
+        if "/" not in path and not path.startswith("README") and not plan.get("kind") and st["state"] != "ready":
             print(f"note: {path} has a build under way; move it to in-progress/", file=sys.stderr)
         if path.startswith("in-progress/") and st["state"] == "released":
             print(f"note: {path} is released; move it to done/", file=sys.stderr)
-        print(f"{path}: {st}")
+        print(f"{path}: {st['state']}")
 
     old = README.read_text()
     m = re.search(r"(<!-- status:start -->\n).*?(<!-- status:end -->)", old, re.S)

@@ -6,6 +6,7 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 
 The status below fills itself in. Every few hours [`scripts/status.py`](scripts/status.py) looks at clawd-clash (and the forks) on GitHub and works out how far each universe has got: its phase, how many of the plan's characters and places are drawn, and the release it shipped in. It can only see pushed branches. Each plan says where its build lives in a hidden `<!-- track: … -->` line under its title; a new plan needs one too.
 
+<!-- track: kind=overhaul repo=rodclemen/clawd-clash branch=universe-modules title="Detail overhaul" source="Every released universe redrawn to the detail bar the Star Clawds refresh set. Counted from the `detail` line in each universe's `universe.conf`." -->
 <!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" source="The Lord of the Rings, no plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
@@ -16,6 +17,23 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 | Universe | Progress | Where it's at |
 |---|---|---|
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>Henrik · `feature-burton` in HEM42/clawd-clash, nothing pushed yet</sub> |
+
+### 🎨 Detail overhaul
+
+Every released universe redrawn to the detail bar the Star Clawds refresh set. Counted from the `detail` line in each universe's `universe.conf`.
+
+**Overall** `█░░░░░░░░░` 7% · 81/934 characters · 4/213 places<br><sub>`universe-modules`, last commit 19 Oct</sub>
+
+| Universe | Characters | Places |
+|---|---|---|
+| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `██░░░░░░░░` 18%<br><sub>4/22</sub> |
+| **Marvelous Clawds** | `░░░░░░░░░░` 0%<br><sub>0/193</sub> | `░░░░░░░░░░` 0%<br><sub>0/43</sub> |
+| **Detective Clawds** | `░░░░░░░░░░` 0%<br><sub>0/207</sub> | `░░░░░░░░░░` 0%<br><sub>0/43</sub> |
+| **Doctor Clawd** | `░░░░░░░░░░` 0%<br><sub>0/97</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
+| **The Clawd Files** | `░░░░░░░░░░` 0%<br><sub>0/81</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
+| **Stevie Clawdberg** | `░░░░░░░░░░` 0%<br><sub>0/117</sub> | `░░░░░░░░░░` 0%<br><sub>0/23</sub> |
+| **Clawd of the Rings** | `░░░░░░░░░░` 0%<br><sub>0/75</sub> | `░░░░░░░░░░` 0%<br><sub>0/22</sub> |
+| **Clawd Slayer** | `░░░░░░░░░░` 0%<br><sub>0/83</sub> | `░░░░░░░░░░` 0%<br><sub>0/20</sub> |
 
 ### 📝 Ready to pick up
 
@@ -46,5 +64,5 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 | Plan | Status |
 |---|---|
-| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 50 commits ahead of `main`, last commit 19 Oct</sub> |
+| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 51 commits ahead of `main`, last commit 19 Oct</sub> |
 <!-- status:end -->
