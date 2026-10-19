@@ -228,9 +228,10 @@ def engine_status(plan):
 # The detail overhaul. Every character and place gets a key (its enum case, or its name), and a key is done if:
 #   - its drawing code changed since the `since` tag, on main or on the overhaul's branch. Its code is the function its
 #     `draw:` / `still:` / `moving:` names, plus every function in the universe that those call; or
-#   - a commit message since then covers it: "An audit of all thirty-five Clawd Slayer heroes" (the audit kept the ones
-#     already at the bar as they were), or a `Detail: heroes, Area 51` footer naming groups (heroes, villains,
-#     places) or names. The universe comes from the commit's scope: `feat(slayer): …` is Slayer.
+#   - a commit message since then covers it: "An audit of all thirty-five Clawd Slayer heroes" (or places; the audit
+#     kept the ones already at the bar as they were), or a `Detail: heroes, Area 51` footer naming groups (heroes,
+#     villains, places) or names. The universe comes from the commit's scope: `feat(slayer): …` is Slayer; or
+#   - the track line's `finished=` says its universe is done (`all`, or folder names), whatever the code shows.
 # The keys from both refs go in one set per universe, so a commit on both, or a place redone twice, counts once.
 
 
@@ -309,7 +310,7 @@ def covered(messages, folders):
         if len(hits) != 1:
             continue
         said = out[hits[0]]
-        said.update(g.lower() for g in re.findall(r"\bAn audit of [^.:]*?\b(heroes|villains)\b", msg, re.I))
+        said.update(g.lower() for g in re.findall(r"\bAn audit of [^.:]*?\b(heroes|villains|places)\b", msg, re.I))
         for line in re.findall(r"^Detail:\s*(.+)$", msg, re.M):
             said.update(x.strip() for x in re.split(r",\s*|\s+and\s+", line) if x.strip())
     return out
@@ -328,6 +329,7 @@ def overhaul_status(plan):
     for ref in refs:
         messages.update(commits_since(repo, ref, date))
     said = covered(messages.values(), folders)
+    finished = {f.strip() for f in plan.get("finished", "").split(",") if f.strip()}
     titles = {pl["folder"]: pl.get("title") for pl in tracked_plans().values() if pl.get("folder")}
     rows = []
     for folder in folders:
@@ -341,6 +343,8 @@ def overhaul_status(plan):
             done_places |= {k for k, v in now_places.items() if k not in old_places or v != old_places[k]}
         done_chars |= {k for k, (name, group, _) in chars.items() if group in said[folder] or name in said[folder]}
         done_places |= set(places) if "places" in said[folder] else set(places) & said[folder]
+        if finished & {"all", folder}:
+            done_chars, done_places = set(chars), set(places)
         conf, path = {}, f"{UNIVERSES}/{folder}/universe.conf"
         for ref, files in refs.items():   # the title and number, from the module manifest once the refactor has one
             for line in text(repo, ref, path, files[path]).split("\n") if path in files else []:
@@ -413,7 +417,8 @@ def render_overhaul(plan, st):
     out = [f"### 🎨 {plan.get('title', 'Detail overhaul')}", ""]
     if plan.get("source"):
         out += [plan["source"], ""]
-    out += [f"**Overall** {bar(pct(chars + places, want_chars + want_places))} · {chars}/{want_chars} characters · "
+    done = chars + places >= want_chars + want_places
+    out += [f"**Overall**{' ✅ finished' if done else ''} {bar(pct(chars + places, want_chars + want_places))} · {chars}/{want_chars} characters · "
             f"{places}/{want_places} places<br><sub>{where}, last commit {short_date(st['date']) if st.get('date') else '?'}</sub>", "",
             "| Universe | Characters | Places |", "|---|---|---|"]
     for r in rows:

@@ -6,7 +6,7 @@ Folders: plans at the top level are free to pick up; `in-progress/` is being bui
 
 The status below fills itself in. Every few hours [`scripts/status.py`](scripts/status.py) looks at clawd-clash (and the forks) on GitHub and works out how far each universe has got: its phase, how many of the plan's characters and places are drawn, and the release it shipped in. It can only see pushed branches. Each plan says where its build lives in a hidden `<!-- track: … -->` line under its title; a new plan needs one too. The detail overhaul reads `main` and `universe-modules` together; a refresh commit can name what it covered in a footer like `Detail: villains, Area 51` (groups are heroes, villains and places).
 
-<!-- track: kind=overhaul repo=rodclemen/clawd-clash branch=universe-modules since=v3.7.0 title="Detail overhaul" source="Every released universe redrawn to the detail bar the Star Clawds refresh set. A character or place counts once its drawing has changed since 3.7.0 on either branch, or a commit's audit covers it." -->
+<!-- track: kind=overhaul repo=rodclemen/clawd-clash branch=universe-modules since=v3.7.0 finished=all title="Detail overhaul" source="Every released universe redrawn to the detail bar the Star Clawds refresh set. Done: what was below the bar was redrawn, the rest was audited and left as it was." -->
 <!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" url="https://github.com/rodclemen/clawd-clash/pull/3" source="The Lord of the Rings, built without a plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
@@ -20,20 +20,20 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 ### 🎨 Detail overhaul
 
-Every released universe redrawn to the detail bar the Star Clawds refresh set. A character or place counts once its drawing has changed since 3.7.0 on either branch, or a commit's audit covers it.
+Every released universe redrawn to the detail bar the Star Clawds refresh set. Done: what was below the bar was redrawn, the rest was audited and left as it was.
 
-**Overall** `█████████░` 88% · 933/934 characters · 71/213 places<br><sub>`main` since 3.7.0, last commit 19 Oct</sub>
+**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 19 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
+| **Star Clawds** ✅ | `██████████` 100%<br><sub>81/81</sub> | `██████████` 100%<br><sub>22/22</sub> |
+| **Marvelous Clawds** ✅ | `██████████` 100%<br><sub>193/193</sub> | `██████████` 100%<br><sub>43/43</sub> |
+| **Detective Clawds** ✅ | `██████████` 100%<br><sub>207/207</sub> | `██████████` 100%<br><sub>43/43</sub> |
+| **Doctor Clawd** ✅ | `██████████` 100%<br><sub>97/97</sub> | `██████████` 100%<br><sub>20/20</sub> |
+| **The Clawd Files** ✅ | `██████████` 100%<br><sub>81/81</sub> | `██████████` 100%<br><sub>20/20</sub> |
+| **Stevie Clawdberg** ✅ | `██████████` 100%<br><sub>117/117</sub> | `██████████` 100%<br><sub>23/23</sub> |
+| **Clawd of the Rings** ✅ | `██████████` 100%<br><sub>75/75</sub> | `██████████` 100%<br><sub>22/22</sub> |
 | **Clawd Slayer** ✅ | `██████████` 100%<br><sub>83/83</sub> | `██████████` 100%<br><sub>20/20</sub> |
-| **Star Clawds** | `██████████` 100%<br><sub>81/81</sub> | `██████░░░░` 55%<br><sub>12/22</sub> |
-| **The Clawd Files** | `██████████` 100%<br><sub>81/81</sub> | `████░░░░░░` 40%<br><sub>8/20</sub> |
-| **Marvelous Clawds** | `██████████` 99%<br><sub>192/193</sub> | `██░░░░░░░░` 23%<br><sub>10/43</sub> |
-| **Detective Clawds** | `██████████` 100%<br><sub>207/207</sub> | `██░░░░░░░░` 21%<br><sub>9/43</sub> |
-| **Doctor Clawd** | `██████████` 100%<br><sub>97/97</sub> | `██░░░░░░░░` 20%<br><sub>4/20</sub> |
-| **Stevie Clawdberg** | `██████████` 100%<br><sub>117/117</sub> | `█░░░░░░░░░` 13%<br><sub>3/23</sub> |
-| **Clawd of the Rings** | `██████████` 100%<br><sub>75/75</sub> | `██░░░░░░░░` 23%<br><sub>5/22</sub> |
 
 ### 📝 Ready to pick up
 
