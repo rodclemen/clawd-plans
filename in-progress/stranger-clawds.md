@@ -1,7 +1,10 @@
 # Plan: a new universe, Stranger Clawds (Stranger Things parody)
-<!-- track: repo=rodclemen/clawd-clash branch=stranger-things folder=StrangerClawds title="Stranger Clawds" source="Stranger Things, all five seasons" cast=45 places=16 -->
+<!-- track: repo=rodclemen/clawd-clash branch=stranger-clawds folder=StrangerClawds title="Stranger Clawds" source="Stranger Things, all five seasons" cast=45 places=16 -->
 
 ## Context
+
+> **Started 2026-10-19, on branch `stranger-clawds`, number 9** (`NUMBERS`: 8 reserved for Henrik's Clawd Burton, 9 hawkins). Clawd Clash is now built from universe folders (the universe-modules refactor, 3.7.1), so the build follows the clawdify guide's new flow instead of "How a universe plugs in" below: `Tools/new-universe.sh StrangerClawds Hawkins hawkins "Stranger Clawds" 9`, everything inside `Sources/App/Universes/StrangerClawds/` through the module's members, engine requests for anything the toolkit lacks (the flip will need one), `Tools/CheckUniverse/check.sh StrangerClawds` every phase, and the guide's "When a universe is complete" before hand-off. The rest of this plan (cast, places, mechanics, the flip, transitions, trailer, decisions) stands.
+
 
 Clawd Clash has seven universes on `main` (d270b63, 2026-10-17, after 3.6.0). This plan adds a parody of Stranger Things: all five seasons, with no spin-offs (not the stage play *The First Shadow*, not the animated *Tales from '85*). It's **a limited experience, and you chose it knowingly**: the heroes are many and strong, the villains are thin (about a dozen real ones, with the Demodogs and their kin as small fry). The ideas carry it: the neon title, Joyce's Christmas lights and the Upside Down, which now and then really is upside down.
 
@@ -25,7 +28,7 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17, after 3.6.0). Th
 - **Code naming** avoids the franchise name:
   - `case hawkins` with key `"hawkins"`.
   - Folder `Sources/App/Universes/StrangerClawds/`, file prefix `Hawkins` (`HawkinsRoster.swift`, `HawkinsHeroes1.swift`, `HawkinsWipes.swift` …). No file in the repo uses `Hawkins` as a prefix today. Top-level names start with `hawkins` or are `private`, as `scripts/pr-guard.py` asks.
-  - Branch `stranger-things`. Trailer `REEL=hawkins`.
+  - Branch `stranger-clawds`. Trailer `REEL=hawkins`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own; Superclawdtural (`hunters`) and Battleclawd Galactica (`fleet`) may have taken one by then. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** light puns only where they read at a glance: Lucas **Sinclawd**, Steve **Harringclawd**, Eddie **Munclawd**, the **Democlawgon**. Everyone else keeps the on-screen name (Eleven, Dustin, Vecna), because a forced pun is worse than none. Actors' names are never used.
 - **Size:** 45 characters and 16 places. The smallest universe in the app.
