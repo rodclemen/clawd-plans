@@ -64,5 +64,5 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. C
 
 | Plan | Status |
 |---|---|
-| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 51 commits ahead of `main`, last commit 19 Oct</sub> |
+| **[Universes as modules](universe-modules.md)**<br><sub>One folder each, a template that never ships, a checker, and a checkbox per universe in Settings</sub> | 🚧 **in progress**<br><sub>`universe-modules`, 26 commits ahead of `main`, last commit 19 Oct</sub> |
 <!-- status:end -->
