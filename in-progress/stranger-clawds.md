@@ -428,10 +428,9 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 
 ## Promo: the trailer (`REEL=hawkins`)
 
-Built on `doctorShots`, about 45 to 50 seconds, rendered with the app's own sprites, places and transitions. Storyboard first, for your OK. **The flip never appears, in the storyboard or the video.**
+Built on the promo kit, about 45 to 50 seconds, rendered with the app's own sprites, places and transitions. Storyboard first, for your OK. **The flip never appears, in the storyboard or the video.**
 
-- **Intro (~9 s): The Title.** Darkness, a synth pulse. Red neon letters slide in from the edges and lock together into **STRANGER CLAWDS** in our own lettering; the glow swells, and the camera pushes through the gap in a letter into the Wheelers' basement. Sound: synth arpeggios and a low pulse, in our own notes.
-- **Set piece (~9.5 s): the battle of Starcourt.** Night at the mall, neon flickering. The Mind Flayer looms at the skylights; the Party fire fireworks at it (the Fireworks transition's look), Steve and Robin in their Scoops Ahoy hats, Dustin cheering. Eleven steps forward, her nose bleeds, she raises her hand, and the monster recoils into its smoke. Caption: "Friends don't lie."
+- **Opening (~18 to 20 s): the show's opening titles, not a scene** (decided 2026-10-20: unlike every other trailer, this one has no set piece from the show). Its own take on the title sequence: black, a slow synth pulse, and the name coming onto the screen slowly, as the show's titles do: red outlined letters drifting in very slowly from off the edges and out of the dark, close up and soft, the camera slowly pulling back as they glide into place and lock together into **STRANGER CLAWDS**, the red glow swelling, a hold on the finished title, then it fades to black. No scene from the show, no characters in it. Our own lettering (no logo copied) and our own synth notes that only evoke the sound.
 - **Hook (4 s):** shared.
 - **Desktop (~4.6 s):** `brawl(ctx, .hawkins, …)`: "Something is living in your build folder."
 - **Status (~4.2 s):** four characters, one per state; the aside: "Mornings are for coffee."
