@@ -41,7 +41,7 @@ Heroes are the Party, the teenagers, the grown-ups of Hawkins and the allies who
 - **Alexei and Yuri → heroes**, the Russians who help.
 - **Kali → hero.**
 - **Colonel Sullivan → villain** (he hunts Eleven in season 4).
-- **Derek Turnbow → hero**: the rich, arrogant boy from season 5 who ends up helping the other captured kids.
+- **Derek Turnbow → hero**: the rich, arrogant boy from season 5, Holly's classmate, who ends up helping the other captured kids.
 
 ### Tone: what's left out, and why
 
@@ -117,7 +117,7 @@ How the engine's weapons map onto the show. This is a show about kids, so a lot 
 
 ### Heroes (29)
 
-Enum order is the table order. Eleven, Mike and Dustin come first for the skeleton.
+Enum order is the table order, with one exception: Derek Turnbow keeps his place (15) in the enum but is listed with Holly, whose classmate he is. Eleven, Mike and Dustin come first for the skeleton.
 
 **The Party (7)**
 
@@ -127,11 +127,11 @@ Enum order is the table order. Eleven, Mike and Dustin come first for the skelet
 | 2 | Mike Wheeler | dark hair, striped shirt, walkie-talkie | none | talks into his walkie-talkie | "Over." |
 | 3 | Dustin Henderson | cap, curls, no front teeth | none | into Cerebro's radio | "Suzie, do you copy?" |
 | 4 | Lucas Sinclawd | camo bandana, binoculars | wrist-rocket slingshot (thrown, grey) | lifts the binoculars | none |
-| 5 | Will Byers | bowl cut, flannel shirt, drawings | his season 5 power (lightning, violet `waves`; re-check at the audit) | holds up one of his drawings | none |
+| 5 | Will Byers | bowl cut, flannel shirt, drawings; his eyes turn solid white while he casts, as in season 5, and a thin nosebleed after a long, hard go | his season 5 power (lightning, violet `waves`; checked at the audit) | holds up one of his drawings | none |
 | 6 | Max Mayfield | red hair, skateboard, Walkman | none | puts on her headphones and kicks off on the skateboard | none |
 | 7 | Erica Sinclair | pigtails, attitude | none | crosses her arms | "Nerds." |
 
-**The teenagers (8)**
+**The teenagers (7)**
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
@@ -142,7 +142,6 @@ Enum order is the table order. Eleven, Mike and Dustin come first for the skelet
 | 12 | Eddie Munclawd | long curly hair, Hellfire t-shirt, denim vest | spear and spiky shield (saber) | plays a guitar solo | none |
 | 13 | Argyle | Surfer Boy Pizza uniform, long hair | none | holds out a slice of pizza | "Duuude." |
 | 14 | Barb | big glasses, frilly blouse | none | pushes up her glasses | none |
-| 15 | Derek Turnbow | rich kid's polo shirt and a sneer (season 5; re-check the look at the audit) | none | none | none |
 
 **The grown-ups (7)**
 
@@ -165,12 +164,13 @@ Enum order is the table order. Eleven, Mike and Dustin come first for the skelet
 | 25 | Alexei | Russian scientist's coat | none | sips a cherry Slurpee | none |
 | 26 | Yuri | smuggler's furs | none | eats peanut butter from a jar | none |
 
-**Season 5's Wheelers (2)**
+**Season 5's Wheelers, and Holly's classmate (3)**
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
-| 27 | Holly Wheeler | about ten, blonde, *A Wrinkle in Time* under her arm | none | waves to Mr. Whatsit, who appears next to her for a moment (a friendly man in a cardigan) and is gone | none |
+| 27 | Holly Wheeler | season 5's Holly, about ten, long blonde hair, in her Camazotz outfit: a mustard hooded cape, a red neckerchief with an orange star, a light blue dress with a sash and a scalloped white underskirt, a tan satchel (in place of the book) | none | waves to Mr. Whatsit, who appears next to her for a moment (combed hair, glasses, a kind smile, a warm brown suit and red tie) and is gone; as he goes, his eyes flash red and for a blink he's Henry Creel in the orderly's whites | none |
 | 28 | Karen Wheeler | blonde perm, dressing gown, a glass of wine | broken wine bottle (saber), as in her season 5 fight with the Demogorgon | sips her wine | none |
+| 15 | Derek Turnbow | Holly's classmate, about ten, kid height: a combed quiff and a sneer, a sweater in bright stripes under a flannel-lined beige vest, jeans and sneakers (his season 5 clothes) | none | none | none |
 
 **HEM (last hero)**
 
@@ -190,7 +190,7 @@ Vecna comes first for the skeleton.
 | 4 | The Democlawgon | no face; its head opens like a flower, `canSit: false` | claws (saber) | its face opens and shuts | none |
 | 5 | Dr. Brenner | white hair, suit | none | holds out his hand | "Hello, Eleven." |
 | 6 | Billy Hargrove | mullet, lifeguard's red, sunglasses | fists (saber) | lowers his sunglasses | none |
-| 7 | Grigori | Russian hitman, moustache, leather coat | pistol (bullet) | none | none |
+| 7 | Grigori | Russian hitman got up like the Terminator: clean-shaven, a dark brown flat-top, leather coat | pistol (bullet) | none | none |
 | 8 | Jason Carver | letterman's jacket | pistol (bullet) | none | none |
 | 9 | Mayor Kline | sleazy suit, big grin | none | waves to the crowd | none |
 | 10 | Dr. Kay | military officer (season 5) | pistol (bullet) | none | none |
@@ -206,7 +206,7 @@ Vecna comes first for the skeleton.
 - **Vecna and One** are the same person in two forms: Vecna's grey-red vines against One's bright white uniform. They're **rivals** (`Universe.rivals`), so they never lead two sessions back to back.
 - **Next to Stevie Clawdberg's Goonies:** the Party have walkie-talkies, Eleven her pink dress, Dustin his cap. Nobody looks like Chunk or Mikey.
 - **Robin and Steve** both wear Scoops Ahoy in season 3; Steve is drawn in his season 2 jacket instead.
-- **Holly and Max** (both small, light-haired at a glance): Holly is blonde with her book, Max red-haired with her skateboard.
+- **Holly and Max** (both small, light-haired at a glance): Holly is blonde in her mustard cape, Max red-haired with her skateboard.
 
 ### Nemeses (12)
 
@@ -467,3 +467,12 @@ All the gates are passed:
 - **Transitions:** the ten above, opening with The Title, finished with Joyce's Christmas lights.
 
 The plan is ready for phase 1 when you say start.
+
+## Audit decisions (2026-10-20)
+
+The owner's calls on the phase 3 character audit, applied in `fix(hawkins): the character audit's fixes`:
+- **Will:** keeps violet `waves`; his eyes turn solid white while he casts, and a thin nosebleed follows a long, hard go.
+- **Derek:** Holly's classmate (about ten), moved out of the teenagers to sit with Holly; drawn in his season 5 striped sweater and beige vest (Worn on TV, 5x05).
+- **Grigori:** clean-shaven; the show's dark brown flat-top replaces the blond crew cut (Stranger Things Wiki infobox; styled after the Terminator).
+- **Holly:** season 5's Holly in her Camazotz outfit (the owner's reference), the satchel in place of the book. Mr. Whatsit is a small figure in a warm brown suit, red tie and glasses (costume designer Amy Parris), and the signature ends on the tell: red eyes, then a blink of Henry Creel.
+- **Kamchatka's sign:** real Cyrillic ОПАСНО, with a skull and crossbones.
