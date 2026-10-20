@@ -1,5 +1,5 @@
 # Plan: a new universe, Stranger Clawds (Stranger Things parody)
-<!-- track: repo=rodclemen/clawd-clash branch=stranger-clawds folder=StrangerClawds title="Stranger Clawds" source="Stranger Things, all five seasons" cast=45 places=16 -->
+<!-- track: repo=rodclemen/clawd-clash branch=stranger-clawds folder=StrangerClawds title="Stranger Clawds" source="Stranger Things, all five seasons" cast=44 places=16 -->
 
 ## Context
 
@@ -19,11 +19,11 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17, after 3.6.0). Th
 | Clawd of the Rings                   |     38 |       38 |    76 |     22 |           9 |
 | Superclawdtural (planned)            |     35 |       45 |    80 |     20 |          12 |
 | Battleclawd Galactica (planned)      |     26 |       25 |    51 |     17 |          10 |
-| **Stranger Clawds (proposed)**       | **29** | **16** | **45** | **16** | **10** + the lights |
+| **Stranger Clawds (proposed)**       | **29** | **15** | **44** | **16** | **10** + the lights |
 
 (heroCount includes HEM; villainCount includes the four agent-only small fry.)
 
-- **Viability: a limited experience.** 28 drawn heroes, well over 20. Only 12 drawn villains, under the 20 threshold: the same villains' faces will come round often, and some fights will be thin. You weighed the three choices on 2026-10-17 (go ahead small, widen with the spin-offs, pick another show) and chose to go ahead small, with all five seasons and no spin-offs.
+- **Viability: a limited experience.** 28 drawn heroes, well over 20. Only 11 drawn villains (12 until the Mind Flayer became scenery), under the 20 threshold: the same villains' faces will come round often, and some fights will be thin. You weighed the three choices on 2026-10-17 (go ahead small, widen with the spin-offs, pick another show) and chose to go ahead small, with all five seasons and no spin-offs.
 - **Name: Stranger Clawds** (chosen on 2026-10-17). The alternatives were Stranger Thclawds and The Upside Clawd.
 - **Code naming** avoids the franchise name:
   - `case hawkins` with key `"hawkins"`.
@@ -31,7 +31,7 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17, after 3.6.0). Th
   - Branch `stranger-clawds`. Trailer `REEL=hawkins`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own; Superclawdtural (`hunters`) and Battleclawd Galactica (`fleet`) may have taken one by then. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** light puns only where they read at a glance: Lucas **Sinclawd**, Steve **Harringclawd**, Eddie **Munclawd**, the **Democlawgon**. Everyone else keeps the on-screen name (Eleven, Dustin, Vecna), because a forced pun is worse than none. Actors' names are never used.
-- **Size:** 45 characters and 16 places. The smallest universe in the app.
+- **Size:** 44 characters and 16 places (45 until phase 4, when the Mind Flayer became scenery). The smallest universe in the app.
 
 ### How the cast is split
 
@@ -71,7 +71,7 @@ The show is horror with children at its heart. Clawd Clash is a desktop toy, so:
 
 **Wiring into the existing code.** Copy what `middleEarth` and `clawdberg` did. Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎.
 - **`Sources/Shared/Universe.swift`:**
-  - `:9–15` the case; `:17` `key`; `:25` `title`; `:33` `villainCount` (16); `:37` `heroCount` (29);
+  - `:9–15` the case; `:17` `key`; `:25` `title`; `:33` `villainCount` (15); `:37` `heroCount` (29);
   - `:50` `agentOnly` (Demodog, Dart, Demobat, flayed rat);
   - `:65` `claudeSide` (default false: Claude plays the heroes);
   - `:68` `rivals` (Vecna and One; today it's `self == .starWars ? [0, 1] : []`, so it becomes a switch, which Superclawdtural or Battleclawd Galactica may already have done);
@@ -112,7 +112,7 @@ How the engine's weapons map onto the show. This is a show about kids, so a lot 
 - **`.saber`** for things swung: Steve's nail bat, Joyce's axe, Karen's broken wine bottle, Eddie's spear and spiky shield, the monsters' claws and tendrils, Billy's fists.
 - **`.blaster` + `.bullet`** for the guns: Hopper, Nancy, Jonathan, and the bad men.
 - **`.blaster` + `.thrown(grey)`** for Lucas's wrist-rocket slingshot; **`.fire`** for Murray's flamethrower.
-- **`bulk`** for Vecna and the Mind Flayer; **`canSit: false`** for the Mind Flayer and the Democlawgon.
+- **`bulk`** for Vecna; **`canSit: false`** for the Democlawgon.
 - Everyone, monsters included, is Clawd in costume on Clawd's four legs.
 
 ### Heroes (29)
@@ -178,7 +178,7 @@ Enum order is the table order, with one exception: Derek Turnbow keeps his place
 |---|---|---|---|---|
 | 29 | HEM | Hellfire Club t-shirt, cap, walkie-talkie on his belt | nail bat (saber) | swings the bat onto his shoulder |
 
-### Villains (16)
+### Villains (15)
 
 Vecna comes first for the skeleton.
 
@@ -186,18 +186,19 @@ Vecna comes first for the skeleton.
 |---|---|---|---|---|---|
 | 1 | Vecna | tall, vine-covered skin, long claws, `bulk` | mind power (lightning, red `rings`) | raises a hand, and the vines writhe | none |
 | 2 | One (Henry Creel) | the lab orderly's whites, blond | telekinesis (lightning, red `rings`) | his fingers twitch and a clock chimes; for a moment the whites flicker into Mr. Whatsit's cardigan and kind smile, then back | none |
-| 3 | The Mind Flayer | a towering spider of black smoke, `bulk`, `canSit: false` | tendrils (saber) | its legs spread across the sky | none |
-| 4 | The Democlawgon | no face; its head opens like a flower, `canSit: false` | claws (saber) | its face opens and shuts | none |
-| 5 | Dr. Brenner | white hair, suit | none | holds out his hand | "Hello, Eleven." |
-| 6 | Billy Hargrove | mullet, lifeguard's red, sunglasses | fists (saber) | lowers his sunglasses | none |
-| 7 | Grigori | Russian hitman got up like the Terminator: clean-shaven, a dark brown flat-top, leather coat | pistol (bullet) | none | none |
-| 8 | Jason Carver | letterman's jacket | pistol (bullet) | none | none |
-| 9 | Mayor Kline | sleazy suit, big grin | none | waves to the crowd | none |
-| 10 | Dr. Kay | military officer (season 5) | pistol (bullet) | none | none |
-| 11 | Lieutenant Colonel Sullivan | army uniform | rifle (bullet) | none | none |
-| 12 | Connie Frazier | Department of Energy suit | pistol (bullet) | none | none |
+| 3 | The Democlawgon | no face; its head opens like a flower, `canSit: false` | claws (saber) | its face opens and shuts | none |
+| 4 | Dr. Brenner | white hair, suit | none | holds out his hand | "Hello, Eleven." |
+| 5 | Billy Hargrove | mullet, lifeguard's red, sunglasses | fists (saber) | lowers his sunglasses | none |
+| 6 | Grigori | Russian hitman got up like the Terminator: clean-shaven, a dark brown flat-top, leather coat | pistol (bullet) | none | none |
+| 7 | Jason Carver | letterman's jacket | pistol (bullet) | none | none |
+| 8 | Mayor Kline | sleazy suit, big grin | none | waves to the crowd | none |
+| 9 | Dr. Kay | military officer (season 5) | pistol (bullet) | none | none |
+| 10 | Lieutenant Colonel Sullivan | army uniform | rifle (bullet) | none | none |
+| 11 | Connie Frazier | Department of Energy suit | pistol (bullet) | none | none |
 
-**Small fry, as agents only (4):** a Demodog, **Dart** (Dustin's pet), a Demobat, a flayed rat. Ids 13 to 16, all in `agentOnly`.
+**Small fry, as agents only (4):** a Demodog, **Dart** (Dustin's pet), a Demobat, a flayed rat. Ids 12 to 15, all in `agentOnly`.
+
+**The Mind Flayer is scenery, not a character** (owner's decision, 2026-10-20, phase 4): it was villain 3 until then; its case was taken out and the cases after it moved up one, which was fine only because Stranger Clawds had never shipped. That was the last reorder the enums may ever have. It now towers over the Upside Down as part of the place (`Places/HawkinsMindFlayer.swift`), in the window strip and on the screen saver, animated in the moving layer.
 
 **Claude's side:** the heroes (the default).
 
@@ -215,7 +216,7 @@ Vecna comes first for the skeleton.
 | Eleven | Brenner | Papa |
 | Max | Vecna | "Running Up That Hill", season 4 |
 | Holly | One | Mr. Whatsit, season 5 |
-| Will | the Mind Flayer | its host in season 2 |
+| Will | Vecna | Henry took him in season 1, and Will fights him to the end in season 5 (Vecna is Max's nemesis too) |
 | Karen | the Democlawgon | her kitchen fight, season 5 |
 | Steve | Billy | their fight, season 2 |
 | Hopper | Grigori | season 3 |
@@ -240,7 +241,7 @@ All keys start with `hawkins`, so none clash with another universe (checked with
 | 1 | `hawkinsBasement` | **The Wheelers' basement** (default) | the D&D table, the old couch, Eleven's blanket fort, the stairs | the lamp flickers, the dice tray rattles | shelves of boxes, the stairs going up |
 | 2 | `hawkinsByers` | **The Byers' living room** | the alphabet painted on the wall, Christmas lights strung over it | the lights blink letter by letter | wood panelling, a ceiling light |
 | 3 | `hawkinsLab` | **Hawkins National Laboratory** | a cold corridor, the Gate room, a "RESTRICTED" sign | fluorescent tubes flicker | the Gate's crack in the wall above |
-| 4 | `hawkinsUpsideDown` | **The Upside Down** (home of the rare flip, see Mechanics) | Hawkins in blue-grey, vines over everything | spores float, red lightning | the Mind Flayer's storm cloud |
+| 4 | `hawkinsUpsideDown` | **The Upside Down** (home of the rare flip, see Mechanics) | Hawkins in blue-grey, vines over everything | the Mind Flayer towering in the storm over the town (strip and tall), its legs shifting, lit red from within by the lightning; spores float | the storm filling the sky, the Mind Flayer standing in it |
 | 5 | `hawkinsStarcourt` | **Starcourt Mall** | neon, the fountain, Scoops Ahoy | neon flickers, the fountain splashes | the atrium's skylights |
 | 6 | `hawkinsArcade` | **The Palace Arcade** | rows of cabinets, MADMAX on the high-score screen | the screens flash | neon signs above |
 | 7 | `hawkinsCabin` | **Hopper's cabin** | a box of Eggos, the TV, a tripwire across the door | TV static | the trees round it |
@@ -265,7 +266,7 @@ A mix of day (the pool, the mall, Benny's) and night, with the Upside Down's blu
 | Wheelers' basement | Mike, Nancy, Holly, Karen, Barb, Suzie (on the radio), HEM | |
 | Byers' living room | Joyce, Jonathan, Bob | |
 | Hawkins Lab | Dr. Owens, Kali (where she was "Eight") | Brenner, Connie Frazier, Dr. Kay, Sullivan |
-| The Upside Down | | the Democlawgon, the Mind Flayer, Demodog, Dart, Demobat, flayed rat |
+| The Upside Down | | the Democlawgon, Demodog, Dart, Demobat, flayed rat (the Mind Flayer looms over it as scenery) |
 | Starcourt Mall | Steve, Robin, Erica, Derek, Alexei | Mayor Kline, Grigori |
 | Palace Arcade | Max | |
 | Hopper's cabin | Hopper, Eleven | |
@@ -357,11 +358,11 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    It runs end to end in the app, the window, the screen saver and Clawd Royale, with plain wipes (`case .starWars, .hawkins: return nil` in `ComicTransition.pick`).
 2. **Core ensemble.** About 20 characters:
    - the rest of the Party, Steve, Nancy, Jonathan, Robin, Hopper, Joyce;
-   - One, the Mind Flayer, the Democlawgon, Brenner, Billy;
+   - One, the Mind Flayer (later made scenery), the Democlawgon, Brenner, Billy;
    - 8 places: the basement, the Byers' living room, the Lab, the Upside Down (right way up for now), Starcourt, Hopper's cabin, Vecna's mind, the Creel house; with homes and nemeses for these.
 
    The enum cases can go in first as stand-ins and be drawn in a second commit, as The Clawd Files did.
-3. **The rest:** all 45 characters and all 16 places, every home filled in. Ends with **the character audit**: every weapon, shot, motion, signature and callout checked against the show and this plan, a mismatches table for your OK. Re-check two things flagged at the roster: **Will's season 5 power** (its look and colour) and **Derek Turnbow's look**.
+3. **The rest:** all 45 characters (44 once the Mind Flayer became scenery) and all 16 places, every home filled in. Ends with **the character audit**: every weapon, shot, motion, signature and callout checked against the show and this plan, a mismatches table for your OK. Re-check two things flagged at the roster: **Will's season 5 power** (its look and colour) and **Derek Turnbow's look**.
 4. **Mechanics:** the bikes, Taken to the Upside Down, the three habits, the bespoke drills, and **the flip**: `HawkinsFlip.swift`, the scene-wide flag in the window and the screen saver, upright labels, flipped clicks, the Upside Down's art reading both ways up, and **all of its tests** (Preview `--flipped`, `edges` flipped, the hidden Playground trigger, the in-app checks above), shown to you before phase 5.
 5. **Transitions:** the ten `HawkinsTrip`s and the Christmas-lights finishing touch, through `ComicTransition`.
 6. **Polish pass** (always before docs): every weak spot noted in phases 2 to 5, split by file and fixed in parallel, with before-and-after renders for your OK.
@@ -408,7 +409,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 | 3 | **The Gate** | A red, glowing crack splits the screen from top to bottom, pulses, and opens wide, showing the new place through it. | Brenner, Owens · turf: Lab |
 | 4 | **Walkie Static** | Static lines and "DO YOU COPY? OVER." The picture tunes in through the noise onto the new place. | Mike, Dustin, Suzie · turf: basement |
 | 5 | **The Void** | Everything goes black, with a thin sheet of water on the floor. The new place shows as a reflection in the water and rises out of it. | Eleven, Kali · turf: the void |
-| 6 | **The Storm** | A red storm cloud rolls in, and the Mind Flayer's spider shape looms in it. Lightning, and the clouds part onto the new place. | the Mind Flayer, Will · turf: Upside Down |
+| 6 | **The Storm** | A red storm cloud rolls in, and the Mind Flayer's spider shape looms in it. Lightning, and the clouds part onto the new place. | Will, Vecna · turf: Upside Down |
 | 7 | **Vecna's Clock** | The grandfather clock fills the screen and chimes four times. The glass cracks more with each chime, and on the fourth it shatters onto the new place. | Vecna, One · turf: Vecna's mind, the Creel house |
 | 8 | **Natural 20** | A giant d20 tumbles across the screen, stops on **20**, flashes, and the new place appears in the flash. | Eddie, Mike, Dustin, Lucas · turf: trailer, basement |
 | 9 | **Fireworks** | Fireworks burst across the dark (the battle of Starcourt), and the new place lights up in their glow. | Steve, Robin, Erica, Dustin · turf: Starcourt |
@@ -458,7 +459,7 @@ No logo or melody is copied: the title is our own lettering, and the music only 
 All the gates are passed:
 - **Name: Stranger Clawds.** Puns: Sinclawd, Harringclawd, Munclawd, the Democlawgon; everyone else by name.
 - **Scope:** all five seasons, no spin-offs.
-- **Size:** a limited experience, accepted: 45 with HEM and the four small fry.
+- **Size:** a limited experience, accepted: 45 with HEM and the four small fry (44 since the Mind Flayer became scenery).
 - **Raw value:** settled at build time, after checking `main`, the open branches, the forks, Superclawdtural and Battleclawd Galactica.
 - **Roster:** approved, with Holly Wheeler (a major part of season 5) and Karen Wheeler (her wine-bottle fight) added at your request.
 - **Places and homes:** the 16 approved; the void is nobody's home.
