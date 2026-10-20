@@ -300,7 +300,7 @@ Your idea, 2026-10-17: a rare random event where the Upside Down really is upsid
 - Then the place and everyone in it are **upside down**: the crew walks along the ceiling, the vines hang upwards, the spores "fall" up, the Mind Flayer's storm cloud is at the bottom.
 - After **30 to 60 seconds**, or as soon as the crew moves on, it turns back the right way up, with the same half-turn.
 
-**How rare:** a random event, about **1 in 10 arrivals** at the Upside Down. Tune the exact chance once it's seen in the build: rare enough to be a "did you see that?!" moment.
+**How rare:** semi-rare, as decided on 2026-10-20 ("once in a while only, semi rare"): a chance a few seconds after arriving at the Upside Down and then one every 15 minutes while it stays on show, each 35%, so roughly one or two turns an hour of the Upside Down on show; 20 to 40 seconds upside down each time; never twice in a row (10 minutes' rest after each). All in one constant, `hawkinsUpsideDownTurn` (HawkinsFlip.swift), to tune. (Was: about 1 in 10 arrivals, 30 to 60 seconds.)
 
 **Where:**
 - **Only in window mode and the screen saver**, where the place fills the frame.
@@ -338,7 +338,7 @@ You asked for this explicitly: the flip is secret in public, but while it's bein
 - **Edges:** `build/preview edges` covers the flipped state too, so nothing is cut off at the frame's new "floor".
 - **The Playground** in the app gets a hidden trigger that starts the flip at once, to watch the half-turn, the 30 to 60 seconds upside down and the turn back. For the build and checking only; never documented in public.
 - **In the app, check that:**
-  - the flip comes up at about the planned rate (roughly 1 in 10 arrivals);
+  - the flip comes up at about the planned rate (roughly one or two an hour on show);
   - it **never** fires in desktop mode or Clawd Royale's desktop scenes;
   - names and speech bubbles are upright and readable;
   - clicks on characters land where they should while flipped;
@@ -390,7 +390,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
   - `build/preview place out.png "Stranger Clawds" --flipped`: the Upside Down both ways up, crew and labels upright and readable;
   - `build/preview edges` with the flipped state;
   - the hidden Playground trigger in the app: the half-turn, the 30 to 60 seconds, the turn back, the turn back when the crew leaves;
-  - in the app: about 1 in 10 arrivals, never in desktop mode or Clawd Royale's desktop scenes, clicks landing on the right character, the screen saver's tall version.
+  - in the app: about one or two an hour on show, never in desktop mode or Clawd Royale's desktop scenes, clicks landing on the right character, the screen saver's tall version.
 - **Pull request guard:** `python3 scripts/pr-guard.py main stranger-things` before any PR.
 - **Transitions:** `Tools/Transitions/build.sh`, then `build/transitions <outdir> hawkinsBasement hawkinsUpsideDown`.
 - **In the app:**
