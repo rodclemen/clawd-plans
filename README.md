@@ -16,8 +16,8 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 | Universe | Progress | Where it's at |
 |---|---|---|
+| **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 21 Oct</sub> |
 | **[Stranger Clawds](in-progress/stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | `██████░░░░` 65% | **Phase 4 of 6**, mechanics<br><sub>44/44 characters · 16/16 places · `stranger-clawds`, last commit 20 Oct</sub> |
-| **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>Henrik · `feature-burton` in HEM42/clawd-clash, nothing pushed yet</sub> |
 
 ### 🎨 Detail overhaul
 
