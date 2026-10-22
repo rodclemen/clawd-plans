@@ -45,7 +45,7 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. D
 | **[Clawd Trek](clawd-trek.md)**<br><sub>Star Trek</sub> | 100 characters · 21 places |
 | **[Clawdformers](clawdformers.md)**<br><sub>Transformers</sub> | 112 characters · 23 places |
 | **[Clawds of the Universe](clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | 85 characters · 21 places |
-| **[Dungeon Clawd Carl](dungeon-clawd-carl.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | 95 characters · 20 places |
+| **[Dungeon Crawler Clawd](dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | 95 characters · 20 places |
 | **[Game of Clawds](game-of-clawds.md)**<br><sub>Game of Thrones</sub> | 99 characters · 20 places |
 | **[Harry Clawder](harry-clawder.md)**<br><sub>Harry Potter, the seven books and eight films</sub> | 85 characters · 22 places |
 | **[Superclawdtural](superclawdtural.md)**<br><sub>Supernatural</sub> | 80 characters · 20 places |

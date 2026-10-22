@@ -1,5 +1,5 @@
-# Plan: a new universe, Dungeon Clawd Carl (Dungeon Crawler Carl parody)
-<!-- track: repo=rodclemen/clawd-clash branch=dungeon-clawd-carl folder=DungeonClawdCarl title="Dungeon Clawd Carl" source="Dungeon Crawler Carl, all eight books" cast=95 places=20 -->
+# Plan: a new universe, Dungeon Crawler Clawd (Dungeon Crawler Carl parody)
+<!-- track: repo=rodclemen/clawd-clash branch=dungeon-crawler-clawd folder=DungeonCrawlerClawd title="Dungeon Crawler Clawd" source="Dungeon Crawler Carl, all eight books" cast=95 places=20 -->
 
 ## Context
 
@@ -16,17 +16,17 @@ Clawd Clash has seven universes on `main` (b5c6ab8, 2026-10-18). This plan adds 
 | Clawd of the Rings                   |     38 |       38 |    76 |     22 |           9 |
 | Clawd Slayer (branch `buffy`)        |     36 |       48 |    84 |     20 |  in progress |
 | Harry Clawder (planned)              |     45 |       40 |    85 |     22 |          12 |
-| **Dungeon Clawd Carl (proposed)**    | **51** | **44** | **95** | **20** | **12** + the System box |
+| **Dungeon Crawler Clawd (proposed)**    | **51** | **44** | **95** | **20** | **12** + the System box |
 
 (heroCount includes HEM and the agent-only Garret; villainCount includes the five agent-only small fry.)
 
 - **Viability: comfortably over.** 49 drawn heroes and 39 drawn villains. The early worry that heroes would be thin didn't survive the research: the allies run well past Carl's crew.
-- **Name: Dungeon Clawd Carl** (chosen on 2026-10-18). The alternatives were Dungeon Clawler Carl, Dungeon Crawler Clawd and The Royal Clawd of Princess Donut.
+- **Name: Dungeon Crawler Clawd** (chosen on 2026-10-18 as Dungeon Clawd Carl, renamed on 2026-10-22). The other alternatives were Dungeon Clawler Carl and The Royal Clawd of Princess Donut.
 - **Code naming** avoids the franchise's trademark:
   - `case crawl` with key `"crawl"`.
-  - Folder `Sources/App/Universes/DungeonClawdCarl/`, file prefix `Crawl` (`CrawlRoster.swift`, `CrawlHeroes1.swift`, `CrawlWipes.swift` …). No file in the repo uses `Crawl` as a prefix today. Top-level names start with `crawl` or are `private`, as `scripts/pr-guard.py` asks. Star Clawds' sandcrawler has locals called `crawlerLights` and `crawlerHigh`; don't name anything `crawler…`.
+  - Folder `Sources/App/Universes/DungeonCrawlerClawd/`, file prefix `Crawl` (`CrawlRoster.swift`, `CrawlHeroes1.swift`, `CrawlWipes.swift` …). No file in the repo uses `Crawl` as a prefix today. Top-level names start with `crawl` or are `private`, as `scripts/pr-guard.py` asks. Star Clawds' sandcrawler has locals called `crawlerLights` and `crawlerHigh`; don't name anything `crawler…`.
   - Place keys are prefixed `crawl…` (`crawlSafeRoom`); none clash with `main` or `buffy`.
-  - Branch `dungeon-clawd-carl`. Trailer `REEL=crawl`.
+  - Branch `dungeon-crawler-clawd`. Trailer `REEL=crawl`.
 - **Raw value: next free when the build starts.** Check `main`, the open branches (`buffy` has `slayer = 7`), Henrik's fork (HEM42/clawd-clash) and the other plans (Harry Clawder's `wizards` among them). Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
 - **Naming style:** everyone keeps the on-page name. The books' names are already jokes (Princess Donut, Gluteus Maxx, Splash Zone), and a pun on top would be forced. No narrators' or actors' names (Donut's announced voice actor included), and no character named after a real person.
 - **Size:** 95 characters and 20 places, in the guide's 70 to 100 target.
@@ -54,7 +54,7 @@ The books are profane, gory and bawdy. Clawd Clash is a desktop toy, but at 72×
 
 ## How a universe plugs in (checked against the code on 2026-10-18, main b5c6ab8)
 
-**New code: `Sources/App/Universes/DungeonClawdCarl/`**
+**New code: `Sources/App/Universes/DungeonCrawlerClawd/`**
 - `CrawlRoster.swift`:
   - `enum CrawlHero` and `enum CrawlVillain`, append-only, with `hem` as the last hero.
   - The persona dictionaries, `.reduce([.hem: hemPersona(.crawl)])`.
@@ -81,15 +81,15 @@ The books are profane, gory and bawdy. Clawd Clash is a desktop toy, but at 72×
 - **`Sources/App/Universes/Hem.swift:31–32, 55–57, 76, 115, 130, 151–157, 174, 196, 203`:** HEM's persona and costume in every switch (a crawler's patch jacket, a "Princess Posse" fan sash, a slingshot). Leave the `u == .middleEarth` Rohan checks alone.
 - **`Sources/App/Rides.swift:18–34`:** the monster truck in `drawRide` (phase 4).
 - ⚠︎ **`Sources/Saver/SaverView.swift`:** nothing to add; the Options list and trip choice build themselves from `Universe.offered` (`:89`, `:208–212`).
-- ⚠︎ **`Sources/App/Drills.swift:51`:** the meditation guard (`meditates`): Dungeon Clawd Carl stays out. **`:73`** and the bespoke-drill table: merge `crawlBespokeDrills`.
+- ⚠︎ **`Sources/App/Drills.swift:51`:** the meditation guard (`meditates`): Dungeon Crawler Clawd stays out. **`:73`** and the bespoke-drill table: merge `crawlBespokeDrills`.
 - ⚠︎ **`Sources/App/Overlay.swift`:**
   - `:875–878` the Playground prompts (five, below), a `case .crawl:` next to `.clawdberg` and `.middleEarth`;
   - `:1271–1272` is where `OutaTime` is chosen for `clawdberg` (`MissingTime` is the fallback for everyone else in `abductees`); `CrawlAchievement` hooks in the same way;
   - the fans, Mongo-and-Donut, Prepotente's-scream and petty-achievement habits hook into the tick;
   - the cast-size check is at `:180`.
-- ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per universe-specific `if`. Dungeon Clawd Carl joins none of the existing ones.
+- ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per universe-specific `if`. Dungeon Crawler Clawd joins none of the existing ones.
 - ⚠︎ **Compaction:** `Sources/Shared/StatusStore.swift:367` already marks any leader in `abductees`; check it picks up `.crawl` without changes. `HookInstaller.swift` already registers the hook.
-- **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies in a Dungeon Clawd Carl place, and that the homebound Hoarder is recast anywhere but her lair.
+- **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies in a Dungeon Crawler Clawd place, and that the homebound Hoarder is recast anywhere but her lair.
 - **Tools:**
   - `Tools/Preview/main.swift:7, 65` (batch doc comments), `:87` (`"crawl": Theme.of(.crawl).cast`), `:102–104` (the batch arrays `crawlHeroes1…`, `crawlVillains1…`, `crawlHem`), and the enum lookups by case name.
   - `Tools/Transitions/main.swift:7, 15` (usage comments), a `shownCrawl` like `shownRings` at `:88–90`, and the branch at `:133` (phase 5).
@@ -409,7 +409,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 6. **Polish pass** (always before docs): every weak spot noted in phases 2 to 5, split by file and fixed in parallel, with before-and-after renders for your OK.
 7. **Docs and release:**
    - README (the universe's own section under "The universes" with its collapsible cast-and-places pictures, the screen-saver paragraph, developer notes), `llms.txt` (universe list, folder and prefix, the compaction mechanic);
-   - `Tools/RenderDocs`: a `crawlLineup` desktop strip, `roster-dungeon-clawd-carl.png`, the locations sheet and a social preview; `Tools/MakeSocial`, `Tools/RenderShowcase`;
+   - `Tools/RenderDocs`: a `crawlLineup` desktop strip, `roster-dungeon-crawler-clawd.png`, the locations sheet and a social preview; `Tools/MakeSocial`, `Tools/RenderShowcase`;
    - the trailer, `REEL=crawl`;
    - flip `isReleased` if it was built on `main`;
    - the version: a new universe raises the middle number (the next `3.N.0`);
@@ -426,14 +426,14 @@ Ids are append-only, so the enum order is the order characters are added, and ph
   - `build/preview cast out.png "Princess Donut"`;
   - `build/preview fight out.png "Carl" "Maestro"`;
   - `build/preview fight out.png "Elle McGibbons" "Big Tina"`: ice against a steady red ray;
-  - `build/preview place out.png "Dungeon Clawd Carl"`;
-  - `build/preview edges out.txt "Dungeon Clawd Carl"`: everything it lists must be on purpose (shots, Carl's dynamite lob, Rosemarie's coins, thrown potions and bombs, Quan Ch's flight, Amayon's fire column);
+  - `build/preview place out.png "Dungeon Crawler Clawd"`;
+  - `build/preview edges out.txt "Dungeon Crawler Clawd"`: everything it lists must be on purpose (shots, Carl's dynamite lob, Rosemarie's coins, thrown potions and bombs, Quan Ch's flight, Amayon's fire column);
   - and the batch sheets, one per Art file. Look at the PNGs before showing them.
 - **Homebound:** the Hoarder only appears in her lair, and is recast anywhere else, including the desktop.
-- **Pull request guard:** `python3 scripts/pr-guard.py main dungeon-crawler-carl` before any PR.
+- **Pull request guard:** `python3 scripts/pr-guard.py main dungeon-crawler-clawd` before any PR.
 - **Transitions:** `Tools/Transitions/build.sh`, then `build/transitions <outdir> crawlSafeRoom crawlDesperado`.
 - **In the app:**
-  - Settings → Universe → Dungeon Clawd Carl: sessions are heroes, subagents include villains, Garret and the small fry;
+  - Settings → Universe → Dungeon Crawler Clawd: sessions are heroes, subagents include villains, Garret and the small fry;
   - the screen saver's Options list it;
   - Random and Clawd Royale reach it.
 - **New Achievement!:** `/compact` in a session led by Carl or Donut, several times, to see more than one box tier.
@@ -442,7 +442,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 
 | # | Name | What happens | Comes up more with |
 |---|---|---|---|
-| 1 | **The Collapse** (signature, longest and rarest) | Night street, rain. The ground cracks and the buildings sink into the earth. A blue System box slams in: **WELCOME, CRAWLER!** A glittering game-show title, DUNGEON CLAWD CARL in our own lettering, sweeps up, and the camera drops through the floor into the new place. | rare for anyone · turf: Carl's street |
+| 1 | **The Collapse** (signature, longest and rarest) | Night street, rain. The ground cracks and the buildings sink into the earth. A blue System box slams in: **WELCOME, CRAWLER!** A glittering game-show title, DUNGEON CRAWLER CLAWD in our own lettering, sweeps up, and the camera drops through the floor into the new place. | rare for anyone · turf: Carl's street |
 | 2 | **Down the Stairwell** | The view spirals down a stone stairwell, a floor counter ticks over, and the bottom opens onto the new place. | Carl, Donut, Mordecai · turf: First Floor tunnels |
 | 3 | **Loot Box** | A box thumps down, shakes, glows and bursts open, and its light becomes the new place. | the crawlers · turf: a safe room |
 | 4 | **Recap Episode** | TV static, "PREVIOUSLY ON…", and the picture tunes in onto the new place. | Odette, Zev, Cascadia · turf: Odette's studio |
@@ -465,7 +465,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 
 Built on `doctorShots`, about 45 to 50 seconds, rendered with the app's own sprites, places and transitions. Storyboard first, for your OK.
 
-- **Intro (~9 s): The Collapse.** Rain on Carl's street; Donut darts out of a window and Carl follows in boxers and a leather jacket. The ground cracks, the buildings sink, the blue box slams in (**WELCOME, CRAWLER!**), and the glittering title **DUNGEON CLAWD CARL** sweeps up as the camera drops into a safe room. Sound: a game-show brass sting and a chiptune pulse, our own notes.
+- **Intro (~9 s): The Collapse.** Rain on Carl's street; Donut darts out of a window and Carl follows in boxers and a leather jacket. The ground cracks, the buildings sink, the blue box slams in (**WELCOME, CRAWLER!**), and the glittering title **DUNGEON CRAWLER CLAWD** sweeps up as the camera drops into a safe room. Sound: a game-show brass sting and a chiptune pulse, our own notes.
 - **Set piece (~9.5 s): from the sofa to the boss room.** Carl and Donut on Odette's cream sofa, ON AIR glowing; a trapdoor opens and drops them into the Juicer's gym as the lights go red. Carl's gauntlet punch, Donut's pink Magic Missiles from his shoulder, Mongo leaping in with a screech; the System box: "BOSS DEFEATED". Caption: "Mongo is appalled."
 - **Hook (4 s):** shared.
 - **Desktop (~4.6 s):** `brawl(ctx, .crawl, …)`: "Welcome to the dungeon. Your desktop is the dungeon."
@@ -487,9 +487,9 @@ No cover art, logo or melody is copied.
 ## Decisions (2026-10-18)
 
 All four gates are passed:
-- **Name: Dungeon Clawd Carl.** Everyone keeps the on-page name.
+- **Name: Dungeon Crawler Clawd.** Everyone keeps the on-page name.
 - **Scope:** all eight books (confirmed by you after the plan was written).
-- **Code naming:** `case crawl`, prefix `Crawl`, folder `DungeonClawdCarl/`, branch `dungeon-clawd-carl`, `REEL=crawl`.
+- **Code naming:** `case crawl`, prefix `Crawl`, folder `DungeonCrawlerClawd/`, branch `dungeon-crawler-clawd`, `REEL=crawl`.
 - **Raw value:** settled at build time.
 - **Tone:** the Desperado dancers are in, your call (pixel art keeps them from being too sexy); Samantha is a doll's head with smeared red lipstick; Lucia Mar stays a villain (confirmed by you after the plan was written).
 - **Roster:** approved as drafted: 51 heroes (with HEM and the agent-only Garret), 44 villains (with five small fry), 95 in all. Callouts "I'll kill your mother!" (Samantha) and Prepotente's scream approved.
