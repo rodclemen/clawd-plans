@@ -22,3 +22,4 @@
 - [Universe modules refactor](universe-modules-refactor.md): started 2026-10-18 on branch universe-modules; baseline tools and phase status
 - [Stranger Clawds](stranger-clawds.md): started 2026-10-19 on branch stranger-clawds, number 9 (8 reserved for Clawd Burton); flip stays secret
 - [Renders outside build/](renders-outside-build.md): review renders go to ~/Desktop/<name>, never build/ (build.sh wipes it)
+- [Clawd, not claw](clawd-not-claw.md): pun names say "clawd", never bare "claw", even for real claws (Democlawdgon)

@@ -26,13 +26,14 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
-Updated 2026-10-22: Stranger Clawds, phase 7's local half (trailer, README, llms.txt, docs pictures) done and pushed (f257547); the public steps wait for the owner's OK.
+Updated 2026-10-22 (end of day): Stranger Clawds, phase 7 done up to the release; its showcase repo is public. Branch `stranger-clawds` at 32cbf19. What's left is under "Next, at home".
 
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch stranger-clawds   # phase 7 docs done (f257547)
+git switch stranger-clawds   # everything so far (32cbf19)
+git pull
 ./build.sh                   # builds, installs and launches (wipes build/)
 Tools/Preview/build.sh       # the Preview tool for character/place sheets
 Tools/Transitions/build.sh   # the transitions renderer
@@ -51,15 +52,54 @@ with them; Yuri's greyer beard and bigger open jar; Barb's glasses push-up and g
 cap; Benny's cream tin ceiling. The owner OK'd the before/after renders on 2026-10-22 (in `~/Desktop/hawkins-polish/`
 on the first machine). The height change is subtle; raise `hawkinsKidDrop` if it should show more.
 
-**Phase 7 so far:** the trailer (`Promo/HawkinsReel.swift`, storyboard OK'd 2026-10-22; renders in
-`~/Desktop/hawkins-promo/` on the first machine, 720p copy 9.6 MB), the README section and desktop strip, `llms.txt`,
-the docs pictures, the comic cover's panel, and the module's `docs` line-up. None of it mentions the flip.
+**Phase 7, done today (2026-10-22), all pushed:**
+- The trailer, `Promo/HawkinsReel.swift` (storyboard OK'd): 49 s, the opening titles slowed right down, then the shared
+  shots. Renders on the first machine: `~/Desktop/hawkins-promo/` (1080p and `720p/Stranger-Clawds.mp4`, 9.6 MB).
+  Re-render anywhere: build RenderPromo (header of `Tools/RenderPromo/main.swift`), `REEL=hawkins <bin> video <dir>`
+  and `REEL=hawkins <bin> 720p <dir>`, into a folder outside `build/`.
+- README section, desktop strip, roster, places, `llms.txt`, the comic cover's panel (Eleven against Vecna), the
+  module's `docs` line-up.
+- **The showcase repo, https://github.com/rodclemen/stranger-clawds (public)**: README, CHANGELOG, llms.txt, LICENSE,
+  the 1080p trailer and storyboard in `promo/`, and `docs/` (icon, bikes and Upside Down strips from
+  `Promo/HawkinsShowcase.swift` via `build/rendershowcase docs hawkins`; the transitions sheet from
+  `build/transitions <dir> hawkinsBasement hawkinsStarcourt`; the window shot cropped from the trailer's frame at
+  39.2 s; the screen saver shot from `scripts/saveshot.swift` here, which runs the real saver view offscreen with sample
+  sessions, because screen capture isn't permitted from Claude's shell: build it with the saver's swiftc line from
+  `build.sh` plus that file). It says "comes with Clawd Clash 3.8.0 and later", so release before linking it widely.
 
-**Left, each needing the owner's OK (public):** upload the 720p trailer to a GitHub issue and add its row to the
-README's video table (it has 8 entries, so Stranger Clawds starts a new row); a showcase repo (and the README link in
-the universe list); a cask (the manifest's `cask` line); merge into `main`, `NUMBERS` 9 from `reserved` to
-`shipped`, release 3.8.0. Render review material outside `build/`. `check.sh`'s "hand-off scope" fails if the local
-`main` is stale; compare with `origin/main`.
+**Also done today, on the same branch (engine changes, the owner asked for each):**
+- **Trips cover the crew**, in every universe, window and screen saver: the trip (or Star Clawds' wipe) is drawn over
+  the characters, who fade back in over the trip's last 12% (`ComicTransition.cover`). In the saver the cards, clock
+  and place name stay on top (`Item.underTrip`, layer zPositions 0/1/2). The owner hasn't watched it in the app yet.
+- **Screen saver privacy**: Settings → Screen Saver gets "Show the banner" and "Show the session cards"; the saver's
+  Options sheet has the same two. The app's choice travels in the feed (`SaverFeed.Privacy`, with a timestamp); the
+  Options write theirs to the saver's own options.json with a timestamp; the later one wins. Cards off: name tags show
+  the character's name, not the project. The app's window always shows everything.
+- **Location in Settings → General**, under Universe: the Location menu's choices (`locationChoices()`), one setting
+  (`pickedLocation`), hidden in Clawd Royale.
+- **Every pun says "clawd"** (owner's rule, in memory `clawd-not-claw`): the Democlawgon is the **Democlawdgon**, and
+  26 names in the released universes got their "d" (list in CHANGELOG's Unreleased "Changed"; Draclawla is Clawdula,
+  Deep Clawt is Deep Clawd, Captain Clawk is Captain Clawd, Ian Malclawm is Ian Malclawd). Only displayed names
+  changed; code identifiers (`buffyClawmers`) kept, so no ids move. Rosters and desktop strips of those four universes
+  re-rendered into `docs/`.
+- The Democlawdgon's look: the owner tried a two-legged and an in-between version and chose the original, square,
+  four-legged one. No change.
+
+**Next, at home:**
+1. **Upload the trailer**: drag `720p/Stranger-Clawds.mp4` (re-render it if the first machine's Desktop isn't there)
+   into a GitHub issue comment on clawd-clash, copy the URL. Put it in clawd-clash's README video table (a ninth
+   entry, starting a new row) and at the top of the showcase README (as clawd-slayer's has it), then push both.
+2. **Try today's engine changes in the app**: a place change in the window and the saver (crew hidden, fading back),
+   the two privacy toggles both in Settings and in System Settings' Options (reinstall the saver first), and
+   Settings → General → Location.
+3. **Release 3.8.0**: merge `stranger-clawds` into `main`, `NUMBERS` 9 from `reserved` to `shipped`, a 3.8.0 heading
+   in the CHANGELOG over Unreleased, `./release.sh 3.8.0`, push. A cask is optional (none decided; the manifest's
+   `cask` line is empty, so none is written).
+4. **The other showcase repos** (clawd-slayer, the-clawd-files, stevie-clawdberg, doctor-clawd) still use the old
+   "claw" names in their READMEs, CHANGELOGs, llms.txt and pictures; update them after the release. Their trailers
+   show some old names too (re-render if wanted).
+5. Optional: `HawkinsFlipTrip.swift:45` takes ~5 s to type-check (check.sh warns); worth a look before the release
+   build.
 
 **Rules for this universe:** the secret mechanic (the flip) never appears in public text: CHANGELOG, README, commit
 messages. "The Flip" transition is a different thing and fine to name. No em dashes anywhere. No Co-Authored-By lines.
