@@ -26,13 +26,13 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
-Updated 2026-10-22: Stranger Clawds, phase 6 (the polish pass) done and pushed (b412be9); phase 7 next.
+Updated 2026-10-22: Stranger Clawds, phase 7's local half (trailer, README, llms.txt, docs pictures) done and pushed (f257547); the public steps wait for the owner's OK.
 
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch stranger-clawds   # phase 6 done (b412be9)
+git switch stranger-clawds   # phase 7 docs done (f257547)
 ./build.sh                   # builds, installs and launches (wipes build/)
 Tools/Preview/build.sh       # the Preview tool for character/place sheets
 Tools/Transitions/build.sh   # the transitions renderer
@@ -51,9 +51,15 @@ with them; Yuri's greyer beard and bigger open jar; Barb's glasses push-up and g
 cap; Benny's cream tin ceiling. The owner OK'd the before/after renders on 2026-10-22 (in `~/Desktop/hawkins-polish/`
 on the first machine). The height change is subtle; raise `hawkinsKidDrop` if it should show more.
 
-**Next: phase 7, docs and release** (see the plan); ask the owner before starting it. Render review material outside
-`build/` (e.g. `~/Desktop/<name>/`), since `./build.sh` wipes it. `check.sh`'s "hand-off scope" fails if the local
-`main` is stale; compare with `origin/main`. The engine files it lists are this branch's own earlier phases.
+**Phase 7 so far:** the trailer (`Promo/HawkinsReel.swift`, storyboard OK'd 2026-10-22; renders in
+`~/Desktop/hawkins-promo/` on the first machine, 720p copy 9.6 MB), the README section and desktop strip, `llms.txt`,
+the docs pictures, the comic cover's panel, and the module's `docs` line-up. None of it mentions the flip.
+
+**Left, each needing the owner's OK (public):** upload the 720p trailer to a GitHub issue and add its row to the
+README's video table (it has 8 entries, so Stranger Clawds starts a new row); a showcase repo (and the README link in
+the universe list); a cask (the manifest's `cask` line); merge into `main`, `NUMBERS` 9 from `reserved` to
+`shipped`, release 3.8.0. Render review material outside `build/`. `check.sh`'s "hand-off scope" fails if the local
+`main` is stale; compare with `origin/main`.
 
 **Rules for this universe:** the secret mechanic (the flip) never appears in public text: CHANGELOG, README, commit
 messages. "The Flip" transition is a different thing and fine to name. No em dashes anywhere. No Co-Authored-By lines.
