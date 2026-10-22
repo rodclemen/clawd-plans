@@ -21,3 +21,4 @@
 - [Clawd Slayer](clawd-slayer.md): Buffy universe, released in 3.7.0 (2026-10-18); decisions and lessons
 - [Universe modules refactor](universe-modules-refactor.md): started 2026-10-18 on branch universe-modules; baseline tools and phase status
 - [Stranger Clawds](stranger-clawds.md): started 2026-10-19 on branch stranger-clawds, number 9 (8 reserved for Clawd Burton); flip stays secret
+- [Renders outside build/](renders-outside-build.md): review renders go to ~/Desktop/<name>, never build/ (build.sh wipes it)

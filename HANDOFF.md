@@ -26,38 +26,28 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
-Updated 2026-10-22: Stranger Clawds, in the middle of phase 5 (the trips between places).
+Updated 2026-10-22: Stranger Clawds, phase 5 (the trips between places) done and pushed (3920bce); phase 6 next.
 
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch stranger-clawds   # phase 5 in progress (813c7a6)
-./build.sh                   # builds, installs and launches
+git switch stranger-clawds   # phase 5 done (3920bce)
+./build.sh                   # builds, installs and launches (wipes build/)
 Tools/Preview/build.sh       # the Preview tool for character/place sheets
 Tools/Transitions/build.sh   # the transitions renderer
 ```
 The plan is `in-progress/stranger-clawds.md` here. Its note at the top says the folder flow (the universe-modules
-refactor) replaces its old wiring section, so phase 5's `ComicTransition.swift` edits aren't needed: the trips plug in
-through `HawkinsUniverse.transitions`, which is already done.
+refactor) replaces its old wiring section: the trips plug in through `HawkinsUniverse.transitions`.
 
-**Done in phase 5** (all in `Sources/App/Universes/StrangerClawds/`):
-- `HawkinsTrips.swift`: the `HawkinsWipe` enum (the ten kinds), timings, owners and turf, the pick.
-- `HawkinsLights.swift`: Joyce's Christmas lights spelling the new place's name at the end of every trip.
-- Eight trips drawn, a file each: Flip, Gate, Walkie, Void, Storm, Clock, Natural20, Fireworks (`Hawkins…Trip.swift`).
-- The build passes. Nothing has been rendered or shown to the owner yet.
+**Phase 5, done** (all in `Sources/App/Universes/StrangerClawds/`): `HawkinsTrips.swift` (the ten kinds, timings,
+owners, turf, the pick), `HawkinsLights.swift` (Joyce's lights at the end of every trip), and a file per trip:
+Title, Flip, Gate, Walkie, Void, Storm, Clock, Natural20, Fireworks, InsertCoin (`Hawkins…Trip.swift`). The owner
+OK'd the renders on 2026-10-22; the CHANGELOG's Stranger Clawds bullet describes all ten.
 
-**Next:**
-1. Draw **The Title** (the signature opener, longest and rarest: red neon letters slide in out of the dark and lock,
-   then the camera pushes through the gap in a letter onto the new place) and **Insert Coin** (an arcade screen,
-   GAME OVER, INSERT COIN, the new place loads like the next level). Both are crossfade stubs in
-   `HawkinsTripStubs.swift`; give each its own file like the others and delete the stubs file.
-2. `./build.sh`, `Tools/CheckUniverse/check.sh StrangerClawds`, then render all ten with
-   `build/transitions <outdir> hawkinsBasement hawkinsUpsideDown` and look at them. Check the lights' lettering reads
-   at window size (a weak spot the plan expects).
-3. Show the owner the renders for an OK, then commit with a CHANGELOG entry (the phase 5 sentence in the Stranger
-   Clawds bullet under Unreleased says The Title and Insert Coin are still to come; update it), and push the branch.
-4. Phase 6 is the polish pass, after the owner's OK.
+**Next: phase 6, the polish pass** (see the plan). Render review material outside `build/` (e.g.
+`~/Desktop/hawkins-trips/`), since `./build.sh` wipes it. `check.sh`'s "hand-off scope" fails if the local `main`
+is stale; compare with `origin/main`. The engine files it lists are this branch's own earlier phases.
 
 **Rules for this universe:** the secret mechanic (the flip) never appears in public text: CHANGELOG, README, commit
 messages. "The Flip" transition is a different thing and fine to name. No em dashes anywhere. No Co-Authored-By lines.
