@@ -26,13 +26,13 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
-Updated 2026-10-22: Stranger Clawds, phase 5 (the trips between places) done and pushed (3920bce); phase 6 next.
+Updated 2026-10-22: Stranger Clawds, phase 6 (the polish pass) done and pushed (b412be9); phase 7 next.
 
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch stranger-clawds   # phase 5 done (3920bce)
+git switch stranger-clawds   # phase 6 done (b412be9)
 ./build.sh                   # builds, installs and launches (wipes build/)
 Tools/Preview/build.sh       # the Preview tool for character/place sheets
 Tools/Transitions/build.sh   # the transitions renderer
@@ -45,9 +45,15 @@ owners, turf, the pick), `HawkinsLights.swift` (Joyce's lights at the end of eve
 Title, Flip, Gate, Walkie, Void, Storm, Clock, Natural20, Fireworks, InsertCoin (`Hawkins…Trip.swift`). The owner
 OK'd the renders on 2026-10-22; the CHANGELOG's Stranger Clawds bullet describes all ten.
 
-**Next: phase 6, the polish pass** (see the plan). Render review material outside `build/` (e.g.
-`~/Desktop/hawkins-trips/`), since `./build.sh` wipes it. `check.sh`'s "hand-off scope" fails if the local `main`
-is stale; compare with `origin/main`. The engine files it lists are this branch's own earlier phases.
+**Phase 6, done:** the kids stand shorter (`hawkinsKidDrop` in `HawkinsKit.swift`: the Party 2 rows, Erica, Derek
+and Holly 3; never while sitting), with Eleven's and Will's powers, Lucas's slingshot and Mike's walkie moved down
+with them; Yuri's greyer beard and bigger open jar; Barb's glasses push-up and glint; Robin's salute edged against her
+cap; Benny's cream tin ceiling. The owner OK'd the before/after renders on 2026-10-22 (in `~/Desktop/hawkins-polish/`
+on the first machine). The height change is subtle; raise `hawkinsKidDrop` if it should show more.
+
+**Next: phase 7, docs and release** (see the plan); ask the owner before starting it. Render review material outside
+`build/` (e.g. `~/Desktop/<name>/`), since `./build.sh` wipes it. `check.sh`'s "hand-off scope" fails if the local
+`main` is stale; compare with `origin/main`. The engine files it lists are this branch's own earlier phases.
 
 **Rules for this universe:** the secret mechanic (the flip) never appears in public text: CHANGELOG, README, commit
 messages. "The Flip" transition is a different thing and fine to name. No em dashes anywhere. No Co-Authored-By lines.
