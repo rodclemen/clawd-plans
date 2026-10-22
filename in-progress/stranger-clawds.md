@@ -30,7 +30,7 @@ Clawd Clash has seven universes on `main` (d270b63, 2026-10-17, after 3.6.0). Th
   - Folder `Sources/App/Universes/StrangerClawds/`, file prefix `Hawkins` (`HawkinsRoster.swift`, `HawkinsHeroes1.swift`, `HawkinsWipes.swift` …). No file in the repo uses `Hawkins` as a prefix today. Top-level names start with `hawkins` or are `private`, as `scripts/pr-guard.py` asks.
   - Branch `stranger-clawds`. Trailer `REEL=hawkins`.
 - **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own; Superclawdtural (`hunters`) and Battleclawd Galactica (`fleet`) may have taken one by then. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
-- **Naming style:** light puns only where they read at a glance: Lucas **Sinclawd**, Steve **Harringclawd**, Eddie **Munclawd**, the **Democlawgon**. Everyone else keeps the on-screen name (Eleven, Dustin, Vecna), because a forced pun is worse than none. Actors' names are never used.
+- **Naming style:** light puns only where they read at a glance: Lucas **Sinclawd**, Steve **Harringclawd**, Eddie **Munclawd**, the **Democlawdgon**. Everyone else keeps the on-screen name (Eleven, Dustin, Vecna), because a forced pun is worse than none. Actors' names are never used.
 - **Size:** 44 characters and 16 places (45 until phase 4, when the Mind Flayer became scenery). The smallest universe in the app.
 
 ### How the cast is split
@@ -112,7 +112,7 @@ How the engine's weapons map onto the show. This is a show about kids, so a lot 
 - **`.saber`** for things swung: Steve's nail bat, Joyce's axe, Karen's broken wine bottle, Eddie's spear and spiky shield, the monsters' claws and tendrils, Billy's fists.
 - **`.blaster` + `.bullet`** for the guns: Hopper, Nancy, Jonathan, and the bad men.
 - **`.blaster` + `.thrown(grey)`** for Lucas's wrist-rocket slingshot; **`.fire`** for Murray's flamethrower.
-- **`bulk`** for Vecna; **`canSit: false`** for the Democlawgon.
+- **`bulk`** for Vecna; **`canSit: false`** for the Democlawdgon.
 - Everyone, monsters included, is Clawd in costume on Clawd's four legs.
 
 ### Heroes (29)
@@ -186,7 +186,7 @@ Vecna comes first for the skeleton.
 |---|---|---|---|---|---|
 | 1 | Vecna | tall, vine-covered skin, long claws, `bulk` | mind power (lightning, red `rings`) | raises a hand, and the vines writhe | none |
 | 2 | One (Henry Creel) | the lab orderly's whites, blond | telekinesis (lightning, red `rings`) | his fingers twitch and a clock chimes; for a moment the whites flicker into Mr. Whatsit's cardigan and kind smile, then back | none |
-| 3 | The Democlawgon | no face; its head opens like a flower, `canSit: false` | claws (saber) | its face opens and shuts | none |
+| 3 | The Democlawdgon | no face; its head opens like a flower, `canSit: false` | claws (saber) | its face opens and shuts | none |
 | 4 | Dr. Brenner | white hair, suit | none | holds out his hand | "Hello, Eleven." |
 | 5 | Billy Hargrove | mullet, lifeguard's red, sunglasses | fists (saber) | lowers his sunglasses | none |
 | 6 | Grigori | Russian hitman got up like the Terminator: clean-shaven, a dark brown flat-top, leather coat | pistol (bullet) | none | none |
@@ -217,7 +217,7 @@ Vecna comes first for the skeleton.
 | Max | Vecna | "Running Up That Hill", season 4 |
 | Holly | One | Mr. Whatsit, season 5 |
 | Will | Vecna | Henry took him in season 1, and Will fights him to the end in season 5 (Vecna is Max's nemesis too) |
-| Karen | the Democlawgon | her kitchen fight, season 5 |
+| Karen | the Democlawdgon | her kitchen fight, season 5 |
 | Steve | Billy | their fight, season 2 |
 | Hopper | Grigori | season 3 |
 | Lucas | Jason | season 4 |
@@ -266,7 +266,7 @@ A mix of day (the pool, the mall, Benny's) and night, with the Upside Down's blu
 | Wheelers' basement | Mike, Nancy, Holly, Karen, Barb, Suzie (on the radio), HEM | |
 | Byers' living room | Joyce, Jonathan, Bob | |
 | Hawkins Lab | Dr. Owens, Kali (where she was "Eight") | Brenner, Connie Frazier, Dr. Kay, Sullivan |
-| The Upside Down | | the Democlawgon, Demodog, Dart, Demobat, flayed rat (the Mind Flayer looms over it as scenery) |
+| The Upside Down | | the Democlawdgon, Demodog, Dart, Demobat, flayed rat (the Mind Flayer looms over it as scenery) |
 | Starcourt Mall | Steve, Robin, Erica, Derek, Alexei | Mayor Kline, Grigori |
 | Palace Arcade | Max | |
 | Hopper's cabin | Hopper, Eleven | |
@@ -358,7 +358,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
    It runs end to end in the app, the window, the screen saver and Clawd Royale, with plain wipes (`case .starWars, .hawkins: return nil` in `ComicTransition.pick`).
 2. **Core ensemble.** About 20 characters:
    - the rest of the Party, Steve, Nancy, Jonathan, Robin, Hopper, Joyce;
-   - One, the Mind Flayer (later made scenery), the Democlawgon, Brenner, Billy;
+   - One, the Mind Flayer (later made scenery), the Democlawdgon, Brenner, Billy;
    - 8 places: the basement, the Byers' living room, the Lab, the Upside Down (right way up for now), Starcourt, Hopper's cabin, Vecna's mind, the Creel house; with homes and nemeses for these.
 
    The enum cases can go in first as stand-ins and be drawn in a second commit, as The Clawd Files did.
@@ -382,7 +382,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 - **Build:** `./build.sh`. The cast-size `precondition` in `Overlay.swift:180` catches a wrong `heroCount` or `villainCount`. Check `./build.sh --release <version>` for slow type-checks before calling a phase done.
 - **Characters:** `Tools/Preview/build.sh`, then:
   - `build/preview cast out.png "Eleven"`;
-  - `build/preview fight out.png "Steve Harringclawd" "The Democlawgon"`;
+  - `build/preview fight out.png "Steve Harringclawd" "The Democlawdgon"`;
   - `build/preview place out.png "Stranger Clawds"`;
   - `build/preview edges out.txt "Stranger Clawds"`: everything it lists must be on purpose (shots, Lucas's slingshot stones, Max's skateboard kick-off);
   - and the batch sheets, one per Art file. Look at the PNGs before showing them.
@@ -457,7 +457,7 @@ No logo or melody is copied: the title is our own lettering, and the music only 
 ## Decisions (2026-10-17)
 
 All the gates are passed:
-- **Name: Stranger Clawds.** Puns: Sinclawd, Harringclawd, Munclawd, the Democlawgon; everyone else by name.
+- **Name: Stranger Clawds.** Puns: Sinclawd, Harringclawd, Munclawd, the Democlawdgon; everyone else by name.
 - **Scope:** all five seasons, no spin-offs.
 - **Size:** a limited experience, accepted: 45 with HEM and the four small fry (44 since the Mind Flayer became scenery).
 - **Raw value:** settled at build time, after checking `main`, the open branches, the forks, Superclawdtural and Battleclawd Galactica.
