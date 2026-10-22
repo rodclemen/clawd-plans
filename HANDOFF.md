@@ -26,30 +26,44 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
+Updated 2026-10-22: Stranger Clawds, in the middle of phase 5 (the trips between places).
+
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch buffy          # Clawd Slayer phase 1 (23e3206) + promo pick page (2307bd0)
-./build.sh                # builds, installs and launches
-Tools/Preview/build.sh    # the Preview tool for character/place sheets
+git switch stranger-clawds   # phase 5 in progress (813c7a6)
+./build.sh                   # builds, installs and launches
+Tools/Preview/build.sh       # the Preview tool for character/place sheets
+Tools/Transitions/build.sh   # the transitions renderer
 ```
-`CLAWD-SLAYER-PLAN.md` at the repo root is the working plan (same as `in-progress/buffy.md` here). Delete it before merging.
+The plan is `in-progress/stranger-clawds.md` here. Its note at the top says the folder flow (the universe-modules
+refactor) replaces its old wiring section, so phase 5's `ComicTransition.swift` edits aren't needed: the trips plug in
+through `HawkinsUniverse.transitions`, which is already done.
 
-**Next:** phase 2, the core ensemble: the rest of the Scooby Gang, Faith, Kendra, Jenny, Angstel, Wesley, the
-vampires and the Big Bads (~35 characters), plus 7 places (Bronze, cemetery, Revello, Magic Box, crypt, sunken
-church, Hellmouth). New files go in `Sources/App/Universes/Slayer/Art/SlayerHeroes2…` and `Places/SlayerScenes2…`,
-added to the arrays in `SlayerRoster.swift` and to the Preview batches.
+**Done in phase 5** (all in `Sources/App/Universes/StrangerClawds/`):
+- `HawkinsTrips.swift`: the `HawkinsWipe` enum (the ten kinds), timings, owners and turf, the pick.
+- `HawkinsLights.swift`: Joyce's Christmas lights spelling the new place's name at the end of every trip.
+- Eight trips drawn, a file each: Flip, Gate, Walkie, Void, Storm, Clock, Natural20, Fireworks (`Hawkins…Trip.swift`).
+- The build passes. Nothing has been rendered or shown to the owner yet.
 
-**Promo:** the Pick-your-universe page is now the pop-art layout (a panel per universe, no Settings pop-up),
-committed on `buffy` (2307bd0) and on `main` (90eecab, without the Slayer lines). The full re-render still waits for the LOTR universe. The Clawd Royale teaser still assumes
-three universes (`royaleCollide`'s `from`/`meet`/`rest` arrays) and will crash until that's fixed. Build the promo
-tool as `-o build/renderpromo` (the binary must be named `renderpromo`).
+**Next:**
+1. Draw **The Title** (the signature opener, longest and rarest: red neon letters slide in out of the dark and lock,
+   then the camera pushes through the gap in a letter onto the new place) and **Insert Coin** (an arcade screen,
+   GAME OVER, INSERT COIN, the new place loads like the next level). Both are crossfade stubs in
+   `HawkinsTripStubs.swift`; give each its own file like the others and delete the stubs file.
+2. `./build.sh`, `Tools/CheckUniverse/check.sh StrangerClawds`, then render all ten with
+   `build/transitions <outdir> hawkinsBasement hawkinsUpsideDown` and look at them. Check the lights' lettering reads
+   at window size (a weak spot the plan expects).
+3. Show the owner the renders for an OK, then commit with a CHANGELOG entry (the phase 5 sentence in the Stranger
+   Clawds bullet under Unreleased says The Title and Insert Coin are still to come; update it), and push the branch.
+4. Phase 6 is the polish pass, after the owner's OK.
 
-**Open question:** keep building Slayer the current way and port it later, or do the `done/universe-modules.md` refactor
-first.
+**Rules for this universe:** the secret mechanic (the flip) never appears in public text: CHANGELOG, README, commit
+messages. "The Flip" transition is a different thing and fine to name. No em dashes anywhere. No Co-Authored-By lines.
 
 ## Claude's memory
 Claude Code keeps its memory per machine. To bring it over, copy `claude-memory/*.md` into
 `~/.claude/projects/<the clawd-clash folder's path with every non-letter/digit replaced by ->/memory/`
-(start Claude once in the clawd-clash folder first so the folder exists, then copy).
+(start Claude once in the clawd-clash folder first so the folder exists, then copy). `MEMORY.md` here merges both
+machines' indexes, so it can replace the one there.

@@ -16,3 +16,8 @@
 - [Short ! commands](short-bang-commands.md): user-run commands must fit one line (use files in build/); never test via HOME redirect
 - [GitHub video uploads](github-video-uploads.md): README videos go public only when the issue they were dropped in is submitted; 720p via RenderPromo
 - [Outline frame rule](outline-frame-rule.md): outlines cut at the 72x52 frame edge; check new art with build/preview edges
+- [Version rule](version-rule.md): only a new universe bumps 3.N.0; everything else is a patch 3.6.x
+- [Superclawdtural](superclawdtural.md): the Supernatural universe's name, with "clawd" spelled in full
+- [Clawd Slayer](clawd-slayer.md): Buffy universe, released in 3.7.0 (2026-10-18); decisions and lessons
+- [Universe modules refactor](universe-modules-refactor.md): started 2026-10-18 on branch universe-modules; baseline tools and phase status
+- [Stranger Clawds](stranger-clawds.md): started 2026-10-19 on branch stranger-clawds, number 9 (8 reserved for Clawd Burton); flip stays secret
