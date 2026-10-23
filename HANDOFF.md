@@ -1,7 +1,7 @@
 # Picking up on another computer
 
-Written 2026-10-23, after the 4.0.0 release. One job is left: the four older showcase repos still use the old "claw"
-names. Everything else is done and pushed.
+Written 2026-10-23, after the 4.0.0 release. Nothing is left open: the showcase repos' "clawd" names are done too, and
+everything is pushed.
 
 ## Where things stand
 - **Clawd Clash 4.0.0 is out** (notarized, GitHub release, Homebrew cask): Stranger Clawds, plus Full Screen, the
@@ -25,48 +25,17 @@ git pull
 ./build.sh                   # builds, installs and launches (wipes build/)
 ```
 
-## The job: the "clawd" names in the showcase repos
+## Done: the "clawd" names in the showcase repos
 
-Every pun says "clawd" (memory `clawd-not-claw`), and 4.0.0 renamed 27 characters in the app. Their showcase repos
-still show the old names in text and pictures:
-[clawd-slayer](https://github.com/rodclemen/clawd-slayer),
-[the-clawd-files](https://github.com/rodclemen/the-clawd-files),
-[stevie-clawdberg](https://github.com/rodclemen/stevie-clawdberg) and
-[doctor-clawd](https://github.com/rodclemen/doctor-clawd).
-(stranger-clawds is already right.)
-
-**The names, old → new:**
-- Clawd Slayer: Buffy Clawmers → Buffy Clawdmers, Dawn Clawmers → Dawn Clawdmers, Joyce Clawmers → Joyce Clawdmers,
-  Willow Rosenclaw → Willow Rosenclawd, Tara Maclaw → Tara Maclawd, Jenny Clawlendar → Jenny Clawdlendar,
-  Kate Lockclaw → Kate Lockclawd, Miss Kitty Fanclawstico → Miss Kitty Fanclawdstico, Draclawla → Clawdula,
-  Mayor Wilclaws → Mayor Wilclawds, Glorificlaws → Glorificlawds
-- The Clawd Files: Deep Clawt → Deep Clawd, Clyde Bruckclaw → Clyde Bruckclawd, Leyla Harriclaw → Leyla Harriclawd,
-  Frank Blackclaw → Frank Blackclawd, Tad O'Clawley → Tad O'Clawdley, Dr. Blockclaw → Dr. Blockclawd,
-  Alex Clawcek → Alex Clawdcek, Diana Fowlclaw → Diana Fowlclawd, Eugene Clawms → Eugene Clawdms
-- Stevie Clawdberg: Captain Clawk → Captain Clawd, Ian Malclawm → Ian Malclawd, Clara Clawton → Clara Clawdton,
-  Dr. Clawtheter → Dr. Clawdtheter, Murray Futterclaw → Murray Futterclawd, Mutt Willclaws → Mutt Willclawds
-- Doctor Clawd: Susan Foreclaw → Susan Foreclawd
-
-(From clawd-clash commit 0493913. Only displayed names changed; code identifiers like `buffyClawmers` stay.)
-
-**In each repo:**
-1. **Text:** `README.md`, `CHANGELOG.md` and `llms.txt`, including picture alt texts. A plain find and replace of
-   the list works, but read each hit: possessives ("Buffy Clawmers'") and names inside longer phrases.
-2. **Pictures in `docs/`:** the roster, desktop, locations and social preview have the same file names in
-   clawd-clash's `docs/`, already re-rendered with the new names in 4.0.0; copy those four over. Two need a fresh
-   render first, because 4.0.0 also redrew a sign in them:
-   - `locations-clawd-slayer.png`: the Welcome to Sunnydale sign is pixel art now. Re-render with `Tools/RenderDocs`
-     in clawd-clash, then copy.
-   - `transitions-stevie-clawdberg.png` (optional): the park gates' sign is in a pixel font now. Re-render with
-     `build/transitions <dir> hillValley1955 moonHill` (the sheet is `transitions.png`).
-   Other pictures (window shots, the vehicle and move strips) show no names, or names too small to matter; look
-   at them, but leave them unless a name reads.
-3. **A CHANGELOG line** in each showcase's own CHANGELOG under a "Clawd Clash 4.0.0" heading: the names that
-   got their "d".
-4. **The trailers** (`promo/`) show some old names. Re-rendering is optional; if you do, the 720p copy needs a new
-   upload (memory `github-video-uploads`: a comment on closed issue #4), and the README links change.
-
-Commit with `docs:` (they're the showcase repos, no release follows). No em dashes, no Co-Authored-By lines.
+clawd-slayer, the-clawd-files, stevie-clawdberg and doctor-clawd now use the names 4.0.0 gave the "claw" puns (Buffy
+Clawdmers, Clawdula, Deep Clawd, Captain Clawd, Susan Foreclawd and the rest), pushed 2026-10-23:
+- README, CHANGELOG (a "Clawd Clash 4.0.0" entry in each) and llms.txt, alt texts included.
+- Pictures rendered again: the rosters, desktops, social previews and locations sheets that had changed, the Slayer
+  locations sheet with the pixel Sunnydale sign, the Stevie transitions sheet with the JURASSIC CLAWD gates, and the
+  Tabula Rasa and DeLorean strips.
+- **Left as they are, on purpose:** three app screenshots still show old names (clawd-slayer's
+  `window-sunnydale-high-library.png` and `screensaver-clawd-slayer.png`, stevie-clawdberg's `window-jolly-roger.png`),
+  and the trailers in `promo/`. Don't redo them.
 
 ## Claude's memory
 Claude Code keeps its memory per machine. To bring it over, copy `claude-memory/*.md` into
