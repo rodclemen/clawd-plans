@@ -26,13 +26,15 @@ Released as [v3.6.0](https://github.com/rodclemen/clawd-clash/releases/tag/v3.6.
 
 # Picking up on another computer
 
-Updated 2026-10-22 (end of day): Stranger Clawds, phase 7 done up to the release; its showcase repo is public. Branch `stranger-clawds` at 32cbf19. What's left is under "Next, at home".
+Updated 2026-10-23 (end of day, second machine): four fixes and a new menu item on top of Stranger Clawds, see
+"Done 2026-10-23" below. Branch `stranger-clawds` at 025b485. What's left is under "Next" (the 2026-10-22 list still
+stands; nothing from it was done yet).
 
 ## clawd-clash
 ```sh
 cd "<your code folder>/clawd-clash"
 git fetch origin
-git switch stranger-clawds   # everything so far (32cbf19)
+git switch stranger-clawds   # everything so far (025b485)
 git pull
 ./build.sh                   # builds, installs and launches (wipes build/)
 Tools/Preview/build.sh       # the Preview tool for character/place sheets
@@ -85,15 +87,40 @@ on the first machine). The height change is subtle; raise `hawkinsKidDrop` if it
 - The Democlawdgon's look: the owner tried a two-legged and an in-between version and chose the original, square,
   four-legged one. No change.
 
-**Next, at home:**
-1. **Upload the trailer**: drag `720p/Stranger-Clawds.mp4` (re-render it if the first machine's Desktop isn't there)
+**Done 2026-10-23, on the same branch, all pushed (the owner asked for each; none of it tried in the app by
+the owner yet):**
+- **Full Screen in the menu bar menu** (`Sources/App/FullScreen.swift`, `openFullScreen` in `Overlay.swift`): the
+  saver view itself in native macOS full screen on the display under the mouse, its own Space there. A click on it or
+  Escape closes it; the other display keeps working. Path to it: an always-on-top window first did nothing (behind
+  other windows), then worked once (fixed: `isShown` guard, `onClose` deferred), then missed the second monitor
+  (NSWindow's `screen:` init parameter makes the rect screen-relative; dropped), then the owner didn't want it on every
+  Space, hence native full screen. A pinned window and the desktop panel are on every Space and floated over it;
+  removing `.fullScreenAuxiliary` didn't help, so they're ordered out on that display while it's open and come back on
+  close. **Check:** open, swipe Spaces, work on the other display, close; the pinned window must not show over it and
+  must come back after.
+- **Status bubbles on tall characters** (`Cast.bubbleLift`): measured per character at rest; 135 of 986 had art
+  within 3 rows of the bubble (the dinosaurs, Abominator, Galacticus, Smaug, the Tall Visitor...) and get it raised to
+  the usual 7-row gap. **Check** a Jurassic Park dinosaur's bubble in the app.
+- **Jurassic Park's gate trip** (`ClawdbergWipes.swift`): the place behind is drawn at full resolution (the window's
+  list text was pixelated in a universe change), a dusk jungle (`jungle()`) frames the gates so the swap no longer
+  shows around them, and the sign reads JURASSIC CLAWD. Render: `build/transitions <dir> <a Clawdberg place> ...`.
+  The other nine Clawdberg trips still pixelate text in a universe change; the same fix would work if the owner wants.
+- **Roald Doll Plass face lift** (`DoctorScenes2.swift`, `plassBuildings()`): same layout, bigger sun and reflection,
+  fuller Millennium Centre and Pierhead, lamps on the rail. Before/after were in `~/Desktop/roald-doll-plass/` on the
+  second machine.
+
+**Next:**
+0. **Try the 2026-10-23 changes above** in the app (the "Check" lines), fix what's off.
+1. **Upload the trailer**: drag `720p/Stranger-Clawds.mp4` (not on the second machine; re-render it if the first
+   machine's Desktop doesn't have it)
    into a GitHub issue comment on clawd-clash, copy the URL. Put it in clawd-clash's README video table (a ninth
    entry, starting a new row) and at the top of the showcase README (as clawd-slayer's has it), then push both.
 2. **Try today's engine changes in the app**: a place change in the window and the saver (crew hidden, fading back),
    the two privacy toggles both in Settings and in System Settings' Options (reinstall the saver first), and
    Settings → General → Location.
 3. **Release 3.8.0**: merge `stranger-clawds` into `main`, `NUMBERS` 9 from `reserved` to `shipped`, a 3.8.0 heading
-   in the CHANGELOG over Unreleased, `./release.sh 3.8.0`, push. A cask is optional (none decided; the manifest's
+   in the CHANGELOG over Unreleased (it now also lists Full Screen, the bubbles, the gates and the plass),
+   `./release.sh 3.8.0`, push. A cask is optional (none decided; the manifest's
    `cask` line is empty, so none is written).
 4. **The other showcase repos** (clawd-slayer, the-clawd-files, stevie-clawdberg, doctor-clawd) still use the old
    "claw" names in their READMEs, CHANGELOGs, llms.txt and pictures; update them after the release. Their trailers
