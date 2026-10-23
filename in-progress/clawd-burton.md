@@ -14,7 +14,7 @@ Clawd Clash has six universes: Star Clawds, Marvelous Clawds, Detective Clawds, 
 - **Raw value: 8** (`case clawdBurton = 8`), settled: Clawd of the Rings was merged as 6 and Clawd Slayer as 7 (3.7.0), so 8 is simply next. Ids are rawValue*1000 and permanent.
 - **The films (decided, ten):** Beetlejuice and Beetlejuice Beetlejuice (counted as one), Edward Scissorhands, The Nightmare Before Christmas, Corpse Bride, Sleepy Hollow, Mars Attacks!, Charlie and the Chocolate Factory, Alice in Wonderland (2010), Frankenweenie (2012), and **Pee-wee's Big Adventure** (Burton's first feature), added last.
   - **Left out on purpose:** Batman and Batman Returns (Batclawd, the Jester, Cat Burglar and the Puffin already live in Detective Clawds, and they'd look like doubles in Clawd Royale); Sweeney Todd (the whole film is murder and cannibal pies; there's no desktop-toy version of it); Ed Wood and Big Eyes (real people); Dark Shadows (Barnabas's appetite is the point of him); Planet of the Apes (2001) (overlaps Gorilla Grudd's Gorilla City). Wednesday is The Addams Family, its own franchise, so it stays out. Big Fish and Miss Peregrine's Home for Peculiar Children were offered and stay out too.
-- **Naming style:** light puns on the on-screen names (Jack Skullington, Edward Scissorclaws, Sandy Clawz, Violet Bluregarde, the Jabberclawky). A near-spelling where no pun fits (Ichabod Craine, Katrina Van Tassle). Actors' names are never used, and the real people who play themselves (Mars Attacks!' singer cameo) are left out.
+- **Naming style:** light puns on the on-screen names (Jack Skullington, Edward Scissorclawds, Sandy Clawdz, Violet Bluregarde, the Jabberclawdky). A near-spelling where no pun fits (Ichabod Craine, Katrina Van Tassle). Actors' names are never used, and the real people who play themselves (Mars Attacks!' singer cameo) are left out.
 - **Size:** **107 characters**: 54 heroes including HEM and one agent-only, 53 villains including four agent-only. Plus **23 places** and **12 transitions**.
 - **Tone:** Burton is gothic but warm: his monsters are the misunderstood ones. That suits a desktop toy well. Where a film goes darker it's tamed to eerie (see "What's tamed" under Cast).
 
@@ -110,7 +110,7 @@ How the engine's weapons map onto Burton's films:
 | The Western Woods Crone | `touch` | pale lime `F2F2A0` / `8F9A2A` | no stream: a sickly glowing fingertip, and a glow round whoever she points at |
 | Katrina Van Tassle | `touch` | candle cream `FFF4D0` / gold `D4A645` | a warm protective charm glowing round the friend she points at |
 | Grandma Florenz | `waves` | cream `FFF0E0` / pink `FF9EC8` | sound arcs pulsing from her portable record player (the yodelling record) |
-| The Jabberclawky | jagged | lavender `F0D6FF` / violet `7A2BD1` | the Jabberwocky's purple lightning breath |
+| The Jabberclawdky | jagged | lavender `F0D6FF` / violet `7A2BD1` | the Jabberwocky's purple lightning breath |
 | Victor Frankenstien | jagged | white `FFFFFF` / grey `A8A8A8` | a black-and-white lightning bolt from his kite: the only grey lightning in the app |
 
 The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; their colours are opposite (warm gold, sour lime). The Witch's orange lightning and Victor's grey are the two jagged ones; Thorr's, Stormy's and the Electric Gremlin's are blue-white, so neither is confusable. Jack's scare is pumpkin orange too, but arcs in bursts, not forks; it's orange because the other `waves` casters (Bansheen, the Barrow-write) are green, and it's the only pulsing one.
@@ -125,7 +125,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 | 2 | Sallee | the rag doll: a pale-blue stitched block with big white eyes under lashes and stitched lips, long red yarn hair over the top and down both sides past her waist, the patchwork dress (mustard, teal, lilac, black, pink), stitched legs | none | her whole arm drops off onto the floor; she picks it up, sews it back with needle and red thread, and wiggles it |
 | 3 | Zeero | a small white ghost dog floating on a wispy tail instead of hind legs, floppy ears hanging down, a collar with a bow tie, a glowing pumpkin nose | none, `.hover`, `canSit: false` | his nose blazes like a jack-o'-lantern and he loops once round in the air; callout "Arf!" |
 | 4 | The Mayor | the block is his cone of a head, narrow at the top and widest at his collar, the hat perched on top (a little brim, a tall thin crooked stovepipe); a grey bell of a coat flaring over short pinstriped legs, a white collar with a black spider bow tie, a red rosette; his megaphone. Two faces: happy (tan, spiral eyes, a big toothy grin) and worried (pale, droopy eyes, a zigzag frown) | none, `bulk` | his head spins from one face to the other and back; he wears the worried face while his session waits for you |
-| 5 | Sandy Clawz | round red fur-trimmed coat, belt and gold buckle, black boots, big white beard, the hat's tip drooping behind, his sack over his shoulder | presents (`.thrown(red)`), `bulk` | pats his bouncing tummy; callout "Ho ho ho!" |
+| 5 | Sandy Clawdz | round red fur-trimmed coat, belt and gold buckle, black boots, big white beard, the hat's tip drooping behind, his sack over his shoulder | presents (`.thrown(red)`), `bulk` | pats his bouncing tummy; callout "Ho ho ho!" |
 
 **Beetlejuice and Beetlejuice Beetlejuice (8)**
 
@@ -144,7 +144,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 14 | Edward Scissorclaws | wild black hair, pale face, black leather with buckles, long scissor-blade hands | scissor blades (melee) | snips a hedge into a little dinosaur topiary; callout "I'm not finished." |
+| 14 | Edward Scissorclawds | wild black hair, pale face, black leather with buckles, long scissor-blade hands | scissor blades (melee) | snips a hedge into a little dinosaur topiary; callout "I'm not finished." |
 | 15 | Kim Boggz | long blonde hair, pastel dress | none | dances in falling snow |
 | 16 | Peg Boggz | Avon lady, lilac suit, make-up case | none | opens her case, "Avon calling!" |
 | 17 | The Inventor | old gentleman, velvet smoking jacket | none | holds up a heart-shaped biscuit |
@@ -155,7 +155,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 |---|---|---|---|---|
 | 18 | Victor Van Dawt | tall, thin, grey-blue, Victorian tailcoat | none | practises his vows, fumbling a ring; callout "With this hand…" |
 | 19 | Emilee | blue skin, torn wedding dress and veil, one bony arm | none | blue butterflies swirl off her; callout "I do." |
-| 20 | Victoria Everclawt | grey-lilac gown, high collar, neat hair | none | a shy curtsey |
+| 20 | Victoria Everclawd | grey-lilac gown, high collar, neat hair | none | a shy curtsey |
 | 21 | Scrapz | skeleton dog | bite (melee) | plays fetch with his own bone |
 | 22 | Elder Gutknocked | ancient dead sage, long beard, huge book | none | thumbs through his book of rules |
 | 23 | Bonejingles | one-eyed skeleton band leader, bowler hat, a trumpet | none | plays a riff and does a bony shuffle; callout "Hit it, boys!" |
@@ -178,7 +178,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 | 30 | Grandma Florenz | cardigan, big hair, a portable record player | the yodelling record (`waves`) | turns up the volume and taps along |
 | 31 | President Dayle | dark suit, flag pin, side parting | none | gives a speech from a podium |
 | 32 | Byron Wilyums | ex-boxer in a casino uniform | fists (melee) | shadow-boxes, then raises his gloves |
-| 33 | Professor Kessclaw | pipe, tweed, Martian-loving smile | none | points his pipe at the sky; callout "A peaceful people." |
+| 33 | Professor Kessclawd | pipe, tweed, Martian-loving smile | none | points his pipe at the sky; callout "A peaceful people." |
 
 **Charlie and the Chocolate Factory (5)**
 
@@ -194,7 +194,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 39 | Alice Kingsclaw | blonde, blue dress, later silver armour | the Vorpal sword (melee) | drinks from a tiny bottle and shrinks a moment; callout "Six impossible things." |
+| 39 | Alice Kingsclawd | blonde, blue dress, later silver armour | the Vorpal sword (melee) | drinks from a tiny bottle and shrinks a moment; callout "Six impossible things." |
 | 40 | Tarrant Hightop | frizzy orange hair, chalk-white face, tall patched hat with pins and ribbons | his hat (`.thrown(teal)`) | does the Futterwacken, a wild little jig; callout "Fairfarren!" |
 | 41 | Chessur | grey-blue striped cat, huge grin, glowing eyes | none, `.hover` | fades away until only the grin is left, then comes back; callout "Lost, are we?" |
 | 42 | Mirana the White Queen | white hair, white gown, black lips | none (she harms no living thing) | floats her hands up in a graceful pose |
@@ -208,7 +208,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 |---|---|---|---|---|
 | 46 | Victor Frankenstien | small boy, black hair, sweater vest | lightning from his kite (jagged, grey) | flies a kite until lightning strikes it |
 | 47 | Sparkie | bull terrier with stitches and neck bolts | bite (melee) | his bolts spark, he wags so hard his tail flies off, then it's back |
-| 48 | Elsa Van Helsclaw | black bob, pale dress | none | carries her poodle's lead; a little wave |
+| 48 | Elsa Van Helsclawd | black bob, pale dress | none | carries her poodle's lead; a little wave |
 | 49 | Mr. Rzykrusky | science teacher, long face, tie | none | holds up a frog that twitches with a zap |
 
 **Pee-wee's Big Adventure (3)**, appended last of the film groups
@@ -263,8 +263,8 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 |---|---|---|---|---|
 | 16 | Lord Barkiss Bittern | big chin, plumed hat, red cape | sword (melee) | twirls his cape with a sly grin |
 | 17 | Pastor Gallswell | huge jaw, black robes, a staff | staff (melee) | thunders a sermon, finger pointing |
-| 18 | Finis Everclawt | short, stout, sour, a cane | cane (melee) | taps the cane, scowls |
-| 19 | Maudeline Everclawt | tall, rigid, grey gown, pinched mouth | none | sniffs disapprovingly through a lorgnette |
+| 18 | Finis Everclawd | short, stout, sour, a cane | cane (melee) | taps the cane, scowls |
+| 19 | Maudeline Everclawd | tall, rigid, grey gown, pinched mouth | none | sniffs disapprovingly through a lorgnette |
 
 **Sleepy Hollow (3)**
 
@@ -300,7 +300,7 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 |---|---|---|---|---|
 | 33 | The Red Queen | huge round head, heart-shaped lips, red gown | flamingo mallet (melee) | swings the flamingo at a hedgehog; callout "Off with their heads!" |
 | 34 | Stayne | tall Knave of Hearts, eyepatch, heart-pattern armour | sword (melee) | a slow bow, hand on the hilt |
-| 35 | The Jabberclawky | dragon, long neck, bat wings | purple lightning, `bulk`, `armoured` | spreads its wings and roars |
+| 35 | The Jabberclawdky | dragon, long neck, bat wings | purple lightning, `bulk`, `armoured` | spreads its wings and roars |
 | 36 | The Bandersnatch | white shaggy beast, spotted, huge jaws | jaws (melee), `bulk` | shakes its shaggy head |
 | 37 | A Red Card Knight | armour made of playing cards, heart pattern | spear (melee), `armoured` | stands at attention, clanks |
 
@@ -347,13 +347,13 @@ As always, the last hero. His Clawd Burton costume: a crooked black top hat with
 Each pair faces off first when both are on stage:
 - Jack Skullington ↔ Ooogie Boogie
 - Sallee ↔ Dr. Finkelclawd
-- Sandy Clawz ↔ Lok
+- Sandy Clawdz ↔ Lok
 - Lydia Deathz ↔ Beetlejooce
 - Adam Maitclawd ↔ Otho
 - Barbara Maitclawd ↔ the Sandwurm
 - Astrid Deathz ↔ Jeremee
 - Wolf Jaxon ↔ Delorez
-- Edward Scissorclaws ↔ Jimm
+- Edward Scissorclawds ↔ Jimm
 - Peg Boggz ↔ Joyce Monrow
 - Emilee ↔ Lord Barkiss Bittern
 - Victor Van Dawt ↔ Pastor Gallswell
@@ -364,7 +364,7 @@ Each pair faces off first when both are on stage:
 - Richie Norriss ↔ the Martian Walker
 - Willy Wonky ↔ Slugwurth
 - Charlie Buckett ↔ Veruca Saltt
-- Alice Kingsclaw ↔ the Jabberclawky
+- Alice Kingsclawd ↔ the Jabberclawdky
 - Mirana ↔ the Red Queen
 - Tarrant Hightop ↔ Stayne
 - Victor Frankenstien ↔ Edgar "E" Gorr
@@ -438,14 +438,14 @@ Each is a `Place` with a still picture, a moving layer and tall-canvas extras fo
 Keys checked: none clash with the 150-odd `Location("…")` keys on main (`christmasLondon` and `mothership` exist, so these are `christmasTown` and `martianSaucerDeck`; nothing on main mentions breakfast, bikes or Pee-wee, so `breakfastMachineHouse` is free). Each is a name only this universe would use, so the six sibling plans shouldn't hit them; check again at build time with `grep -rn 'Location("' Sources/App/Universes`.
 
 **Homes:**
-- **Nightmare:** Jack, Sallee, Zeero and the Mayor in Halloween Town; Sandy Clawz in Christmas Town. Ooogie and his bugs in his lair; Lok, Shok and Barrell in the lair too; Dr. Finkelclawd, the Wolfclawd, the Clown and the Witch in Halloween Town. Spiral Hill is Jack's turf in the transitions.
+- **Nightmare:** Jack, Sallee, Zeero and the Mayor in Halloween Town; Sandy Clawdz in Christmas Town. Ooogie and his bugs in his lair; Lok, Shok and Barrell in the lair too; Dr. Finkelclawd, the Wolfclawd, the Clown and the Witch in Halloween Town. Spiral Hill is Jack's turf in the transitions.
 - **Beetlejuice:** Lydia, Delia, Astrid, Adam and Barbara at the Maitlands' house; Junoh, Wolf Jaxon and the Shrunken-Head Man in the waiting room. Beetlejooce and Bob in the model town; the Sandwurm on Saturn; Delorez, Otho and Jeremee in the waiting room (Otho at the house; he moves in).
 - **Edward Scissorhands:** Edward and the Inventor at the castle; Kim and Peg in the cul-de-sac. Jimm and Joyce in the cul-de-sac.
 - **Corpse Bride:** Emilee, Scrapz, Elder Gutknocked, Bonejingles, General Bonesapart and Maggott in the Land of the Dead; Victor Van Dawt and Victoria in the village. Barkiss, Gallswell and the Everglots in the village.
 - **Sleepy Hollow:** Ichabod, Katrina, Young Masbeth and Brom in the village. The Horseclawd and the Crone at the Tree of the Dead; Lady Van Tassle in the village.
-- **Mars Attacks!:** Richie and Grandma Florenz in Perkinsville; Byron at the Galaxy hotel; President Dayle and Kessclaw at Perkinsville too (the White House is a real building, so it isn't a place here). The Martians on the saucer deck; the Walker in Perkinsville.
+- **Mars Attacks!:** Richie and Grandma Florenz in Perkinsville; Byron at the Galaxy hotel; President Dayle and Kessclawd at Perkinsville too (the White House is a real building, so it isn't a place here). The Martians on the saucer deck; the Walker in Perkinsville.
 - **Charlie:** everyone in the Chocolate Room, the squirrel included; Slugwurth too (he's snooping).
-- **Alice:** Alice, Tarrant, Chessur, McTwisp, Mally and Thackery at the tea party; Mirana at the tea party. The Red Queen, Stayne, the Bandersnatch and the Card Knight at Salazen Grum; the Jabberclawky at Salazen Grum.
+- **Alice:** Alice, Tarrant, Chessur, McTwisp, Mally and Thackery at the tea party; Mirana at the tea party. The Red Queen, Stayne, the Bandersnatch and the Card Knight at Salazen Grum; the Jabberclawdky at Salazen Grum.
 - **Frankenweenie:** Victor, Sparkie and Mr. Rzykrusky in the attic; Elsa at the windmill. The classmates and their monsters, and the Sea-Monkeys, at the windmill.
 - **Pee-wee's Big Adventure:** everyone at Pee-wee's house: Pee-wee and Dottie; Large Marge (her truck stop isn't a place, so she haunts the house's porch light); Francis (next door), the Bike Thief, Madam Rubee and Andee (they've followed the bike there).
 - HEM lives in Halloween Town.
@@ -453,7 +453,7 @@ Keys checked: none clash with the 150-odd `Location("…")` keys on main (`chris
 ## Mechanics that make it its own universe
 
 1. **Rides** (`BurtonRides.swift`):
-   - **Jack's coffin sleigh:** a coffin on runners pulled by skeleton reindeer, Zeero's nose glowing in front. For Jack, Sallee, Zeero, the Mayor and Sandy Clawz.
+   - **Jack's coffin sleigh:** a coffin on runners pulled by skeleton reindeer, Zeero's nose glowing in front. For Jack, Sallee, Zeero, the Mayor and Sandy Clawdz.
    - **The walking bathtub:** Lock, Shock and Barrel's clawed tub stomping in on its feet. For Lok, Shok, Barrell and Ooogie.
    - **The Sandworm:** bursts up through the floor, the rider on its back, and dives back down. For Beetlejooce, Delorez and Jeremee (and the Maitlands leave on it, unwillingly: a fun gag, your call).
    - **The Martian saucer:** a classic silver saucer with a clear dome and a ring of flashing lights, drawn new (not the Clawd Files' saucer). For the Martians.
@@ -617,7 +617,7 @@ New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only),
 
 ## Decisions during phases 2–5 (2026-10-17 – 2026-10-21, Henrik)
 
-1. **The look: people are Clawds in costume.** The first draft of the Beetlejuice group drew little humans, a face and head above the body; Henrik: "all too human.. long way from the clawds design". Redone the way Dana Scrawly, Fox Clawder and Indiana Bones are drawn: the Clawd block with its eyes on it, clothes on its bottom rows, hair and hats on top, props in hand. "Some humans might still have different skin color": the block may be tinted. Non-humans keep their own shape at Clawd's size (the Sandwurm, Zeero, Scrapz, Chessur, the Jabberclawky). The guide's new "Look and style" section (main, 3.7.0) says the same.
+1. **The look: people are Clawds in costume.** The first draft of the Beetlejuice group drew little humans, a face and head above the body; Henrik: "all too human.. long way from the clawds design". Redone the way Dana Scrawly, Fox Clawder and Indiana Bones are drawn: the Clawd block with its eyes on it, clothes on its bottom rows, hair and hats on top, props in hand. "Some humans might still have different skin color": the block may be tinted. Non-humans keep their own shape at Clawd's size (the Sandwurm, Zeero, Scrapz, Chessur, the Jabberclawdky). The guide's new "Look and style" section (main, 3.7.0) says the same.
 2. **The Nightmare group and Beetlejooce redrawn to it** ("they are too big for house rules.. but lets try to keep the look from the current ones"), each keeping its colours and iconic pieces (Jack's skull and bat-wing spikes, Sallee's red hair, the Mayor's cone and stovepipe, Ooogie one size up). The detailed first versions stay in the branch's history, in the commit before the redraw, as a backup.
 3. **The Sandwurm is Clawd-sized and lean**, its head and neck out of a hole, not huge like Ooogie. **Lydia** was drawn from Henrik's reference photo (the wide flat hat, the long black coat, the camera); **Junoh** is an old grey-haired woman.
 4. **The rest of the roster and places were drawn in one go** ("lets continue on the plan.. i will evaluate roster and places when done"), without design directions per group: Henrik reviews the whole roster and all 23 places at the end of phase 3.
@@ -625,6 +625,9 @@ New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only),
 6. **The trailer was made early** ("do the promo video with what we have"), before the rides and trips: the Model Town Flyover opening with the `burtonTitle` lockup (CLAWD over BURTON in wobbly pixel strokes, the O a full moon, "universe" under it), the set piece Mars Attacks Halloween Town (the saucers, "Ack! Ack!", Grandma Florenz's yodel popping the domes, Beetlejooce out of the fountain: "It's showtime!"), the shared shots in Burton's cast, and a lopsided D-minor waltz on tuba, pizzicato and celesta with a wordless choir, our own notes. It cuts and wipes for now; it can come in through the trips once they're in.
 7. **The transitions were drawn before the mechanics** ("go with the transitions"). The finishing touch: every trip ends with the new place's name written in stroke by stroke, top left, in spidery curling capitals (our own alphabet, built from pixel strokes), bone white with an ink edge and a violet glow, a spiral flourish under it, shrinking to fit long names. The Flyover is the rarest (a quarter of picks, more at its turf).
 8. **Main moved to 3.7.0 and the branch was rebased onto it.** The PR guard (`scripts/pr-guard.py`) now applies: every top-level name `private` or `burton…`; `llms.txt` and `clawdify_guide.md` are the maintainer's, so the docs phase says in the PR what `llms.txt` needs instead of editing it; "Take a number" needs nothing in `StatusStore`/`HookInstaller` beyond the compaction hook Doctor Clawd already registers, or it's described in the PR. The guide's edge check (`build/preview edges`) is clean for all 107.
+9. **Jack is a beanpole** (2026-10-22): "design is great.. BUT he is a bit to fat". Of five slimmer, taller shapes Henrik picked a narrow skull block, 14 wide and 14 tall, on legs four rows longer and one pixel thin, with thin sleeves; the scare comes from his mouth, higher up.
+10. **Ported to universe modules** (2026-10-22): main moved to 3.7.1, so the branch was rebased and Clawd Burton became a module: `universe.conf`, `BurtonFacts.swift`, `BurtonUniverse.swift`, `BurtonHem.swift`, the trailer in `Promo/BurtonReel.swift`, `BurtonTrip` a `Trip`. It carries `8 clawdBurton ClawdBurton reserved` in NUMBERS (the same line as on `stranger-clawds`) until main has it. Left for Rod: `Magic.pulse` as an engine addition, and a way to keep a universe unreleased (`isReleased` is true for every universe now).
+11. **Names say "clawd", never a bare "claw"** (2026-10-23, Rod's rule from the Democlawdgon): Sandy Clawdz, Edward Scissorclawds, Victoria, Finis and Maudeline Everclawd, Professor Kessclawd, Alice Kingsclawd, Elsa Van Helsclawd, the Jabberclawdky.
 
 **Weak spots from phases 2–5** (for the polish pass): Junoh's bun merges into her hair; Maudeline's beehive reads like a tombstone; Finis is a wide grey box; Emilee's veil is stiff; Mirana is white on white; the Red Queen's heart hair is mild; the Bandersnatch could be a polar bear; Weird Gurl's cat is a white lump; Ichabod's faint is a tipped block; the Chocolate Room's waterfall looks like a brown column; the Tree of the Dead's far woods are a busy web; the Flyover trip's glide is a gentle drift and its spider blocky at the cut; the saucers' "ACK ACK" and the rabbit hole's far things are tiny in the window strip.
 
