@@ -3,7 +3,7 @@
 
 ## Context
 
-Clawd Clash has seven universes on `main` (d471352, 2026-10-17, after 3.6.0). This plan adds a Supernatural parody, the fifteen seasons of the TV series (2005 to 2020), as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
+Written 2026-10-17 (after 3.6.0); brought up to date 2026-10-23 for the universe-modules folder flow and the "clawd, never claw" naming rule, with Stranger Clawds (4.0.0) the newest universe on `main`. This plan adds a Supernatural parody, the fifteen seasons of the TV series (2005 to 2020), as a full ensemble, built the same way as Doctor Clawd and The Clawd Files. Every character, place, move and transition has to carry the show. Nothing is added just to grow the count.
 
 | Universe                        | Heroes | Villains | Total | Places | Transitions |
 |---------------------------------|--------|----------|-------|--------|-------------|
@@ -21,11 +21,10 @@ Clawd Clash has seven universes on `main` (d471352, 2026-10-17, after 3.6.0). Th
 - **Viability: comfortably viable.** 33 drawn heroes and 42 drawn villains, both well over the 20 threshold. Fifteen seasons of monsters of the week, angels, demons and hunters leave more candidates than slots; the job was picking.
 - **Name: Superclawdtural** (chosen on 2026-10-17). The alternatives were Supernaclawd, The Road So Clawd, Team Free Clawd, Carry On Clawd and others.
 - **Code naming** avoids the franchise name, as the other universes do:
-  - `case hunters` with key `"hunters"`.
-  - Folder `Sources/App/Universes/Superclawdtural/`, file prefix `Hunt` (`HuntRoster.swift`, `HuntHeroes1.swift`, `HuntWipes.swift` …). No file in the repo uses `Hunt` as a prefix today. Top-level names start with `hunt` or are `private`, as `scripts/pr-guard.py` asks.
-  - Branch `superclawdtural`.
-- **Raw value: next free when the build starts.** Check before the skeleton commit: `main` uses 0 to 6 (`middleEarth = 6`); the `buffy` branch also claims `slayer = 6`, which clashes and needs renumbering before it merges; Henrik's Clawd Burton lives on his fork (HEM42/clawd-clash) with a value of its own. Read other branches with `git show <branch>:Sources/Shared/Universe.swift`, never by switching. Ids are rawValue*1000 and permanent.
-- **Naming style:** light puns on the on-screen names, kept where they read at a glance: **Winclawster** for the family, **Clawstiel**, **Clawley**, Bobby **Clawsinger**, Garth **Fitzclawd** IV, Charlie **Clawdbury**, Rowena **MacClawd**, **Balthaclaws**. Where a pun would be forced, the real or near name (Metatron, Ruby, Jack Klyne). Actors' names are never used.
+  - **number 10** in `Sources/App/Universes/NUMBERS` (8 is reserved for Clawd Burton, 9 is Stranger Clawds), so ids are 10000 and up;
+  - key `hunters`, folder `Sources/App/Universes/Superclawdtural/`, prefix `Hunt` (`HuntRoster.swift`, `HuntHero`, `huntTheme`), reel `hunters`; no file, type or key in the repo uses any of them today;
+  - branch `superclawdtural`, off `main`.
+- **Naming style:** light puns on the on-screen names, kept where they read at a glance, and every pun says "clawd", never a bare "claw" (the rule from 2026-10-22; Crowley is Clawdley even though The Clawd Files has a Tad O'Clawdley, the owner's call on 2026-10-23): **Winclawdster** for the family, **Clawdstiel**, **Clawdley**, Bobby **Clawdsinger**, Garth **Fitzclawd** IV, Charlie **Clawdbury**, Rowena **MacClawd**, **Balthaclawds**. Where a pun would be forced, the real or near name (Metatron, Ruby, Jack Klyne). Actors' names are never used.
 - **Scope:** the fifteen seasons only. The prequel *The Winchesters* and the *Wayward Sisters* pilot are left out.
 - **Size:** 80 characters (about The Clawd Files' size) and 20 places.
 
@@ -34,7 +33,7 @@ Clawd Clash has seven universes on `main` (d471352, 2026-10-17, after 3.6.0). Th
 The show is about hunters against monsters, so the split is mostly easy: hunters, their friends and the angels who side with them are heroes; demons, the angels who turn on humanity, the cosmic Big Bads, the human villains and the monsters of the week are villains. The rule for the grey ones is **where they end up**:
 - **Rowena → hero.** A villain early on, but she ends as an ally, becomes Queen of Hell and gives her life for the boys.
 - **Gabriel → hero.** The Trickster's pranks turn into his stand against Lucifer, and he comes back to fight alongside them.
-- **Clawley → the lead villain.** Fans love him and he helps now and then, but he's the King of Hell for most of the run.
+- **Clawdley → the lead villain.** Fans love him and he helps now and then, but he's the King of Hell for most of the run.
 - **Meg, Ruby → villains.** Both help the brothers for a while, as demons with their own plans.
 - **Ketch, Lady Bevell → villains.** The British Men of Letters; Ketch comes round late, but the show frames them as the enemy.
 - **Gordon Walker → villain.** A hunter who hunts Sam, then becomes a vampire.
@@ -59,45 +58,32 @@ The show is full of gore, torture and dark themes. Clawd Clash is a desktop toy,
 - **The Wendigo** is left out: The Clawd Files already has a character called The Wendigo, and the names would clash in Clawd Royale.
 - **Overlaps with the other universes:** vampires, ghosts and a cemetery also show up in Clawd Slayer and The Clawd Files. This universe keeps its own look: flannel and denim hunters, black-eyed demons in suits, angels in trench coats, and a palette of rust, amber, Impala black and dusty denim blue. Its graveyard is flat Kansas Stull, not a gothic crypt.
 
-## How a universe plugs in (checked against the code on 2026-10-17, main d471352)
+## Your folder (the universe-modules flow, clawdify_guide.md Step 7)
 
-**New code: `Sources/App/Universes/Superclawdtural/`**
-- `HuntRoster.swift`:
-  - `enum HuntHero` and `enum HuntVillain`, append-only, with `hem` as the last hero.
-  - The persona dictionaries, `.reduce([.hem: hemPersona(.hunters)])`.
-  - `Location.huntHome(of:)` for heroes and villains, `huntNemeses`, the ride closure, `let huntTheme = Theme(...)`.
-  - The `static let` place keys and `let huntPlaces` merged from the Places files.
-- `Art/HuntHeroes1…4.swift` and `Art/HuntVillains1…5.swift`, 8 to 10 personas per file, in the pattern of `ClawdbergHeroes1.swift`. Shared helpers (flannel, leather jackets, trench coats, wing shadows, black demon eyes) go in one `HuntKit.swift` with `hunt`-prefixed names.
-- `Places/HuntScenes1…3.swift` as `let huntScenesN: [Location: Place]`.
-- `HuntIcon.swift`: the menu bar icon, 28×26, colour and mono. A devil's trap, or the Impala's front end.
-- `HuntBackFromHell.swift`: the compaction mechanic (see Mechanics).
-- `HuntWipes.swift`: the transitions, last.
+Nothing outside `Sources/App/Universes/Superclawdtural/` changes, except the owner's `NUMBERS` line on `main`. It starts as the template, through `Tools/new-universe.sh Superclawdtural Hunt hunters "Superclawdtural" 10`.
 
-**Wiring into the existing code.** Copy what `middleEarth` and `clawdberg` did. Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎.
-- **`Sources/Shared/Universe.swift`:**
-  - `:9–15` the case; `:17` `key`; `:25` `title`; `:33` `villainCount`; `:37` `heroCount`;
-  - `:50` `agentOnly` (Miracle, the hellhound, the Leviathan blob, the demon smoke);
-  - `:65` `claudeSide` (default false: Claude plays the heroes);
-  - `:68` `rivals` (Death and Billie, see Cast; today it's `self == .starWars ? [0, 1] : []`, so it becomes a switch);
-  - `:90` `abductees`: Dean, Sam, Clawstiel, Bobby and Jack, the way Clawdberg lists its time travellers;
-  - `:106` `isReleased`: return `false` for `.hunters` until phase 6 if it's built on `main`, as Clawd of the Rings was.
-- **`Sources/App/Theme.swift:40`:** `Theme.of`. **`:89`** add `impala` to `enum Ride`; **`:93`** add it to `Ride.drives`.
-- **`Sources/App/Locations.swift:72`:** `.merging(huntPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift`:** in phase 1, a `case .hunters: return nil` in `pick` (`:40–62`). In phase 5, a `.hunters(HuntTrip)` case at `:8–13`, in `duration` (`:15–23`), `draw` (`:26–35`) and `pick`, and the doc comment at `:3–6`.
-- **`Sources/App/Universes/Hem.swift:15–31, 63–104, 113–118, 130, 203`:** HEM's persona and costume in every switch.
-- **`Sources/App/Rides.swift`:** the Impala's drawing (phase 4), next to `drawFalcon` and the others at `:20` on.
-- ⚠︎ **`Sources/Saver/SaverView.swift`:** nothing to add; the Options list and the trip choice build themselves from `Universe.offered`. Only the doc comment at `:80` names universes.
-- ⚠︎ **`Sources/App/Drills.swift:54`:** the meditation guard. Superclawdtural doesn't meditate (see Mechanics), so add `universe != .hunters`. **`:488`:** merge `huntBespokeDrills`.
-- ⚠︎ **`Sources/App/Overlay.swift:875–878`:** the Playground prompts (five, below), a `case .hunters:` next to `.clawdberg` and `.middleEarth`. **`:1271–1275`** is where `OutaTime` is chosen for `clawdberg` (`MissingTime` is the fallback for everyone else in `abductees`); `HuntBackFromHell` hooks in the same way, and its caption at **`:1353`**. The habits hook into the tick here too.
-- ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per universe-specific `if`. Superclawdtural joins none of the existing ones; it adds its own habits.
-- ⚠︎ **Compaction:** `StatusStore.swift:341` already marks any leader in `abductees`; check it picks up `.hunters` without changes. `HookInstaller.swift` already registers the hook.
-- **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies still behave when a scene is in a Superclawdtural place.
-- **Tools:**
-  - `Tools/Preview/main.swift:64–95`: the batch doc comment, the batch arrays (`huntHeroes1…`, `huntVillains1…`), the universe lookup (`"hunters": Theme.of(.hunters).cast`), the enum lookups by case name.
-  - `Tools/Transitions/main.swift:13–14` (usage comment) and `:131–133` (the branch that renders this universe's trips, phase 5).
-  - Phase 6: `Tools/RenderPromo` (`REEL=hunters`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
+| File | What it holds here |
+|---|---|
+| `universe.conf` | number 10, key `hunters`, title Superclawdtural, prefix `Hunt`, entry `HuntUniverse`, reel `hunters`, cask empty |
+| `HuntFacts.swift` | `HuntHero` and `HuntVillain` (append-only, enum order as in Cast, `hem` last), agent-only (Miracle, the hellhound, the Leviathan blob, the demon smoke), Claude's side heroes, rivals Death and Billie, compaction `.away` for Dean, Sam, Clawdstiel, Bobby and Jack |
+| `HuntUniverse.swift` | the module (below) |
+| `HuntRoster.swift` | the persona dictionaries, `Location.huntHome(of:)`, nemeses, the ride closure, `huntTheme`, the place keys, `huntPlaces` |
+| `HuntHem.swift` | HEM: flannel, a trucker cap, Dean's amulet on his chest, a rock-salt shotgun |
+| `HuntIcon.swift` | the menu bar icon: a devil's trap, or the Impala's front end |
+| `HuntKit.swift` | shared art helpers: flannel, leather jackets, trench coats, wing shadows, black demon eyes |
+| `Art/HuntHeroes1…4.swift`, `Art/HuntVillains1…5.swift` | 8 to 10 personas a file |
+| `Places/HuntScenes1…N.swift` | the 20 places |
+| `HuntRides.swift` | Baby, the '67 Impala, a `Ride` that drives in |
+| `HuntBackFromHell.swift` | the compaction look (`CompactionLook`) |
+| `HuntDrills.swift` | the devil's trap and angel blade drills |
+| `HuntWipes.swift` + `Hunt<Name>Trip.swift` | the twelve trips, one file each past a handful, as Slayer does |
+| `Promo/HuntReel.swift`, `Promo/HuntShowcase.swift` | the trailer and the showcase pictures (phase 6) |
 
-**Playground prompts** (`Overlay.swift:875`):
+**The module's members:** `theme`, `places`, `hem`, `preview` (written); `transitions` (the template's one trip until phase 5); `playgroundPrompts` (below); `meditation: .never`; `compactionLook` (Back from Hell); `quirks.remark` for "Jerk." "Bitch."; `rides`; `drills`; `docs` (phase 6). Left at their defaults: `poseStyle`, `moonwalkers`, `swingLine`, `placeCaption`, `regeneration`, `shootOuts`.
+
+**Engine requests:** one, for phase 4. **Clawdstiel's personal space** (he vanishes with a flutter of wings and turns up right behind the nearest hero) needs a character to jump to a spot on stage, which no quirk can do. It goes on `main` as a general hook, its own commit, before the folder uses it. If it isn't built, the habit is dropped and his wing shadows stay his signature. The Impala's radio burst has no sound in the app; it lives in the trailer only.
+
+**Playground prompts** (the module's `playgroundPrompts`):
 1. "Salt the doorways before the build runs."
 2. "Find out what's haunting the test suite and burn its bones."
 3. "Check the lore in the Bunker's library for this stack trace."
@@ -127,7 +113,7 @@ Each entry gives the parody name, look, weapon or motion, signature move and cal
 
 | Caster | Look |
 |---|---|
-| Clawley | `touch`, red fingertip, red glow round his target |
+| Clawdley | `touch`, red fingertip, red glow round his target |
 | Azazel | `rings`, yellow |
 | Alastair | `rings`, white |
 | War | `rings`, deep red, slower |
@@ -159,24 +145,24 @@ Checked against the other universes: Detective Clawds' Constantin has a gold `sp
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
-| 1 | Dean Winclawster | brown leather jacket over a flannel shirt, short hair, the amulet | Colt M1911, pearl grip (bullet) | pulls out a slice of pie and takes a huge bite | "Son of a…!" |
-| 2 | Sam Winclawster | tall, long brown hair, flannel over a hoodie | Ruby's demon knife (saber) | opens his laptop, types, sweeps his hair back | "Jerk." |
-| 3 | Clawstiel | beige trench coat, blue tie askew, dark hair | angel blade (saber) | his wing shadows spread across the wall, then fold | "Hello, Dean." |
+| 1 | Dean Winclawdster | brown leather jacket over a flannel shirt, short hair, the amulet | Colt M1911, pearl grip (bullet) | pulls out a slice of pie and takes a huge bite | "Son of a…!" |
+| 2 | Sam Winclawdster | tall, long brown hair, flannel over a hoodie | Ruby's demon knife (saber) | opens his laptop, types, sweeps his hair back | "Jerk." |
+| 3 | Clawdstiel | beige trench coat, blue tie askew, dark hair | angel blade (saber) | his wing shadows spread across the wall, then fold | "Hello, Dean." |
 | 4 | Jack Klyne | tan jacket, young face | Nephilim force (lightning, gold `waves`) | eyes glow gold, then he grins and eats nougat | "I'm Jack." |
 
-**The Winclawster family (3)**
+**The Winclawdster family (3)**
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
-| 5 | Mary Winclawster | blonde, leather jacket | pistol (bullet) | pushes her hair back and checks the clip | "Angels are watching over you." |
-| 6 | John Winclawster | worn leather jacket, stubble | the Colt (bullet) | writes in his journal | "Take care of Sammy." |
-| 7 | Henry Winclawster | 1958 suit and fedora, the Men of Letters key | none | tips his fedora and shows the key | "Men of Letters." |
+| 5 | Mary Winclawdster | blonde, leather jacket | pistol (bullet) | pushes her hair back and checks the clip | "Angels are watching over you." |
+| 6 | John Winclawdster | worn leather jacket, stubble | the Colt (bullet) | writes in his journal | "Take care of Sammy." |
+| 7 | Henry Winclawdster | 1958 suit and fedora, the Men of Letters key | none | tips his fedora and shows the key | "Men of Letters." |
 
 **Hunters (14)**
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
-| 8 | Bobby Clawsinger | trucker cap, grey beard, vest over flannel | shotgun with rock salt (bullet) | takes a swig from his flask of holy water | "Idjits." |
+| 8 | Bobby Clawdsinger | trucker cap, grey beard, vest over flannel | shotgun with rock salt (bullet) | takes a swig from his flask of holy water | "Idjits." |
 | 9 | Ellen Harvell | dark hair, Roadhouse apron over flannel | shotgun (bullet) | racks the shotgun | none |
 | 10 | Jo Harvell | blonde, young, denim jacket | throwing knives (thrown, silver) | throws a knife into a dartboard | none |
 | 11 | Rufus Turner | flat cap, older, cardigan | pistol (bullet) | pours a glass from a blue-label bottle | none |
@@ -205,7 +191,7 @@ Checked against the other universes: Detective Clawds' Constantin has a gold `sp
 | 29 | Mick Davies | tidy British suit | pistol (bullet) | none | none |
 | 30 | Tessa | dark hair, reaper's black coat | none | holds out a hand, softly | none |
 | 31 | Gabriel, the Trickster | brown jacket, lollipop | Trickster magic (lightning, pink `spell`) | snaps his fingers and a candy bar appears | "Heya, Sammy!" |
-| 32 | Balthaclaws | low V-neck, smug, wine glass | angel blade (saber) | sips wine, his wing shadows spreading | none |
+| 32 | Balthaclawds | low V-neck, smug, wine glass | angel blade (saber) | sips wine, his wing shadows spreading | none |
 | 33 | Rowena MacClawd | red hair, green velvet gown | spells (lightning, red `spell`) | throws a hex bag; red sparks fly | "Boys." |
 
 **Agent-only and HEM (2)**
@@ -221,7 +207,7 @@ Checked against the other universes: Detective Clawds' Constantin has a gold `sp
 
 | # | Name | Look | Weapon | Signature | Callout |
 |---|---|---|---|---|---|
-| 1 | Clawley | black suit and overcoat, goatee | power over Hell (lightning, red `touch`) | snaps his fingers with a red flash, and Juliet the hellhound appears at his heel (a shadow dog with red eyes, since hellhounds can't be seen in the show) | "Hello, boys." |
+| 1 | Clawdley | black suit and overcoat, goatee | power over Hell (lightning, red `touch`) | snaps his fingers with a red flash, and Juliet the hellhound appears at his heel (a shadow dog with red eyes, since hellhounds can't be seen in the show) | "Hello, boys." |
 | 2 | Azazel | plain jacket, yellow eyes | telekinesis (lightning, yellow `rings`) | his eyes flash yellow | "Hey, Sammy." |
 | 3 | Meg Masters | dark hair, leather jacket, black eyes | knife (saber) | her black eyes flick on | "Hey, Clarence." |
 | 4 | Ruby | brunette, leather jacket | demon knife (saber) | twirls the knife | none |
@@ -297,34 +283,34 @@ Checked against the other universes: Detective Clawds' Constantin has a gold `sp
 - **Dean and Demon Dean:** the same jacket; Demon Dean has black eyes, the glowing red Mark on his forearm and the jawbone blade.
 - **The hunters with guns:** Dean's pearl-grip pistol, Bobby's cap and shotgun, Ellen's apron and shotgun, Jody's and Donna's uniforms (tan, and a parka with donuts), John's journal, Mary's blonde hair.
 - **The Ghostfacers:** Ed's camcorder, Harry's EMF meter.
-- **The suits:** Clawley black with a goatee; Zachariah grey and balding; Dick Roman slick with the grin; Death tall and thin with a cane; Ketch black with weapons; Michael dark with a white glow.
+- **The suits:** Clawdley black with a goatee; Zachariah grey and balding; Dick Roman slick with the grin; Death tall and thin with a cane; Ketch black with weapons; Michael dark with a white glow.
 - **The redheads:** Rowena in green velvet, Abaddon in black, Naomi in a prim suit, Charlie in a t-shirt, Eve barefoot and wild.
 - **The reapers:** Tessa has no scythe; Billie carries one.
-- **Against the other universes:** Clawstiel and Detective Clawds' Constantin both wear beige trench coats: Constantin is blond with a cigarette; Clawstiel has dark hair, a crooked blue tie and wing shadows. The Clown is not a Joker: a rainbow wig and a red nose, no purple. The Clawd Files' trench coats (Fox Clawder, HEM's costume there) are grey-brown with a lanyard.
+- **Against the other universes:** Clawdstiel and Detective Clawds' Constantin both wear beige trench coats: Constantin is blond with a cigarette; Clawdstiel has dark hair, a crooked blue tie and wing shadows. The Clown is not a Joker: a rainbow wig and a red nose, no purple. The Clawd Files' trench coats (Fox Clawder, HEM's costume there) are grey-brown with a lanyard.
 
 ### Nemeses
 
 Each pair faces off first on the same stage:
-- Dean Winclawster ↔ Michael
-- Sam Winclawster ↔ Lucifer
-- Clawstiel ↔ Metatron
+- Dean Winclawdster ↔ Michael
+- Sam Winclawdster ↔ Lucifer
+- Clawdstiel ↔ Metatron
 - Jack Klyne ↔ Chuck
-- John Winclawster ↔ Azazel
-- Mary Winclawster ↔ Lady Toni Bevell
-- Bobby Clawsinger ↔ Clawley
+- John Winclawdster ↔ Azazel
+- Mary Winclawdster ↔ Lady Toni Bevell
+- Bobby Clawdsinger ↔ Clawdley
 - Charlie Clawdbury ↔ Dick Roman
 - Kevin Tran ↔ Gadreel
 - Gabriel ↔ Asmodeus
 - Benny Lafitte ↔ Eve
 - Victor Henriksen ↔ Lilith
-- Henry Winclawster ↔ Abaddon
+- Henry Winclawdster ↔ Abaddon
 - Mick Davies ↔ Arthur Ketch
 
 **Rivals:** Death and Billie never lead two sessions back to back (two Deaths in a row).
 
 **Claude's side:** the heroes (the default).
 
-**Enum order** is as listed. Dean, Sam and Clawstiel come first among the heroes and Clawley first among the villains, so the skeleton is drawn first. `hem` is always the last hero.
+**Enum order** is as listed. Dean, Sam and Clawdstiel come first among the heroes and Clawdley first among the villains, so the skeleton is drawn first. `hem` is always the last hero.
 
 ## Places (20)
 
@@ -339,7 +325,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
 | 5 | `huntLawrence` | **The house in Lawrence, Kansas**, at night | a two-storey house, the lawn, one lit window upstairs | the window light flickers, leaves blow | the old tree, the night sky |
 | 6 | `huntCrossroads` | **The crossroads** | a dirt crossroads, one dead tree, flat fields | dust blows, a crow shifts on the branch | a big moon and stars |
 | 7 | `huntStull` | **Stull Cemetery**, in a storm | the ruined stone church, headstones, the Impala parked | lightning flashes, a grave burns (salt and burn) | storm clouds |
-| 8 | `huntHell` | **Clawley's Hell** | the throne room in red stone, the throne, Crowley's endless queue | the queue shuffles forward, embers drift | a vaulted ceiling, chains |
+| 8 | `huntHell` | **Clawdley's Hell** | the throne room in red stone, the throne, Crowley's endless queue | the queue shuffles forward, embers drift | a vaulted ceiling, chains |
 | 9 | `huntHeaven` | **Heaven's garden** | white light, one great tree, a fountain, mid-green grass | leaves fall, the light shimmers | a blinding sky, a doorway of light |
 | 10 | `huntPurgatory` | **Purgatory** | dark woods in mist | red and gold eyes blink between the trees | tall trees |
 | 11 | `huntEmpty` | **The Empty** | a black void, pools of black goo, faint violet | goo drips | sleeping shapes in the dark |
@@ -359,15 +345,15 @@ Rules from the guide's Look and style apply: the bottom `floorRows` and the band
 
 | Place | Heroes | Villains |
 |---|---|---|
-| Bunker | Dean, Sam, Clawstiel, Jack, Henry, Kevin, Eileen, Mick, Miracle, HEM | Ketch, Lady Bevell (both broke in; Ketch lived there later) |
+| Bunker | Dean, Sam, Clawdstiel, Jack, Henry, Kevin, Eileen, Mick, Miracle, HEM | Ketch, Lady Bevell (both broke in; Ketch lived there later) |
 | Singer Salvage | Bobby, Rufus, Garth, Frank | |
 | Roadhouse | Ellen, Jo, Ash, Pamela | Demon Dean (a bar and a karaoke mic) |
 | Motel room | Henriksen | Bela, Ruby |
 | Lawrence | John, Mary, Missouri | Azazel |
 | Crossroads | | the Crossroads Demon, Meg, Ramiel, the hellhound |
 | Stull Cemetery | | Lucifer, War, Pestilence |
-| Clawley's Hell | Rowena (Queen of Hell) | Clawley, Lilith, Alastair, Abaddon, Asmodeus, Dagon, the demon smoke |
-| Heaven | Gabriel, Balthaclaws, Tessa | Zachariah, Uriel, Raphael, Naomi, Gadreel |
+| Clawdley's Hell | Rowena (Queen of Hell) | Clawdley, Lilith, Alastair, Abaddon, Asmodeus, Dagon, the demon smoke |
+| Heaven | Gabriel, Balthaclawds, Tessa | Zachariah, Uriel, Raphael, Naomi, Gadreel |
 | Purgatory | Benny | Eve, the Alpha Vampire, the Djinn |
 | The Empty | | Billie, Amara |
 | Open road | | the Woman in White, the Hookman, Gordon |
@@ -382,44 +368,40 @@ Rules from the guide's Look and style apply: the bottom `floorRows` and the band
 
 ## Mechanics that make it its own universe
 
-1. **The ride: Baby, the '67 Impala** (`Rides.swift`, a new `Ride.impala`, in `Ride.drives` at `Theme.swift:93`). It drives in along the ground, headlights on, windows down, a burst of classic-rock chiptune from the radio. It stops, the crew gets in or out, and the trunk lid swings up on the arsenal for a moment as they go. Everyone rides it.
-2. **Back from Hell: the compaction mechanic.** The Winchesters never stay dead. When a Claude Code or pi session led by **Dean, Sam, Clawstiel, Bobby or Jack** compacts its context, its leader is dragged down by hellhound claws: red scratches across the ground, and they sink in a red glow. A moment later a fist punches up through the ground (Dean's grave, season 4), they climb out, dust themselves off, and the caption reads **BACK FROM HELL**. A session losing its memory and coming back as itself is exactly how the show treats death. It reuses the clock Clawdberg's 88 mph uses: the five go in `Universe.abductees`, and `HuntBackFromHell.swift` draws the effect where the overlay draws `OutaTime` (`Overlay.swift:1271`). Everyone else ignores compaction.
-3. **Habits** (`Habits.swift`, the Overlay tick):
-   - **Clawstiel's personal space.** Now and then he vanishes with a flutter of wings and turns up right behind the nearest hero, standing too close.
-   - **"Jerk." "Bitch."** With Sam and Dean both on stage and idle, now and then Sam says "Jerk." and Dean answers "Bitch." Check in phase 4 whether the engine can do a call and response; if not, Sam says "Jerk." on his own.
-4. **Bespoke practice drills** (`Drills.swift:488`):
+1. **The ride: Baby, the '67 Impala** (`HuntRides.swift`, a `Ride` that drives in, listed in the module's `rides` and picked by the theme's `ride:` closure). It drives in along the ground, headlights on, windows down (the radio's classic-rock burst is the trailer's; the app has no sound). It stops, the crew gets in or out, and the trunk lid swings up on the arsenal for a moment as they go. Everyone rides it.
+2. **Back from Hell: the compaction mechanic.** The Winchesters never stay dead. When a Claude Code or pi session led by **Dean, Sam, Clawdstiel, Bobby or Jack** compacts its context, its leader is dragged down by hellhound claws: red scratches across the ground, and they sink in a red glow. A moment later a fist punches up through the ground (Dean's grave, season 4), they climb out, dust themselves off, and the caption reads **BACK FROM HELL**. A session losing its memory and coming back as itself is exactly how the show treats death. It's `compaction: .away` for the five in `HuntFacts.swift`, on the same clock as Clawdberg's 88 mph, and `HuntBackFromHell.swift` is the module's `compactionLook` (its `caption`, `alpha`, `lift` and `layers`). Everyone else ignores compaction.
+3. **Habits:**
+   - **Clawdstiel's personal space.** Now and then he vanishes with a flutter of wings and turns up right behind the nearest hero, standing too close. **Engine request** (see Your folder): built on `main` first, or dropped.
+   - **"Jerk." "Bitch."** With Sam and Dean both on stage and idle, now and then Sam says "Jerk." and Dean answers "Bitch." Done with the module's `quirks.remark`: Sam's line and Dean's answer timed off the same clock, so Dean answers a beat later.
+4. **Bespoke practice drills** (`HuntDrills.swift`, the module's `drills`):
    - the hunters spray-paint a devil's trap on the floor and check it;
    - the angels practise with their angel blades, wing shadows flaring.
 
-   Nobody floats cross-legged in meditation (`Drills.swift:54`): hunters, angels and demons don't, and Rowena is the only witch.
+   Nobody floats cross-legged in meditation (`meditation: .never`): hunters, angels and demons don't, and Rowena is the only witch.
 
 ## Phases
 
-Each phase builds, is checked with Preview sheets, and is shown to you before the next one. A `CHANGELOG.md` entry each phase.
+Each phase builds, is checked with Preview sheets and `Tools/CheckUniverse/check.sh Superclawdtural`, and is shown to you before the next one. One commit per phase (or two: stand-ins, then the art), scoped `feat(hunters)`. The changelog and README text is gathered in the hand-off, not written into `CHANGELOG.md` until after the merge (guide Step 8).
 
 1. **Skeleton:**
-   - settle the raw value first (see Context);
-   - the universe case and all the wiring above;
-   - Dean, Sam and Clawstiel, and Clawley (the enums' first cases);
-   - the Bunker's war room, the menu icon, HEM's costume, Preview support.
+   - the owner's `10 hunters Superclawdtural reserved` line in `NUMBERS` on `main`, then the branch;
+   - `Tools/new-universe.sh Superclawdtural Hunt hunters "Superclawdtural" 10`;
+   - the template's samples turned into Dean, Sam and Clawdstiel, and Clawdley (the enums' first cases);
+   - the Bunker's war room, the menu icon, HEM's costume, the facts.
 
-   It runs end to end in the app, the window, the screen saver and Clawd Royale, with plain wipes (`ComicTransition.pick` returns nil for it).
+   It runs end to end in the app, the window, the screen saver and Clawd Royale, with the template's one trip until phase 5.
 2. **Core ensemble.** About 35 characters:
-   - Team Free Will, the Winclawster family, Bobby, Ellen, Jo, Ash, Charlie, Kevin, Gabriel, Rowena;
+   - Team Free Will, the Winclawdster family, Bobby, Ellen, Jo, Ash, Charlie, Kevin, Gabriel, Rowena;
    - the demons, Lucifer, Michael, Zachariah, Metatron, Dick Roman, Chuck, the Horsemen and Death;
-   - 8 places: the Bunker, Singer Salvage, the Roadhouse, the motel room, the crossroads, Stull, Clawley's Hell, Heaven; with homes and nemeses for these.
+   - 8 places: the Bunker, Singer Salvage, the Roadhouse, the motel room, the crossroads, Stull, Clawdley's Hell, Heaven; with homes and nemeses for these.
 
    The enum cases can go in first as stand-ins and be drawn in a second commit, as The Clawd Files did.
 3. **The rest:** all 80 characters and 20 places, every home filled in. Ends with **the character audit**: every weapon, shot, magic, motion, signature and callout checked against the show and this plan; a mismatches table for your OK.
 4. **Mechanics:** the Impala, Back from Hell, the habits and the bespoke drills.
-5. **Transitions:** the twelve `HuntTrip`s, through `ComicTransition`.
+5. **Transitions:** the twelve `HuntTrip`s, through the module's `transitions`.
 6. **Polish pass** (always before docs): every weak spot noted in phases 2 to 5, split by file and fixed in parallel, with before-and-after renders for your OK.
-7. **Docs and release:**
-   - README (universe table column, screen-saver paragraph, a collapsible cast-and-places section, developer notes), `llms.txt` (universe list, folder and prefix, the compaction mechanic);
-   - `Tools/RenderDocs`: a `huntLineup` desktop strip, `roster-superclawdtural.png`, the locations sheet and a social preview; `Tools/MakeSocial`, `Tools/RenderShowcase`;
-   - the trailer, `REEL=hunters`;
-   - flip `isReleased` if it was built on `main`;
-   - **needs your OK first, since it's public:** a showcase repo, a cask in `release.sh` (`write_cask`, the `others` list), releasing, pushing, a PR.
+7. **Trailer and hand-off** (guide phase 6, once it's complete): the trailer `Promo/HuntReel.swift` (`REEL=hunters`, storyboard first), the showcase `Promo/HuntShowcase.swift`, the module's `docs` (the desktop line-up and the social preview), `check.sh` with no ✗, and the changelog and README text in the hand-off.
+8. **The owner's steps, after the merge:** `CHANGELOG.md`, the README's universe section and table, `llms.txt`, the docs pictures (RenderDocs), the `cask` line, `NUMBERS` from `reserved` to `shipped`, and the release, 5.0.0 by the version rule. **Needs your OK first, since it's public:** pushing, a showcase repo, a cask, releasing.
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
@@ -427,19 +409,19 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 
 ## Verification
 
-- **Build:** `./build.sh`. The cast-size `precondition` in `Overlay.swift:180` catches a wrong `heroCount` or `villainCount`. Check `./build.sh --release <version>` for slow type-checks before calling a phase done.
+- **Build:** `./build.sh --no-install` (the copy in `build/`, leaving the installed app and hooks alone). `Tools/CheckUniverse/check.sh Superclawdtural` every phase; its "slow to type-check" line before calling a phase done.
 - **Characters:** `Tools/Preview/build.sh`, then:
-  - `build/preview cast out.png "Dean Winclawster"`;
-  - `build/preview fight out.png "Sam Winclawster" "Lucifer"`;
+  - `build/preview cast out.png "Dean Winclawdster"`;
+  - `build/preview fight out.png "Sam Winclawdster" "Lucifer"`;
   - `build/preview place out.png "Superclawdtural"`;
   - `build/preview edges out.txt "Superclawdtural"`: everything it lists must be on purpose (shots, thrown knives, the demon smoke leaving);
   - and the batch sheets, one per Art file. Look at the PNGs before showing them.
-- **Pull request guard:** `python3 scripts/pr-guard.py main supernatural` before any PR.
+- **Pull request guard:** `python3 scripts/pr-guard.py main HEAD` before any PR.
 - **Transitions:** `Tools/Transitions/build.sh`, then `build/transitions <outdir> huntBunker huntRoadhouse`.
 - **In the app:**
   - Settings → Universe → Superclawdtural: sessions are heroes, subagents include villains and small fry;
   - the screen saver's Options list it;
-  - Random and Clawd Royale reach it.
+  - Random and Clawd Royale reach it, and Settings → Universes can uncheck it and check it again.
 - **Back from Hell:** `/compact` in a Claude session led by Dean.
 
 ## Transitions (`HuntTrip`, 12)
@@ -456,9 +438,9 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 | 2 | **Headlights** | Night falls on the old place, the Impala drives across, and its headlight beams sweep the new place into view. | Dean · turf: open road |
 | 3 | **Salt and Burn** | Flames rise from the bottom like a grave set alight and burn the old place away; the new one shows through as the smoke clears. | Bobby, John, Ellen · turf: Stull |
 | 4 | **Devil's Trap** | A red devil's trap paints itself on the screen and spins; the new place opens in the centre and grows to fill the frame. | Sam, Bobby · turf: Bunker |
-| 5 | **Smoke Out** | A column of black demon smoke bursts up out of the old place the way it leaves a host's mouth, roaring and twisting. It fills the screen and thrashes, then funnels down in one tight stream and pours into the new place, which clears as the last wisp goes in. A red flash at the end, like demon eyes flicking on. | Clawley, Meg, Ruby, Azazel, the demons · turf: Hell, Crossroads |
-| 6 | **Angel Light** | The lights flicker and the bulbs pop; a blinding white light rises; huge wing shadows spread across the screen and fade on the new place. | Clawstiel, Gabriel, the angels · turf: Heaven |
-| 7 | **Hellhound** | Claw marks rip across the old place one after another, red eyes in the dark, and the tears open on the new place. | Clawley, Lilith · turf: Crossroads |
+| 5 | **Smoke Out** | A column of black demon smoke bursts up out of the old place the way it leaves a host's mouth, roaring and twisting. It fills the screen and thrashes, then funnels down in one tight stream and pours into the new place, which clears as the last wisp goes in. A red flash at the end, like demon eyes flicking on. | Clawdley, Meg, Ruby, Azazel, the demons · turf: Hell, Crossroads |
+| 6 | **Angel Light** | The lights flicker and the bulbs pop; a blinding white light rises; huge wing shadows spread across the screen and fade on the new place. | Clawdstiel, Gabriel, the angels · turf: Heaven |
+| 7 | **Hellhound** | Claw marks rip across the old place one after another, red eyes in the dark, and the tears open on the new place. | Clawdley, Lilith · turf: Crossroads |
 | 8 | **Cold Spot** | The lights flicker, frost creeps in from the corners, breath-fog and all; the frost cracks and falls away onto the new place. | the ghosts (Woman in White, Bloody Mary, the Hookman) · turf: Asylum, Stull |
 | 9 | **Ghostfacers Cam** | The camcorder's viewfinder with a red REC dot; static; a ghost flickers past the lens; the picture comes back on the new place. | Ed, Harry · turf: Asylum |
 | 10 | **Motel Wallpaper** | The motel's wild wallpaper tiles across the screen in loud patterns, then peels away strip by strip onto the new place. | turf: motel room |
@@ -494,12 +476,14 @@ No logo or melody is copied: the title is our own lettering, and the music only 
 ## Decisions (2026-10-17)
 
 All the gates are passed:
-- **Name: Superclawdtural.** Puns stay: Winclawster, Clawstiel, Clawley, Clawsinger, Fitzclawd, Clawdbury, MacClawd, Balthaclaws.
+- **Name: Superclawdtural.** Puns stay: Winclawdster, Clawdstiel, Clawdley, Clawdsinger, Fitzclawd, Clawdbury, MacClawd, Balthaclawds.
 - **Scope:** the fifteen seasons only; no *The Winchesters*, no *Wayward Sisters*.
 - **Raw value:** settled at build time, after checking `main`, the open branches and the forks.
-- **Roster:** approved as written, 80 with HEM and the small fry. Rowena and Gabriel are heroes; Clawley is the lead villain, and his signature brings Juliet the hellhound.
+- **Roster:** approved as written, 80 with HEM and the small fry. Rowena and Gabriel are heroes; Clawdley is the lead villain, and his signature brings Juliet the hellhound.
 - **Places and homes:** the 20 approved; Demon Dean lives at the Roadhouse.
-- **Mechanics:** the Impala, Back from Hell for the five, Clawstiel's personal space and "Jerk." "Bitch.", the devil's trap and angel blade drills, no meditation.
+- **Mechanics:** the Impala, Back from Hell for the five, Clawdstiel's personal space and "Jerk." "Bitch.", the devil's trap and angel blade drills, no meditation.
 - **Transitions:** the twelve above; #5 is **Smoke Out** (the demon smoke leaving one host and entering the new place), in place of a plain exorcism.
 
-The plan is ready for phase 1 when you say start.
+- **2026-10-23:** names get their "d" (Winclawdster, Clawdstiel, Clawdsinger, Balthaclawds, Clawdley); number 10; the plan follows the universe-modules folder flow.
+
+Started 2026-10-23.
