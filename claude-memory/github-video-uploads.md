@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: be19b5c9-e9f0-4576-b0b5-ea68d1892e1a
-  modified: 2026-10-16T23:24:10.808Z
+  modified: 2026-10-23T10:17:10.381Z
 ---
 
 README videos are `https://github.com/user-attachments/assets/<uuid>` links, made by dragging an mp4 into an issue or comment box on github.com. There's no API for it.
@@ -16,7 +16,7 @@ README videos are `https://github.com/user-attachments/assets/<uuid>` links, mad
   2. Submit the issue, then close it (issue #4 holds the README videos).
   3. Paste the links into the README.
   4. Check each link signed out with `curl -s -o /dev/null -w '%{http_code}'`: 302 means public, 404 means private.
-- **For a new universe's video:** drag it into a new comment on closed issue #4 and post it. Posting is what makes it public, and comments on a closed issue are posted too; this hasn't been tested yet, so check the link signed out.
+- **For a new universe's video:** drag it into a new comment on closed issue #4 and post it. Posting is what makes it public, and comments on a closed issue are posted too. Confirmed with the Stranger Clawds trailer on 2026-10-23 (signed-out check gave 302).
 - **Links work in any repo's README:** the same link can serve both clawd-clash and a universe's showcase repo.
 - **Video size:** uploads must be under 10 MB.
   - `REEL=<reel> build/renderpromo 720p promo` writes `promo/720p/<Name>.mp4`. Run it after `REEL=<reel> build/renderpromo video promo`.

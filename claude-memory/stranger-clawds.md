@@ -12,4 +12,4 @@ Push the `stranger-clawds` branch to GitHub as a backup after each phase (owner 
 
 **How to apply:** show each phase to the owner before the next; check.sh StrangerClawds every phase; never mention the flip in changelog, README, commits. Links: [[universe-modules-refactor]], [[version-rule]].
 
-**Status 2026-10-22:** phases 1 to 7 done on the branch; showcase repo rodclemen/stranger-clawds is public. Left: the owner uploads the 720p trailer to a GitHub issue (URL goes in the clawd-clash README video table and the showcase README top), merge into main, NUMBERS 9 reserved→shipped, release 3.8.0, update the other showcase repos for the clawd renames. See clawd-plans HANDOFF.md. The Democlawdgon stays the square four-legged original (owner tried a biped and an in-between, chose the original).
+**Status 2026-10-23:** released as 4.0.0 (merged into main, NUMBERS 9 shipped, trailer in both READMEs, showcase page says 4.0.0). Left: update the other showcase repos (clawd-slayer, the-clawd-files, stevie-clawdberg, doctor-clawd) for the clawd renames. The Democlawdgon stays the square four-legged original.
