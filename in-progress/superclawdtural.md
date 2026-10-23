@@ -487,3 +487,33 @@ All the gates are passed:
 - **2026-10-23:** names get their "d" (Winclawdster, Clawdstiel, Clawdsinger, Balthaclawds, Clawdley); number 10; the plan follows the universe-modules folder flow.
 
 Started 2026-10-23.
+
+## Weak spots so far (for the polish pass)
+
+Noted at the end of each phase, fixed together in the polish pass (guide Step 7).
+
+**Phase 1:** Clawdstiel's wing shadow could be grander; Clawdley's goatee can read as a mouth; the Bunker's map table is small in the window strip.
+
+**Phase 2, characters:**
+- Jack: tan jacket a bit generic; his hair, like Dean's, reads as a rounded cap.
+- Mary and Ellen: hair as full helmet shapes; Mary's clip check is small.
+- Bobby: the flask is a 4×5 silver blob. Bobby's and Ellen's shotgun stocks hide behind the fist.
+- Henry: lapel highlights a little blotchy.
+- Jo: the top between her jacket halves can read as an open mouth; her dartboard and Rowena's hex bag pop in from nowhere.
+- Gabriel: lollipop stick barely shows, jacket blocky. Kevin: hood reads as a lump. Charlie: laptop corner in her bag too small. Ash: black tee a flat band.
+- Cain: grey hair and beard speckled; his bees' outlines heavy for their size. Ruby: knife at rest lost against her hair.
+- Abaddon: signature only black eyes and a smile. Azazel and Asmodeus: same yellow eyes (costumes tell them apart). Lilith: hair a solid helmet.
+- Dagon: black hair and dress run together, and her hair frames her face like a beard; her flame is small.
+- Ramiel: hair a pale dome, face busy. Demon Dean: black eyes subtle on their own, the Mark of Cain tiny.
+- The Crossroads Demon: box and mound small. Michael: his always-on glow barely registers. Zachariah: the watch is a 3×2 patch.
+- Metatron: glasses read as a mask; typewriter small. Dick Roman and Death: grey hair reads as a helmet. Dick's bite tendril tiny.
+- War: ring-turning subtle (and his rings can't be slower: no setting for it, an engine request if wanted). Pestilence: combover dotted, green tint reads khaki. Famine: eyelids don't show, and the cane makes him read like a five-legged animal. Death: chili dog small. Chuck: beard blends into his hair.
+
+**Phase 2, places:**
+- A Motel Room: the orange wallpaper fills the band behind the crew's heads (and is Clawd's colour); the tall wall is one pattern all the way up.
+- Clawdley's Hell: the queue of souls stands in the band just behind the crew, which should stay plain; the souls are a little robotic; the wall is small uniform brick; the tall zigzag queue is regular.
+- Harvelle's Roadhouse: the fan sits at the very top in the window; the dartboard is small; the tall plank wall is plain.
+- The Crossroads: the road reads a little like a mound; the wire steps; the crow is tiny.
+- Singer Salvage: the tall car stacks can look as if they float.
+- Stull Cemetery: clouds a little bubbly; the burning grave reads like a campfire.
+- Heaven: the white light mostly shows on the screen saver; the tall green rise is a plain ellipse.
