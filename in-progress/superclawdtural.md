@@ -116,7 +116,7 @@ Each entry gives the parody name, look, weapon or motion, signature move and cal
 | Clawdley | `touch`, red fingertip, red glow round his target |
 | Azazel | `rings`, yellow |
 | Alastair | `rings`, white |
-| War | `rings`, deep red, slower |
+| War | `rings`, deep red (normal speed: owner chose not to add a slow setting) |
 | Abaddon | steady ray, red |
 | Lilith | jagged, white |
 | Asmodeus | jagged, yellow |
@@ -507,7 +507,7 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Ramiel: hair a pale dome, face busy. Demon Dean: black eyes subtle on their own, the Mark of Cain tiny.
 - The Crossroads Demon: box and mound small. Michael: his always-on glow barely registers. Zachariah: the watch is a 3×2 patch.
 - Metatron: glasses read as a mask; typewriter small. Dick Roman and Death: grey hair reads as a helmet. Dick's bite tendril tiny.
-- War: ring-turning subtle (and his rings can't be slower: no setting for it, an engine request if wanted). Pestilence: combover dotted, green tint reads khaki. Famine: eyelids don't show, and the cane makes him read like a five-legged animal. Death: chili dog small. Chuck: beard blends into his hair.
+- War: ring-turning subtle (rings stay at normal speed: owner decided against an engine request on 2026-10-24). Pestilence: combover dotted, green tint reads khaki. Famine: eyelids don't show, and the cane makes him read like a five-legged animal. Death: chili dog small. Chuck: beard blends into his hair.
 
 **Phase 2, places:**
 - A Motel Room: the orange wallpaper fills the band behind the crew's heads (and is Clawd's colour); the tall wall is one pattern all the way up.
