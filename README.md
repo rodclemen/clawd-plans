@@ -16,8 +16,8 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 | Universe | Progress | Where it's at |
 |---|---|---|
+| **[Superclawdtural](in-progress/superclawdtural.md)**<br><sub>Supernatural</sub> | `█████████░` 92% | **Phase 6 of 6**, docs and trailer<br><sub>80/80 characters · 20/20 places · `superclawdtural`, last commit 24 Oct</sub> |
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 24 Oct</sub> |
-| **[Superclawdtural](in-progress/superclawdtural.md)**<br><sub>Supernatural</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>`superclawdtural`, nothing pushed yet</sub> |
 
 ### 🎨 Detail overhaul
 

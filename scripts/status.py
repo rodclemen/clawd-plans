@@ -160,7 +160,8 @@ def progress(repo, ref, files, plan):
     places = len(re.findall(r"\bPlace\(name:", scenes))
     has_trips = any(re.search(r"(Wipes|Trips)\.swift$", p) for p in mine)
     slug = re.sub(r"[^a-z0-9]+", "-", plan.get("title", "").lower()).strip("-")
-    has_docs = f"docs/roster-{slug}.png" in files
+    # Module universes render their docs pictures after the merge, so their own showcase counts as the docs phase.
+    has_docs = f"docs/roster-{slug}.png" in files or any(p.endswith("Showcase.swift") for p in mine)
 
     want = int(plan.get("cast", 0)) or cast or 1
     want_places = int(plan.get("places", 0)) or places or 1
