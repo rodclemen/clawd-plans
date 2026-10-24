@@ -557,6 +557,15 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Leviathan Maw: the old place warps column by column; the slit jumps as it spreads; fangs small in the window; snapped goo thin over Roman's lights.
 - Chuck's Rewrite: the page comes and goes as a crossfade; the hand is a mitten; the ball small in the window; the new chapter types very fast; body text tight.
 
+**Phase 6, polish (2026-10-24):** every weak spot above fixed, in thirteen commits on the branch, with before-and-after pictures for the owner. Left over, for the owner to judge:
+- Speed: The Road So Far now about 25 ms and Ghostfacers Cam about 29 ms a frame at 2560×1600 (were 56 and 79). The saver draws trips at the screen's point size (SaverView), so on a Retina screen the 1280×800 timings (all under 16 ms) are the real ones.
+- The Woman in White now wears a gown to the floor, four sets of toes under the hem (the guide's long-gown rule).
+- Garth can only look partly thin: Clawd's body is a fixed 20 px wide.
+- Chuck's Rewrite's new chapter is shorter so it types slower ("LET'S TRY THAT AGAIN. THEY ARRIVED. SAM NOTICED. DEAN DID NOT."); "THE WRITER WAS PLEASED." is gone.
+- The Devil's Trap's fifth sigil (two hooks either side of a bar) reads clearly now and isn't a real symbol.
+- The Impala is drawn at companion scale in the app, so its new arsenal and grille are about half the size of the zoomed pictures.
+- Smaller notes: Amara's mist ribbons thin at 1×; War's gold ring a few pixels; Lucifer's wing rim greyish pink; Gordon's stubble dotted; Harry's hair colour near Dean's (shapes differ); Jo's dartboard segments noisy; the Rewrite's fingers a little glove-like; Apocalypse World's overpass gap can sit under a name tag; the wing-shadow helper keeps clear of a hard-coded reach table, to update if a new angel raises a prop further out.
+
 ## Character audit (phase 3, 2026-10-24)
 
 Every weapon, shot, magic family, motion, signature and callout checked against the Cast tables and the caster table. Everything matches except:
