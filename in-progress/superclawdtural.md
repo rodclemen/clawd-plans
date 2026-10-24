@@ -534,6 +534,14 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Chuck's House: plain wall between the tall bookcases. Orchard: scarecrow small, Cain's veiled hat a grey box.
 - Sioux Falls: counter doors uniform, the attic wall one brown area. Moondoor: the right oak cut by the frame.
 
+**Phase 4, mechanics:**
+- The Impala: the arsenal is small at 1× (the shotgun mostly a stock); the shotgun propping the lid was dropped (it turned to noise); the wound-down windows are a 3-row slit; the trunk stays up for the whole boarding (a ride only gets `ramp`); the grille shows only as an edge.
+- Back from Hell: the pit's red glow is dim on dark; the tipping cross briefly reads as an X and vanishes in one frame; the fist is Clawd-orange for everyone, no sleeve; dirt specks are single pixels; the pit reaches about 4 rows under the feet (nothing clips it). Not checked on Sam, Bobby or Jack, on a ride, or with a coloured outline.
+- Drills: the tipped spray can reads a bit like a pistol; the nods and the step back are 1 to 2 px; the paint fades rather than being scuffed; the angels all share one set of moves; the trap reaches x 70 and row 50. The drill hides the held weapon by erasing x 41 and beyond while the can is out.
+- Wing shadows (HuntKit's `huntWingShadows`): next to the head they stop the app's outline being drawn, so the outline breaks where the wings meet the hair (the drill keeps a 1 px gap; the shared helper should too). Clawdstiel's flutter and signature wings are faint on a dark desktop; the drill adds a pale rim.
+- Clawdstiel's visit: the feathers show only where he left, not at the other end when he goes home.
+- Engine, for the owner: for a `.drives` ride the overlay draws a canvas `Ride.height + 1` tall and ignores `canvasHeight` (Overlay.swift, the second ride canvas), so Stranger Clawds' bikes, drawn two rows down on a taller canvas, may lose their bottom rows in the app.
+
 ## Character audit (phase 3, 2026-10-24)
 
 Every weapon, shot, magic family, motion, signature and callout checked against the Cast tables and the caster table. Everything matches except:
