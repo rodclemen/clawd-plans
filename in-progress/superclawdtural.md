@@ -541,7 +541,7 @@ Every weapon, shot, magic family, motion, signature and callout checked against 
 | Who | Plan | As drawn | Why |
 |---|---|---|---|
 | Michael | steady, white-gold | steady **thick** beam | owner asked for it to differ from Abaddon (phase 2) |
-| Abaddon | steady ray, red | the engine's new `grip`: her foe lifted, choked, in black smoke | owner chose an engine request (2026-10-24), built on main as e6e7c32 |
+| Abaddon | steady ray, red | the engine's new `grip`: her foe lifted and choked inside a pink and crimson coil, her orange fist out | owner chose an engine request (2026-10-24), built on main as d7eabd2 |
 | War | `rings`, slower | `rings`, normal speed | owner chose no engine request |
 | Bloody Mary | appears in a mirror | carries her standing mirror everywhere; her face swims up in it in the signature | needs owner's OK |
 | Gordon Walker | machete | machete, two small fangs show while he swings | a nod to "later a vampire"; needs owner's OK |
