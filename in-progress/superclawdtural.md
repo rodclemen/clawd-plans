@@ -542,6 +542,21 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Clawdstiel's visit: the feathers show only where he left, not at the other end when he goes home.
 - Engine, for the owner: for a `.drives` ride the overlay draws a canvas `Ride.height + 1` tall and ignores `canvasHeight` (Overlay.swift, the second ride canvas), so Stranger Clawds' bikes, drawn two rows down on a taller canvas, may lose their bottom rows in the app.
 
+**Phase 5, trips:**
+- Speed, first: a frame at a Retina screen saver's 2560×1600 takes Ghostfacers Cam about 71 ms and The Road So Far about 53 ms, more than any Stranger Clawds trip (15 to 45 ms, Flip the slowest). The other ten take 10 to 29 ms. Bring those two down.
+- The Road So Far: the title fills only 70% of the saver's width; the shared lettering's O reads like Ø at big sizes (HuntTrips.swift); every still opens on a washed-out flash frame; the yellow-eyed figure's hair reads as a bun; the burn starts with specks that look like a glitch.
+- Headlights: night onto a night place (the Road) is less dramatic; the beam's three steps show as rings.
+- Ghostfacers Cam: the ghost is cartoon-scream and her hair a flat block; NIGHT SHOT and LOW BATTERY are tiny in the window.
+- Salt and Burn: round billows can look like balls; orange-lit puffs under the flames like blobs.
+- Cold Spot: frost covers the window strip early; shards slide but don't turn; the breath fog is small.
+- Smoke Out: the funnel is a straight V in the window and the stream thin; red sparks like lava specks; the eyes tiny; the flash subtle over Hell.
+- Devil's Trap: sigils barely legible in the window; its glow leans neon.
+- Angel Light: the blown-up wing reads a little bat-like and the body hides behind it; the wings are stretched sideways in the window; the rays like a picket fence; bulbs small; on Heaven the dimming goes flat grey.
+- Hellhound: the last tears close fast; the eyes sit at fixed spots and can land on busy art.
+- Motel Wallpaper: the peel is a rolling bar, not a curl; the patterns are huge in the window.
+- Leviathan Maw: the old place warps column by column; the slit jumps as it spreads; fangs small in the window; snapped goo thin over Roman's lights.
+- Chuck's Rewrite: the page comes and goes as a crossfade; the hand is a mitten; the ball small in the window; the new chapter types very fast; body text tight.
+
 ## Character audit (phase 3, 2026-10-24)
 
 Every weapon, shot, magic family, motion, signature and callout checked against the Cast tables and the caster table. Everything matches except:
