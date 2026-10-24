@@ -9,9 +9,9 @@ everything is pushed.
   `main`, and NUMBERS has 9 as `shipped`.
 - **On `main` since, for the next release (4.0.1):** the screen saver's ticker says when it was an agent
   ("Dustin, Eleven's agent, finished and left: ..."), and the guide's line on counting version numbers.
-- **New version rule:** a universe raises the first number (5.0.0), a feature the middle one (4.1.0), anything else
-  the last one (4.0.1, and on past 4.0.9 to 4.0.10). Don't pick it: `scripts/next-version.sh` reads it from the
-  commits, and `./release.sh` with no version uses it. So `feat:` only for real features.
+- **New version rule (2026-10-25, replacing the 2026-10-23 one):** a universe raises the middle number (Superclawdtural,
+  4.1.0), anything else, features included, the last one (4.0.1, and on past 4.0.9 to 4.0.10). The first number stays
+  at 4. Don't pick it: `scripts/next-version.sh` reads it from the commits, and `./release.sh` with no version uses it.
 - **For trying trips:** Shift-double-click the window's scene (off the crew) goes to the next place now; in Full
   Screen, a Shift-click does the same for the screen saver's view. The transitions tool's `ART=1` renders trips the
   way the window draws them (art-size pictures).

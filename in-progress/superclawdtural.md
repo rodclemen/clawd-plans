@@ -401,7 +401,7 @@ Each phase builds, is checked with Preview sheets and `Tools/CheckUniverse/check
 5. **Transitions:** the twelve `HuntTrip`s, through the module's `transitions`.
 6. **Polish pass** (always before docs): every weak spot noted in phases 2 to 5, split by file and fixed in parallel, with before-and-after renders for your OK.
 7. **Trailer and hand-off** (guide phase 6, once it's complete): the trailer `Promo/HuntReel.swift` (`REEL=hunters`, storyboard first), the showcase `Promo/HuntShowcase.swift`, the module's `docs` (the desktop line-up and the social preview), `check.sh` with no ✗, and the changelog and README text in the hand-off.
-8. **The owner's steps, after the merge:** `CHANGELOG.md`, the README's universe section and table, `llms.txt`, the docs pictures (RenderDocs), the `cask` line, `NUMBERS` from `reserved` to `shipped`, and the release, 5.0.0 by the version rule. **Needs your OK first, since it's public:** pushing, a showcase repo, a cask, releasing.
+8. **The owner's steps, after the merge:** `CHANGELOG.md`, the README's universe section and table, `llms.txt`, the docs pictures (RenderDocs), the `cask` line, `NUMBERS` from `reserved` to `shipped`, and the release, 4.1.0 by the version rule. **Needs your OK first, since it's public:** pushing, a showcase repo, a cask, releasing.
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
@@ -573,7 +573,7 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Gordon's signature redone with the owner: the machete held level across his front, the whetstone in his fist, three strokes, sparks off the tip.
 - Found while rendering: the Open Road, Heaven's hill, the Sioux Falls attic and Angel Light could crash at odd sizes (an empty or backwards range). Fixed; every place now passes about 1,500 sizes and every trip about 140 sizes at 13 moments.
 - `check.sh Superclawdtural` (full) and `preview edges` both clean.
-- Left for the owner (phase 8): the changelog entry, the README section, `llms.txt`, RenderDocs, the cask line, `NUMBERS` to `shipped`, the video render, release 5.0.0.
+- Left for the owner (phase 8): the changelog entry, the README section, `llms.txt`, RenderDocs, the cask line, `NUMBERS` to `shipped`, the video render, release 4.1.0.
 
 ## Character audit (phase 3, 2026-10-24)
 
