@@ -117,7 +117,7 @@ Each entry gives the parody name, look, weapon or motion, signature move and cal
 | Azazel | `rings`, yellow |
 | Alastair | `rings`, white |
 | War | `rings`, deep red (normal speed: owner chose not to add a slow setting) |
-| Abaddon | steady ray, red |
+
 | Lilith | jagged, white |
 | Asmodeus | jagged, yellow |
 | Lucifer | jagged, white core, red glow |
@@ -541,7 +541,7 @@ Every weapon, shot, magic family, motion, signature and callout checked against 
 | Who | Plan | As drawn | Why |
 |---|---|---|---|
 | Michael | steady, white-gold | steady **thick** beam | owner asked for it to differ from Abaddon (phase 2) |
-| Abaddon | steady ray, red | red `waves` | same; her telekinesis as pulsing arcs |
+| Abaddon | steady ray, red | the engine's new `grip`: her foe lifted, choked, in black smoke | owner chose an engine request (2026-10-24), built on main as e6e7c32 |
 | War | `rings`, slower | `rings`, normal speed | owner chose no engine request |
 | Bloody Mary | appears in a mirror | carries her standing mirror everywhere; her face swims up in it in the signature | needs owner's OK |
 | Gordon Walker | machete | machete, two small fangs show while he swings | a nod to "later a vampire"; needs owner's OK |
