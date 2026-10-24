@@ -517,3 +517,33 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Singer Salvage: the tall car stacks can look as if they float.
 - Stull Cemetery: clouds a little bubbly; the burning grave reads like a campfire.
 - Heaven: the white light mostly shows on the screen saver; the tall green rise is a plain ellipse.
+
+**Phase 3, characters:**
+- Rufus: cardigan busy, shirt V reads as a bib. Garth: can't look "very thin", buzz cut like a cap; Mr. Fizzles sits above the hand. Donna, Jody, Claire: hair as helmets; Claire's hood a grey lump. Alex's pistol close to Mary's.
+- Ed: camcorder small and close in tone to his face. Harry: signature only lights; mop close to Pamela's curls. Frank: phone stack small. Benny: hair tufts read as ear muffs. Missouri: the swat has no target. Pamela: curls a round afro.
+- Becky: book small, hair close to Sam's. Balthaclawds: wine glass tiny. Mick: pocket square a blob. Tessa: hair hugs her face like a hood. Miracle: the spin is a flip, not quite tail-chasing.
+- Amara: mist reads as scattered puffs. Eve: mane like a hood, the monster 7×4. Gadreel: jacket busy. Billie: hourglass small. Raphael: wing shadows faint.
+- Ketch: hand covers the tie. Gordon: buzz cut like a headband, whetstone hand floats. Bela: bob a helmet. The Alpha: sideburns crowd the eyes, collar lost on the coat. Bloody Mary: hair dome reads as a hood. The Woman in White: reads a bit like a child.
+- The Djinn: tattoos over the face hide it; reads as a pattern block. The Clown: wig is most of the sprite. Hookman: legs hidden by the coat. Shapeshifter: silver eyes subtle. Hellhound: leg pairs merge. Demon Smoke: wisps too faint.
+
+**Phase 3, places:**
+- The Open Road: the Impala's back end reads like a cabinet at window size; guns in the trunk half-read.
+- The Empty: the window strip is the sparsest place (on purpose, but check). Purgatory: mist bands stripy, canopy forks at one height.
+- Lawrence: the lawn a flat band. Asylum: ceiling beams thin. Diner: stools bright in the floor band, pie case small.
+- Roman: goo small at window size. Apocalypse: the overpass break hard to see.
+- Chuck's House: plain wall between the tall bookcases. Orchard: scarecrow small, Cain's veiled hat a grey box.
+- Sioux Falls: counter doors uniform, the attic wall one brown area. Moondoor: the right oak cut by the frame.
+
+## Character audit (phase 3, 2026-10-24)
+
+Every weapon, shot, magic family, motion, signature and callout checked against the Cast tables and the caster table. Everything matches except:
+
+| Who | Plan | As drawn | Why |
+|---|---|---|---|
+| Michael | steady, white-gold | steady **thick** beam | owner asked for it to differ from Abaddon (phase 2) |
+| Abaddon | steady ray, red | red `waves` | same; her telekinesis as pulsing arcs |
+| War | `rings`, slower | `rings`, normal speed | owner chose no engine request |
+| Bloody Mary | appears in a mirror | carries her standing mirror everywhere; her face swims up in it in the signature | needs owner's OK |
+| Gordon Walker | machete | machete, two small fangs show while he swings | a nod to "later a vampire"; needs owner's OK |
+| The Scarecrow | on its post | carries his post and crossbar with him | how "on its post" reads on a walker; needs owner's OK |
+| Hellhound | shadow dog | solid black (not see-through), never sits | so it isn't a copy of Juliet; needs owner's OK |
