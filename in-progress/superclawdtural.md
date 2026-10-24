@@ -566,6 +566,15 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - The Impala is drawn at companion scale in the app, so its new arsenal and grille are about half the size of the zoomed pictures.
 - Smaller notes: Amara's mist ribbons thin at 1×; War's gold ring a few pixels; Lucifer's wing rim greyish pink; Gordon's stubble dotted; Harry's hair colour near Dean's (shapes differ); Jo's dartboard segments noisy; the Rewrite's fingers a little glove-like; Apocalypse World's overpass gap can sit under a name tag; the wing-shadow helper keeps clear of a hard-coded reach table, to update if a new angel raises a prop further out.
 
+**Phase 7, trailer and hand-off (2026-10-24):** done and pushed on `superclawdtural`, waiting for the merge.
+- The trailer (`Promo/HuntReel.swift`, `REEL=hunters`, 48.7 s): The Road So Far (the app's own trip, slowed, six stills, NOW, a plunge into the headlights), then Meg smoked out at the Roadhouse: the rug kicked aside, the devil's trap, Sam's exorcism, the smoke down into the trap, Dean's pie, "Saving people. Hunting things." Storyboard OK'd by the owner. The video and the 720p cut aren't rendered yet: no ffmpeg on the build machine.
+- The showcase (`Promo/HuntShowcase.swift`): the icon (Dean against Clawdley at the crossroads), strips of the Impala, Back from Hell, Clawdstiel's visit, "Bitch." "Jerk.", both drills, Abaddon's grip and the trips.
+- The module's docs: the desktop line-up (Clawdley vs Dean, Sam vs Ruby, Clawdstiel vs Zachariah, Bobby vs Abaddon, Jack cheering) and the social preview ("Saving people. Hunting bugs. The family business.").
+- Gordon's signature redone with the owner: the machete held level across his front, the whetstone in his fist, three strokes, sparks off the tip.
+- Found while rendering: the Open Road, Heaven's hill, the Sioux Falls attic and Angel Light could crash at odd sizes (an empty or backwards range). Fixed; every place now passes about 1,500 sizes and every trip about 140 sizes at 13 moments.
+- `check.sh Superclawdtural` (full) and `preview edges` both clean.
+- Left for the owner (phase 8): the changelog entry, the README section, `llms.txt`, RenderDocs, the cask line, `NUMBERS` to `shipped`, the video render, release 5.0.0.
+
 ## Character audit (phase 3, 2026-10-24)
 
 Every weapon, shot, magic family, motion, signature and callout checked against the Cast tables and the caster table. Everything matches except:
