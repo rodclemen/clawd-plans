@@ -23,7 +23,7 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 Every released universe redrawn to the detail bar the Star Clawds refresh set. Done: what was below the bar was redrawn, the rest was audited and left as it was.
 
-**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 23 Oct</sub>
+**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 24 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
