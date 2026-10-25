@@ -456,6 +456,22 @@ Spots to watch from the start:
 - Orkko's eyes in the dark under his hat; Loo-Kee's size as an agent.
 - Light Hope and Horde Prime: neither has a body, so each must still read as a character on Clawd's legs (a rainbow robe; a smoke cloak with the hand).
 
+
+**Weak spots so far (phase 2):**
+- Castle Greyskull: brow arches are subtle.
+- Tri-Clawdps's dome helmet reads a bit like a turtle shell; the Tri-Clawdps and Mer-Clawd scabbards are a plain stick.
+- Clawdful's pincers read as paddles. Clawdfist's silver fist (6x6) isn't huge; it must win against Jitsu's gold hand.
+- Beast Clawd's 1 px whip gets lost when swung up.
+- Spirit and Swift Wind are white inside a white outline, so their edges fade; Swift Wind's rear is jaggy.
+- Glimmer is the plainest rebel. She-Clawd and Adorra's white tunics read a little like beards. Kowl's folded wings read as one bar.
+- Battle Kat's rear is stair-stepped, his saddle small; Cringer's eye-covering paws are blobs.
+- The Sorceress's folded wing barely shows; Man-At-Clawds' spanner merges with his gauntlet.
+- Man-E-Clawds's faces are small; Ram Clawd's horns read as ear muffs; Stratos's white hair a little like a helmet.
+- Hordakk's cowl ribs can read as hair; Mantenna's belly bands are plank-like; Scorpia's far pincer is hard to read.
+- Whispering Woods is light behind the crew in the window; its blossoms read as sparkles.
+- Fright Zone buttresses stair-step, near dead trees thin. Crystal Castle aurora faint with a hard top.
+- Snake Mountain's snake head is cute rather than menacing; the palace vault is plain; the workshop's side bays repeat; the jungle crown is bright against the canopy.
+
 ## Verification
 
 - **Build:** `./build.sh`. The cast-size assert in `Overlay.swift` catches a wrong `heroCount` or `villainCount`. Check `./build.sh --release <version>` before calling a phase done (dense drawing code can trip Swift's type-checker).
