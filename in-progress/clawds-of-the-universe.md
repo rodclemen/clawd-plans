@@ -1,7 +1,7 @@
 # Plan: a new universe, Clawds of the Universe (He-Man and the Masters of the Universe)
 <!-- track: repo=rodclemen/clawd-clash branch=clawds-of-the-universe folder=Eternia title="Clawds of the Universe" source="He-Man and She-Ra" cast=85 places=21 -->
 
-(The file keeps its old name, `masters-of-the-clawdiverse.md`, so links to it still work. The universe is called **Clawds of the Universe**.)
+
 
 ## Context
 
@@ -16,8 +16,8 @@ Clawd Clash has seven universes: Star Clawds, Marvelous Clawds, Detective Clawds
   - `case eternia` with key `"eternia"`.
   - Folder `Sources/App/Universes/Eternia/`, file prefix `Eternia…`.
   - Branch `clawds-of-the-universe`. Trailer reel `REEL=eternia`.
-- **Raw value:** the next free one when its build starts, checked against main and the open branches (Clawd of the Rings is `middleEarth = 6` on main, and the `buffy` branch also uses 6 today); ids are rawValue*1000 and permanent.
-- **Naming style:** light puns on the on-screen names (He-Clawd, Skeleclawd, Man-At-Claws, Trap Claw, Tri-Klawps). Where no pun comes naturally, a near-spelling or the plain name (Bow, Glimmer, Kowl, Cringer). Actors' names are never used.
+- **Number: 11** (reserved in NUMBERS on 2026-10-25, c8d1865); ids are 11000 and up, permanent.
+- **Naming style:** light puns on the on-screen names (He-Clawd, Skeleclawd, Man-At-Clawds, Trap Clawd, Tri-Clawdps). Where no pun comes naturally, a near-spelling or the plain name (Bow, Glimmer, Kowl, Cringer). Actors' names are never used.
 - **Size:** **85 characters**: 44 heroes including HEM and one agent-only, and 41 villains including 4 agent-only. Plus **21 places** and **12 transitions**.
 - **Tone:** the show is already made for children, so very little needs leaving out. Fisto is renamed (his real name reads as adult slang); Mosquitor (a blood-sucker) and the cruelty of Vultak's Horde Zoo are left out. Anything else is just a matter of keeping fights cartoonish, which is how Filmation drew them anyway: nobody is ever hurt by a sword.
 
@@ -49,13 +49,13 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **He-Clawd / She-Clawd:** She-Clawd has the long blond hair, **winged golden tiara, red cape** and white tunic.
 - **The scaly greens:** Mer-Clawd (teal-green, fish fins, blue armour), Kobra Khan (bright green, **yellow cobra hood**), Whiplash (olive-brown, long gator snout and **orange belly**, spear), Rattlor (**red-orange**, yellow belly, rattle tail), Tung Lashor (**purple**, long pink tongue), King Hiss (purple-and-gold armour, snake heads round his waist), Saurod (**grey-green** lizard in **silver plate armour**, sparks at the mouth).
 - **The beasts:** Beast Clawd (**orange-red fur, blue face**), Grizzlor (dark brown shag, **Horde purple chest armour, red eyes**), Battle Kat (**green tiger, orange stripes, red helmet and saddle**), Cringer (the same tiger, no helmet, ears down), Panthor (**dark purple panther, gold saddle**). Katra no longer turns into a panther, so Panthor is the only purple cat.
-- **The big hands:** Clawfist's **silver** right fist on blue and red armour; Jitsu's **gold** chopping hand on orange and black.
+- **The big hands:** Clawdfist's **silver** right fist on blue and red armour; Jitsu's **gold** chopping hand on orange and black.
 - **The film's mercenaries:** Blade (**black and silver**, a long sword), Karg (**wild white mane**, a hook for a hand, black fur cloak). Neither is a skull, so neither reads as Skeleclawd.
 - **The fliers:** Stratos (grey fur, **blue wing-arms, red backpack**), Vultak (bald pink vulture head, black wings), Kowl (round grey koala-owl, little), Buzz-Off (yellow and black bee), Flutterina (butterfly wings), Swift Wind (white winged horse).
 
 **Against the other seven universes** (they all meet in Clawd Royale):
 - **Thorr** and **Herakles** (Marvel) and **Captain Thunderbolt** (DC, red and gold with lightning): He-Clawd's lightning is white-gold from the sword tip, and he's bronze and blond with no cape.
-- **Cyclopz** (Marvel, red visor): Tri-Klawps is green with a **three-eyed rotating drum** on his helmet.
+- **Cyclopz** (Marvel, red visor): Tri-Clawdps is green with a **three-eyed rotating drum** on his helmet.
 - **The Beest** (Marvel, blue fur) and **Sabreclawd**: Beast Clawd is orange-red with a blue face.
 - **Chewbacca** (Star Clawds): Grizzlor needs his Horde armour and red eyes to stay apart from him.
 - **Black Panthah** and **Black Kat** (Marvel): Katra's red cat-mask headdress and long black hair. She stays a woman in a mask throughout; no panther form.
@@ -67,51 +67,16 @@ Half the heroic cast are muscled men in furry briefs and a harness, and many vil
 - **The Thingamajig** (Marvel, orange rock): Stonedar is grey-brown stone.
 - **Red Skulk** (Marvel): Skeleclawd's skull is **yellow under a purple hood**, his body blue.
 - **The Emperor's Royal Guards** (Star Clawds, red robes): Shadow Weaver's red robe has a black face and glowing eyes, and she casts.
-- **Names:** DC already has a **"Sorceress"** and **"The Leech"**, and Marvel has **"The Scorpyon"** and **"Iron Fyst"**. So it's *The Sorceress of Greyskull*, *Leach*, *Scorpia* and *Clawfist*.
+- **Names:** DC already has a **"Sorceress"** and **"The Leech"**, and Marvel has **"The Scorpyon"** and **"Iron Fyst"**. So it's *The Sorceress of Greyskull*, *Leach*, *Scorpia* and *Clawdfist*.
 
-## How a universe plugs in (checked against the code on 2026-10-17, main at d270b63)
+## How a universe plugs in (the folder flow, since 2026-10-19)
 
-**New code: `Sources/App/Universes/Eternia/`**
-- `EterniaRoster.swift`:
-  - `enum EterniaHero` and `enum EterniaVillain`, append-only, with `hem` as the last hero.
-  - The persona dictionaries, `.reduce([.hem: hemPersona(.eternia)])`.
-  - `Location.eterniaHome(of:)`, `eterniaNemeses`, the ride closure, `let eterniaTheme = Theme(...)`.
-  - The `static let` place keys, and `let eterniaPlaces` merged from the Places files.
-- `Art/EterniaHeroes1…N.swift` and `Art/EterniaVillains1…N.swift`, about 8–10 personas per file, in the pattern of `ClawdbergHeroes1.swift`. Shared helpers (the harness, the furry briefs, the Horde emblem) go in `EterniaKit.swift` with `eternia`-prefixed names.
-- `Places/EterniaScenes1…N.swift` as `let eterniaScenesN: [Location: Place]`.
-- `EterniaIcon.swift`: the menu bar icon, 28×26, colour and mono. Castle Greyskull's skull face, or the Power Sword with a spark at its tip.
-- `EterniaRides.swift`: the Wind Raider, Swift Wind, the Roton and the Horde skiff (see Mechanics).
-- `EterniaPower.swift`: the transformation on compaction (see Mechanics).
-- `EterniaDrills.swift`: bespoke drills.
-- `EterniaWipes.swift`: the transitions, last.
+Everything is in `Sources/App/Universes/Eternia/`, started from the template with `Tools/new-universe.sh Eternia Eternia eternia "Clawds of the Universe" 11` (2026-10-25). Nothing outside the folder changes except `NUMBERS`; the guide's Step 7 and "Your folder" have the layout (`EterniaFacts`, `EterniaRoster`, `EterniaUniverse`, `Art/`, `Places/`, `Promo/`). Shared drawing helpers are in `EterniaKit.swift`.
 
-**Wiring into the existing code.** Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎. Copy what `clawdberg` did at each spot.
-- **`Sources/Shared/Universe.swift`:**
-  - `:8–40`: the case, `key`, `title`, `villainCount`, `heroCount`.
-  - `:50–61`: `agentOnly` (Loo-Kee, Imp, the Horde Trooper, Screeech, the Dark Trooper: table rows hero #42 and villains #34, #35, #36 and #41, which are the 0-based enum ids hero 41 and villains 33, 34, 35 and 40).
-  - `:65`: `claudeSide` (Claude plays the heroes, the default `false`).
-  - `:68`: `rivals` (Skeleclawd and Hordakk, see Nemeses). Today it's a one-liner, `self == .starWars ? [0, 1] : []`, so it becomes a `switch` or gains an Eternia branch.
-  - `:70–78`: `guises` gets the four Eternia pairs (see Mechanics). Today it's `guard self == .middleEarth else { return [] }`, so it becomes a `switch`, and its doc comment gains the Eternia pairs. The `Roster`'s union at `:141` and `ruledOut(by:)` at `:143–145` pick them up with nothing added.
-  - `:100–102`: next to `regenerations`, a one-line flag, `var guisesSwapOnCompaction: Bool { self == .eternia }`, with a doc comment like the others (see Mechanics).
-- ⚠︎ **`Sources/Shared/StatusStore.swift`:**
-  - `:336–349` (`PreCompact`): a transformation branch after the abductee one (`:341`), before the regeneration lookup (`:342`).
-  - Nothing for the secret identity rule: the casting already keeps to `guises` (see Mechanics).
-  - `"Stop"` (`:350`): the moral's roll (see Mechanics).
-- **`Sources/App/Theme.swift:40`:** `Theme.of`.
-- **`Sources/App/Locations.swift:72`:** `.merging(eterniaPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift:42`:** `pick` now lists every universe explicitly, and Star Clawds is the only one left on plain wipes, so in phase 1 Eternia joins its line: `case .starWars, .eternia: return nil`. In phase 5 it comes out of that line, and a `.eternia(EterniaTrip)` case goes in the enum (`:8–13`), `duration` (`:15`), `draw` (`:27`) and `pick` (`:40`), plus the doc comment (`:3–5`).
-- **`Sources/App/Universes/Hem.swift:29, 104, 119, 146, 172, 228`:** HEM's costume in every switch (below).
-- **`Sources/App/Rides.swift`:** the rides (phase 4).
-- **`Sources/Saver/SaverView.swift`:** nothing to add. The Options list (`:89`) and the trip choice (`:208`) build themselves from `Universe.offered`.
-- ⚠︎ **`Sources/App/Drills.swift:54`** (the meditation guard: no, see Mechanics) and **`:488`** (the bespoke drills merge).
-- ⚠︎ **`Sources/App/Overlay.swift:868`:** five Playground prompts, a `case .eternia:` in the `prompts` switch. Lines 1143 and 1271 show how clawdberg hooked its set piece and its OutaTime effect into the tick; the transformation effect and Skeleclawd's retreat hook in the same places. The moral's speech bubble reuses the callout bubble at `:1339`.
-- ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`:** decide whether Eternia joins each universe-specific `if`.
-- ⚠︎ **`HookInstaller.swift`:** nothing new. The transformation reuses Doctor Clawd's `PreCompact` hook and the moral reuses `Stop`, both already registered.
-- **Clawd Royale** picks up the cast and places through `Universe.allCases`. Check the menu bar icon and arch-enemies when a scene is an Eternia place.
-- **Tools:**
-  - `Tools/Preview/main.swift:64–120`: batch names (`eterniaHeroes1…`), the universe lookup and the enum lookups.
-  - `Tools/Transitions/main.swift:7, 15, 133`.
-  - Phase 6: `Tools/RenderPromo` (`REEL=eternia`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
+**Engine requests** (built on `main` as their own commits, before the folder uses them):
+- **The transformation on compaction.** The facts' `guises` already keep each pair off the stage together (Clawd of the Rings uses them). What's missing is a compaction that swaps a leader for its other guise, with the guard against the other self being on stage (see Mechanics). `UniverseCompaction` has only `.regenerate(order:)` (one cycle) and `.away`, so this is a new kind, something like `.transform` over the guises.
+- **The moral on `Stop`:** a roll in the hook and a line in the done state (see Mechanics).
+- Skeleclawd's retreat may fit `StageQuirks` (`afterDuel`); check before asking.
 
 ## Cast
 
@@ -120,8 +85,8 @@ Each entry gives the parody name, its look as pixels, its weapon or motion, and 
 - **`.blaster`** is for the few who shoot: Bow's arrows, Hordak's arm cannon, Trap Jaw's arm laser, Mantenna's eye beams, Saurod's mouth sparks, Roboto, Zodac, the Horde Troopers and the Dark Troopers. Frosta (`.ice`), Granamyr (`.fire`), Netossa's net (`.thrown`) and Perfuma's flowers (`.thrown`) use other shot styles.
 - **`.lightning` + `Magic`** is for the sorcerers. Every caster gets its own family and colour (table below), so no two look alike here or elsewhere.
 - **`motion: .fly`** for Stratos, Buzz-Off, Swift Wind, Kowl, Flutterina, Vultak, Granamyr and Queen Angella; **`.hover`** for Orkko, Light Hope and Horde Prime; **`.swing`** for Webstor.
-- **`armoured: true`** for robots, rock and plate: Roboto, Multi-Bot, Clawful, Stonedar, Saurod, the Horde Trooper and the Dark Trooper.
-- **`bulk`** for Battle Kat, Panthor, Granamyr, Ram Clawd, Two Bad and Clawful.
+- **`armoured: true`** for robots, rock and plate: Roboto, Multi-Bot, Clawdful, Stonedar, Saurod, the Horde Trooper and the Dark Trooper.
+- **`bulk`** for Battle Kat, Panthor, Granamyr, Ram Clawd, Two Bad and Clawdful.
 
 ### Magic, one look per caster
 
@@ -132,12 +97,12 @@ Each entry gives the parody name, its look as pixels, its weapon or motion, and 
 | Horde Prime | jagged | acid green / black | a bolt out of the smoke round his hand |
 | Evil-Lynn | spell | teal / deep blue | a twinkling ribbon from the orb on her staff |
 | Orkko | spell | lemon / magenta | a sparkly ribbon that ends in a puff of the wrong thing |
-| Clawstaspella | rings | lilac / violet | hypnotic rings, she spins as she casts |
+| Clawdstaspella | rings | lilac / violet | hypnotic rings, she spins as she casts |
 | Queen Angella | rings | white / gold | golden rings from her wing-tips |
 | The Sorceress of Greyskull | steady | white / sky blue | a calm, steady ray |
 | Glimmer | steady | white / pink | a bright ray of light, a glow at the hand |
 | Shokoti | steady | gold / black | a wavering gold ray |
-| Sy-Klawne | waves | white / pale blue | wind arcs as he spins |
+| Sy-Clawdne | waves | white / pale blue | wind arcs as he spins |
 | Kobra Khan | waves | pale green / green | sleep mist pulsing out of his hood |
 | Mermista | waves | aqua / blue | water arcs |
 | Shadow Weaver | waves | dark crimson / black | shadow pulses from her sleeves |
@@ -158,19 +123,19 @@ Check every colour against the other seven universes' casters (`magicVariants`, 
 | 4 | Battle Kat (Battle Cat) | green tiger, orange stripes, red helmet and saddle | claws (`.saber`), `bulk` | rears and roars |
 | 5 | Cringer | the same green tiger, no armour, ears flat | none | covers his eyes with both paws and trembles |
 | 6 | Teelah (Teela) | auburn ponytail, white and gold, snake-crest headpiece | staff (`.saber`) | twirls her staff and plants it |
-| 7 | Man-At-Claws (Man-At-Arms) | moustache, orange helmet, green and orange armour | mace (`.saber`) | pulls out a spanner and tinkers with his gauntlet; sparks |
+| 7 | Man-At-Clawds (Man-At-Arms) | moustache, orange helmet, green and orange armour | mace (`.saber`) | pulls out a spanner and tinkers with his gauntlet; sparks |
 | 8 | The Sorceress of Greyskull | white feathered falcon costume, falcon headdress, wings | `steady`, white/sky blue | spreads her wings, becomes Zoar the falcon for a beat, and back |
 | 9 | King Randor | crown, brown beard, blue and gold royal robe | sword (`.saber`) | raises his sceptre (holding court) |
 | 10 | Queen Marlena | crown, long gown | none | puts on her old astronaut's helmet (she crashed on Eternia from Earth) |
 | 11 | Stratos | grey fur, blue feathered wing-arms, red backpack, goggles | fists (`.saber`), `.fly` | flaps up, hangs in the air, lands |
 | 12 | Ram Clawd (Ram Man) | short, red-brown ram helmet, green armour | headbutt and axe (`.saber`), `bulk` | crouches and springs, head first |
-| 13 | Man-E-Claws (Man-E-Faces) | helmet with a turning drum of faces, red and green armour | fists (`.saber`) | turns his faces: man → robot → monster → man |
+| 13 | Man-E-Clawds (Man-E-Faces) | helmet with a turning drum of faces, red and green armour | fists (`.saber`) | turns his faces: man → robot → monster → man |
 | 14 | Mekaneck | blue armour, orange body, periscope visor | club (`.saber`) | his neck telescopes up, looks round, comes down |
 | 15 | Buzz-Off | yellow and black bee, clear wings, antennae | axe (`.saber`), `.fly` | buzzes a little loop |
-| 16 | Clawfist (Fisto) | big black beard, huge silver right fist, blue and red armour | the fist (`.saber`) | thumps his metal fist into his palm |
+| 16 | Clawdfist (Fisto) | big black beard, huge silver right fist, blue and red armour | the fist (`.saber`) | thumps his metal fist into his palm |
 | 17 | Roboto | robot with a see-through chest of gears, snapping jaw | arm laser (`.blaster`, cyan energy), `armoured` | his chest gears spin faster |
 | 18 | Moss Clawd (Moss Man) | shaggy green moss, brown face | vine lash (`.saber`) | a flower blooms on top of his head |
-| 19 | Sy-Klawne (Sy-Klone) | blue and red armour, yellow radar fin on his head | whirlwind (`waves`, white/pale blue) | spins like a top |
+| 19 | Sy-Clawdne (Sy-Klone) | blue and red armour, yellow radar fin on his head | whirlwind (`waves`, white/pale blue) | spins like a top |
 | 20 | Snout Spout | elephant-trunk robot head, blue and red fire-fighter armour | water jet (`.blaster`, white/blue beam) | trumpets a fountain into the air |
 | 21 | Zodac | the Cosmic Enforcer: red armour, black helmet, beard | laser pistol (`.blaster`, violet energy) | sits down in mid-air on his floating cosmic chair |
 | 22 | Granamyr | old grey-green dragon, long white beard, horns | breath (`.blaster`, `.fire`), `.fly`, `bulk` | puffs a smoke ring, unimpressed |
@@ -186,7 +151,7 @@ Check every colour against the other seven universes' casters (`magicVariants`, 
 | 27 | Bow | moustache, red shirt with a heart, blue cape | bow (`.blaster`, `.arrow`) | plucks his bow like a harp |
 | 28 | Glimmer | pink and purple, long dark-red hair | `steady`, white/pink | lights a glowing ball of light in her palm |
 | 29 | Queen Angella | white feathered wings, lilac gown, tall crown | `rings`, white/gold, `.fly` | folds and opens her wings |
-| 30 | Clawstaspella (Castaspella) | purple robe, tall stiff collar, gold circlet | `rings`, lilac/violet | the hypno-spin: twirls on the spot |
+| 30 | Clawdstaspella (Castaspella) | purple robe, tall stiff collar, gold circlet | `rings`, lilac/violet | the hypno-spin: twirls on the spot |
 | 31 | Frosta | white and ice-blue gown, icicle crown, white hair | ice (`.blaster`, `.ice`) | freezes the floor and skates a little circle |
 | 32 | Madame Razz | small Twigget witch, purple pointed hat, green shawl, Broom at her side | `touch`, pink/purple | climbs on Broom, wobbles, falls off |
 | 33 | Kowl | round grey koala-owl, big ears, little wings | none, `.fly` | folds his arms and rolls his eyes |
@@ -222,7 +187,7 @@ Callouts (`Persona.callout`) for the leads:
 - Cringer: "Do I have to?"
 - Battle Kat: "Rrrowr!"
 - Teelah: "Where's Adam?" (she's always asking, which is the joke)
-- Man-At-Claws: "Leave it to me."
+- Man-At-Clawds: "Leave it to me."
 - The Sorceress of Greyskull: "Hurry, He-Clawd!"
 - Bow: "Here's Bow!"
 - Kowl: "Typical."
@@ -237,11 +202,11 @@ Callouts (`Persona.callout`) for the leads:
 | 1 | Skeleclawd (Skeletor) | yellow skull face, purple hood, blue body, black harness | Havoc Staff (`jagged`, yellow/violet) | shakes his fist and cackles, staff raised |
 | 2 | Evil-Lynn (Evil-Lyn) | pale, black skullcap with fins, blue and purple robes | orb staff (`spell`, teal/deep blue) | gazes into the orb on her staff; it swirls |
 | 3 | Beast Clawd (Beast Man) | orange-red fur, blue face, blue armour pieces | whip (`.saber`) | cracks the whip and roars |
-| 4 | Trap Claw (Trap Jaw) | blue skin, metal jaw, black helmet, purple, a hook-arm | arm laser (`.blaster`, orange/yellow energy, `handGun: false`) | chomps his metal jaw open and shut |
-| 5 | Tri-Klawps (Tri-Klops) | green armour, helmet with a turning drum of three eyes | sword (`.saber`) | the eye drum turns, each eye glowing as it comes round |
+| 4 | Trap Clawd (Trap Jaw) | blue skin, metal jaw, black helmet, purple, a hook-arm | arm laser (`.blaster`, orange/yellow energy, `handGun: false`) | chomps his metal jaw open and shut |
+| 5 | Tri-Clawdps (Tri-Klops) | green armour, helmet with a turning drum of three eyes | sword (`.saber`) | the eye drum turns, each eye glowing as it comes round |
 | 6 | Mer-Clawd (Mer-Man) | teal-green fish face, fins, blue armour | sword (`.saber`) | a fish leaps past behind him |
 | 7 | Kobra Khan | bright green, yellow cobra hood | sleep mist (`waves`, pale green) | his hood flares open |
-| 8 | Clawful | big red crab, yellow boots | claws (`.saber`), `armoured`, `bulk` | snaps both claws |
+| 8 | Clawdful | big red crab, yellow boots | claws (`.saber`), `armoured`, `bulk` | snaps both claws |
 | 9 | Webstor | blue skin, orange armour, spider pack | grapple line (`.blaster`, `.web`), `.swing` | dangles upside down on a line |
 | 10 | Whiplash | olive-brown alligator, long snout, orange belly | spear and tail (`.saber`) | swishes his tail |
 | 11 | Spikor | blue-purple, orange spikes, trident arm | trident (`.saber`) | his spikes stand up all over |
@@ -309,22 +274,22 @@ Each pair faces off on the same stage:
 - Prince Addam ↔ Beast Clawd
 - Princess Adorra ↔ Katra
 - Teelah ↔ Evil-Lynn
-- Man-At-Claws ↔ Trap Claw
+- Man-At-Clawds ↔ Trap Clawd
 - Battle Kat ↔ Panthor
 - Orkko ↔ Count Marzo
 - The Sorceress of Greyskull ↔ Shokoti
-- Mekaneck ↔ Tri-Klawps
-- Man-E-Claws ↔ Faker
-- Ram Clawd ↔ Clawful
+- Mekaneck ↔ Tri-Clawdps
+- Man-E-Clawds ↔ Faker
+- Ram Clawd ↔ Clawdful
 - Buzz-Off ↔ Webstor
-- Clawfist ↔ Jitsu (the fist and the chopping hand; their toys were sold as rivals)
+- Clawdfist ↔ Jitsu (the fist and the chopping hand; their toys were sold as rivals)
 - Moss Clawd ↔ Stinkor (the toys shared a mould)
 - Roboto ↔ Multi-Bot
 - King Randor ↔ King Hiss
 - Stratos ↔ Vultak
 - Mermista ↔ Mer-Clawd
 - Sea Hawk ↔ Octavia
-- Clawstaspella ↔ Shadow Weaver (once friends)
+- Clawdstaspella ↔ Shadow Weaver (once friends)
 - Bow ↔ Mantenna
 - Frosta ↔ Scorpia
 - Glimmer ↔ Entrapta
@@ -348,7 +313,7 @@ Each is a `Place` with a still picture and a moving layer, plus tall-canvas extr
 | 1 | **Castle Greyskull** (`castleGreyskull`), the default | the skull-faced castle over a chasm, the jawbridge down, a purple-orange Filmation dusk | green mist curling up out of the chasm; the jawbridge chains sway | the full tower and its twin turrets; Zoar circling; distant lightning |
 | 2 | **The Sorceress's chamber** (`greyskullChamber`) | the stone throne room inside Greyskull, the glowing pool, falcon carvings | the pool's light ripples on the walls | the vaulted ceiling and its hanging braziers |
 | 3 | **The Royal Palace of Eternos** (`eterniaPalace`) | the throne room: two thrones, red banners, guards with spears | torches flicker, banners ripple | the palace towers outside the tall windows, a Wind Raider passing |
-| 4 | **Man-At-Claws's workshop** (`eterniaWorkshop`) | benches, half-built gadgets, a Battle Ram on blocks | welding sparks, a cog turning | racks of tools and a skylight |
+| 4 | **Man-At-Clawds's workshop** (`eterniaWorkshop`) | benches, half-built gadgets, a Battle Ram on blocks | welding sparks, a cog turning | racks of tools and a skylight |
 | 5 | **Snake Mountain** (`snakeMountain`) | the peak with a giant stone snake coiled round it, its mouth the door | the snake's eyes glow on and off; bats | the whole mountain and the snake's head at the top, a red sky |
 | 6 | **The Vine Jungle** (`eterniaVineJungle`) | hanging vines, giant ferns | vines sway, fireflies drift | the canopy far overhead |
 | 7 | **The Mystic Mountains** (`eterniaMysticMountains`) | jagged violet peaks | rocks float and bob in the air | more floating peaks up into a green sky |
@@ -371,11 +336,11 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
 
 **Homes:**
 - He-Clawd, the Sorceress, Battle Kat: Castle Greyskull (the Sorceress in her chamber).
-- The royal family, Addam, Cringer, Teelah, Orkko and the Masters with no realm: the Royal Palace. Man-At-Claws, Roboto and Snout Spout: the workshop.
-- Stratos: Avion. Buzz-Off: Andreenos. Granamyr: Darksmoke. Moss Clawd, Clawfist: the Vine Jungle. Zodac, Sy-Klawne: the Mystic Mountains. Orkko also counts Trolla as home.
+- The royal family, Addam, Cringer, Teelah, Orkko and the Masters with no realm: the Royal Palace. Man-At-Clawds, Roboto and Snout Spout: the workshop.
+- Stratos: Avion. Buzz-Off: Andreenos. Granamyr: Darksmoke. Moss Clawd, Clawdfist: the Vine Jungle. Zodac, Sy-Clawdne: the Mystic Mountains. Orkko also counts Trolla as home.
 - Skeleclawd and the Evil Warriors, Jitsu included: Snake Mountain (Mer-Clawd in the undersea kingdom; Beast Clawd and Panthor on Beast Island; Kobra Khan and King Hiss in the Vine Jungle; Count Marzo and Shokoti at the temple).
 - The Horde: the Fright Zone. Horde Prime appears there too.
-- The Great Rebellion: the Whispering Woods. Glimmer and Angella: Bright Moon. Light Hope, She-Clawd, Swift Wind: the Crystal Castle. Clawstaspella: Mystacor. Frosta: Castle Chill. Mermista: the undersea kingdom. Sea Hawk: the Whispering Woods (his ship moors on the coast).
+- The Great Rebellion: the Whispering Woods. Glimmer and Angella: Bright Moon. Light Hope, She-Clawd, Swift Wind: the Crystal Castle. Clawdstaspella: Mystacor. Frosta: Castle Chill. Mermista: the undersea kingdom. Sea Hawk: the Whispering Woods (his ship moors on the coast).
 - The film's cast: the Earth town. Gwildor, and the mercenaries sent after his key (Blade, Saurod, Karg and the Dark Troopers). Queen Marlena also counts it as home, since she came from Earth.
 
 ## Mechanics that make it its own universe
@@ -425,7 +390,7 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    - **The Dark Troopers** march in step when more than one is on stage.
 4. **The moral (decided).** Every Filmation episode ended with a character stepping forward to give the audience a short lesson. Here, when a session finishes its work, its leader **now and then** steps forward and gives one in a speech bubble, in the Filmation voice with a coding twist. It's short and rare, so it stays a treat rather than chatter:
    - **When:** on `Stop` (the session has finished and gone idle), about one finish in eight, and never twice within half an hour for the same session.
-   - **Who:** heroes only (Skeleclawd doesn't do lessons). Orkko, the Sorceress and Man-At-Claws get the most.
+   - **Who:** heroes only (Skeleclawd doesn't do lessons). Orkko, the Sorceress and Man-At-Clawds get the most.
    - **Engine:** a small change. `StatusStore` rolls the dice on `Stop` and stamps the session with a `moral` time. The overlay shows the line in the done state through the callout bubble (`Overlay.swift:1339`) for about four seconds, the leader facing the front.
    - **The lines** (about ten, written so no single one gets stale):
      - "Remember, kids: always write your tests!"
@@ -433,7 +398,7 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
      - "Sharing your code is good, but never share your passwords!"
      - "Commit before you refactor. Even He-Clawd saves his work."
      - "Never run a script from a stranger without reading it first."
-     - "Nobody's code is perfect. Even Man-At-Claws asks for a review."
+     - "Nobody's code is perfect. Even Man-At-Clawds asks for a review."
      - "Bullies force-push. Friends open a pull request."
      - "Stuck on a bug? Take a break. It'll still be there, and so will you."
      - "Orkko learned today that magic numbers cause trouble. Give them names!"
@@ -441,7 +406,7 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
 5. **Practice drills, which are bespoke:**
    - He-Clawd lifts a boulder over his head and puts it down;
    - Teelah spins her staff through a kata;
-   - Man-At-Claws tinkers (sparks fly);
+   - Man-At-Clawds tinkers (sparks fly);
    - Orkko practises a trick, and juggles three glowing balls until one turns into a fish;
    - Ram Clawd charges a wall and bounces off;
    - Bow shoots at a target;
@@ -463,7 +428,7 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
    It runs end to end in the app, the window, the screen saver and Clawd Royale, with plain wipes for now (`ComicTransition.pick` returns nil for it).
 2. **Core ensemble.** About 38 characters:
-   - heroes 1–16 (the Masters up to Clawfist) and She-Ra's core: She-Clawd, Adorra, Spirit, Swift Wind, Bow, Glimmer, Madame Razz, Kowl;
+   - heroes 1–16 (the Masters up to Clawdfist) and She-Ra's core: She-Clawd, Adorra, Spirit, Swift Wind, Bow, Glimmer, Madame Razz, Kowl;
    - villains: the Evil Warriors 1–8 and the Horde's core: Hordakk, Shadow Weaver, Katra, Scorpia, Mantenna, plus the three agent-only;
    - 8 places (Castle Greyskull, the palace, the workshop, Snake Mountain, the Vine Jungle, the Fright Zone, the Whispering Woods, the Crystal Castle), with the nemeses for these.
 
@@ -486,9 +451,9 @@ The weak-spot list is kept here as the phases go: anything that doesn't read in 
 Spots to watch from the start:
 - He-Clawd, Faker and Prince Addam side by side; She-Clawd and Adorra side by side.
 - The scaly greens (Mer-Clawd, Kobra Khan, Whiplash, Saurod) in one sheet.
-- Clawfist's and Jitsu's big hands: silver against gold must read at a glance.
+- Clawdfist's and Jitsu's big hands: silver against gold must read at a glance.
 - Gwildor's Cosmic Key: a few pixels, so its lights need to be bright.
-- Man-E-Claws's and Tri-Klawps's turning drums: a few pixels each, so the faces and eyes must be bold.
+- Man-E-Clawds's and Tri-Clawdps's turning drums: a few pixels each, so the faces and eyes must be bold.
 - Orkko's eyes in the dark under his hat; Loo-Kee's size as an agent.
 - Light Hope and Horde Prime: neither has a body, so each must still read as a character on Clawd's legs (a rainbow robe; a smoke cloak with the hand).
 
@@ -554,7 +519,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 - The title, CLAWDS OF THE UNIVERSE, rises in carved-stone letters (our own, not the logo), and the camera plunges through the jawbridge into white.
 
 **Set piece (~9.5 s):**
-- Snake Mountain under a red sky. Skeleclawd, Beast Clawd and Trap Claw roll out on the Roton.
+- Snake Mountain under a red sky. Skeleclawd, Beast Clawd and Trap Clawd roll out on the Roton.
 - They pull up at Greyskull's jawbridge. Skeleclawd raises the Havoc Staff.
 - Orkko pops up to help: his spell misfires and a rain cloud opens over Skeleclawd.
 - He-Clawd and Battle Kat leap in, He-Clawd lifts the Roton over his head and the crew scatters.
@@ -584,7 +549,7 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 3. **The transformation: approved.** Two characters per pair (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind), swapping on compaction. **The secret identity rule: approved.** A pair is never on stage at once, through `Universe.guises` and a guard on the `PreCompact` swap (see Mechanics and the 2026-10-17 note below).
 4. **The moral: approved.** Short and rare end-of-episode morals when a session finishes, heroes only, in the Filmation voice with a coding twist. A small engine change: a roll on `Stop` and a line in the done state (see Mechanics).
 5. **Swaps:** none beyond item 6.
-6. **Katra's panther form is dropped; Panthor stays.** Jitsu (villain 37), Skeletor's martial artist with the golden chopping hand, comes in from the bench, at home in Snake Mountain, facing Clawfist (Two Bad loses that pairing).
+6. **Katra's panther form is dropped; Panthor stays.** Jitsu (villain 37), Skeletor's martial artist with the golden chopping hand, comes in from the bench, at home in Snake Mountain, facing Clawdfist (Two Bad loses that pairing).
 7. **Names:** the plain ones (Bow, Glimmer, Kowl, Webstor, Whiplash, Faker) stay as they are.
 
 **2026-10-17: uses `Universe.guises`, decided by the user.** The four pairs (Prince Addam/He-Clawd, Adorra/She-Clawd, Cringer/Battle Kat, Spirit/Swift Wind) go in the engine's existing `guises`, which already keeps Clawd of the Rings' pairs off the stage together, instead of a new `transformations: [Int: Int]` map and changes to `pickLeader` and `nextAgentCast`. What's left to build is the compaction swap: the `guisesSwapOnCompaction` flag, the `PreCompact` branch with its guard against the other self being on stage, and its effect.
@@ -592,3 +557,5 @@ Each is weighted by who is on screen and where, like `DoctorTrip`.
 **The counts now:** 44 heroes (42 who lead, Loo-Kee, HEM) and 41 villains (37 who lead, 4 agent-only), so 85 in all, with `heroCount` 44 and `villainCount` 41. Agent-only: table rows hero #42 and villains #34, #35, #36, #41 (0-based enum ids hero 41; villains 33, 34, 35, 40). 21 places, 12 transitions, 28 nemesis pairs.
 
 The plan is ready for phase 1 when you say start.
+
+**2026-10-25: started, and the names fixed to the clawd rule.** Every pun says "clawd", never a bare "claw": Trap Clawd, Man-At-Clawds, Man-E-Clawds, Clawdful, Clawdfist, Clawdstaspella, and the K names too, Tri-Clawdps and Sy-Clawdne (the user's call). Phase 1 is on branch `clawds-of-the-universe`: He-Clawd, Orkko, Skeleclawd, Castle Greyskull, the icon, HEM.

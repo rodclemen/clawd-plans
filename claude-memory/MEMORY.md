@@ -24,4 +24,5 @@
 - [Renders outside build/](renders-outside-build.md): review renders go to ~/Desktop/<name>, never build/ (build.sh wipes it)
 - [Clawd, not claw](clawd-not-claw.md): pun names say "clawd", never bare "claw", even for real claws (Democlawdgon)
 - [Show animations as GIFs](show-animations-as-gifs.md): moving things go to the owner as GIFs (fightclip frames + PIL); dark effects vanish on the desktop
-- [Background jobs](background-jobs.md): hourglass "waiting on a job" state, branch background-jobs (01f06c8, rebased on 4.1.0), ready to push as 4.1.1; issue #7
+- [Background jobs](background-jobs.md): hourglass "waiting on a job" state, released in 4.1.1; Codex and pi open in issue #7
+- [Clawds of the Universe](clawds-of-the-universe.md): He-Man universe, number 11, prefix Eternia, branch clawds-of-the-universe; phase 1 done 2026-10-25
