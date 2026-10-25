@@ -360,10 +360,9 @@ Interiors (the chamber, the palace, the workshop) sit among plenty of outdoor sc
    Nobody else changes. Decided: these are **two characters per pair**, each with its own id, and compaction swaps one for the other.
 
    **The secret identity rule (decided): a pair is never on stage at once.** Prince Addam and He-Clawd are never both on screen, nor Adorra and She-Clawd, Cringer and Battle Kat, or Spirit and Swift Wind. The engine already has this rule for Clawd of the Rings (Gandclawd the Grey and the White, Arrogorn and Stride-r, Sarumanual and Sharkey, Sourun and the Necro-maintainer): `Universe.guises` (`Universe.swift:70–78`), "one character in two guises, as global ids: never on screen together". So the four pairs go in `guises`, as global ids from the table rows (0-based enum ids, heroes offset by `StatusStore.heroBase`):
-   - He-Clawd and Prince Addam: hero rows #1 and #3, enum ids 0 and 2;
-   - Battle Kat and Cringer: rows #4 and #5, ids 3 and 4;
-   - She-Clawd and Princess Adorra: rows #23 and #24, ids 22 and 23;
-   - Swift Wind and Spirit: rows #26 and #25, ids 25 and 24.
+   - He-Clawd and Prince Addam, Battle Kat and Cringer, She-Clawd and Princess Adorra, Swift Wind and Spirit.
+
+   The enum order is the order the phases add characters (phase 2's core first), not the table's row order, so `EterniaFacts` builds the guise ids from `rawValue` rather than typed numbers (done in phase 2, cf2db17).
 
    That gives the rule for free, through code that's already there:
    - **New sessions:** `nextLeader` (`StatusStore.swift:476`) rules out the other guise of every leader and agent on screen (`Roster.ruledOut(by:)`, `Universe.swift:143–145`), and `pickLeader` (`:519`) drops them from the pool.
