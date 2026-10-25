@@ -1,20 +1,19 @@
 # Picking up on another computer
 
-Written 2026-10-23, after the 4.0.0 release. Nothing is left open: the showcase repos' "clawd" names are done too, and
-everything is pushed.
+Written 2026-10-25, after the 4.1.0 release. Everything is pushed except one branch, `background-jobs`.
 
 ## Where things stand
-- **Clawd Clash 4.0.0 is out** (notarized, GitHub release, Homebrew cask): Stranger Clawds, plus Full Screen, the
-  bubbles on tall characters, the park gates, Roald Doll Plass, the renames below. `stranger-clawds` is merged into
-  `main`, and NUMBERS has 9 as `shipped`.
-- **On `main` since, for the next release (4.0.1):** the screen saver's ticker says when it was an agent
-  ("Dustin, Eleven's agent, finished and left: ..."), and the guide's line on counting version numbers.
-- **New version rule (2026-10-25, replacing the 2026-10-23 one):** a universe raises the middle number (Superclawdtural,
-  4.1.0), anything else, features included, the last one (4.0.1, and on past 4.0.9 to 4.0.10). The first number stays
-  at 4. Don't pick it: `scripts/next-version.sh` reads it from the commits, and `./release.sh` with no version uses it.
-- **For trying trips:** Shift-double-click the window's scene (off the crew) goes to the next place now; in Full
-  Screen, a Shift-click does the same for the screen saver's view. The transitions tool's `ART=1` renders trips the
-  way the window draws them (art-size pictures).
+- **Clawd Clash 4.1.0 is out** (notarized, GitHub release, Homebrew cask): Superclawdtural, number 10, plus the
+  grip magic, habits that carry the name tag, rides at their own height, the ticker's agent lines and the promo fixes
+  (every universe on the comic page, Clawd Royale's smacks, the CLAWD CLASH thumbnail). `superclawdtural` is merged
+  into `main`, and NUMBERS has 10 as `shipped`. The showcase repo rodclemen/superclawdtural is public; its social
+  preview still has to be uploaded by hand (Settings → General → Social preview).
+- **Not pushed: branch `background-jobs`** (01f06c8, on top of 4.1.0, builds): a new "waiting on a job" state, a
+  teal hourglass, for an AI that ended its turn on a job it left running in the background (Claude Code, Qwen Code,
+  Copilot CLI, Gemini CLI with its wake-up settings on). Next release, 4.1.1. Codex and pi are open in clawd-clash
+  issue #7.
+- **Version rule:** a universe raises the middle number, anything else the last. `scripts/next-version.sh` reads it
+  from the commits, and `./release.sh` with no version uses it.
 
 ## clawd-clash
 ```sh

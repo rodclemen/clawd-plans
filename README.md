@@ -10,20 +10,19 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 <!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" url="https://github.com/rodclemen/clawd-clash/pull/3" source="The Lord of the Rings, built without a plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
-🚧 **2** being built · ✅ **6** released · 📝 **8** ready to pick up
+🚧 **1** being built · ✅ **7** released · 📝 **8** ready to pick up
 
 ### 🚧 Being built
 
 | Universe | Progress | Where it's at |
 |---|---|---|
-| **[Superclawdtural](in-progress/superclawdtural.md)**<br><sub>Supernatural</sub> | `█████████░` 92% | **Phase 6 of 6**, docs and trailer<br><sub>80/80 characters · 20/20 places · `superclawdtural`, last commit 24 Oct</sub> |
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 24 Oct</sub> |
 
 ### 🎨 Detail overhaul
 
 Every released universe redrawn to the detail bar the Star Clawds refresh set. Done: what was below the bar was redrawn, the rest was audited and left as it was.
 
-**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 24 Oct</sub>
+**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 25 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
@@ -53,6 +52,7 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. D
 
 | Universe | Released in | Size |
 |---|---|---|
+| **[Superclawdtural](done/superclawdtural.md)**<br><sub>Supernatural</sub> | **4.1.0** | 80 characters · 20 places |
 | **[Stranger Clawds](done/stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | **4.0.0** | 44 characters · 16 places |
 | **[Clawd Slayer](done/clawd-slayer.md)**<br><sub>Buffy the Vampire Slayer</sub> | **3.7.0** | 84 characters · 20 places |
 | **[Clawd of the Rings](https://github.com/rodclemen/clawd-clash/pull/3)**<br><sub>The Lord of the Rings, built without a plan here (PR #3)</sub> | **3.5.0**<br><sub>by Henrik</sub> | 76 characters · 22 places |

@@ -14,13 +14,14 @@
 - [Stevie Clawdberg](stevie-clawdberg.md): built overnight, merged into main as 3.4.0; gate 4 was decided by Claude
 - [Audit plan Oct 2026](audit-plan-2026-10.md): 4-step security/guard/cleanup/perf plan; all done and released as 3.6.0
 - [Short ! commands](short-bang-commands.md): user-run commands must fit one line (use files in build/); never test via HOME redirect
-- [GitHub video uploads](github-video-uploads.md): README videos go public only when the issue they were dropped in is submitted; 720p via RenderPromo
+- [GitHub video uploads](github-video-uploads.md): README videos go public only when the issue they were dropped in is submitted; 720p mode only shrinks the existing 1080p
 - [Outline frame rule](outline-frame-rule.md): outlines cut at the 72x52 frame edge; check new art with build/preview edges
 - [Version rule](version-rule.md): universe = middle number (4.1.0), else last; first stays at 4; release.sh computes it
-- [Superclawdtural](superclawdtural.md): Supernatural universe, started 2026-10-23, branch superclawdtural, number 10, prefix Hunt
+- [Superclawdtural](superclawdtural.md): Supernatural universe, number 10, prefix Hunt; released in 4.1.0 (2026-10-25), showcase repo live
 - [Clawd Slayer](clawd-slayer.md): Buffy universe, released in 3.7.0 (2026-10-18); decisions and lessons
 - [Universe modules refactor](universe-modules-refactor.md): started 2026-10-18 on branch universe-modules; baseline tools and phase status
 - [Stranger Clawds](stranger-clawds.md): released 4.0.0 on 2026-10-23, number 9; flip stays secret; other showcases still need clawd renames
 - [Renders outside build/](renders-outside-build.md): review renders go to ~/Desktop/<name>, never build/ (build.sh wipes it)
 - [Clawd, not claw](clawd-not-claw.md): pun names say "clawd", never bare "claw", even for real claws (Democlawdgon)
 - [Show animations as GIFs](show-animations-as-gifs.md): moving things go to the owner as GIFs (fightclip frames + PIL); dark effects vanish on the desktop
+- [Background jobs](background-jobs.md): hourglass "waiting on a job" state, branch background-jobs (01f06c8, rebased on 4.1.0), ready to push as 4.1.1; issue #7

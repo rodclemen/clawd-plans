@@ -1,11 +1,11 @@
 ---
 name: github-video-uploads
-description: README videos (github.com/user-attachments) only go public once the issue/comment they were dropped into is submitted; 720p copies come from RenderPromo
+description: README videos (github.com/user-attachments) only go public once the issue/comment is submitted; 720p mode only shrinks the 1080p already rendered
 metadata:
   node_type: memory
   type: reference
   originSessionId: be19b5c9-e9f0-4576-b0b5-ea68d1892e1a
-  modified: 2026-10-23T10:17:10.381Z
+  modified: 2026-10-25T08:15:30.798Z
 ---
 
 README videos are `https://github.com/user-attachments/assets/<uuid>` links, made by dragging an mp4 into an issue or comment box on github.com. There's no API for it.
@@ -20,6 +20,7 @@ README videos are `https://github.com/user-attachments/assets/<uuid>` links, mad
 - **Links work in any repo's README:** the same link can serve both clawd-clash and a universe's showcase repo.
 - **Video size:** uploads must be under 10 MB.
   - `REEL=<reel> build/renderpromo 720p promo` writes `promo/720p/<Name>.mp4`. Run it after `REEL=<reel> build/renderpromo video promo`.
+  - `720p` only shrinks the 1080p mp4 already in `promo/`; it renders nothing. After a code change, or a `git checkout` of the tracked promo mp4, it silently gives you the old cut. On 2026-10-25 two "fixed" 720p cuts sent to the owner were really the old promo.
   - The `avconvert` presets come out too large.
 - **Before uploading, check the render date:** a video rendered before a promo change carries the old text. On 2026-10-17, five trailers predated the BRING YOUR OWN AI line-up (efe4f8e) and had to be re-rendered.
 

@@ -574,6 +574,7 @@ Noted at the end of each phase, fixed together in the polish pass (guide Step 7)
 - Found while rendering: the Open Road, Heaven's hill, the Sioux Falls attic and Angel Light could crash at odd sizes (an empty or backwards range). Fixed; every place now passes about 1,500 sizes and every trip about 140 sizes at 13 moments.
 - `check.sh Superclawdtural` (full) and `preview edges` both clean.
 - Left for the owner (phase 8): the changelog entry, the README section, `llms.txt`, RenderDocs, the cask line, `NUMBERS` to `shipped`, the video render, release 4.1.0.
+- **Released 2026-10-25 in Clawd Clash 4.1.0** (merge 777b49c, tag v4.1.0, notarized, cask updated). Showcase repo rodclemen/superclawdtural is public, with the trailer at the top. Found on the way: the main promo's vortex title had slipped past its shot with a tenth universe; its waves now close up to fit (535a0ed).
 
 ## Character audit (phase 3, 2026-10-24)
 
