@@ -468,14 +468,9 @@ Spots to watch from the start:
 
 **Polish pass for phases 1 to 3: done (2026-10-26, brought forward at the owner's request).** Twelve helpers in worktrees fixed every weak spot from the phase 2 and 3 lists, one group of files each, with before and after renders in `~/Desktop/clawds-of-the-universe/polish/<group>/compare*.png`. Darksmoke was redrawn from scratch (black crags, Granamyr's maw, smoke streamers). The temple's idol is now Shokoti herself (it read as a pharaoh), with stelae for obelisks. Snake Mountain took two rounds: the owner liked the snake's head as the door, but not the first, orc-like head; v2 has a smaller viper head, a taller mountain and four turns of the body.
 
-**Left open after the polish:**
-- Gwildor is better but still a wide brown loaf at 1x; he also gained a walking stick (not in the plan).
-- Blade's hair is still a fairly solid dark mass at 1x.
-- Stratos's new swept-back hair is large; check it next to his wings.
-- Angella's and Glimmer's costumes start right under the eyes (a milder beard trap).
-- The engine's seated pose merges every character's four legs into two bands, in all universes (`drawLegs`); Zodac's chair works round it. An engine fix, if wanted.
-- On the screen saver the Greyskull-scale landmarks blow up only about 2x at 1440x900 and 2560x1440 (the scale is capped by floor height), so Greyskull, the Fright Zone and the Crystal Castle stand small under a lot of sky.
-- Lesson: see-through glow behind an outlined sprite turns muddy on a dark desktop; effects that must read are drawn as solid pixels.
+**After the owner's review (2026-10-26):** Gwildor, Blade, Stratos and Snake Mountain v2 approved; the Earth town keeps the name "Earth". Queen Angella's gown now starts below her face. On the screen saver every outdoor landmark is 1.5x bigger (`eterniaTall` in EterniaKit.swift); the three rooms and the Earth street keep their scale, since they already fill the screen. Both are waiting for the owner's OK: the pictures are in clawd-plans `review/clawds-of-the-universe/`. The seated pose was a false alarm: every universe folds legs the same way.
+
+**Still open:** Glimmer's costume also starts right under her eyes (the owner asked only for Angella). Lesson: see-through glow behind an outlined sprite turns muddy on a dark desktop; effects that must read are drawn as solid pixels.
 
 **Character audit (phase 3, 2026-10-26).** All 85 personas checked against the Heroes and Villains tables: weapon, shot, magic family and colours, motion, `armoured`, `bulk`, `canSit`, signature and callout. Everything matches except:
 
