@@ -443,12 +443,13 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
-### Status (2026-10-26, hand-off)
+### Status (2026-10-26, after phase 3)
 
-- **Done:** phases 1 and 2 on branch `clawds-of-the-universe` (pushed). 41 characters, 8 places, homes and nemeses set; `check.sh Eternia` clean apart from the expected size warning. Main carries `c8d1865`, the number 11 reservation (pushed).
-- **Next:** phase 3, waiting on the owner's go. Phase 2's art was drawn by seven worktree helpers, one file each, with the shared brief in `clawds-of-the-universe-brief.md` (next to this plan); update its HEAD commit and group before reuse. Agent worktrees start from main, so each helper resets onto the branch head first; their commits are cherry-picked back.
-- **Review sheets** are not in git; regenerate them with `zsh Tools/Preview/build.sh`, then `build/preview cast|place|edges <out> eternia` into `~/Desktop/clawds-of-the-universe/`.
-- **Engine requests for phase 4:** a compaction kind that swaps a leader for its other guise, guarded so it never meets itself on stage; the moral on Stop.
+- **Done:** phases 1 to 3 on branch `clawds-of-the-universe`: all 85 characters, all 21 places, every home and all 28 nemesis pairs. `check.sh Eternia` (full) is clean apart from the size warning, now only for transitions (phase 5). Main carries `c8d1865`, the number 11 reservation.
+- **Place keys** in code carry the prefix, not the table's names: `eterniaChamber`, `eterniaMysticMountains`, `eterniaAvion`, `eterniaAndreenos`, `eterniaDarksmoke`, `eterniaTrolla`, `eterniaUndersea`, `eterniaBeastIsland`, `eterniaTemple`, `eterniaBrightMoon`, `eterniaMystacor`, `eterniaCastleChill`, `eterniaEarthTown` (and phase 2's `eterniaGreyskull`, `eterniaPalace` ...).
+- **How phases 2 and 3 were drawn:** worktree helpers, one file each, from the shared brief in `clawds-of-the-universe-brief.md` (next to this plan; update its HEAD commit and group before reuse). Agent worktrees start from main, so each helper resets onto the branch head first; their commits are cherry-picked back. Phase 3 ran 13 helpers in two waves; seven builds at once already pushed the load average past 300.
+- **Next:** phase 4 (mechanics), waiting on the owner's go. Engine requests first, on `main`: a compaction kind that swaps a leader for its other guise, guarded so it never meets itself on stage; the moral on Stop.
+- **Review sheets** are not in git. Phase 3's are in `~/Desktop/clawds-of-the-universe/phase3/` (one folder per helper group, and `sheets/` from the full check). Regenerate with `zsh Tools/Preview/build.sh`, then `build/preview cast|place|edges`.
 
 ## Polish pass (after phase 5, before phase 6)
 
@@ -478,6 +479,37 @@ Spots to watch from the start:
 - Whispering Woods is light behind the crew in the window; its blossoms read as sparkles.
 - Fright Zone buttresses stair-step, near dead trees thin. Crystal Castle aurora faint with a hard top.
 - Snake Mountain's snake head is cute rather than menacing; the palace vault is plain; the workshop's side bays repeat; the jungle crown is bright against the canopy.
+
+**Weak spots so far (phase 3):**
+- Evil Warriors (phase 3): Webstor's upside-down hang is short and his chest spider can read as a mouth; Stinkor's charcoal is near the desktop and his tail thin; Two Bad's turned heads subtle; Panthor's flat ears read as horns, tail thin; Faker's red pageboy hides most of the blue face. Whiplash has `bulk: 3` (not in the plan) for his snout.
+- Horde A (phase 3): Entrapta's hair cap reads a little like a helmet; Grizzlor's chest-beating paws are plain blocks; Multi-Bot's head spin reads mostly through the antennae. No red bat on any of the five (it read as a mouth); Leach's signature adds a wall slab.
+- Rebels B (phase 3): Flutterina's closed wings read as brown sticks for a frame; Light Hope's pillar top like a stacked hat; Stonedar's gold comet sits at belt height like a buckle, his rolling dust faint; Peekablue's side hair barely shows. Peekablue's and Netossa's colours were chosen to keep them apart (check against the show in the audit).
+- Loo-Kee's big pointed ears stick out sideways and read a little like wings (my look at the sheet).
+- Foes (phase 3): King Hiss's peeled mask halves read as ear flaps, his legs busy; Jitsu's raised hand covers the edge of his head; Count Marzo's plum robe near Evil-Lynn's violet; Shokoti's gold/black ray reads dashed on a dark desktop, and her headdress glow is subtle. Clawdfist's fist should grow: Jitsu's gold hand now dwarfs it.
+- Horde B (phase 3): Octavia's mantle spots noisy, eyes sleepy, back tentacles sweep sideways; Vultak's ruff can read as a beard and his black body is low contrast on a dark desktop; Horde Prime's pointing hand reads a little like a green pistol. Check the scaly greens side by side (Rattlor, Tung Lashor, Kobra Khan, Whiplash, Saurod).
+- Masters (phase 3): Gwildor's hair reads a bit like a spiky crown, his face small; Sy-Clawdne's fin from the front like a candle flame; Moss Clawd a round blob (could be shaggier); Zodac's legs on the floating chair merge into one band (four legs rule: fix); Granamyr's belly plain. Roboto's colours unchecked against the toy (audit).
+- Rebels A (phase 3): Angella's wing opening is a small change at 1x; Frosta's white hair reads a little like a hood; Sea Hawk's rope swing jaggy, 1 px rope, no cutlass in it; Clawdstaspella's collar could read as a spiky mane. Angella's and Clawdstaspella's hair colours unconfirmed (audit).
+- Frosta (my look): the white hair all round her face reads as a white beard, the same trap as She-Clawd's tunic; worth fixing first.
+- Places C (phase 3): the temple's stone snake heads read as block faces, the half-buried skull's socket as a cross; Shokoti's idol reads Egyptian beside a stepped pyramid; undersea coral and kelp repeat in the window strip; Beast Island's volcano glow rings hard-banded; jellyfish tiny on the screen saver.
+- Places D (phase 3): Bright Moon's Moonstone and ledge crystals small in the window strip; Mystacor's onion domes boxy, its lilac sparks barely show, its top islands cut off in the strip. Put Mystacor beside the Mystic Mountains.
+- Film (phase 3): Blade the weakest, his hair dome reads as a cap, scar barely a scar, scabbard odd when sitting; Karg's grey hook fades on his white mane in the wind-up, and he has no sword (plan: hook and sword); Saurod's jaw hides his front arm, scales brick-like. The Dark Trooper's signature is an aim (the plan gives none).
+- Places A (phase 3): Mystic Mountains' side crags repeat, far islets grey blobs, rock undersides plain strata; Avion's bird-man small and plane-like, far towers a picket fence, window grids plain; the chamber's falcon small in the window, clerestory plain on the screen saver. Full-screen sizes worked out by hand, not seen: check on a real screen saver.
+- Places E (phase 3): Castle Chill small in the window with plain sides, aurora soft and faint; the Earth town's keyboards and diner people tiny, much empty sky above the water tower on the screen saver; the portal only checked at one time. The place is named plain "Earth" (owner's call: "A small town on Earth"?).
+- Places B (phase 3): Andreenos's flower leaves thin sticks, honeycomb busy at window size; Darksmoke's smoke puffs look like bubbles, dragon silhouettes blobby wings-down, cave roof fringe could read as hair; Darksmoke and Trolla small in the middle of the window strip.
+
+**Character audit (phase 3, 2026-10-26).** All 85 personas checked against the Heroes and Villains tables: weapon, shot, magic family and colours, motion, `armoured`, `bulk`, `canSit`, signature and callout. Everything matches except:
+
+| Who | The plan | What's drawn | Why |
+|---|---|---|---|
+| Whiplash | no `bulk` | `bulk: 3` | his snout reaches 9 px past the body; without it blades pass through it |
+| Karg | hook and sword | the hook only (`.saber`) | no sword drawn; the swing and signature use the hook |
+| Dark Trooper | no signature (marching is a habit) | an aim: rifle to the shoulder, a red sighting beam | a shouldered march read the same as the Horde Trooper's |
+| Leach | sticks to the wall | a slab of stone wall fades in for the signature | with no wall the sucker read as a fin |
+| Leach, Grizzlor, Modulok, Multi-Bot, Entrapta | the Horde's red bat | no bat (Multi-Bot has a purple power core) | on a face-on body the bat reads as a mouth |
+| Teelah | "Where's Adam?" | "Where's Addam?" | the parody name, as everywhere else |
+| Skeleclawd | no callout listed | "Fools! Greyskull will be mine!" | from phase 1 |
+
+Colours chosen where the show was unclear, to recheck: Queen Angella's blue-black hair, Clawdstaspella's copper-brown, Peekablue's white and royal blue, Netossa's slate and silver, Roboto's chrome, navy and red. Trap Clawd and Saurod share the same orange/yellow energy, and the two Troopers the same red, as the plan gives them.
 
 ## Verification
 
