@@ -443,6 +443,13 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
+### Status (2026-10-26, hand-off)
+
+- **Done:** phases 1 and 2 on branch `clawds-of-the-universe` (pushed). 41 characters, 8 places, homes and nemeses set; `check.sh Eternia` clean apart from the expected size warning. Main carries `c8d1865`, the number 11 reservation (pushed).
+- **Next:** phase 3, waiting on the owner's go. Phase 2's art was drawn by seven worktree helpers, one file each, with the shared brief in `clawds-of-the-universe-brief.md` (next to this plan); update its HEAD commit and group before reuse. Agent worktrees start from main, so each helper resets onto the branch head first; their commits are cherry-picked back.
+- **Review sheets** are not in git; regenerate them with `zsh Tools/Preview/build.sh`, then `build/preview cast|place|edges <out> eternia` into `~/Desktop/clawds-of-the-universe/`.
+- **Engine requests for phase 4:** a compaction kind that swaps a leader for its other guise, guarded so it never meets itself on stage; the moral on Stop.
+
 ## Polish pass (after phase 5, before phase 6)
 
 The weak-spot list is kept here as the phases go: anything that doesn't read in the Preview sheets (a prop too small, an outline gap, a bare area on the screen saver, a caption too small at window size). It's fixed in one go after the transitions, before any docs, sheets or the trailer are rendered, split by file across helpers in worktrees, with before-and-after renders as the approval gate.
