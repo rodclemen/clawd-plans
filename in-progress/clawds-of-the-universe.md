@@ -443,6 +443,12 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
+### Status (2026-10-27, after phase 5)
+
+- **Phases 4 and 5 done** (owner away; Claude decided this phase's details). The engine hooks (transform, morals) are on `main` (b492504, pushed straight to main with admin bypass of the PR rule; ask if PRs are wanted). Phase 5: the twelve trips, each in its own `Eternia<Name>Trip.swift`, registry and pick in `EterniaTrips.swift`, the stone caption in `EterniaStone.swift`; four helpers drew three each. Full `check.sh Eternia` is clean (no ✗, no slow expressions; d31933b). Review: clawd-plans `review/clawds-of-the-universe/` items 9 to 15 and its README.
+- **Next:** the owner's review of 9 to 15, then the polish pass for the rides and transitions (weak spots in the README), a real `/compact` test of the transformation, then phase 6 (docs, trailer `REEL=eternia` opening on By the Power of Greyskull, release; the showcase repo and cask need the owner's OK).
+- **Phase 5 weak spots:** Zoar from above reads gull-like; the Wind Raider's cloud and Orkko's smoke are round balls, not wisps; the Havoc skull is blocky and stark; the Horde Bat's closed wall has no outline and stray ribs; the Crystal Orb is small on the window strip; Light Hope's fade is a busy dither; the swords in Greyskull and Honour are thin on the window strip; the Jawbridge leaves a strip of deck at the bottom till late.
+
 ### Status (2026-10-26, after phase 3 and the polish pass)
 
 - **Done:** phases 1 to 3 on branch `clawds-of-the-universe`: all 85 characters, all 21 places, every home and all 28 nemesis pairs. `check.sh Eternia` (full) is clean apart from the size warning, now only for transitions (phase 5). Main carries `c8d1865`, the number 11 reservation.

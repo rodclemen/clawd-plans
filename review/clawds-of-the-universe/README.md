@@ -1,13 +1,36 @@
-# Needs your call (2026-10-26, updated 2026-10-27)
+# Needs your call (updated 2026-10-27, after phase 5)
 
-Approved 2026-10-27: 7 (Angella) and 8 (screen saver size). Still to check, in the code on branch `clawds-of-the-universe`:
+Everything here is already in the code on branch `clawds-of-the-universe`. Look, and say what to change.
 
-- **9 House of Shokoti.png**: the temple redone from the cartoon stills, tall cracked blue spire, red sky, her small face over the door, tentacles now and then. Before and after, the door close up, and the burst of light.
-- **10 Shokoti.png**: Shokoti redone after the cartoon: blue skin, horned bronze headdress with a crescent, red cape, blank eyes and fangs.
+## New since you left
 
-Earlier:
+- **15 Transitions/**: all twelve trips between places, each ending in the new place's name carved in stone.
+  - `All twelve back to back.mp4`: the quickest look, every trip in a row at screen-saver size.
+  - `screen saver/` and `window/`: one video per trip, and `transitions.png`, a sheet of five frames each.
+  - 1 By the Power of Greyskull (the rarest; it will open the trailer), 2 the Jawbridge, 3 Zoar's Flight (only with
+    the Sorceress), 4 Orkko's Trick (only with Orkko), 5 the Havoc Staff, 6 the Crystal Orb, 7 the Wind Raider,
+    8 For the Honour of Greyskull, 9 the Horde Bat, 10 Shadow Weave (only with Shadow Weaver), 11 the Portal,
+    12 Light Hope's Rainbow.
+- **11 Transformation (By the power of Greyskull).png**: on compaction, Prince Addam into He-Clawd ("I have the
+  power!"), Cringer into Battle Kat, Adorra into She-Clawd ("For the honour of Greyskull!"), Spirit into Swift Wind,
+  and back again (bottom row). Not yet seen in the real app: `/compact` a session led by one of them to try it.
+- **12 Rides.png**: the Wind Raider (the Masters), Swift Wind (the rebels), the Roton (Skeleclawd's side), the Horde
+  skiff, and Hordakk's rocket. Granamyr flies off on his own wings.
+- **13 Drills.png**: the ten practice drills, one row each.
+- **14 Habits/**: one picture per habit (Orkko's mishaps, Cringer and Gwildor hiding, Loo-Kee peeking, Imp the stool,
+  Two Bad arguing, Stinkor clearing the room, the Dark Troopers marching, Skeleclawd's retreat after a fight).
+- Also in: the moral of the story. Now and then a hero who finishes their work says a lesson in their speech bubble.
 
-1. **7 Angella dress.png**: Queen Angella's gown now starts below her face (top row before, bottom row now). OK?
-2. **8 Screen saver 1.5x bigger.png**: all 21 places on the screen saver at 1440x900, left as they were, right 1.5x bigger. The three rooms (the chamber, the palace, the workshop) and the Earth street stay as they were: they already fill the screen, and bigger only cut off their ceilings or ran off the sides. Right size?
+## Still waiting for your OK from before
 
-Already decided: Blade, Stratos, Gwildor, Snake Mountain v2 are good; the Earth town keeps the name "Earth"; sitting already matches the other universes.
+- **9 House of Shokoti.png**: redone from your cartoon stills (the tentacles now only come out now and then).
+- **10 Shokoti.png**: Shokoti redone after the cartoon.
+
+## Known weak spots (for the polish pass, after this review)
+
+Zoar looks a bit like a gull from above; the Wind Raider's cloud and Orkko's smoke are round balls rather than wisps;
+the Havoc Staff's skull is blocky; the Horde Bat's red wall has no outline; Screeech in Skeleclawd's drill looks
+duck-like; Orkko's juggling balls are tiny at window size. Habits: a hero hiding can be drawn in front of the one
+they hide behind, Stinkor only moves this universe's characters, and the habits don't run on the screen saver.
+
+Earlier, approved: 7 Angella's dress, 8 the 1.5x screen saver, Blade, Stratos, Gwildor, Snake Mountain v2, "Earth".
