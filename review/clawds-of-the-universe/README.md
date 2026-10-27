@@ -3,6 +3,7 @@
 Approved 2026-10-27: 7 (Angella) and 8 (screen saver size). Still to check, in the code on branch `clawds-of-the-universe`:
 
 - **9 House of Shokoti.png**: the temple redone from the cartoon stills, tall cracked blue spire, red sky, her small face over the door, tentacles now and then. Before and after, the door close up, and the burst of light.
+- **10 Shokoti.png**: Shokoti redone after the cartoon: blue skin, horned bronze headdress with a crescent, red cape, blank eyes and fangs.
 
 Earlier:
 
