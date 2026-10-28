@@ -1,8 +1,21 @@
-# Needs your call (updated 2026-10-28, after the polish pass for phases 4 and 5)
+# Needs your call (updated 2026-10-28, after the second polish pass)
 
 Everything here is already in the code on branch `clawds-of-the-universe`. Look, and say what to change.
 
-## Newest: phase 6 (2026-10-28)
+## Newest: the second polish pass (2026-10-28)
+
+- **20 Polish 2/**: before (left) and after (right) for every weak spot left after item 16: 1 the Roton's smoke as
+  outlined cel puffs; 2 Man-At-Clawds' anvil blade, a solid hot glow, no see-through haze; 3 the Wind Raider's cloud
+  on the window, fewer and bigger puffs; 4 Orkko's smoke, cel clouds instead of spiral ribbons; 5 Zoar's wingbeat,
+  wings spread on the downstroke and folded on the upstroke; 6 the Horde Bat's closed wall in riveted Fright Zone
+  plate; 7 He-Clawd's arms lifting the Roton in the trailer (biceps, bracers, fists).
+- **19 Trailer/**: the owner said "better" after the white line fix (taken as approved). The white line under the
+  ledge in the intro is gone (a row of the Castle Greyskull place was never painted; fixed in the place itself).
+  `Trailer 720p.mp4` is re-rendered with the new arms.
+- Full `check.sh Eternia` clean (no slow expressions) apart from the hand-off scope (the docs files, expected till
+  the merge); a local `./build.sh --release` builds and signs.
+
+## Phase 6 (2026-10-28)
 
 - **19 Trailer/**: the trailer, `Trailer 720p.mp4` (the GitHub-sized copy; the 1080p one is on the Desktop in
   "Needs your call"), 49 s, with sound. The storyboard and 18 frames by time, and before/after for the four fixes
@@ -57,12 +70,12 @@ Everything here is already in the code on branch `clawds-of-the-universe`. Look,
 - **9 House of Shokoti.png**: redone from your cartoon stills (the tentacles now only come out now and then).
 - **10 Shokoti.png**: Shokoti redone after the cartoon.
 
-## Still weak after the polish pass
+## Still weak after the second polish pass
 
-The Roton's exhaust is soft round puffs; the Wind Raider's puffs are small and busy on the window strip; Orkko's
-wisps may read as ribbons on the screen saver; Zoar still looks a little like a swift on the wing's down-beat; the
-Horde Bat's closed wall is flat red around the emblem; Man-At-Clawds' hot blade has a soft glow. Habits (need engine
-hooks): a hero hiding can be drawn in front of the one they hide behind, Stinkor only moves this universe's
-characters, and the habits don't run on the screen saver.
+The Wind Raider's full cloud on the window shows the puffs' flat undersides as horizontal lines; Zoar's beat reads
+through wing shape and tone, not depth; the Horde Bat's wall panels have only a one-tone shadow; the Roton's puffs
+are small at 1x (little room behind the stacks); the cooled anvil blade's dark-red top edge may read as a tray rim.
+Habits (need engine hooks): a hero hiding can be drawn in front of the one they hide behind, Stinkor only moves this
+universe's characters, and the habits don't run on the screen saver.
 
 Earlier, approved: 7 Angella's dress, 8 the 1.5x screen saver, Blade, Stratos, Gwildor, Snake Mountain v2, "Earth".

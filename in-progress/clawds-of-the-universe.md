@@ -443,6 +443,12 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
+### Status (2026-10-28, evening: second polish pass, ready to continue anywhere)
+
+- **Trailer:** the white line under the ledge fixed in the place itself (c1b2d13, the Greyskull chasm now reaches the ledge); owner said "better", taken as approved. He-Clawd's lifting arms redrawn (8c4ca11). Rendered at `~/Desktop/clawds-of-the-universe/trailer/v4/` (not in git; re-render with `REEL=eternia build/renderpromo video <dir>`, then `720p`).
+- **Second polish pass done:** Roton cel puffs and Man-At-Clawds' solid hot blade (b3b205d), the Horde Bat's wall in Fright Zone plate (6e866fb), calmer Wind Raider cloud on the window, cel smoke wisps, Zoar's wingbeat (db53421). Review item 20. Full `check.sh Eternia` clean apart from the hand-off scope (docs files, expected); `./build.sh --release 99.0.0` builds and signs.
+- **Open, the owner's call:** review of 9, 10, 18, 20; `fix/neverland-lights` (Stevie Clawdberg, off main): PR or straight merge; a real `/compact` test in the app; then the public steps (showcase repo, cask, release, merge into main).
+
 ### Status (2026-10-28, after the polish pass for phases 4 and 5)
 
 - **Polish pass for rides, drills and transitions done** (e384bf1, five helpers, before/after in `review/clawds-of-the-universe/16 ...`). Every listed phase 4 and 5 weak spot fixed except the habits that need engine hooks. Full `check.sh Eternia` clean, no slow expressions. The window draws the Greyskull/Honour sword at 2x art scale (owner to judge). Left weak: Roton exhaust puffs, the Wind Raider's puffs busy on the window, Orkko's wisps ribbon-like, Zoar's downbeat, the Horde Bat's flat wall panels, Man-At-Clawds' blade glow.
