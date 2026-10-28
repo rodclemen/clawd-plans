@@ -4,12 +4,11 @@ Everything here is already in the code on branch `clawds-of-the-universe`. Look,
 
 ## Newest: phase 6 (2026-10-28)
 
-- **19 Trailer storyboard/**: the storyboard (`00`) and 17 frames by time, before any video is rendered (the guide's
-  approval gate). Intro (0 to 9.5 s): Addam rides up on Cringer at Greyskull, raises the sword, the lightning
-  close-up, He-Clawd and Battle Kat, the title in carved stone, the plunge through the jawbridge. Set piece (9.5 to
-  19 s): the Roton from Snake Mountain, Orkko's rain cloud, He-Clawd lifts the Roton, Skeleclawd's purple puff,
-  Orkko's moral. Then the shared shots, 49 s in all. Weak: Addam stands on Cringer's back (sprites can't sit
-  astride), the Roton lift is stiff, the intro's characters are small against the castle; the sound is unheard.
+- **19 Trailer/**: the trailer, `Trailer 720p.mp4` (the GitHub-sized copy; the 1080p one is on the Desktop in
+  "Needs your call"), 49 s, with sound. The storyboard and 18 frames by time, and before/after for the four fixes
+  the owner asked for: Addam walks up beside a cowering Cringer, the Roton is really lifted overhead and tossed, the
+  intro is framed tight so the characters are big, Teelah says "Where's Adam?" in the status shot. Sound checked by
+  numbers only (no clipping, thunderclap and shing on their beats): listen to it.
 - The README section, CHANGELOG, llms.txt and the docs pictures are in (9c71b1b).
 
 ## Earlier (2026-10-28)
