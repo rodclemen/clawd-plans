@@ -446,8 +446,9 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 ### Status (2026-10-28, after the polish pass for phases 4 and 5)
 
 - **Polish pass for rides, drills and transitions done** (e384bf1, five helpers, before/after in `review/clawds-of-the-universe/16 ...`). Every listed phase 4 and 5 weak spot fixed except the habits that need engine hooks. Full `check.sh Eternia` clean, no slow expressions. The window draws the Greyskull/Honour sword at 2x art scale (owner to judge). Left weak: Roton exhaust puffs, the Wind Raider's puffs busy on the window, Orkko's wisps ribbon-like, Zoar's downbeat, the Horde Bat's flat wall panels, Man-At-Clawds' blade glow.
-- **Next:** the owner's review of 9 to 16, a real `/compact` test, then phase 6.
-- Side fix: Neverland (Stevie Clawdberg) fairy lights ended in mid-air on the screen saver; fixed on branch `fix/neverland-lights` (d65c30e, off main, pushed, not merged).
+- **Owner approved item 16** (2026-10-28) except the swords: redone with the blade taking all the height the hand doesn't (c67f9b1), review item 18.
+- **Next:** the owner's review of 9, 10 and 18, a real `/compact` test, then phase 6.
+- Side fix: Neverland (Stevie Clawdberg) fairy lights ended in mid-air on the screen saver; fixed on branch `fix/neverland-lights` (off main, pushed, not merged), with the Neverland window zip line and the Kingston Falls house standing on its hill (8799a29).
 
 ### Status (2026-10-27, after phase 5)
 

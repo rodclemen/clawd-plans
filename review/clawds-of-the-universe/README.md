@@ -2,7 +2,15 @@
 
 Everything here is already in the code on branch `clawds-of-the-universe`. Look, and say what to change.
 
-## New on 2026-10-28
+## Newest (2026-10-28, later)
+
+- **16 approved** by the owner, except the swords: **18 Swords longer, arm shorter.png** is the redo (the blade now
+  runs down to the hand; a stub of forearm on the screen saver, the top of the fist on the window).
+- **17** now also has the Neverland window's zip line (it ended by a cloud; now on the cliff top) and the Kingston
+  Falls house (it floated over a dip in the hill; now it stands on the snow). All three Stevie Clawdberg fixes are on
+  branch `fix/neverland-lights`, not merged into main yet.
+
+## Earlier on 2026-10-28
 
 - **16 Polish, rides transitions and drills/**: the weak spots below, fixed, each picture before (left) and after
   (right). Rides: longer solid flames, a real anchor, bold Roton horns, Swift Wind's mane pink like his sprite.
