@@ -16,8 +16,8 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 
 | Universe | Progress | Where it's at |
 |---|---|---|
+| **[Clawds of the Universe](in-progress/clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | `█████████░` 92% | **Phase 6 of 6**, docs and trailer<br><sub>85/85 characters · 21/21 places · `clawds-of-the-universe`, last commit 28 Oct</sub> |
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 28 Oct</sub> |
-| **[Clawds of the Universe](in-progress/clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>85/85 characters · 21/21 places · `clawds-of-the-universe`, last commit 28 Oct</sub> |
 
 ### 🎨 Detail overhaul
 
