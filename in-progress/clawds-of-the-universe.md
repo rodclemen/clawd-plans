@@ -443,6 +443,12 @@ Each phase builds, is checked with Preview sheets, and is shown to you before th
 
 Ids are append-only, so the enum order is the order characters are added, and phases never renumber.
 
+### Status (2026-10-28, after the polish pass for phases 4 and 5)
+
+- **Polish pass for rides, drills and transitions done** (e384bf1, five helpers, before/after in `review/clawds-of-the-universe/16 ...`). Every listed phase 4 and 5 weak spot fixed except the habits that need engine hooks. Full `check.sh Eternia` clean, no slow expressions. The window draws the Greyskull/Honour sword at 2x art scale (owner to judge). Left weak: Roton exhaust puffs, the Wind Raider's puffs busy on the window, Orkko's wisps ribbon-like, Zoar's downbeat, the Horde Bat's flat wall panels, Man-At-Clawds' blade glow.
+- **Next:** the owner's review of 9 to 16, a real `/compact` test, then phase 6.
+- Side fix: Neverland (Stevie Clawdberg) fairy lights ended in mid-air on the screen saver; fixed on branch `fix/neverland-lights` (d65c30e, off main, pushed, not merged).
+
 ### Status (2026-10-27, after phase 5)
 
 - **Phases 4 and 5 done** (owner away; Claude decided this phase's details). The engine hooks (transform, morals) are on `main` (b492504, pushed straight to main with admin bypass of the PR rule; ask if PRs are wanted). Phase 5: the twelve trips, each in its own `Eternia<Name>Trip.swift`, registry and pick in `EterniaTrips.swift`, the stone caption in `EterniaStone.swift`; four helpers drew three each. Full `check.sh Eternia` is clean (no ✗, no slow expressions; d31933b). Review: clawd-plans `review/clawds-of-the-universe/` items 9 to 15 and its README.
