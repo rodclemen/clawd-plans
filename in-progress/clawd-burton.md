@@ -110,6 +110,7 @@ How the engine's weapons map onto Burton's films:
 | The Western Woods Crone | `touch` | pale lime `F2F2A0` / `8F9A2A` | no stream: a sickly glowing fingertip, and a glow round whoever she points at |
 | Katrina Van Tassle | `touch` | candle cream `FFF4D0` / gold `D4A645` | a warm protective charm glowing round the friend she points at |
 | Grandma Florenz | `waves` | cream `FFF0E0` / pink `FF9EC8` | sound arcs pulsing from her portable record player (the yodelling record) |
+| The Martian Spy | `rings` | pink `FFE0F0` / `F07AB8` | her hypnotic stare: a soft pink ray rippling with rings out of her right eye, her eyes glinting pink |
 | The Jabberclawdky | jagged | lavender `F0D6FF` / violet `7A2BD1` | the Jabberwocky's purple lightning breath |
 | Victor Frankenstien | jagged | white `FFFFFF` / grey `A8A8A8` | a black-and-white lightning bolt from his kite: the only grey lightning in the app |
 
@@ -123,7 +124,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 |---|---|---|---|---|
 | 1 | Jack Skullington | the Clawd block as his bone-white skull, rounded on top: big black eye sockets, two nose slits, a long stitched grin; the black pinstripe suit on its bottom rows with the heart-shaped white shirt front and a bat bow tie; small filled bat-wing spikes fanned from his shoulders; bony fingers | the scare (`waves` + `pulse`) | his scary face (the skull stretching taller, angry eyes, the mouth gaping with teeth, both hands clawing beside it), then a deep bow; callout "What's this?" |
 | 2 | Sallee | the rag doll: a pale-blue stitched block with big white eyes under lashes and stitched lips, long red yarn hair over the top and down both sides past her waist, the patchwork dress (mustard, teal, lilac, black, pink), stitched legs | none | her whole arm drops off onto the floor; she picks it up, sews it back with needle and red thread, and wiggles it |
-| 3 | Zeero | a small white ghost dog floating on a wispy tail instead of hind legs, floppy ears hanging down, a collar with a bow tie, a glowing pumpkin nose | none, `.hover`, `canSit: false` | his nose blazes like a jack-o'-lantern and he loops once round in the air; callout "Arf!" |
+| 3 | Zeero | a small white ghost dog floating on a wispy tail instead of hind legs, a round crown tapering into a snout, long floppy ears hanging down past his jaw, a collar with a bow tie, a glowing pumpkin nose on the snout's tip | none, `.hover`, `canSit: false` | his nose blazes like a jack-o'-lantern and he loops once round in the air; callout "Arf!" |
 | 4 | The Mayor | the block is his cone of a head, narrow at the top and widest at his collar, the hat perched on top (a little brim, a tall thin crooked stovepipe); a grey bell of a coat flaring over short pinstriped legs, a white collar with a black spider bow tie, a red rosette; his megaphone. Two faces: happy (tan, spiral eyes, a big toothy grin) and worried (pale, droopy eyes, a zigzag frown) | none, `bulk` | his head spins from one face to the other and back; he wears the worried face while his session waits for you |
 | 5 | Sandy Clawdz | round red fur-trimmed coat, belt and gold buckle, black boots, big white beard, the hat's tip drooping behind, his sack over his shoulder | presents (`.thrown(red)`), `bulk` | pats his bouncing tummy; callout "Ho ho ho!" |
 
@@ -144,7 +145,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 14 | Edward Scissorclawds | wild black hair, pale face, black leather with buckles, long scissor-blade hands | scissor blades (melee) | snips a hedge into a little dinosaur topiary; callout "I'm not finished." |
+| 14 | Edward Scissorclawds | wild black hair, pale face, black leather with buckles, bunches of long thin scissor blades for hands, splayed, a gap between each blade | scissor blades (melee) | snips a hedge into a little dinosaur topiary; callout "I'm not finished." |
 | 15 | Kim Boggz | long blonde hair, pastel dress | none | dances in falling snow |
 | 16 | Peg Boggz | Avon lady, lilac suit, make-up case | none | opens her case, "Avon calling!" |
 | 17 | The Inventor | old gentleman, velvet smoking jacket | none | holds up a heart-shaped biscuit |
@@ -176,8 +177,8 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 |---|---|---|---|---|
 | 29 | Richie Norriss | doughnut-shop uniform, mop of hair | vinyl records (`.thrown(black)`) | spins a record on one finger |
 | 30 | Grandma Florenz | cardigan, big hair, a portable record player | the yodelling record (`waves`) | turns up the volume and taps along |
-| 31 | President Dayle | dark suit, flag pin, side parting | none | gives a speech from a podium |
-| 32 | Byron Wilyums | ex-boxer in a casino uniform | fists (melee) | shadow-boxes, then raises his gloves |
+| 31 | President Dayle | dark suit, flag pin, side parting | none | gives a speech from a podium; callout "Why can't we all just get along?" |
+| 32 | Byron Wilyums | ex-boxer greeting guests at an Egyptian-themed casino: a gold-and-blue striped nemes headdress and a gold-and-lapis broad collar over his maroon uniform, white gloves | fists (melee) | shadow-boxes, then raises his gloves |
 | 33 | Professor Kessclawd | pipe, tweed, Martian-loving smile | none | points his pipe at the sky; callout "A peaceful people." |
 
 **Charlie and the Chocolate Factory (5)**
@@ -215,7 +216,7 @@ The two `touch` casters (Katrina, the Crone) are a good witch and a bad one; the
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 50 | Pee-wee Herclawd | slicked-back hair, rosy cheeks, a too-small grey suit, red bow tie, white shoes | joke-shop novelties from the magic shop (`.thrown(red)`) | kicks off his shoes and does his big-shoe dance on the spot; callout "I know you are, but what am I?" |
+| 50 | Pee-wee Herclawd | slicked-back hair, rosy cheeks, a too-small grey suit, red bow tie, white shoes | joke-shop novelties from the magic shop (`.thrown(red)`) | kicks off his shoes, steps up into tall white platform shoes and does his big-shoe "Tequila" dance on the spot; callout "I know you are, but what am I?" |
 | 51 | Dottie | short tousled hair, bike-shop overalls, a spanner in the pocket | none | rings a bike bell and gives a hopeful little wave; callout "Drive-in, Saturday?" |
 | 52 | Large Marge | the ghost trucker: big hair, trucker's shirt, a sweet grin, a faint glow round her edges | none | her face stretches into the claymation scare (eyes pop out on stalks, jaw drops), then snaps back to the sweet grin; callout "Tell 'em Large Marge sent ya!" |
 
@@ -231,7 +232,7 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 1 | Beetlejooce | bursting bright-lime mane round a tall pale mouldy face, dark sunken eyes, huge sharp yellow grin; black-and-white striped suit with white shirt and black tie, black boots | snake arm (melee, `bulk`): his arm turns into a black-and-white banded snake that slithers out and snaps, jaws open, tongue out | his name bubbles up three times and he drops into a striped ring, hands on its rim, and springs back out; a beetle drops out of his sleeve now and then; callout "It's showtime!" |
+| 1 | Beetlejooce | bursting bright-lime mane round a tall pale mouldy face, dark sunken eyes, huge sharp yellow grin; black-and-white striped suit with white shirt and black tie, black boots | snake arm (melee, `bulk`): his arm turns into a black-and-white banded snake that slithers out and snaps, jaws open, tongue out, only as he strikes (a plain hand between strikes) | his name bubbles up three times and he drops into a striped ring, hands on its rim, and springs back out; a beetle drops out of his sleeve now and then; callout "It's showtime!" |
 | 2 | The Sandwurm | lean and Clawd-sized, not huge: its banded black-and-white neck reared up out of a hole in the sand in an S, a blunt black head with a bone band, a red mouth full of teeth and a pink inner mouth inside it; no legs (it travels with its hole, the one creature besides the wheelchair and unicycle off Clawd's four legs) | jaws (melee), `bulk` | rears up and its inner mouth snaps out |
 | 3 | Delorez | black gown, dark hair, held together with staples | soul wisp (steady ray) | gathers her pieces and staples them back together |
 | 4 | Otho | black turtleneck, red scarf, theatrical | séance rings (`rings`) | reads from the Handbook, arms raised |
@@ -270,7 +271,7 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
-| 20 | The Headless Horseclawd | black armour and cloak, no head, teeth-like spurs | sword (melee) | throws a flaming jack-o'-lantern and catches it; his swing knocks hats off, never heads |
+| 20 | The Headless Horseclawd | black armour and cloak, no head, teeth-like spurs | sword (melee), `armoured` | throws a flaming jack-o'-lantern and catches it; his swing knocks hats off, never heads |
 | 21 | Lady Van Tassle | black hair, wine-red gown | crimson witchcraft (`spell`) | stirs a little cauldron |
 | 22 | The Western Woods Crone | hunched, grey, milky eyes, rags | sickly charm (`touch`) | leans on her stick and peers |
 
@@ -281,7 +282,7 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 | 23 | The Martian Leader | big exposed brain in a glass dome, green skull face, red cape | ray gun (`.beam`) | raises a fist; callout "Ack! Ack!" |
 | 24 | The Martian Ambassador | brain in a dome, white robe, a translator box | ray gun (`.beam`) | releases a dove... then zaps it into a puff of feathers; callout "We come in peace!" |
 | 25 | A Martian Trooper | brain in a dome, silver spacesuit | ray gun (`.beam`) | spins the ray gun |
-| 26 | The Martian Spy | tall black beehive (hiding the brain), stiff walk, chewing gum | ray gun (`.beam`) | blows a bubble and stares without blinking |
+| 26 | The Martian Spy | tall black beehive (hiding the brain), stiff walk, chewing gum | no gun: her hypnotic stare, a soft pink ray rippling with rings out of her eye (`rings`) | blows a bubble and stares without blinking |
 | 27 | The Martian Walker | giant robot with a Martian in a dome on top | ray (`.beam`), `armoured`, `bulk` | stomps; its dome swivels |
 
 **Charlie and the Chocolate Factory (5)**
@@ -299,8 +300,8 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 | # | Name | Look | Weapon | Signature |
 |---|---|---|---|---|
 | 33 | The Red Queen | huge round head, heart-shaped lips, red gown | flamingo mallet (melee) | swings the flamingo at a hedgehog; callout "Off with their heads!" |
-| 34 | Stayne | tall Knave of Hearts, eyepatch, heart-pattern armour | sword (melee) | a slow bow, hand on the hilt |
-| 35 | The Jabberclawdky | dragon, long neck, bat wings | purple lightning, `bulk`, `armoured` | spreads its wings and roars |
+| 34 | Stayne | very tall Knave of Hearts, raised on long thin legs above the court, eyepatch, heart-pattern armour | sword (melee) | a slow bow, hand on the hilt |
+| 35 | The Jabberclawdky | dragon, long neck, bat wings; one size up, about 41×30 px | purple lightning, `bulk`, `armoured` | spreads its wings and roars |
 | 36 | The Bandersnatch | white shaggy beast, spotted, huge jaws | jaws (melee), `bulk` | shakes its shaggy head |
 | 37 | A Red Card Knight | armour made of playing cards, heart pattern | spear (melee), `armoured` | stands at attention, clanks |
 
@@ -313,9 +314,9 @@ Large Marge is the universe's best jump scare, kept eerie-fun: big rubbery clay 
 | 40 | Toshiakki | neat hair, competitive glare | bottle rockets (`.thrown(silver)`) | fires up a little rocket bottle |
 | 41 | Weird Gurl | huge round eyes, fringe, holding her cat | static-charged fur-balls off Mr. Whiskerz (`.thrown(grey)`) | holds up Mr. Whiskerz, who stares |
 | 42 | Mr. Whiskerz | vampire cat with bat wings | fangs (melee), `.fly` | flaps and hisses |
-| 43 | Shellee | turtle grown to a kaiju | stomp (melee), `armoured`, `bulk` | roars and stomps, the ground shaking |
+| 43 | Shellee | turtle grown to a kaiju, a domed grey shell of hexagonal scutes ridged with spikes | stomp (melee), `armoured`, `bulk` | roars and stomps, the ground shaking |
 | 44 | Colossuss | mummy hamster in bandages | bite (melee) | waddles with its arms out |
-| 45 | The Were-Rat | rat-man in tatters | claws (melee) | sniffs the air, whiskers twitching |
+| 45 | The Were-Rat | a hulking rat-monster in greys, hunched and bristling, tall pointed ears, a glaring eye, long fangs, a long bald tail | claws (melee), `bulk` | sniffs the air, whiskers twitching |
 
 All four Wonka children and all four classmates fight with something silly (gum, a candy bar, walnuts, a game zapper, a charged pet or its leftovers). Nobody is hurt; a hit is a splat, a fizz or a puff of fur.
 
@@ -325,13 +326,13 @@ All four Wonka children and all four classmates fight with something silly (gum,
 |---|---|---|---|---|
 | 46 | Francis Buxtun | big spoilt rich boy, curly hair, a striped bathrobe, a toy boat | rubber bath toys (`.thrown(yellow)`) | lolls in a bubble bath with his toy boat, smug, then sinks out of sight |
 | 47 | The Bike Thief | a shadowy figure, hat pulled low, collar up, bolt cutters | bolt cutters (melee) | tiptoes, snips a chain, and sneaks off with a cartoon "tee-hee" |
-| 48 | Madam Rubee | phoney fortune-teller, turban, beads, a crystal ball | none | waves her hands over the crystal ball, which glows; callout "The basement of the Alamo!" |
+| 48 | Madam Rubee | phoney fortune-teller, turban, beads, a crystal ball (on its stand while she stands, carried in her hands while she walks) | none | waves her hands over the crystal ball, which glows; callout "The basement of the Alamo!" |
 | 49 | Andee | Simone's enormous, short-tempered boyfriend, crew cut, plaid shirt | fists (melee), `bulk` | cracks his knuckles and stomps after someone |
 
 Madam Rubee and Andee earn their places: Rubee sends Pee-wee off on the wrong trail (and her turban and crystal ball read at once), and Andee's chase through the dinosaur park is one of the film's big set pieces.
 
 **Agent-only small fry (4).** Like the MSE-6, these only ever appear as agents:
-- 50 · **Bob**, one of Beetlejooce's shrunken-head workers in a suit;
+- 50 · **Bob**, one of Beetlejooce's shrunken-head workers in a suit, the block itself his shrunken head (stitched mouth, hair combed flat);
 - 51 · **an Oogie bug**, a beetle out of Oogie Boogie's seams;
 - 52 · **a nut-sorting squirrel** from Wonka's factory;
 - 53 · **a Sea-Monkey**, Frankenweenie's monstrous brine shrimp.
@@ -629,6 +630,7 @@ New totals: 54 heroes (HEM and Maggott included), 53 villains (four agent-only),
 10. **Ported to universe modules** (2026-10-22): main moved to 3.7.1, so the branch was rebased and Clawd Burton became a module: `universe.conf`, `BurtonFacts.swift`, `BurtonUniverse.swift`, `BurtonHem.swift`, the trailer in `Promo/BurtonReel.swift`, `BurtonTrip` a `Trip`. It carries `8 clawdBurton ClawdBurton reserved` in NUMBERS (the same line as on `stranger-clawds`) until main has it. Left for Rod: `Magic.pulse` as an engine addition, and a way to keep a universe unreleased (`isReleased` is true for every universe now).
 11. **Names say "clawd", never a bare "claw"** (2026-10-23, Rod's rule from the Democlawdgon): Sandy Clawdz, Edward Scissorclawds, Victoria, Finis and Maudeline Everclawd, Professor Kessclawd, Alice Kingsclawd, Elsa Van Helsclawd, the Jabberclawdky.
 12. **Five keep their own shape, without four legs** (2026-10-24): Zeero (a floating sheet), the Sandwurm (out of its hole), Dr. Finkelclawd (his wheelchair), the Tear-Away Clown (his unicycle) and the Halloween Witch (two legs while she rides her broom, four when she fights). Henrik: other universes have characters that don't conform to the four-legged rule either. The Sandwurm's hole stays put while it fights.
+13. **The character audit** (2026-10-24, decided 2026-10-28): all 107 checked against the films and this roster; Henrik approved all fifteen look changes it raised. Zeero gets a snout; Byron wears the casino's pharaoh get-up (nemes and collar) over his uniform; the Martian Spy drops the ray gun for a hypnotic stare (`rings`; she never fires a gun in the film); Beetlejooce's snake comes out only on the strike; the Headless Horseclawd is `armoured`; Bob's block is the shrunken head; Victor Frankenstien is child-sized; Stayne is tall on long legs; the Jabberclawdky comes down to one size up; the Were-Rat is a hunched rat-monster, no longer a cute mouse like Slayer's Amy; Edward's blades are thin with gaps (apart from Clawdverine); Pee-wee dances in platform shoes; Madam Rubee carries her ball when she walks; President Dayle says "Why can't we all just get along?"; Shellee's shell has hexagonal scutes.
 
 **Weak spots from phases 2–5** (for the polish pass): Junoh's bun merges into her hair; Maudeline's beehive reads like a tombstone; Finis is a wide grey box; Emilee's veil is stiff; Mirana is white on white; the Red Queen's heart hair is mild; the Bandersnatch could be a polar bear; Weird Gurl's cat is a white lump; Ichabod's faint is a tipped block; the Chocolate Room's waterfall looks like a brown column; the Tree of the Dead's far woods are a busy web; the Flyover trip's glide is a gentle drift and its spider blocky at the cut; the saucers' "ACK ACK" and the rabbit hole's far things are tiny in the window strip.
 
