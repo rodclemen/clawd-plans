@@ -67,7 +67,7 @@ Everything here is already in the code on branch `clawds-of-the-universe`. Look,
 
 ## Approved (2026-10-29)
 
-9 House of Shokoti, 10 Shokoti and 18 the swords: approved by the owner.
+9 House of Shokoti, 10 Shokoti, 18 the swords, 19 the trailer (with the new lift), 20 the second polish pass, and the Neverland and Kingston Falls fixes (17): all approved by the owner.
 
 ## Still weak after the second polish pass
 
