@@ -450,7 +450,7 @@ Ids are append-only, so the enum order is the order characters are added, and ph
 - **2026-10-29:** the owner approved 9, 10 and 18. The first arms on the Roton lift looked weird (posts beside the body, four arms): redone with his own arm stubs bent up, the Roton just over his hair (a5ecbac).
 - **2026-10-29, later:** the owner approved 20, the new lift ("much better") and the Neverland/Kingston fixes. Every review item is now approved.
 - The trailer is approved. `fix/neverland-lights` went straight into main at the owner's pick (8799a29, plus the CHANGELOG entry e7eb0f9, admin bypass of the PR rule); main merged into `clawds-of-the-universe` (e2257cc).
-- **Open, the owner's call:** a real `/compact` test in the app; then the public steps (showcase repo, cask, release, merge into main).
+- **2026-10-29: the /compact test passed** in the app, both ways (the change back got its own animation, the power leaving, in 9cade23). **Open, the owner's call:** the public steps (showcase repo, cask, release, merge into main).
 
 ### Status (2026-10-28, after the polish pass for phases 4 and 5)
 
