@@ -8,7 +8,7 @@ Everything here is already in the code on branch `clawds-of-the-universe`. Look,
   outlined cel puffs; 2 Man-At-Clawds' anvil blade, a solid hot glow, no see-through haze; 3 the Wind Raider's cloud
   on the window, fewer and bigger puffs; 4 Orkko's smoke, cel clouds instead of spiral ribbons; 5 Zoar's wingbeat,
   wings spread on the downstroke and folded on the upstroke; 6 the Horde Bat's closed wall in riveted Fright Zone
-  plate; 7 He-Clawd's arms lifting the Roton in the trailer (biceps, bracers, fists).
+  plate; 7 He-Clawd lifting the Roton in the trailer: the first try (long posts beside his body) the owner found weird; now his own arms bend straight up from his sides, the Roton just over his hair.
 - **19 Trailer/**: the owner said "better" after the white line fix (taken as approved). The white line under the
   ledge in the intro is gone (a row of the Castle Greyskull place was never painted; fixed in the place itself).
   `Trailer 720p.mp4` is re-rendered with the new arms.
@@ -65,10 +65,9 @@ Everything here is already in the code on branch `clawds-of-the-universe`. Look,
   Two Bad arguing, Stinkor clearing the room, the Dark Troopers marching, Skeleclawd's retreat after a fight).
 - Also in: the moral of the story. Now and then a hero who finishes their work says a lesson in their speech bubble.
 
-## Still waiting for your OK from before
+## Approved (2026-10-29)
 
-- **9 House of Shokoti.png**: redone from your cartoon stills (the tentacles now only come out now and then).
-- **10 Shokoti.png**: Shokoti redone after the cartoon.
+9 House of Shokoti, 10 Shokoti and 18 the swords: approved by the owner.
 
 ## Still weak after the second polish pass
 
