@@ -10,13 +10,12 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 <!-- track: repo=rodclemen/clawd-clash folder=ClawdOfTheRings title="Clawd of the Rings" url="https://github.com/rodclemen/clawd-clash/pull/3" source="The Lord of the Rings, built without a plan here (PR #3)" cast=76 places=22 who=Henrik -->
 
 <!-- status:start -->
-🚧 **2** being built · ✅ **7** released · 📝 **7** ready to pick up
+🚧 **1** being built · ✅ **8** released · 📝 **7** ready to pick up
 
 ### 🚧 Being built
 
 | Universe | Progress | Where it's at |
 |---|---|---|
-| **[Clawds of the Universe](in-progress/clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | `█████████░` 92% | **Phase 6 of 6**, docs and trailer<br><sub>85/85 characters · 21/21 places · `clawds-of-the-universe`, last commit 29 Oct</sub> |
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 28 Oct</sub> |
 
 ### 🎨 Detail overhaul
@@ -52,6 +51,7 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. D
 
 | Universe | Released in | Size |
 |---|---|---|
+| **[Clawds of the Universe](done/clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | **4.2.0** | 85 characters · 21 places |
 | **[Superclawdtural](done/superclawdtural.md)**<br><sub>Supernatural</sub> | **4.1.0** | 80 characters · 20 places |
 | **[Stranger Clawds](done/stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | **4.0.0** | 44 characters · 16 places |
 | **[Clawd Slayer](done/clawd-slayer.md)**<br><sub>Buffy the Vampire Slayer</sub> | **3.7.0** | 84 characters · 20 places |
