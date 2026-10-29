@@ -1,6 +1,6 @@
 # Clawdify guide: adding a universe to Clawd Clash
 
-## Last updated: 19 October 2026 (the universe-modules refactor)
+## Last updated: 29 October 2026 (never say how many universes there are)
 
 This guide is for an AI assistant (Claude Code or similar) working in this repo. To start, point the assistant at it along with the franchise you want, for example:
 
@@ -19,6 +19,10 @@ So there are two roles, and this guide says which one each step belongs to:
 - **The owner** of the repo hands out the universe's number, builds anything new the engine needs, and, after merging, does everything public and shared: the changelog, the README, `llms.txt`, the release.
 
 If the user *is* the owner, you'll do both halves, but still in that order: the folder first, the shared files after.
+
+### Never say how many universes there are
+
+Nothing anyone reads ever gives the number of universes: not a trailer, the promo, a caption, the README, `llms.txt`, a showcase page, the app's own text or a commit message meant for the changelog. Say "multiple universes" (or "many" or "several"), never "eleven universes", "ONE APP. ELEVEN UNIVERSES." or a number worked out from `Universe.offered.count`. A count goes stale the day the next universe lands, and then every video that shows it has to be rendered and uploaded again. Counting a universe's own things is fine ("21 places", "twelve transitions"); counting the universes is not.
 
 Reference builds to read when you get stuck:
 - **The template** (`Sources/App/Universes/_Template/`) is where every universe starts. Read `TemplateUniverse.swift`'s header first: it's the "start here". Every rule in this guide that's about code is also written next to the code it applies to.
@@ -500,7 +504,7 @@ These are public or shared, so they're the owner's, and done once the folder is 
 - **`NUMBERS`**: the universe's line goes from `reserved` to `shipped` with the release that first carries it. From then on its number can never be reused, and its enums are append-only for good.
 - **Thanks**: a contributor's name in About's "Thanks to" list (`CONTRIBUTING.md` says where).
 
-Trailers never say how many universes there are (the end card reads "One of many universes in Clawd Clash"), so nothing needs updating when one is added. Don't add a count anywhere else either: the README and `llms.txt` say "many" or "several".
+Trailers never say how many universes there are (the end card reads "One of many universes in Clawd Clash"), so nothing needs updating when one is added. The same goes for everything else: see [Never say how many universes there are](#never-say-how-many-universes-there-are).
 
 **Version numbers:** a new universe, and only a new universe, raises the middle number: 3.6.x → 3.7.0. Everything else (fixes, tweaks, features that don't add a universe) raises only the last: 3.6.0 → 3.6.1 → 3.6.2. So a universe ships as the next `3.N.0`, and its own fixes after that as `3.N.1`, `3.N.2`…
 
