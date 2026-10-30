@@ -487,3 +487,13 @@ Phase 2 is drawn on branch `dungeon-crawler-clawd` (3458284 wiring, 62d58af art,
 - Lorelai's bone necklace and topknot.
 - Odette's studio: the mantis emblem, and the tall version's empty top.
 - Chaco's signature runs off the left edge on purpose.
+
+## Handoff (2026-10-30, end of the day)
+
+Everything is pushed: `main` (4f73e7b, number 12 reserved) and `dungeon-crawler-clawd` (763144c) on origin. To pick up at home: `git fetch && git checkout dungeon-crawler-clawd`, then `Tools/Preview/build.sh` (about 4 minutes).
+
+- **Where it stands:** phases 1 and 2 done and shown; the owner approved Donut, Mongo, Prepotente and the guild fixes. No other phase 2 notes yet.
+- **Next:** phase 3, the rest of the cast and places (see Phases). The enum cases go in first, before `hem` (HEM is always last), then the art.
+- **How phase 2 was built:** the wiring commit first (cases, homes, nemeses, place keys, empty `CrawlHeroes2/3`, `CrawlVillains2/3`, `CrawlScenes2/3`), then six agents in parallel, one file each, in their own worktrees, with renders checked before merging. Worktree agents start from `main`, so each had to fast-forward to the branch first; say so in the brief. Builds run 4 to 7 minutes when several go at once.
+- **Review renders:** `~/Desktop/dungeon-crawler-clawd-phase-2/` on the work machine only (not in git).
+- **Preview names:** some clash with other universes; use `crawl:` in front (`crawl:rory`, `crawl:samantha`).
