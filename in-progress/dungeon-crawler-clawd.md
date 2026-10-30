@@ -52,48 +52,14 @@ The books are profane, gory and bawdy. Clawd Clash is a desktop toy, but at 72×
 - **Lookalikes in Clawd Royale:** Mongo's pink feathers and collar keep him apart from Stevie Clawdberg's raptors; Big Tina's tutu and tiara apart from its T. rex; the Sledge's cowboy hat and boa apart from Bomo; Katia's combat form is pink, never Hulk green.
 - **Music:** game-show brass and chiptune in our own notes.
 
-## How a universe plugs in (checked against the code on 2026-10-18, main b5c6ab8)
+## How a universe plugs in (the folder flow, since 2026-10-19)
 
-**New code: `Sources/App/Universes/DungeonCrawlerClawd/`**
-- `CrawlRoster.swift`:
-  - `enum CrawlHero` and `enum CrawlVillain`, append-only, with `hem` as the last hero.
-  - The persona dictionaries, `.reduce([.hem: hemPersona(.crawl)])`.
-  - `Location.crawlHome(of:)` for heroes and villains, `crawlNemeses`, the ride closure, `let crawlTheme = Theme(...)`.
-  - The `static let` place keys and `let crawlPlaces` merged from the Places files.
-- `Art/CrawlHeroes1…6.swift` and `Art/CrawlVillains1…5.swift`, 8 to 10 personas per file, in the pattern of `RingsHeroes1.swift`. Shared helpers (System-blue glows, the Desperado tuxedo, goblin dynamite, pineapple staffs, Skyfowl feathers, the kua-tin fish face) go in one `CrawlKit.swift` with `crawl`-prefixed names.
-- `Places/CrawlScenes1…3.swift` as `let crawlScenesN: [Location: Place]`.
-- `CrawlIcon.swift`: the menu bar icon, 28×26, colour and mono. A stick of dynamite, or Donut's crown.
-- `CrawlAchievement.swift`: the compaction mechanic (see Mechanics).
-- `CrawlWipes.swift`: the twelve transitions and the System-box finishing touch, last.
+Everything is in `Sources/App/Universes/DungeonCrawlerClawd/`, started from the template with `Tools/new-universe.sh DungeonCrawlerClawd Crawl crawl "Dungeon Crawler Clawd" 12` (2026-10-30, number 12 reserved in `NUMBERS` on `main`). Nothing outside the folder changes except `NUMBERS`; the guide's Step 7 and "Your folder" have the layout (`CrawlFacts`, `CrawlRoster`, `CrawlUniverse`, `CrawlHem`, `CrawlIcon`, `CrawlWipes`, `Art/`, `Places/`, `Promo/`). Shared drawing helpers go in `CrawlKit.swift` with `crawl`-prefixed names; never name anything `crawler…` (Star Clawds' sandcrawler has `crawlerLights`).
 
-**Wiring into the existing code.** Copy what `middleEarth` and `clawdberg` did. Every exhaustive `switch` on `Universe` turns a missed spot into a compile error, except the ones marked ⚠︎.
-- **`Sources/Shared/Universe.swift`:**
-  - `:9–15` the case; `:17` `key`; `:25` `title`; `:33` `villainCount` (44); `:37` `heroCount` (51);
-  - `:50` `agentOnly`: Garret (hero 49, so `base + StatusStore.heroBase + 49`) and the five small fry (villains 39 to 43);
-  - `:65` `claudeSide` (default false: Claude plays the heroes);
-  - `:74` `guises`: none;
-  - `:83` `homebound`: the Hoarder (villain 1) only at `"crawlHoard"`. Today it's `self == .middleEarth ? … : [:]`, so it becomes a `switch` (Harry Clawder's Basilisk may already have done that);
-  - `:90` `abductees`: the Earth crawlers among the heroes (see Mechanics), with a doc comment like the other two;
-  - `:106` `isReleased`: return `false` for `.crawl` until phase 6 if it's built on `main`.
-- **`Sources/App/Theme.swift:40–48`:** `Theme.of`. **`:89–90`** add `monsterTruck` to `enum Ride`, and **`:93`** add it to `Ride.drives`. Check `boardingOffset` just below.
-- **`Sources/App/Locations.swift:70–72`:** `.merging(crawlPlaces)`.
-- **`Sources/App/Universes/ComicTransition.swift`:** in phase 1, add `.crawl` next to Star Clawds in `pick` (`case .starWars, .crawl: return nil`, `:49`). In phase 5, take it out of that line and add a `.crawl(CrawlTrip)` case to the enum (`:7–13`), `duration` (`:15–23`), `draw` (`:27–35`) and `pick` (`:47–68`), and the doc comment at `:3–6`.
-- **`Sources/App/Universes/Hem.swift:31–32, 55–57, 76, 115, 130, 151–157, 174, 196, 203`:** HEM's persona and costume in every switch (a crawler's patch jacket, a "Princess Posse" fan sash, a slingshot). Leave the `u == .middleEarth` Rohan checks alone.
-- **`Sources/App/Rides.swift:18–34`:** the monster truck in `drawRide` (phase 4).
-- ⚠︎ **`Sources/Saver/SaverView.swift`:** nothing to add; the Options list and trip choice build themselves from `Universe.offered` (`:89`, `:208–212`).
-- ⚠︎ **`Sources/App/Drills.swift:51`:** the meditation guard (`meditates`): Dungeon Crawler Clawd stays out. **`:73`** and the bespoke-drill table: merge `crawlBespokeDrills`.
-- ⚠︎ **`Sources/App/Overlay.swift`:**
-  - `:875–878` the Playground prompts (five, below), a `case .crawl:` next to `.clawdberg` and `.middleEarth`;
-  - `:1271–1272` is where `OutaTime` is chosen for `clawdberg` (`MissingTime` is the fallback for everyone else in `abductees`); `CrawlAchievement` hooks in the same way;
-  - the fans, Mongo-and-Donut, Prepotente's-scream and petty-achievement habits hook into the tick;
-  - the cast-size check is at `:180`.
-- ⚠︎ **`Sources/App/Pose.swift`** (`classic`) and **`Habits.swift`**: decide per universe-specific `if`. Dungeon Crawler Clawd joins none of the existing ones.
-- ⚠︎ **Compaction:** `Sources/Shared/StatusStore.swift:367` already marks any leader in `abductees`; check it picks up `.crawl` without changes. `HookInstaller.swift` already registers the hook.
-- **Clawd Royale** picks the cast and places up through `Universe.allCases`. Check the menu bar icon and arch-enemies in a Dungeon Crawler Clawd place, and that the homebound Hoarder is recast anywhere but her lair.
-- **Tools:**
-  - `Tools/Preview/main.swift:7, 65` (batch doc comments), `:87` (`"crawl": Theme.of(.crawl).cast`), `:102–104` (the batch arrays `crawlHeroes1…`, `crawlVillains1…`, `crawlHem`), and the enum lookups by case name.
-  - `Tools/Transitions/main.swift:7, 15` (usage comments), a `shownCrawl` like `shownRings` at `:88–90`, and the branch at `:133` (phase 5).
-  - Phase 6: `Tools/RenderPromo` (`REEL=crawl`), `Tools/RenderDocs`, `Tools/MakeSocial`, `Tools/RenderShowcase`.
+What the old wiring list asked for now lives in the module and the facts:
+- **Facts:** counts from the enums; agent-only Garret (hero 49) and the five small fry (villains 39 to 43); Claude plays the heroes; no guises; the Hoarder (villain 1) homebound at `crawlHoard`; compaction `.away` for the Earth crawlers (see Mechanics).
+- **Module:** the monster truck in `rides` and `theme.ride`; New Achievement! as `compactionLook`; the habits through `quirks` where they fit (anything they can't do is an engine request); `drills` for the bespoke drills; `meditation: .never`; the five `playgroundPrompts` below; `transitions` in phase 5.
+- **Engine requests**, if any turn up (built on `main` as their own commits first): check in phase 4 whether the fans' viewer ticker, Mongo nipping Donut, the crew jumping at Prepotente's scream and the petty-achievement toasts fit `StageQuirks`.
 
 **Playground prompts** (`Overlay.swift:875`):
 1. "Open the loot box the CI left us."
