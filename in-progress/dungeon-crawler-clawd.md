@@ -464,3 +464,13 @@ All four gates are passed:
 - **Transitions:** the twelve above, opening with the Collapse, finished with the System box.
 
 The plan is ready for phase 1 when you say start.
+
+## Status (2026-10-30, after phase 1)
+
+Phase 1 is done on branch `dungeon-crawler-clawd` (1064d89; number 12 reserved on `main`): Carl, Princess Donut, Mongo and Maestro, HEM as a crawler fan with a slingshot, a safe room, the dynamite menu icon, the Playground prompts, no meditation, and the System's block letters (`crawlText` in CrawlKit). The template's one trip stays until phase 5. check.sh passes. Next: show phase 1, then phase 2 (core ensemble).
+
+**Weak spots so far** (for the polish pass):
+- Carl: the leather jacket's dark sides read a little like a moustache at 1×; the gauntlet is small.
+- Donut: her split tortie face is busy, so the copper eyes and flat face don't read at once.
+- Maestro: the snout and tusks are crowded together.
+- Safe room: the "PREV" caption on the TV is cramped.
