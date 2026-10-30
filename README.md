@@ -17,13 +17,13 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 | Universe | Progress | Where it's at |
 |---|---|---|
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 28 Oct</sub> |
-| **[Dungeon Crawler Clawd](in-progress/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | `░░░░░░░░░░` 0% | **In progress**<br><sub>`dungeon-crawler-clawd`, nothing pushed yet</sub> |
+| **[Dungeon Crawler Clawd](in-progress/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>37/95 characters · 8/20 places · `dungeon-crawler-clawd`, last commit 30 Oct</sub> |
 
 ### 🎨 Detail overhaul
 
 Every released universe redrawn to the detail bar the Star Clawds refresh set. Done: what was below the bar was redrawn, the rest was audited and left as it was.
 
-**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 29 Oct</sub>
+**Overall** ✅ finished `██████████` 100% · 934/934 characters · 213/213 places<br><sub>`main` since 3.7.0, last commit 30 Oct</sub>
 
 | Universe | Characters | Places |
 |---|---|---|
