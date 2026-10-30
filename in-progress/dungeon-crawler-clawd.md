@@ -474,3 +474,16 @@ Phase 1 is done on branch `dungeon-crawler-clawd` (1064d89; number 12 reserved o
 - Donut: her split tortie face is busy, so the copper eyes and flat face don't read at once.
 - Maestro: the snout and tusks are crowded together.
 - Safe room: the "PREV" caption on the TV is cramped.
+
+## Status (2026-10-30, after phase 2)
+
+Phase 2 is drawn on branch `dungeon-crawler-clawd` (3458284 wiring, 62d58af art, 763144c fixes): 20 more heroes, 12 villains and 7 places. Donut is brown with a ginger saddle and a brown tail; Mongo is blue-grey under pink plumage (owner's picks, d76cbd4). Prepotente stands on his own now, without Bianca (owner's call). HEM sits just before the end of `CrawlHero`, so the plan's 0-based hero and villain numbers no longer apply; use the case names. Phase 2 homes stand in for places that come in phase 3 (see CrawlRoster.swift). Emberus is `.lightning` with a thick steady ray.
+
+**Weak spots from phase 2** (for the polish pass):
+- Mordecai reads as a brown bird more than an eagle.
+- Ball of Swine: a tight cluster of tiny faces.
+- The Hoarder: busy edges from the junk.
+- Bautista's orange sword can read as his tail at rest.
+- Lorelai's bone necklace and topknot.
+- Odette's studio: the mantis emblem, and the tall version's empty top.
+- Chaco's signature runs off the left edge on purpose.
