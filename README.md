@@ -17,7 +17,7 @@ The status below fills itself in. Every few hours [`scripts/status.py`](scripts/
 | Universe | Progress | Where it's at |
 |---|---|---|
 | **[Clawd Burton](in-progress/clawd-burton.md)**<br><sub>Tim Burton's films</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>107/107 characters · 23/23 places · Henrik · `feature-burton` in HEM42/clawd-clash, last commit 28 Oct</sub> |
-| **[Dungeon Crawler Clawd](in-progress/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>37/95 characters · 8/20 places · `dungeon-crawler-clawd`, last commit 30 Oct</sub> |
+| **[Dungeon Crawler Clawd](in-progress/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | `████████░░` 80% | **Phase 5 of 6**, transitions<br><sub>95/95 characters · 20/20 places · `dungeon-crawler-clawd`, last commit 31 Oct</sub> |
 
 ### 🎨 Detail overhaul
 
