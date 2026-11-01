@@ -508,3 +508,14 @@ Phase 3's art is drawn on branch `dungeon-crawler-clawd` (464772a stand-ins, the
 - Heroes: Li Jun a plain red blob; Jurgen a blond blob; Langley's and Osvaldo's bows read as pale slabs; Zhang's die reads as an X; Tran's shirt tug too small; Gluteus Maxx mostly a red helmet; Anaconda more slug than snake-man; Juice Box's jacket merges with her arms; Orthrus's second head barely shows; Tipid a plain brown dome; Rosetta's near-black bombs hard to see in flight.
 - Villains: Gore-Gore's second torso doesn't read; Queen Imogen's beehive a red ball; Heather cute more than eerie; Grimaldi's vine lash faint; Quan Ch a plain Clawd in a robe; Mrs. Ghazi plain, a table when slumped; the Hydra's necks a busy fan; Eva's hood reads as a second face; Vrah more grasshopper than mantis; Tsarina's tattoos only show zoomed; Burcu's face reads as a mask; Harbinger's muzzle lost in his coat; Eris's coat a barcode; Grull's axe haft lost on his body; the Tuskling's tusks; the cloneling's tuft.
 - Places: Iron Tangle's screen-saver roof empty girders; the ballroom's black and silver mask reads as sunglasses; Larracos's castle small in the window; Havana's pastels light behind the crew; Death Watch's spotlights faint; the temple fountain's upper bowl like a glass box; the circus vines a flat green carpet; Seattle's rain dense over the crew and the Needle small; the Over City's birds tiny.
+
+## Status (2026-11-01, the character audit)
+
+The audit is done (all 95 against the Cast tables; 83 clean). Owner's calls:
+- Harbinger and Astrid share red: fine. Shi Maria as drawn: fine (a spider with a granny head). HEM keeps the shared fist shake. Fire and arrow users sharing one look: fine. Li Jun's beads and the small fry's signatures: kept as drawn.
+- Tserendolgor's Crisper weapon is a flamethrower (orange `beam`, tank on her back). Eva carries four swords (two on her back, two at her sash) and fights with all four. Quan Ch goes pale cyan, Zhang's rocks grey-brown stone (d3025c7).
+- The Hydra's heads take turns (engine: `Persona.shotTurns`, ac2608f): Monobrow Sam's crimson death ray and Bea's mother's fireballs, the only powers the books show; the Keymaster, Judge Lucian, is the main head, on top, bigger, in a judge's wig (c0dba2a). Known heads: Monobrow Sam, Bea's mother, Asher, Dick, Sally, Sugar Cube, Tami-Lynn, Mr. Roth, Judge Lucian.
+- Also fixed from the owner's look: the circus trapezes hang from a cable between the poles (3668424); the Hunting Grounds volcano's lava sits in a crater summit (67d617b).
+- Plan corrections: the bulk list also has Mongo, Jurgen, the Juicer, Hekla and Stalwart; "every weapon type the engine has is used" isn't so (web, card, rcCar, grip and swing aren't).
+
+Next: phase 4 (mechanics).
