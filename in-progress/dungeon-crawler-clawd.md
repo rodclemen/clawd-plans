@@ -519,3 +519,18 @@ The audit is done (all 95 against the Cast tables; 83 clean). Owner's calls:
 - Plan corrections: the bulk list also has Mongo, Jurgen, the Juicer, Hekla and Stalwart; "every weapon type the engine has is used" isn't so (web, card, rcCar, grip and swing aren't).
 
 Next: phase 4 (mechanics).
+
+## Status (2026-11-01, after phase 4)
+
+Phase 4 is done on branch `dungeon-crawler-clawd` (857635d stand-ins, then one commit per file from four worktree helpers, cherry-picked: cb3d875 truck, 8d0bd35 drills, c3ae5b6 New Achievement!, 5b4a0b7 habits). Full check.sh and `--release` build clean. Helper brief: `dungeon-crawler-clawd-brief-phase4.md`. Renders and GIFs: `~/Desktop/dungeon-crawler-clawd-phase-4/<file>/` on the home machine. Next: show the owner, then phase 5 (transitions).
+
+- **Truck riders:** Ferdinand, Rosetta, Tipid and Formidable ride (the plan's on-foot list doesn't name them); flip if the owner sees them as tied to posts.
+- **New Achievement! tier** is fixed per compaction by a memo keyed on the cast and the compaction's start; odds bronze 58, silver 24, gold 11, legendary 5, celestial 2. The System box and light are layers; the loot box is drawn on the sprite in `touch`.
+- **Habits timing:** fans every 47 s (3.4 s), Mongo's nip every 63 s (5.6 s, only when he's on her tail side within 130 px), Prepotente's scream as often as his signature, the petty toast every 110 s to one idler at a time (3.2 s).
+- **Sparring:** no two-person drill API, so Bautista and Tran each spar with a stand-in (a sword post, a quintain).
+
+**Weak spots from phase 4** (for the polish pass):
+- Truck: the pink flames read as a spiky stripe; body a bit long; the roll bar's grate a dark block; the bounce rides on the tailgate, not the stop (the engine doesn't tell a ride when it stopped).
+- New Achievement!: the panel slides behind the raised name tag in its first 0.25 s; it nearly reaches the top of the window scene (check in the real window); 93 px wide, overhangs a close opponent; the loot box can cover the bottom of a weapon; the bronze lid dark in flight.
+- Habits: "idling" is guessed from a recent idle signature (a core `idle` on `OnStage` would be clean); the toast is about 57 px wide; a wrapped name tag would overlap it; agent Mongo's nip is drawn behind Donut.
+- Drills: Smush's dust small and dim; the M in SMUSH crowded (shared glyph); Bautista's blade crosses the post's pegs; Tran's shield small; Katia's breath puff faint.
