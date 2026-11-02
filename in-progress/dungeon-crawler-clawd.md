@@ -538,3 +538,23 @@ Phase 4 is done on branch `dungeon-crawler-clawd` (857635d stand-ins, then one c
 ## Status (2026-11-02, phase 5 under way)
 
 The engine change for the Hydra (several shots taking turns) is on `main` as its own commit (711cee2, cherry-picked from ac2608f) and merged back into the branch. Phase 5's wiring is on the branch (f0661af): `CrawlTrips.swift` (was CrawlWipes.swift) with the twelve kinds, the Collapse the rarest (0.2, 0.35 with Carl), Emberus's Fire `needsOwner`, a `crewShown` hook for the Collapse, Floor Collapse and the Hole; a stand-in file per trip; and the System box (`CrawlSystemCaption.swift`): ENTERING: and the place's name cut at the first comma, dropping into the top-left corner, checked at window and screen saver size. The block letters gained J, Q, X, Z and : . , ' - ?. `CrawlFacts.earthCrawlers` is shared by New Achievement! and the Loot Box trip. Four worktree helpers draw three trips each (brief: `dungeon-crawler-clawd-brief-phase5.md`); renders go to `~/Desktop/dungeon-crawler-clawd-phase-5/` on the work machine.
+
+## Status (2026-11-02, after phase 5)
+
+Phase 5 is done on branch `dungeon-crawler-clawd`: the twelve trips, one commit per file from four worktree helpers, cherry-picked (4b2c2ab dynamite, ce19e47 wheel, 627f044 Iron Tangle, 82c42e7 stairwell, 4affe1b floor collapse, 853d0ec ping, 5fc3f2d loot box, 0d7f709 recap, b8b1b6f club doors, c1abf15 hole, 92e606c Collapse, a9e2f16 Emberus's Fire), then 4b7109d: W in the block letters is 5 wide now (the 3-wide one read as H: "CRAHLER CLAHD"); `crawlText` steps by each letter's width. Review clips (both sizes) and key-frame sheets: `~/Desktop/dungeon-crawler-clawd-phase-5/` on the work machine, the helpers' own frames in its `helpers' work/`. Next: show the owner, then phase 6 (polish).
+
+- **Open for the owner:** the stairwell's floor table (private in CrawlStairwellTrip.swift, from memory of the books: Hoarder 1, gym 2, club and Parade 3, Iron Tangle and circus 4, Hump Town 5, Over City, castle and Hunting Grounds 6, Havana 8, Larracos 9; the rest one floor down from where the crew were). The wheel is a game-show drum on its side (so long names fit), not a round face. The Loot Box trip's tier odds are grander than New Achievement!'s (bronze 30, silver 26, gold 24, legendary 13, celestial 7). Ping's dot colours (party green, monsters red, boss gold) are our own.
+
+**Weak spots from phase 5** (for the polish pass):
+- Collapse: Carl's street a little dark and busy under the rain on the screen saver; the blue fall is dark for about 0.3 s.
+- Hole: the pink streaks fall through a dark pit for about 0.3 s.
+- Emberus's Fire: noise flames flicker every 0.06 s, maybe busy in motion.
+- Stairwell: the stone courses near the rim get very large on the window's strip.
+- Floor Collapse: cracks show early on the old place; a few dark blocks still falling over the lit new place; the shaking old place drawn 2 px bigger.
+- Ping: busy horizontal bands on the window's strip; 2 px dots.
+- Loot Box: a silver flood is flat grey-white; the light still thinning when the System box comes; the landing dust barely shows.
+- Recap: PREVIOUSLY ON sits a little left until the dots are in; nothing of Odette's show in it.
+- Club Doors: no sign or lettering on the doors.
+- Dynamite: the smoke puffs a regular grid of balls; scattered dots as it clears; BOOM's crumbling messy.
+- Wheel: the dive into the winning wedge noisy (0.8 to 0.86), housing bars and name fragments at the edges.
+- Iron Tangle: the passengers plain orange blocks with eyes, not Clawds; the lower body flat grey.
