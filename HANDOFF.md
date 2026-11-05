@@ -1,5 +1,20 @@
 # Picking up on another computer
 
+## Latest: 2026-11-05, Dungeon Crawler Clawd's polish pass
+
+Everything is pushed. To pick up:
+```sh
+cd "<your code folder>/clawd-plans" && git pull
+cd "<your code folder>/clawd-clash" && git fetch && git switch dungeon-crawler-clawd && git pull
+Tools/Preview/build.sh
+```
+- **Dungeon Crawler Clawd:** phases 1 to 6 done on `dungeon-crawler-clawd`, full check clean. Next is your review: `review/dungeon-crawler-clawd/Polish/Needs your call/` here, 21 images each with a question. The plan's last Status section has everything else that's open.
+- **Branch `fix-idle-session-records`** (from `main`, pushed, not merged): a session idle over 3 hours kept showing as disconnected, and could raise a false "isn't reporting" banner. Installed on the work machine only, built from `main`, so that app doesn't have the universe. To merge once it has proved itself: leave a session idle for over 3 hours, restart the app, and it should stay idle and asleep with no banner. Ships as a patch release.
+- **Open question:** the app drops a subagent from the stage while it waits on its own background work, because that looks like it finished. Check what `SubagentStop` carries, or add it to clawd-clash issue #7. That issue could also link openai/codex#51272.
+- **Memory:** copy `claude-memory/dungeon-crawler-clawd.md` over as described below.
+
+## Earlier: 2026-10-25
+
 Written 2026-10-25, after the 4.1.0 release. Everything is pushed except one branch, `background-jobs`.
 
 ## Where things stand

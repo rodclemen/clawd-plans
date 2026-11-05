@@ -558,3 +558,19 @@ Phase 5 is done on branch `dungeon-crawler-clawd`: the twelve trips, one commit 
 - Dynamite: the smoke puffs a regular grid of balls; scattered dots as it clears; BOOM's crumbling messy.
 - Wheel: the dive into the winning wedge noisy (0.8 to 0.86), housing bars and name fragments at the edges.
 - Iron Tangle: the passengers plain orange blocks with eyes, not Clawds; the lower body flat grey.
+
+## Status (2026-11-05, after phase 6, the polish pass)
+
+Phase 6 is done on branch `dungeon-crawler-clawd` (6d12f11), waiting for the owner's OK. Ten worktree helpers, one group of files each (brief: `dungeon-crawler-clawd-brief-phase6.md`), cherry-picked, plus 374c459: the Recap's medallion had kept the old mantis after the studio's was redrawn; `recapMantis` is now a copy of `crawlMantis`, so change both together. The full check.sh passes (every build, all content checks; only the hand-off scope line). Not checked in the real app: New Achievement! and the habits were rendered on a scratch stage copying the Overlay's draw order, so look at them in a real window before signing off. Tran's sparring drill wasn't viewed after his changes.
+
+**Review:** `review/dungeon-crawler-clawd/Polish/Needs your call/` (21 numbered, captioned images, each with a question); every before and after in `Polish/All/<group>/`. The Desktop copy exists on the work machine only.
+
+**Open for the owner, beyond those 21:**
+- The M in the block letters is crowded in SMUSH: a 5-wide M like the W (`#...#`, `##.##`, `#.#.#`, `#...#`, `#...#`) in CrawlKit.swift would fix it, but changes all System lettering and widens each line by 2 px.
+- Still from phases 4 and 5: the stairwell's floor table, the wheel as a drum on its side, the Loot Box trip's tier odds, Ping's dot colours, whether Ferdinand, Rosetta, Tipid and Formidable ride the truck.
+
+**Engine requests:** `.thrown` only draws a 3 px spinning bar, so a round bomb can't fly (`Pose.swift`); `CompactionLook.layers` isn't told the stage's edges, so a crawler at the far left has its panel clipped; the truck's bounce and "idling" limits from phase 4 stand.
+
+**Left weak, not on the list:** the ballroom's violet mask (old two-lens shape); Tsarina's tattoos still modest; Tipid's bandolier reads as a belt; Osvaldo's jeans near the preview's background; Imogen's gown below the ground when seated; Ball of Swine's seated legs; Eva's head a little right of her hood; Vrah's blocky body; a faint streak behind Bautista's swing; Floor Collapse cracks thin on dark places, and a crowd of blocks at about 0.76; the fire's comb of tongues on its back edge; the fans' ticker over a wrapped name tag; an over-head line landing on the panel during a compaction; a bird on the Over City's flag finial.
+
+**Next:** the owner's review, fixes from it, then phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.

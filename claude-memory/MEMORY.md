@@ -26,3 +26,4 @@
 - [Show animations as GIFs](show-animations-as-gifs.md): moving things go to the owner as GIFs (fightclip frames + PIL); dark effects vanish on the desktop
 - [Background jobs](background-jobs.md): hourglass "waiting on a job" state, released in 4.1.1; Codex and pi open in issue #7
 - [Clawds of the Universe](clawds-of-the-universe.md): He-Man universe, number 11, prefix Eternia, branch clawds-of-the-universe; phase 1 done 2026-10-25
+- [Dungeon Crawler Clawd](dungeon-crawler-clawd.md): number 12, phases 1-6 done 2026-11-05; owner's review next; art picks; handoff in the clawd-plans plan
