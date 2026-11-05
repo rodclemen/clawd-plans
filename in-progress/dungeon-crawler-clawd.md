@@ -574,3 +574,15 @@ Phase 6 is done on branch `dungeon-crawler-clawd` (6d12f11), waiting for the own
 **Left weak, not on the list:** the ballroom's violet mask (old two-lens shape); Tsarina's tattoos still modest; Tipid's bandolier reads as a belt; Osvaldo's jeans near the preview's background; Imogen's gown below the ground when seated; Ball of Swine's seated legs; Eva's head a little right of her hood; Vrah's blocky body; a faint streak behind Bautista's swing; Floor Collapse cracks thin on dark places, and a crowd of blocks at about 0.76; the fire's comb of tongues on its back edge; the fans' ticker over a wrapped name tag; an over-head line landing on the panel during a compaction; a bird on the Over City's flag finial.
 
 **Next:** the owner's review, fixes from it, then phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.
+
+## Status (2026-11-05, the owner's polish review)
+
+The owner took Claude's recommendation on all 21 calls ("go with your picks"). Kept as they are: 1 to 14 except as below, 16 to 19, 21. Tsarina (8) stays as good enough, no second try.
+
+**Changed:** the violet mask (15) is one shaped piece with a gold swirl; the toasts (20) are back to PARTICIPATION TROPHY and SPECTACULARLY AVERAGE (same two lines, so the same height over a wrapped name tag, 4 px wider; word limit now thirteen letters); the block letters' M is 5 wide (only five signs changed across all places: SAFE ROOM, MONGO, ADMIN, GRIMALDI and MAP; every box fits or sizes itself). The changelog gained the missing phase 5 entry.
+
+**Kept from the open list:** the wheel as a drum, the Loot Box trip's tier odds, Ping's dot colours, Ferdinand, Rosetta, Tipid and Formidable riding the truck.
+
+**Still the owner's:** the stairwell's floor table and #1 (Donut's saddle, the owner's own colour pick) need the owner's own eye. New Achievement! and the habits still need a look in a real window. Tran's drill viewed, fine.
+
+**Next:** phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.
