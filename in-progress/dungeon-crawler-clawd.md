@@ -583,6 +583,8 @@ The owner took Claude's recommendation on all 21 calls ("go with your picks"). K
 
 **Kept from the open list:** the wheel as a drum, the Loot Box trip's tier odds, Ping's dot colours, Ferdinand, Rosetta, Tipid and Formidable riding the truck.
 
-**Still the owner's:** the stairwell's floor table and #1 (Donut's saddle, the owner's own colour pick) need the owner's own eye. New Achievement! and the habits still need a look in a real window. Tran's drill viewed, fine.
+**Still the owner's:** the stairwell's floor table and #1 (Donut's saddle, the owner's own colour pick) stand unless the owner objects. Tran's drill viewed, fine.
+
+**Real window check done (2026-11-05, Playground build, CLAWD_SHOT frames):** New Achievement!, the fans, Mongo's nip, the scream and all eight toasts play and fit the scene; a real Loot Box trip fired too. Found and fixed: the viewers strip was hard-coded at 58 px (8bcb471). The toast needed a temporary 8 s beat to be seen, reverted. Not proven: name tags did not show in those frames, so a toast over a wrapped tag is reasoned, not seen. Panels overlap when neighbours compact at once (the test compacts everyone; rare live). The ticker can cross a sign or a sleep bubble for a moment.
 
 **Next:** phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.
