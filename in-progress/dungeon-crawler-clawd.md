@@ -588,3 +588,5 @@ The owner took Claude's recommendation on all 21 calls ("go with your picks"). K
 **Real window check done (2026-11-05, Playground build, CLAWD_SHOT frames):** New Achievement!, the fans, Mongo's nip, the scream and all eight toasts play and fit the scene; a real Loot Box trip fired too. Found and fixed: the viewers strip was hard-coded at 58 px (8bcb471). The toast needed a temporary 8 s beat to be seen, reverted. Not proven: name tags did not show in those frames, so a toast over a wrapped tag is reasoned, not seen. Panels overlap when neighbours compact at once (the test compacts everyone; rare live). The ticker can cross a sign or a sleep bubble for a moment.
 
 **Next:** phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.
+
+**Owner, 2026-11-06:** Donut's after is good. New Achievement! is good as long as it isn't shown on everyone at once: it fires per session on that session's own compaction, only the Playground's `--missing-time` forces all at once, so nothing needs changing. Never use the all-at-once look in the trailer or sheets.
