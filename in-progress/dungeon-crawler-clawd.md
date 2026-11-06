@@ -598,3 +598,5 @@ Done on the branch: the README section, llms.txt, and the four docs pictures (th
 Also on the branch, not universe work: fix(hooks), the false "isn't reporting" warning (`ContextUsage.neverPrompted`, `turnBusySeconds`). It belongs on main too. The owner's machine is on 4.2.0 from the release, which doesn't have it.
 
 **Next:** the trailer. `CrawlReel.swift` still has the template's lines (seed pistols, watering the flaky tests) and shared shots only; storyboard first, for the owner's OK.
+
+**Trailer done (2026-11-06):** storyboard approved by the owner, full render `promo/dungeon-crawler-clawd-promo.mp4` (48.7 s, all 1461 frames render, audio -16.5 dB mean, -1.3 dB peak, in line with the others). Waiting for the owner to watch and hear it: nobody has listened to the score yet. A tiny pink dash from Donut's sprite stays beside her in the studio. The `/hooks` fix shipped as 4.2.1 and is merged back. Still open and public, for the owner's OK: the showcase repo, the cask line, the README link and trailer cell, the GitHub-sized copy, and releasing the universe.
