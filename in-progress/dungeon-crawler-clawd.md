@@ -590,3 +590,11 @@ The owner took Claude's recommendation on all 21 calls ("go with your picks"). K
 **Next:** phase 7 (docs, sheets, the trailer's storyboard). Public steps need the owner's OK.
 
 **Owner, 2026-11-06:** Donut's after is good. New Achievement! is good as long as it isn't shown on everyone at once: it fires per session on that session's own compaction, only the Playground's `--missing-time` forces all at once, so nothing needs changing. Never use the all-at-once look in the trailer or sheets.
+
+## Status (2026-11-06, phase 7 under way)
+
+Done on the branch: the README section, llms.txt, and the four docs pictures (the line-up uses Bautista, because a label covered Katia's crown). Iron Tangle's sign drops to small letters on narrow scenes. Name unlinked in the README until a showcase repo exists; the universe table's trailer cell waits for the trailer.
+
+Also on the branch, not universe work: fix(hooks), the false "isn't reporting" warning (`ContextUsage.neverPrompted`, `turnBusySeconds`). It belongs on main too. The owner's machine is on 4.2.0 from the release, which doesn't have it.
+
+**Next:** the trailer. `CrawlReel.swift` still has the template's lines (seed pistols, watering the flaky tests) and shared shots only; storyboard first, for the owner's OK.
