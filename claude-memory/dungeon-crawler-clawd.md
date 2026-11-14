@@ -8,7 +8,7 @@ metadata:
   modified: 2026-10-30T13:56:41.492Z
 ---
 
-Dungeon Crawler Clawd, universe 12, on branch `dungeon-crawler-clawd` (pushed to origin 2026-10-30, 763144c). Plan and handoff: clawd-plans `in-progress/dungeon-crawler-clawd.md` ("Handoff" section at the end). Phases 1 to 6 done by 2026-11-05 (polish pass 6d12f11; the Hydra's engine commit is on main as 711cee2); next is the owner's review in clawd-plans `review/dungeon-crawler-clawd/Polish/Needs your call/`, then phase 7 docs. The plan's latest Status section wins.
+Dungeon Crawler Clawd, universe 12, on branch `dungeon-crawler-clawd` (pushed to origin 2026-10-30, 763144c). Plan and handoff: clawd-plans `done/dungeon-crawler-clawd.md` ("Handoff" section at the end). Phases 1 to 6 done by 2026-11-05 (polish pass 6d12f11; the Hydra's engine commit is on main as 711cee2); next is the owner's review in clawd-plans `review/dungeon-crawler-clawd/Polish/Needs your call/`, then phase 7 docs. The plan's latest Status section wins.
 
 Owner's art decisions:
 - Donut: mostly brown fur with a ginger saddle, tail the same brown as her body, cream ruff and muzzle. The first busy tortie was rejected as "a jumble of gfx".

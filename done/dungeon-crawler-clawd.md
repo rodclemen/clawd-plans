@@ -606,3 +606,11 @@ Also on the branch, not universe work: fix(hooks), the false "isn't reporting" w
 The owner watched the trailer. The opening's music changed key and tempo scene to scene and stopped around the effects; the first fix (running the shared groove under the opening) was rejected: the shared groove is for the shared shots only, as in every other trailer. Now the opening has its own D minor tune from the title to the boss's fall, effects over it, a D major finish at 17.7 s and silence 18.1 to 18.5 s before the groove (a25d075, owner: "great that works"). The pink dash was Donut's idle Magic Missile firing during the trapdoor drop; the fall now holds their sitting pose. Changelog e0b99a8. The GitHub-sized copy `promo/720p/Dungeon-Crawler-Clawd.mp4` is made (9.2 MB).
 
 **Next, all public, each needs the owner's OK:** the showcase repo, the cask line in `release.sh`, the README link and trailer cell, merging to main and releasing as 4.3.0.
+
+## Status (2026-11-14, released)
+
+Shipped in Clawd Clash 4.3.0 (merge d681660, notarized, tag v4.3.0, cask `dungeon-crawler-clawd` in the tap). The README's universes table plays its trailer beside Clawds of the Universe (513b806). The showcase repo [rodclemen/dungeon-crawler-clawd](https://github.com/rodclemen/dungeon-crawler-clawd) is public, with the trailer, the strips from `CrawlShowcase.swift`, and the window (safe room) and screen-saver shots (f46e5bb). The owner uploads `docs/social-preview-dungeon-crawler-clawd.png` in the repo's Settings by hand.
+
+Also in 4.3.0, not universe work: fix(hooks) 296c057, a background job keeps the hourglass until its own `<task-notification>` says it ended.
+
+Screenshots recipe, reused from Superclawdtural: window from `./build.sh --no-install` with the temporary `(onScreen || shotPath != nil)` card tweak in Overlay.swift (reverted after), run with `-universe crawl -location crawlSafeRoom -windowLarge YES -windowList YES` and CLAWD_SHOT, cropped to 1320x728; screen saver from `scripts/saveshot.swift` fed crawl sessions (cast ids 12100+ heroes, 12000+ villains, universe 12).

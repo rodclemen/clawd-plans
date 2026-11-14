@@ -50,7 +50,7 @@ Every released universe redrawn to the detail bar the Star Clawds refresh set. D
 
 | Universe | Released in | Size |
 |---|---|---|
-| **[Dungeon Crawler Clawd](in-progress/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | **4.3.0** | 95 characters · 20 places |
+| **[Dungeon Crawler Clawd](done/dungeon-crawler-clawd.md)**<br><sub>Dungeon Crawler Carl, all eight books</sub> | **4.3.0** | 95 characters · 20 places |
 | **[Clawds of the Universe](done/clawds-of-the-universe.md)**<br><sub>He-Man and She-Ra</sub> | **4.2.0** | 85 characters · 21 places |
 | **[Superclawdtural](done/superclawdtural.md)**<br><sub>Supernatural</sub> | **4.1.0** | 80 characters · 20 places |
 | **[Stranger Clawds](done/stranger-clawds.md)**<br><sub>Stranger Things, all five seasons</sub> | **4.0.0** | 44 characters · 16 places |
