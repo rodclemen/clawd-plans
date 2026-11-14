@@ -1,6 +1,6 @@
 ---
 name: dungeon-crawler-clawd
-description: "Dungeon Crawler Clawd (number 12, branch dungeon-crawler-clawd): phases 1-6 done 2026-11-05, owner's review next; art picks; status in the plan"
+description: "Dungeon Crawler Clawd (number 12, branch dungeon-crawler-clawd): released in 4.3.0 (2026-11-14), showcase repo live; art picks; status in the plan"
 metadata:
   node_type: memory
   type: project
@@ -19,3 +19,5 @@ Owner's art decisions:
 **How to apply:** for new looks, keep few big clean shapes and colours exactly as described; offer takes A-D when asked. Related: [[clawd-four-legs]], [[show-review-images-plainly]].
 
 Lessons from the polish pass (2026-11-05): ten helpers at once pushed the Mac's load to 50-70 and took about two hours; four or five is kinder. Give each helper its own scratch subfolder in the brief, because they share one scratchpad and overwrote each other's scripts. Don't brief `git reset --hard`: a permission check blocks it; say `git merge --ff-only <commit>`. After merging, look for private copies of art that another helper redrew (the Recap's mantis).
+
+Released 2026-11-14 in Clawd Clash 4.3.0; README trailer cell filled; showcase repo rodclemen/dungeon-crawler-clawd public with window and screen-saver shots (recipe in the plan's last Status; never needs the owner's app quit). The owner uploads the social preview by hand.
