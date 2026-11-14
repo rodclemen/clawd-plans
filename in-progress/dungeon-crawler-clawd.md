@@ -600,3 +600,9 @@ Also on the branch, not universe work: fix(hooks), the false "isn't reporting" w
 **Next:** the trailer. `CrawlReel.swift` still has the template's lines (seed pistols, watering the flaky tests) and shared shots only; storyboard first, for the owner's OK.
 
 **Trailer done (2026-11-06):** storyboard approved by the owner, full render `promo/dungeon-crawler-clawd-promo.mp4` (48.7 s, all 1461 frames render, audio -16.5 dB mean, -1.3 dB peak, in line with the others). Waiting for the owner to watch and hear it: nobody has listened to the score yet. A tiny pink dash from Donut's sprite stays beside her in the studio. The `/hooks` fix shipped as 4.2.1 and is merged back. Still open and public, for the owner's OK: the showcase repo, the cask line, the README link and trailer cell, the GitHub-sized copy, and releasing the universe.
+
+## Status (2026-11-14, the trailer's music)
+
+The owner watched the trailer. The opening's music changed key and tempo scene to scene and stopped around the effects; the first fix (running the shared groove under the opening) was rejected: the shared groove is for the shared shots only, as in every other trailer. Now the opening has its own D minor tune from the title to the boss's fall, effects over it, a D major finish at 17.7 s and silence 18.1 to 18.5 s before the groove (a25d075, owner: "great that works"). The pink dash was Donut's idle Magic Missile firing during the trapdoor drop; the fall now holds their sitting pose. Changelog e0b99a8. The GitHub-sized copy `promo/720p/Dungeon-Crawler-Clawd.mp4` is made (9.2 MB).
+
+**Next, all public, each needs the owner's OK:** the showcase repo, the cask line in `release.sh`, the README link and trailer cell, merging to main and releasing as 4.3.0.
